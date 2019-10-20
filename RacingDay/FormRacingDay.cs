@@ -62,7 +62,14 @@ namespace RacingDay
 
         private void BtnRun_Click(object sender, EventArgs e)
         {
+            if(guys[0].MyBet.Amount==0 && guys[1].MyBet.Amount == 0 && guys[2].MyBet.Amount == 0)
+            {
+                MessageBox.Show("Ninguém apostou!", "Sem apostadores", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             btnRun.Enabled = false;
+            btnBet.Enabled = false;
             int winner = 0;
 
             while (winner == 0)
@@ -80,11 +87,14 @@ namespace RacingDay
             foreach (Guy bettor in guys)
             {
                 bettor.Collect(winner);
+                bettor.UpdateLabels();
             }
 
-            MessageBox.Show($"O cão {greyHounds[winner - 1]} ganhou a corrida!");
+            MessageBox.Show($"O cão {winner} ganhou a corrida!","Temos um vencedor!",MessageBoxButtons.OK,MessageBoxIcon.Information);
 
             btnRun.Enabled = true;
+            btnBet.Enabled = true;
+
             foreach (GreyHound dog in greyHounds)
             {
                 dog.TakeStartingPosition();

@@ -10,7 +10,7 @@ namespace RacingDay
         public int RacetrackLenght { get; }
         public PictureBox MyPictureBox { get; }
         public int Location { get; private set; }
-        public Random MyRandom { get; } = new Random();
+        public Random MyRandom { get; private set; }
 
         public GreyHound(int startingPosition, int racetrackLenght, PictureBox myPictureBox)
         {
@@ -30,10 +30,14 @@ namespace RacingDay
             // p.X += distance;
             // MyPictureBox.Location = p;
 
+            MyRandom = new Random();
             int distance = MyRandom.Next(1, 5);
             Point p = MyPictureBox.Location;
             Location = p.X += distance;
             MyPictureBox.Location = p;
+
+            Application.DoEvents();
+            System.Threading.Thread.Sleep(15);
 
             return Location >= RacetrackLenght - MyPictureBox.Width;
         }

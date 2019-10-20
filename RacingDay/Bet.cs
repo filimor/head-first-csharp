@@ -6,10 +6,6 @@
         public int Dog { get; }
         public Guy Bettor { get; }
 
-        public Bet()
-        {
-        }
-
         public Bet(int amount, int dog, Guy bettor)
         {
             Amount = amount;

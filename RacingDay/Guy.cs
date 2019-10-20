@@ -26,7 +26,7 @@ namespace RacingDay
 
             if (MyBet == null)
             {
-                MyBet = new Bet();
+                MyBet = new Bet(0, 0, this);
             }
             MyLabel.Text = MyBet.GetDescription();
             MyRadioButton.Text = $"{Name} tem {Cash} reais";
@@ -43,7 +43,7 @@ namespace RacingDay
             // Crie uma nova aposta e armazene-a no meu campo bet
             // Retorne verdadeiro se o cara tem dinheiro suficiente para apostar
 
-            if (amount >= Cash)
+            if (Cash >= amount)
             {
                 ClearBet();
                 MyBet = new Bet(amount, dog, this);
