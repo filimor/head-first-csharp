@@ -30,24 +30,24 @@
         {
             this.tabEvents = new System.Windows.Forms.TabControl();
             this.tpDinner = new System.Windows.Forms.TabPage();
-            this.tpBirthday = new System.Windows.Forms.TabPage();
             this.lblDinnerCost = new System.Windows.Forms.Label();
             this.lblCost = new System.Windows.Forms.Label();
             this.chkHealthyOption = new System.Windows.Forms.CheckBox();
             this.chkFancyDinner = new System.Windows.Forms.CheckBox();
             this.nudDinner = new System.Windows.Forms.NumericUpDown();
             this.lblNumberOfPeople = new System.Windows.Forms.Label();
-            this.lblNumberOfPeople2 = new System.Windows.Forms.Label();
-            this.nudBirthday = new System.Windows.Forms.NumericUpDown();
-            this.chkFancyBirthday = new System.Windows.Forms.CheckBox();
-            this.lblCakeWriting = new System.Windows.Forms.Label();
-            this.txtCakeWriting = new System.Windows.Forms.TextBox();
-            this.lblCost2 = new System.Windows.Forms.Label();
+            this.tpBirthday = new System.Windows.Forms.TabPage();
             this.lblBirthdayCost = new System.Windows.Forms.Label();
+            this.lblCost2 = new System.Windows.Forms.Label();
+            this.txtCakeWriting = new System.Windows.Forms.TextBox();
+            this.lblCakeWriting = new System.Windows.Forms.Label();
+            this.chkFancyBirthday = new System.Windows.Forms.CheckBox();
+            this.nudBirthday = new System.Windows.Forms.NumericUpDown();
+            this.lblNumberOfPeople2 = new System.Windows.Forms.Label();
             this.tabEvents.SuspendLayout();
             this.tpDinner.SuspendLayout();
-            this.tpBirthday.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDinner)).BeginInit();
+            this.tpBirthday.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBirthday)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,23 +77,6 @@
             this.tpDinner.TabIndex = 0;
             this.tpDinner.Text = "Jantar";
             this.tpDinner.UseVisualStyleBackColor = true;
-            // 
-            // tpBirthday
-            // 
-            this.tpBirthday.Controls.Add(this.lblBirthdayCost);
-            this.tpBirthday.Controls.Add(this.lblCost2);
-            this.tpBirthday.Controls.Add(this.txtCakeWriting);
-            this.tpBirthday.Controls.Add(this.lblCakeWriting);
-            this.tpBirthday.Controls.Add(this.chkFancyBirthday);
-            this.tpBirthday.Controls.Add(this.nudBirthday);
-            this.tpBirthday.Controls.Add(this.lblNumberOfPeople2);
-            this.tpBirthday.Location = new System.Drawing.Point(4, 25);
-            this.tpBirthday.Name = "tpBirthday";
-            this.tpBirthday.Padding = new System.Windows.Forms.Padding(3);
-            this.tpBirthday.Size = new System.Drawing.Size(180, 150);
-            this.tpBirthday.TabIndex = 1;
-            this.tpBirthday.Text = "Aniversário";
-            this.tpBirthday.UseVisualStyleBackColor = true;
             // 
             // lblDinnerCost
             // 
@@ -166,14 +149,71 @@
             this.lblNumberOfPeople.TabIndex = 6;
             this.lblNumberOfPeople.Text = "Número de pessoas:";
             // 
-            // lblNumberOfPeople2
+            // tpBirthday
             // 
-            this.lblNumberOfPeople2.AutoSize = true;
-            this.lblNumberOfPeople2.Location = new System.Drawing.Point(16, 13);
-            this.lblNumberOfPeople2.Name = "lblNumberOfPeople2";
-            this.lblNumberOfPeople2.Size = new System.Drawing.Size(104, 13);
-            this.lblNumberOfPeople2.TabIndex = 0;
-            this.lblNumberOfPeople2.Text = "Número de pessoas:";
+            this.tpBirthday.Controls.Add(this.lblBirthdayCost);
+            this.tpBirthday.Controls.Add(this.lblCost2);
+            this.tpBirthday.Controls.Add(this.txtCakeWriting);
+            this.tpBirthday.Controls.Add(this.lblCakeWriting);
+            this.tpBirthday.Controls.Add(this.chkFancyBirthday);
+            this.tpBirthday.Controls.Add(this.nudBirthday);
+            this.tpBirthday.Controls.Add(this.lblNumberOfPeople2);
+            this.tpBirthday.Location = new System.Drawing.Point(4, 25);
+            this.tpBirthday.Name = "tpBirthday";
+            this.tpBirthday.Padding = new System.Windows.Forms.Padding(3);
+            this.tpBirthday.Size = new System.Drawing.Size(180, 150);
+            this.tpBirthday.TabIndex = 1;
+            this.tpBirthday.Text = "Aniversário";
+            this.tpBirthday.UseVisualStyleBackColor = true;
+            // 
+            // lblBirthdayCost
+            // 
+            this.lblBirthdayCost.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblBirthdayCost.Location = new System.Drawing.Point(61, 114);
+            this.lblBirthdayCost.Name = "lblBirthdayCost";
+            this.lblBirthdayCost.Size = new System.Drawing.Size(59, 19);
+            this.lblBirthdayCost.TabIndex = 6;
+            this.lblBirthdayCost.Text = "R$";
+            // 
+            // lblCost2
+            // 
+            this.lblCost2.AutoSize = true;
+            this.lblCost2.Location = new System.Drawing.Point(18, 115);
+            this.lblCost2.Name = "lblCost2";
+            this.lblCost2.Size = new System.Drawing.Size(37, 13);
+            this.lblCost2.TabIndex = 5;
+            this.lblCost2.Text = "Custo:";
+            // 
+            // txtCakeWriting
+            // 
+            this.txtCakeWriting.Location = new System.Drawing.Point(20, 91);
+            this.txtCakeWriting.Name = "txtCakeWriting";
+            this.txtCakeWriting.Size = new System.Drawing.Size(141, 20);
+            this.txtCakeWriting.TabIndex = 4;
+            this.txtCakeWriting.Text = "Feliz Aniversário";
+            this.txtCakeWriting.TextChanged += new System.EventHandler(this.TxtCakeWriting_TextChanged);
+            // 
+            // lblCakeWriting
+            // 
+            this.lblCakeWriting.AutoSize = true;
+            this.lblCakeWriting.Location = new System.Drawing.Point(16, 75);
+            this.lblCakeWriting.Name = "lblCakeWriting";
+            this.lblCakeWriting.Size = new System.Drawing.Size(80, 13);
+            this.lblCakeWriting.TabIndex = 3;
+            this.lblCakeWriting.Text = "Escrita do bolo:";
+            // 
+            // chkFancyBirthday
+            // 
+            this.chkFancyBirthday.AutoSize = true;
+            this.chkFancyBirthday.Checked = true;
+            this.chkFancyBirthday.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkFancyBirthday.Location = new System.Drawing.Point(19, 55);
+            this.chkFancyBirthday.Name = "chkFancyBirthday";
+            this.chkFancyBirthday.Size = new System.Drawing.Size(114, 17);
+            this.chkFancyBirthday.TabIndex = 2;
+            this.chkFancyBirthday.Text = "Decoração chique";
+            this.chkFancyBirthday.UseVisualStyleBackColor = true;
+            this.chkFancyBirthday.CheckedChanged += new System.EventHandler(this.ChkFancyBirthday_CheckedChanged);
             // 
             // nudBirthday
             // 
@@ -198,50 +238,14 @@
             0});
             this.nudBirthday.ValueChanged += new System.EventHandler(this.NudBirthday_ValueChanged);
             // 
-            // chkFancyBirthday
+            // lblNumberOfPeople2
             // 
-            this.chkFancyBirthday.AutoSize = true;
-            this.chkFancyBirthday.Location = new System.Drawing.Point(19, 55);
-            this.chkFancyBirthday.Name = "chkFancyBirthday";
-            this.chkFancyBirthday.Size = new System.Drawing.Size(114, 17);
-            this.chkFancyBirthday.TabIndex = 2;
-            this.chkFancyBirthday.Text = "Decoração chique";
-            this.chkFancyBirthday.UseVisualStyleBackColor = true;
-            // 
-            // lblCakeWriting
-            // 
-            this.lblCakeWriting.AutoSize = true;
-            this.lblCakeWriting.Location = new System.Drawing.Point(16, 75);
-            this.lblCakeWriting.Name = "lblCakeWriting";
-            this.lblCakeWriting.Size = new System.Drawing.Size(80, 13);
-            this.lblCakeWriting.TabIndex = 3;
-            this.lblCakeWriting.Text = "Escrita do bolo:";
-            // 
-            // txtCakeWriting
-            // 
-            this.txtCakeWriting.Location = new System.Drawing.Point(20, 91);
-            this.txtCakeWriting.Name = "txtCakeWriting";
-            this.txtCakeWriting.Size = new System.Drawing.Size(141, 20);
-            this.txtCakeWriting.TabIndex = 4;
-            this.txtCakeWriting.Text = "Feliz Aniversário";
-            // 
-            // lblCost2
-            // 
-            this.lblCost2.AutoSize = true;
-            this.lblCost2.Location = new System.Drawing.Point(18, 115);
-            this.lblCost2.Name = "lblCost2";
-            this.lblCost2.Size = new System.Drawing.Size(37, 13);
-            this.lblCost2.TabIndex = 5;
-            this.lblCost2.Text = "Custo:";
-            // 
-            // lblBirthdayCost
-            // 
-            this.lblBirthdayCost.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblBirthdayCost.Location = new System.Drawing.Point(61, 114);
-            this.lblBirthdayCost.Name = "lblBirthdayCost";
-            this.lblBirthdayCost.Size = new System.Drawing.Size(59, 19);
-            this.lblBirthdayCost.TabIndex = 6;
-            this.lblBirthdayCost.Text = "R$";
+            this.lblNumberOfPeople2.AutoSize = true;
+            this.lblNumberOfPeople2.Location = new System.Drawing.Point(16, 13);
+            this.lblNumberOfPeople2.Name = "lblNumberOfPeople2";
+            this.lblNumberOfPeople2.Size = new System.Drawing.Size(104, 13);
+            this.lblNumberOfPeople2.TabIndex = 0;
+            this.lblNumberOfPeople2.Text = "Número de pessoas:";
             // 
             // FormPartyPlanner
             // 
@@ -259,9 +263,9 @@
             this.tabEvents.ResumeLayout(false);
             this.tpDinner.ResumeLayout(false);
             this.tpDinner.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDinner)).EndInit();
             this.tpBirthday.ResumeLayout(false);
             this.tpBirthday.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDinner)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBirthday)).EndInit();
             this.ResumeLayout(false);
 

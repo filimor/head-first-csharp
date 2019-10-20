@@ -10,22 +10,22 @@ namespace PartyPlanner
     public class BirthdayParty
     {
         private int _numberOfPeople;
-        private bool _fancyDecoration;
+        private readonly bool _fancyDecoration;
         private string _cakeWriting;
         private const int COSTOFFOODPERPERSON = 25;
 
         public decimal CostOfDecorations { get; private set; }
         public int CakeSize { get; private set; }
+
         public string CakeWriting {
             get => _cakeWriting;
             set
             {
-                if((CakeSize==20 && value.Length> 16) ||
-                    (CakeSize == 40 && value.Length > 40))
+                int maxLength = CakeSize == 20 ? 16 : 40;
+                if(value.Length > maxLength)
                 {
-                    MessageBox.Show($"Muitas letras para um bolo de {CakeSize} cm",
-                        "Tamanho insuficiente", MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
+                    MessageBox.Show($"Muitas letras para um bolo de {CakeSize} cm", "Tamanho insuficiente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    _cakeWriting = _cakeWriting.Substring(0, maxLength);
                 }else{
                     _cakeWriting = value;
                 }
@@ -38,8 +38,16 @@ namespace PartyPlanner
             set
             {
                 _numberOfPeople = value;
+                CakeSize = _numberOfPeople <= 4 ? 20 : 40;
                 CalculateCostOfDecorations(_fancyDecoration);
             }
+        }
+
+        public BirthdayParty(int numberOfPeople, string cakeWriting, bool fancyDecoration)
+        {
+            NumberOfPeople = numberOfPeople;
+            CakeWriting = cakeWriting;
+            _fancyDecoration = fancyDecoration;
         }
 
         public void CalculateCostOfDecorations(bool fancyDecoration)
