@@ -34,34 +34,34 @@
             this.picDog3 = new System.Windows.Forms.PictureBox();
             this.picDog4 = new System.Windows.Forms.PictureBox();
             this.grpCounter = new System.Windows.Forms.GroupBox();
-            this.lblMinimumBet = new System.Windows.Forms.Label();
-            this.rdoJoao = new System.Windows.Forms.RadioButton();
-            this.rdoBeto = new System.Windows.Forms.RadioButton();
-            this.rdoAlfredo = new System.Windows.Forms.RadioButton();
-            this.lblBets = new System.Windows.Forms.Label();
-            this.lblJoao = new System.Windows.Forms.Label();
-            this.lblBeto = new System.Windows.Forms.Label();
-            this.lblAlfredo = new System.Windows.Forms.Label();
-            this.lblBettor = new System.Windows.Forms.Label();
-            this.btnBet = new System.Windows.Forms.Button();
-            this.nudAmount = new System.Windows.Forms.NumericUpDown();
-            this.lblBet = new System.Windows.Forms.Label();
-            this.nudDog = new System.Windows.Forms.NumericUpDown();
             this.btnRun = new System.Windows.Forms.Button();
+            this.nudDog = new System.Windows.Forms.NumericUpDown();
+            this.lblBet = new System.Windows.Forms.Label();
+            this.nudAmount = new System.Windows.Forms.NumericUpDown();
+            this.btnBet = new System.Windows.Forms.Button();
+            this.lblBettor = new System.Windows.Forms.Label();
+            this.lblAlfredo = new System.Windows.Forms.Label();
+            this.lblBeto = new System.Windows.Forms.Label();
+            this.lblJoao = new System.Windows.Forms.Label();
+            this.lblBets = new System.Windows.Forms.Label();
+            this.rdoAlfredo = new System.Windows.Forms.RadioButton();
+            this.rdoBeto = new System.Windows.Forms.RadioButton();
+            this.rdoJoao = new System.Windows.Forms.RadioButton();
+            this.lblMinimumBet = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picDog1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRaceTrack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDog2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDog3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDog4)).BeginInit();
             this.grpCounter.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAmount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDog)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAmount)).BeginInit();
             this.SuspendLayout();
             // 
             // picDog1
             // 
             this.picDog1.Image = global::RacingDay.Properties.Resources.dog;
-            this.picDog1.Location = new System.Drawing.Point(24, 21);
+            this.picDog1.Location = new System.Drawing.Point(21, 21);
             this.picDog1.Name = "picDog1";
             this.picDog1.Size = new System.Drawing.Size(75, 20);
             this.picDog1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -81,7 +81,7 @@
             // picDog2
             // 
             this.picDog2.Image = global::RacingDay.Properties.Resources.dog;
-            this.picDog2.Location = new System.Drawing.Point(24, 72);
+            this.picDog2.Location = new System.Drawing.Point(22, 72);
             this.picDog2.Name = "picDog2";
             this.picDog2.Size = new System.Drawing.Size(75, 20);
             this.picDog2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -91,7 +91,7 @@
             // picDog3
             // 
             this.picDog3.Image = global::RacingDay.Properties.Resources.dog;
-            this.picDog3.Location = new System.Drawing.Point(24, 125);
+            this.picDog3.Location = new System.Drawing.Point(22, 125);
             this.picDog3.Name = "picDog3";
             this.picDog3.Size = new System.Drawing.Size(75, 20);
             this.picDog3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -101,7 +101,7 @@
             // picDog4
             // 
             this.picDog4.Image = global::RacingDay.Properties.Resources.dog;
-            this.picDog4.Location = new System.Drawing.Point(24, 179);
+            this.picDog4.Location = new System.Drawing.Point(22, 179);
             this.picDog4.Name = "picDog4";
             this.picDog4.Size = new System.Drawing.Size(75, 20);
             this.picDog4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -131,136 +131,14 @@
             this.grpCounter.TabStop = false;
             this.grpCounter.Text = "Balcão de Apostas";
             // 
-            // lblMinimumBet
+            // btnRun
             // 
-            this.lblMinimumBet.AutoSize = true;
-            this.lblMinimumBet.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMinimumBet.Location = new System.Drawing.Point(9, 29);
-            this.lblMinimumBet.Name = "lblMinimumBet";
-            this.lblMinimumBet.Size = new System.Drawing.Size(137, 13);
-            this.lblMinimumBet.TabIndex = 0;
-            this.lblMinimumBet.Text = "Aposta Mínima: 5 reais";
-            // 
-            // rdoJoao
-            // 
-            this.rdoJoao.AutoSize = true;
-            this.rdoJoao.Checked = true;
-            this.rdoJoao.Location = new System.Drawing.Point(23, 55);
-            this.rdoJoao.Name = "rdoJoao";
-            this.rdoJoao.Size = new System.Drawing.Size(113, 17);
-            this.rdoJoao.TabIndex = 1;
-            this.rdoJoao.TabStop = true;
-            this.rdoJoao.Text = "João tem 50 Reais";
-            this.rdoJoao.UseVisualStyleBackColor = true;
-            // 
-            // rdoBeto
-            // 
-            this.rdoBeto.AutoSize = true;
-            this.rdoBeto.Location = new System.Drawing.Point(23, 84);
-            this.rdoBeto.Name = "rdoBeto";
-            this.rdoBeto.Size = new System.Drawing.Size(112, 17);
-            this.rdoBeto.TabIndex = 2;
-            this.rdoBeto.Text = "Beto tem 75 Reais";
-            this.rdoBeto.UseVisualStyleBackColor = true;
-            // 
-            // rdoAlfredo
-            // 
-            this.rdoAlfredo.AutoSize = true;
-            this.rdoAlfredo.Location = new System.Drawing.Point(23, 112);
-            this.rdoAlfredo.Name = "rdoAlfredo";
-            this.rdoAlfredo.Size = new System.Drawing.Size(123, 17);
-            this.rdoAlfredo.TabIndex = 3;
-            this.rdoAlfredo.Text = "Alfredo tem 45 Reais";
-            this.rdoAlfredo.UseVisualStyleBackColor = true;
-            // 
-            // lblBets
-            // 
-            this.lblBets.AutoSize = true;
-            this.lblBets.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBets.Location = new System.Drawing.Point(321, 29);
-            this.lblBets.Name = "lblBets";
-            this.lblBets.Size = new System.Drawing.Size(52, 13);
-            this.lblBets.TabIndex = 4;
-            this.lblBets.Text = "Apostas";
-            // 
-            // lblJoao
-            // 
-            this.lblJoao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblJoao.Location = new System.Drawing.Point(324, 54);
-            this.lblJoao.Name = "lblJoao";
-            this.lblJoao.Size = new System.Drawing.Size(270, 19);
-            this.lblJoao.TabIndex = 5;
-            this.lblJoao.Text = "João ainda não apostou";
-            this.lblJoao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblBeto
-            // 
-            this.lblBeto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblBeto.Location = new System.Drawing.Point(324, 83);
-            this.lblBeto.Name = "lblBeto";
-            this.lblBeto.Size = new System.Drawing.Size(270, 19);
-            this.lblBeto.TabIndex = 6;
-            this.lblBeto.Text = "Beto ainda não apostou";
-            this.lblBeto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblAlfredo
-            // 
-            this.lblAlfredo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblAlfredo.Location = new System.Drawing.Point(324, 111);
-            this.lblAlfredo.Name = "lblAlfredo";
-            this.lblAlfredo.Size = new System.Drawing.Size(270, 19);
-            this.lblAlfredo.TabIndex = 7;
-            this.lblAlfredo.Text = "Alfredo ainda não apostou";
-            this.lblAlfredo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblBettor
-            // 
-            this.lblBettor.AutoSize = true;
-            this.lblBettor.Location = new System.Drawing.Point(20, 143);
-            this.lblBettor.Name = "lblBettor";
-            this.lblBettor.Size = new System.Drawing.Size(30, 13);
-            this.lblBettor.TabIndex = 8;
-            this.lblBettor.Text = "João";
-            // 
-            // btnBet
-            // 
-            this.btnBet.Location = new System.Drawing.Point(71, 139);
-            this.btnBet.Name = "btnBet";
-            this.btnBet.Size = new System.Drawing.Size(75, 20);
-            this.btnBet.TabIndex = 9;
-            this.btnBet.Text = "Aposta";
-            this.btnBet.UseVisualStyleBackColor = true;
-            // 
-            // nudAmount
-            // 
-            this.nudAmount.Location = new System.Drawing.Point(165, 139);
-            this.nudAmount.Maximum = new decimal(new int[] {
-            15,
-            0,
-            0,
-            0});
-            this.nudAmount.Minimum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.nudAmount.Name = "nudAmount";
-            this.nudAmount.Size = new System.Drawing.Size(55, 20);
-            this.nudAmount.TabIndex = 10;
-            this.nudAmount.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            // 
-            // lblBet
-            // 
-            this.lblBet.AutoSize = true;
-            this.lblBet.Location = new System.Drawing.Point(226, 143);
-            this.lblBet.Name = "lblBet";
-            this.lblBet.Size = new System.Drawing.Size(103, 13);
-            this.lblBet.TabIndex = 11;
-            this.lblBet.Text = "reais no cão número";
+            this.btnRun.Location = new System.Drawing.Point(519, 143);
+            this.btnRun.Name = "btnRun";
+            this.btnRun.Size = new System.Drawing.Size(75, 20);
+            this.btnRun.TabIndex = 13;
+            this.btnRun.Text = "Corram!";
+            this.btnRun.UseVisualStyleBackColor = true;
             // 
             // nudDog
             // 
@@ -284,14 +162,136 @@
             0,
             0});
             // 
-            // btnRun
+            // lblBet
             // 
-            this.btnRun.Location = new System.Drawing.Point(519, 143);
-            this.btnRun.Name = "btnRun";
-            this.btnRun.Size = new System.Drawing.Size(75, 20);
-            this.btnRun.TabIndex = 13;
-            this.btnRun.Text = "Corram!";
-            this.btnRun.UseVisualStyleBackColor = true;
+            this.lblBet.AutoSize = true;
+            this.lblBet.Location = new System.Drawing.Point(226, 143);
+            this.lblBet.Name = "lblBet";
+            this.lblBet.Size = new System.Drawing.Size(103, 13);
+            this.lblBet.TabIndex = 11;
+            this.lblBet.Text = "reais no cão número";
+            // 
+            // nudAmount
+            // 
+            this.nudAmount.Location = new System.Drawing.Point(165, 139);
+            this.nudAmount.Maximum = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.nudAmount.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.nudAmount.Name = "nudAmount";
+            this.nudAmount.Size = new System.Drawing.Size(55, 20);
+            this.nudAmount.TabIndex = 10;
+            this.nudAmount.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // btnBet
+            // 
+            this.btnBet.Location = new System.Drawing.Point(71, 139);
+            this.btnBet.Name = "btnBet";
+            this.btnBet.Size = new System.Drawing.Size(75, 20);
+            this.btnBet.TabIndex = 9;
+            this.btnBet.Text = "Aposta";
+            this.btnBet.UseVisualStyleBackColor = true;
+            // 
+            // lblBettor
+            // 
+            this.lblBettor.AutoSize = true;
+            this.lblBettor.Location = new System.Drawing.Point(20, 143);
+            this.lblBettor.Name = "lblBettor";
+            this.lblBettor.Size = new System.Drawing.Size(30, 13);
+            this.lblBettor.TabIndex = 8;
+            this.lblBettor.Text = "João";
+            // 
+            // lblAlfredo
+            // 
+            this.lblAlfredo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblAlfredo.Location = new System.Drawing.Point(324, 111);
+            this.lblAlfredo.Name = "lblAlfredo";
+            this.lblAlfredo.Size = new System.Drawing.Size(270, 19);
+            this.lblAlfredo.TabIndex = 7;
+            this.lblAlfredo.Text = "Alfredo ainda não apostou";
+            this.lblAlfredo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblBeto
+            // 
+            this.lblBeto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblBeto.Location = new System.Drawing.Point(324, 83);
+            this.lblBeto.Name = "lblBeto";
+            this.lblBeto.Size = new System.Drawing.Size(270, 19);
+            this.lblBeto.TabIndex = 6;
+            this.lblBeto.Text = "Beto ainda não apostou";
+            this.lblBeto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblJoao
+            // 
+            this.lblJoao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblJoao.Location = new System.Drawing.Point(324, 54);
+            this.lblJoao.Name = "lblJoao";
+            this.lblJoao.Size = new System.Drawing.Size(270, 19);
+            this.lblJoao.TabIndex = 5;
+            this.lblJoao.Text = "João ainda não apostou";
+            this.lblJoao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblBets
+            // 
+            this.lblBets.AutoSize = true;
+            this.lblBets.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBets.Location = new System.Drawing.Point(321, 29);
+            this.lblBets.Name = "lblBets";
+            this.lblBets.Size = new System.Drawing.Size(52, 13);
+            this.lblBets.TabIndex = 4;
+            this.lblBets.Text = "Apostas";
+            // 
+            // rdoAlfredo
+            // 
+            this.rdoAlfredo.AutoSize = true;
+            this.rdoAlfredo.Location = new System.Drawing.Point(23, 112);
+            this.rdoAlfredo.Name = "rdoAlfredo";
+            this.rdoAlfredo.Size = new System.Drawing.Size(123, 17);
+            this.rdoAlfredo.TabIndex = 3;
+            this.rdoAlfredo.Text = "Alfredo tem 45 Reais";
+            this.rdoAlfredo.UseVisualStyleBackColor = true;
+            // 
+            // rdoBeto
+            // 
+            this.rdoBeto.AutoSize = true;
+            this.rdoBeto.Location = new System.Drawing.Point(23, 84);
+            this.rdoBeto.Name = "rdoBeto";
+            this.rdoBeto.Size = new System.Drawing.Size(112, 17);
+            this.rdoBeto.TabIndex = 2;
+            this.rdoBeto.Text = "Beto tem 75 Reais";
+            this.rdoBeto.UseVisualStyleBackColor = true;
+            // 
+            // rdoJoao
+            // 
+            this.rdoJoao.AutoSize = true;
+            this.rdoJoao.Checked = true;
+            this.rdoJoao.Location = new System.Drawing.Point(23, 55);
+            this.rdoJoao.Name = "rdoJoao";
+            this.rdoJoao.Size = new System.Drawing.Size(113, 17);
+            this.rdoJoao.TabIndex = 1;
+            this.rdoJoao.TabStop = true;
+            this.rdoJoao.Text = "João tem 50 Reais";
+            this.rdoJoao.UseVisualStyleBackColor = true;
+            // 
+            // lblMinimumBet
+            // 
+            this.lblMinimumBet.AutoSize = true;
+            this.lblMinimumBet.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMinimumBet.Location = new System.Drawing.Point(9, 29);
+            this.lblMinimumBet.Name = "lblMinimumBet";
+            this.lblMinimumBet.Size = new System.Drawing.Size(137, 13);
+            this.lblMinimumBet.TabIndex = 0;
+            this.lblMinimumBet.Text = "Aposta Mínima: 5 reais";
             // 
             // FormRacingDay
             // 
@@ -315,8 +315,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picDog4)).EndInit();
             this.grpCounter.ResumeLayout(false);
             this.grpCounter.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAmount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDog)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAmount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
