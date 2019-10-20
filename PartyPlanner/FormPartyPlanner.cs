@@ -9,25 +9,25 @@ namespace PartyPlanner
         public FormPartyPlanner()
         {
             InitializeComponent();
-            dinnerParty = new DinnerParty((int)nudNumberOfPeople.Value,
-                chkHealthyOption.Checked, chkFancyDecoration.Checked);
+            dinnerParty = new DinnerParty((int)nudDinner.Value,
+                chkHealthyOption.Checked, chkFancyDinner.Checked);
             DisplayDinnerPartyCost();
         }
 
         private void DisplayDinnerPartyCost()
         {
-            lblTotalCost.Text = dinnerParty.CalculateCost(chkHealthyOption.Checked).ToString("c");
+            lblDinnerCost.Text = dinnerParty.CalculateCost(chkHealthyOption.Checked).ToString("c");
         }
 
         private void NudNumberOfPeople_ValueChanged(object sender, System.EventArgs e)
         {
-            dinnerParty.NumberOfPeople = (int)nudNumberOfPeople.Value;
+            dinnerParty.NumberOfPeople = (int)nudDinner.Value;
             DisplayDinnerPartyCost();
         }
 
         private void ChkFancyDecoration_CheckedChanged(object sender, System.EventArgs e)
         {
-            dinnerParty.CalculateCostOfDecorations(chkFancyDecoration.Checked);
+            dinnerParty.CalculateCostOfDecorations(chkFancyDinner.Checked);
             DisplayDinnerPartyCost();
         }
 
@@ -35,6 +35,14 @@ namespace PartyPlanner
         {
             dinnerParty.SetHealthyOption(chkHealthyOption.Checked);
             DisplayDinnerPartyCost();
+        }
+
+        private void NudBirthday_ValueChanged(object sender, System.EventArgs e)
+        {
+            if((int)nudBirthday.Value <=4 && txtCakeWriting.TextLength > 16)
+            {
+                txtCakeWriting.Text = txtCakeWriting.Text.Substring(0, 16);
+            }
         }
     }
 }

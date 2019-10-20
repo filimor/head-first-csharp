@@ -28,100 +28,227 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblNumberOfPeople = new System.Windows.Forms.Label();
-            this.nudNumberOfPeople = new System.Windows.Forms.NumericUpDown();
-            this.chkFancyDecoration = new System.Windows.Forms.CheckBox();
-            this.chkHealthyOption = new System.Windows.Forms.CheckBox();
+            this.tabEvents = new System.Windows.Forms.TabControl();
+            this.tpDinner = new System.Windows.Forms.TabPage();
+            this.tpBirthday = new System.Windows.Forms.TabPage();
+            this.lblDinnerCost = new System.Windows.Forms.Label();
             this.lblCost = new System.Windows.Forms.Label();
-            this.lblTotalCost = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.nudNumberOfPeople)).BeginInit();
+            this.chkHealthyOption = new System.Windows.Forms.CheckBox();
+            this.chkFancyDinner = new System.Windows.Forms.CheckBox();
+            this.nudDinner = new System.Windows.Forms.NumericUpDown();
+            this.lblNumberOfPeople = new System.Windows.Forms.Label();
+            this.lblNumberOfPeople2 = new System.Windows.Forms.Label();
+            this.nudBirthday = new System.Windows.Forms.NumericUpDown();
+            this.chkFancyBirthday = new System.Windows.Forms.CheckBox();
+            this.lblCakeWriting = new System.Windows.Forms.Label();
+            this.txtCakeWriting = new System.Windows.Forms.TextBox();
+            this.lblCost2 = new System.Windows.Forms.Label();
+            this.lblBirthdayCost = new System.Windows.Forms.Label();
+            this.tabEvents.SuspendLayout();
+            this.tpDinner.SuspendLayout();
+            this.tpBirthday.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDinner)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBirthday)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblNumberOfPeople
+            // tabEvents
             // 
-            this.lblNumberOfPeople.AutoSize = true;
-            this.lblNumberOfPeople.Location = new System.Drawing.Point(23, 9);
-            this.lblNumberOfPeople.Name = "lblNumberOfPeople";
-            this.lblNumberOfPeople.Size = new System.Drawing.Size(104, 13);
-            this.lblNumberOfPeople.TabIndex = 0;
-            this.lblNumberOfPeople.Text = "Número de pessoas:";
+            this.tabEvents.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+            this.tabEvents.Controls.Add(this.tpDinner);
+            this.tabEvents.Controls.Add(this.tpBirthday);
+            this.tabEvents.Location = new System.Drawing.Point(12, 12);
+            this.tabEvents.Name = "tabEvents";
+            this.tabEvents.SelectedIndex = 0;
+            this.tabEvents.Size = new System.Drawing.Size(188, 179);
+            this.tabEvents.TabIndex = 6;
             // 
-            // nudNumberOfPeople
+            // tpDinner
             // 
-            this.nudNumberOfPeople.Location = new System.Drawing.Point(26, 25);
-            this.nudNumberOfPeople.Maximum = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-            this.nudNumberOfPeople.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nudNumberOfPeople.Name = "nudNumberOfPeople";
-            this.nudNumberOfPeople.Size = new System.Drawing.Size(101, 20);
-            this.nudNumberOfPeople.TabIndex = 1;
-            this.nudNumberOfPeople.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.nudNumberOfPeople.ValueChanged += new System.EventHandler(this.NudNumberOfPeople_ValueChanged);
+            this.tpDinner.Controls.Add(this.lblDinnerCost);
+            this.tpDinner.Controls.Add(this.lblCost);
+            this.tpDinner.Controls.Add(this.chkHealthyOption);
+            this.tpDinner.Controls.Add(this.chkFancyDinner);
+            this.tpDinner.Controls.Add(this.nudDinner);
+            this.tpDinner.Controls.Add(this.lblNumberOfPeople);
+            this.tpDinner.Location = new System.Drawing.Point(4, 25);
+            this.tpDinner.Name = "tpDinner";
+            this.tpDinner.Padding = new System.Windows.Forms.Padding(3);
+            this.tpDinner.Size = new System.Drawing.Size(180, 150);
+            this.tpDinner.TabIndex = 0;
+            this.tpDinner.Text = "Jantar";
+            this.tpDinner.UseVisualStyleBackColor = true;
             // 
-            // chkFancyDecoration
+            // tpBirthday
             // 
-            this.chkFancyDecoration.AutoSize = true;
-            this.chkFancyDecoration.Checked = true;
-            this.chkFancyDecoration.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkFancyDecoration.Location = new System.Drawing.Point(26, 51);
-            this.chkFancyDecoration.Name = "chkFancyDecoration";
-            this.chkFancyDecoration.Size = new System.Drawing.Size(114, 17);
-            this.chkFancyDecoration.TabIndex = 2;
-            this.chkFancyDecoration.Text = "Decoração chique";
-            this.chkFancyDecoration.UseVisualStyleBackColor = true;
-            this.chkFancyDecoration.CheckedChanged += new System.EventHandler(this.ChkFancyDecoration_CheckedChanged);
+            this.tpBirthday.Controls.Add(this.lblBirthdayCost);
+            this.tpBirthday.Controls.Add(this.lblCost2);
+            this.tpBirthday.Controls.Add(this.txtCakeWriting);
+            this.tpBirthday.Controls.Add(this.lblCakeWriting);
+            this.tpBirthday.Controls.Add(this.chkFancyBirthday);
+            this.tpBirthday.Controls.Add(this.nudBirthday);
+            this.tpBirthday.Controls.Add(this.lblNumberOfPeople2);
+            this.tpBirthday.Location = new System.Drawing.Point(4, 25);
+            this.tpBirthday.Name = "tpBirthday";
+            this.tpBirthday.Padding = new System.Windows.Forms.Padding(3);
+            this.tpBirthday.Size = new System.Drawing.Size(180, 150);
+            this.tpBirthday.TabIndex = 1;
+            this.tpBirthday.Text = "Aniversário";
+            this.tpBirthday.UseVisualStyleBackColor = true;
             // 
-            // chkHealthyOption
+            // lblDinnerCost
             // 
-            this.chkHealthyOption.AutoSize = true;
-            this.chkHealthyOption.Location = new System.Drawing.Point(26, 74);
-            this.chkHealthyOption.Name = "chkHealthyOption";
-            this.chkHealthyOption.Size = new System.Drawing.Size(104, 17);
-            this.chkHealthyOption.TabIndex = 3;
-            this.chkHealthyOption.Text = "Opção saudável";
-            this.chkHealthyOption.UseVisualStyleBackColor = true;
-            this.chkHealthyOption.CheckedChanged += new System.EventHandler(this.ChkHealthyOption_CheckedChanged);
+            this.lblDinnerCost.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblDinnerCost.Location = new System.Drawing.Point(56, 109);
+            this.lblDinnerCost.Name = "lblDinnerCost";
+            this.lblDinnerCost.Size = new System.Drawing.Size(67, 16);
+            this.lblDinnerCost.TabIndex = 11;
+            this.lblDinnerCost.Text = "R$";
             // 
             // lblCost
             // 
             this.lblCost.AutoSize = true;
-            this.lblCost.Location = new System.Drawing.Point(23, 104);
+            this.lblCost.Location = new System.Drawing.Point(16, 109);
             this.lblCost.Name = "lblCost";
             this.lblCost.Size = new System.Drawing.Size(34, 13);
-            this.lblCost.TabIndex = 4;
+            this.lblCost.TabIndex = 10;
             this.lblCost.Text = "Custo";
             // 
-            // lblTotalCost
+            // chkHealthyOption
             // 
-            this.lblTotalCost.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblTotalCost.Location = new System.Drawing.Point(63, 104);
-            this.lblTotalCost.Name = "lblTotalCost";
-            this.lblTotalCost.Size = new System.Drawing.Size(67, 16);
-            this.lblTotalCost.TabIndex = 5;
-            this.lblTotalCost.Text = "R$";
+            this.chkHealthyOption.AutoSize = true;
+            this.chkHealthyOption.Location = new System.Drawing.Point(19, 79);
+            this.chkHealthyOption.Name = "chkHealthyOption";
+            this.chkHealthyOption.Size = new System.Drawing.Size(104, 17);
+            this.chkHealthyOption.TabIndex = 9;
+            this.chkHealthyOption.Text = "Opção saudável";
+            this.chkHealthyOption.UseVisualStyleBackColor = true;
+            // 
+            // chkFancyDinner
+            // 
+            this.chkFancyDinner.AutoSize = true;
+            this.chkFancyDinner.Checked = true;
+            this.chkFancyDinner.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkFancyDinner.Location = new System.Drawing.Point(19, 56);
+            this.chkFancyDinner.Name = "chkFancyDinner";
+            this.chkFancyDinner.Size = new System.Drawing.Size(114, 17);
+            this.chkFancyDinner.TabIndex = 8;
+            this.chkFancyDinner.Text = "Decoração chique";
+            this.chkFancyDinner.UseVisualStyleBackColor = true;
+            // 
+            // nudDinner
+            // 
+            this.nudDinner.Location = new System.Drawing.Point(19, 30);
+            this.nudDinner.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.nudDinner.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudDinner.Name = "nudDinner";
+            this.nudDinner.Size = new System.Drawing.Size(101, 20);
+            this.nudDinner.TabIndex = 7;
+            this.nudDinner.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // lblNumberOfPeople
+            // 
+            this.lblNumberOfPeople.AutoSize = true;
+            this.lblNumberOfPeople.Location = new System.Drawing.Point(16, 14);
+            this.lblNumberOfPeople.Name = "lblNumberOfPeople";
+            this.lblNumberOfPeople.Size = new System.Drawing.Size(104, 13);
+            this.lblNumberOfPeople.TabIndex = 6;
+            this.lblNumberOfPeople.Text = "Número de pessoas:";
+            // 
+            // lblNumberOfPeople2
+            // 
+            this.lblNumberOfPeople2.AutoSize = true;
+            this.lblNumberOfPeople2.Location = new System.Drawing.Point(16, 13);
+            this.lblNumberOfPeople2.Name = "lblNumberOfPeople2";
+            this.lblNumberOfPeople2.Size = new System.Drawing.Size(104, 13);
+            this.lblNumberOfPeople2.TabIndex = 0;
+            this.lblNumberOfPeople2.Text = "Número de pessoas:";
+            // 
+            // nudBirthday
+            // 
+            this.nudBirthday.Location = new System.Drawing.Point(19, 29);
+            this.nudBirthday.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.nudBirthday.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudBirthday.Name = "nudBirthday";
+            this.nudBirthday.Size = new System.Drawing.Size(101, 20);
+            this.nudBirthday.TabIndex = 1;
+            this.nudBirthday.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.nudBirthday.ValueChanged += new System.EventHandler(this.NudBirthday_ValueChanged);
+            // 
+            // chkFancyBirthday
+            // 
+            this.chkFancyBirthday.AutoSize = true;
+            this.chkFancyBirthday.Location = new System.Drawing.Point(19, 55);
+            this.chkFancyBirthday.Name = "chkFancyBirthday";
+            this.chkFancyBirthday.Size = new System.Drawing.Size(114, 17);
+            this.chkFancyBirthday.TabIndex = 2;
+            this.chkFancyBirthday.Text = "Decoração chique";
+            this.chkFancyBirthday.UseVisualStyleBackColor = true;
+            // 
+            // lblCakeWriting
+            // 
+            this.lblCakeWriting.AutoSize = true;
+            this.lblCakeWriting.Location = new System.Drawing.Point(16, 75);
+            this.lblCakeWriting.Name = "lblCakeWriting";
+            this.lblCakeWriting.Size = new System.Drawing.Size(80, 13);
+            this.lblCakeWriting.TabIndex = 3;
+            this.lblCakeWriting.Text = "Escrita do bolo:";
+            // 
+            // txtCakeWriting
+            // 
+            this.txtCakeWriting.Location = new System.Drawing.Point(20, 91);
+            this.txtCakeWriting.Name = "txtCakeWriting";
+            this.txtCakeWriting.Size = new System.Drawing.Size(141, 20);
+            this.txtCakeWriting.TabIndex = 4;
+            this.txtCakeWriting.Text = "Feliz Aniversário";
+            // 
+            // lblCost2
+            // 
+            this.lblCost2.AutoSize = true;
+            this.lblCost2.Location = new System.Drawing.Point(18, 115);
+            this.lblCost2.Name = "lblCost2";
+            this.lblCost2.Size = new System.Drawing.Size(37, 13);
+            this.lblCost2.TabIndex = 5;
+            this.lblCost2.Text = "Custo:";
+            // 
+            // lblBirthdayCost
+            // 
+            this.lblBirthdayCost.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblBirthdayCost.Location = new System.Drawing.Point(61, 114);
+            this.lblBirthdayCost.Name = "lblBirthdayCost";
+            this.lblBirthdayCost.Size = new System.Drawing.Size(59, 19);
+            this.lblBirthdayCost.TabIndex = 6;
+            this.lblBirthdayCost.Text = "R$";
             // 
             // FormPartyPlanner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(150, 137);
-            this.Controls.Add(this.lblTotalCost);
-            this.Controls.Add(this.lblCost);
-            this.Controls.Add(this.chkHealthyOption);
-            this.Controls.Add(this.chkFancyDecoration);
-            this.Controls.Add(this.nudNumberOfPeople);
-            this.Controls.Add(this.lblNumberOfPeople);
+            this.ClientSize = new System.Drawing.Size(213, 203);
+            this.Controls.Add(this.tabEvents);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -129,20 +256,35 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Planejador de Festas";
-            ((System.ComponentModel.ISupportInitialize)(this.nudNumberOfPeople)).EndInit();
+            this.tabEvents.ResumeLayout(false);
+            this.tpDinner.ResumeLayout(false);
+            this.tpDinner.PerformLayout();
+            this.tpBirthday.ResumeLayout(false);
+            this.tpBirthday.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDinner)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBirthday)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label lblNumberOfPeople;
-        private System.Windows.Forms.NumericUpDown nudNumberOfPeople;
-        private System.Windows.Forms.CheckBox chkFancyDecoration;
-        private System.Windows.Forms.CheckBox chkHealthyOption;
+        private System.Windows.Forms.TabControl tabEvents;
+        private System.Windows.Forms.TabPage tpDinner;
+        private System.Windows.Forms.Label lblDinnerCost;
         private System.Windows.Forms.Label lblCost;
-        private System.Windows.Forms.Label lblTotalCost;
+        private System.Windows.Forms.CheckBox chkHealthyOption;
+        private System.Windows.Forms.CheckBox chkFancyDinner;
+        private System.Windows.Forms.NumericUpDown nudDinner;
+        private System.Windows.Forms.Label lblNumberOfPeople;
+        private System.Windows.Forms.TabPage tpBirthday;
+        private System.Windows.Forms.NumericUpDown nudBirthday;
+        private System.Windows.Forms.Label lblNumberOfPeople2;
+        private System.Windows.Forms.Label lblBirthdayCost;
+        private System.Windows.Forms.Label lblCost2;
+        private System.Windows.Forms.TextBox txtCakeWriting;
+        private System.Windows.Forms.Label lblCakeWriting;
+        private System.Windows.Forms.CheckBox chkFancyBirthday;
     }
 }
 

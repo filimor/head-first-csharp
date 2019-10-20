@@ -1,8 +1,17 @@
-﻿Estimativa de Custo para um Jantar:
+﻿Em comum:
 - Para cada convidado custo fixo de R$ 25 com alimentação
-- Opção de bebidas
-	alcoólicas: R$ 20 por pessoa
-	opção saudável: R$ 5 por pessoa + 5% de desconto no total
 - Opçãode decoração
 	normal: R$ 7,50 por pessoa + R$ 30 fixo
 	opção chique: R$ 15 por pessoa + R$ 50 fixo
+
+Estimativa de Custo para um Jantar:
+- Opção de bebidas
+	alcoólicas: R$ 20 por pessoa
+	opção saudável: R$ 5 por pessoa + 5% de desconto no total
+
+Estimativa de custo para um Aniversário:
+- Pessoas <=4: bolo de 20cm (R$ 40)
+- Pessoas >4: bolo de 40cm (R$ 75)
+- Escrita no bolo: R$ 0,25 por letra
+	Bolo de 20cm: até 16 letras
+	Bolo de 40cm: até 40 letras

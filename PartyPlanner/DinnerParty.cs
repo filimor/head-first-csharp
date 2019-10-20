@@ -4,8 +4,8 @@
     {
         private int _numberOfPeople;
         private bool _fancyDecoration;
-
         private const int COSTOFFOODPERPERSON = 25;
+
         public decimal CostOfBeveragesPerPerson { get; private set; }
         public decimal CostOfDecorations { get; private set; }
 
