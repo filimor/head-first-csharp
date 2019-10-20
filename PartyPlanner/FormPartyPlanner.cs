@@ -29,24 +29,6 @@ namespace PartyPlanner
             lblBirthdayCost.Text = birthdayParty.CalculateCost().ToString("c");
         }
 
-        private void NudNumberOfPeople_ValueChanged(object sender, System.EventArgs e)
-        {
-            dinnerParty.NumberOfPeople = (int)nudDinner.Value;
-            DisplayDinnerPartyCost();
-        }
-
-        private void ChkFancyDecoration_CheckedChanged(object sender, System.EventArgs e)
-        {
-            dinnerParty.CalculateCostOfDecorations(chkFancyDinner.Checked);
-            DisplayDinnerPartyCost();
-        }
-
-        private void ChkHealthyOption_CheckedChanged(object sender, System.EventArgs e)
-        {
-            dinnerParty.SetHealthyOption(chkHealthyOption.Checked);
-            DisplayDinnerPartyCost();
-        }
-
         private void NudBirthday_ValueChanged(object sender, System.EventArgs e)
         {
             birthdayParty.NumberOfPeople = (int)nudBirthday.Value;
@@ -64,6 +46,24 @@ namespace PartyPlanner
         {
             birthdayParty.CakeWriting = txtCakeWriting.Text;
             DisplayBirthdayPartyCost();
+        }
+
+        private void ChkFancyDinner_CheckedChanged(object sender, System.EventArgs e)
+        {
+            dinnerParty.CalculateCostOfDecorations(chkFancyDinner.Checked);
+            DisplayDinnerPartyCost();
+        }
+
+        private void NudDinner_ValueChanged(object sender, System.EventArgs e)
+        {
+            dinnerParty.NumberOfPeople = (int)nudDinner.Value;
+            DisplayDinnerPartyCost();
+        }
+
+        private void ChkHealthyOption_CheckedChanged(object sender, System.EventArgs e)
+        {
+            dinnerParty.SetHealthyOption(chkHealthyOption.Checked);
+            DisplayDinnerPartyCost();
         }
     }
 }

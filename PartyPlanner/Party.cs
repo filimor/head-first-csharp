@@ -22,7 +22,7 @@
         {
             NumberOfPeople = numberOfPeople;
             _fancyDecoration = fancyDecoration;
-            CalculateCostOfDecorations(_fancyDecoration);
+            CalculateCostOfDecorations(fancyDecoration);
         }
 
         public void CalculateCostOfDecorations(bool fancyDecoration)
@@ -37,7 +37,7 @@
             decimal totalCost = CostOfDecorations + (COSTOFFOODPERPERSON * NumberOfPeople);
             if (NumberOfPeople > 12)
             {
-                totalCost += 100M;
+                totalCost += 100;
             }
             return totalCost;
         }

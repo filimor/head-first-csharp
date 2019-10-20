@@ -105,6 +105,7 @@
             this.chkHealthyOption.TabIndex = 9;
             this.chkHealthyOption.Text = "Opção saudável";
             this.chkHealthyOption.UseVisualStyleBackColor = true;
+            this.chkHealthyOption.CheckedChanged += new System.EventHandler(this.ChkHealthyOption_CheckedChanged);
             // 
             // chkFancyDinner
             // 
@@ -117,6 +118,7 @@
             this.chkFancyDinner.TabIndex = 8;
             this.chkFancyDinner.Text = "Decoração chique";
             this.chkFancyDinner.UseVisualStyleBackColor = true;
+            this.chkFancyDinner.CheckedChanged += new System.EventHandler(this.ChkFancyDinner_CheckedChanged);
             // 
             // nudDinner
             // 
@@ -139,6 +141,7 @@
             0,
             0,
             0});
+            this.nudDinner.ValueChanged += new System.EventHandler(this.NudDinner_ValueChanged);
             // 
             // lblNumberOfPeople
             // 
