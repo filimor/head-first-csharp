@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RacingDay
@@ -45,7 +38,8 @@ namespace RacingDay
 
         private void RdoJoao_CheckedChanged(object sender, EventArgs e)
         {
-            if (rdoJoao.Checked){
+            if (rdoJoao.Checked)
+            {
                 lblBettor.Text = guys[0].Name;
             }
         }
@@ -66,9 +60,35 @@ namespace RacingDay
             }
         }
 
-        private void btnRun_Click(object sender, EventArgs e)
+        private void BtnRun_Click(object sender, EventArgs e)
         {
+            btnRun.Enabled = false;
+            int winner = 0;
 
+            while (winner == 0)
+            {
+                for (int i = 0; i < 4; i++)
+                {
+                    if (greyHounds[i].Run())
+                    {
+                        winner = i + 1;
+                        break;
+                    }
+                }
+            }
+
+            foreach (Guy bettor in guys)
+            {
+                bettor.Collect(winner);
+            }
+
+            MessageBox.Show($"O cão {greyHounds[winner - 1]} ganhou a corrida!");
+
+            btnRun.Enabled = true;
+            foreach (GreyHound dog in greyHounds)
+            {
+                dog.TakeStartingPosition();
+            }
         }
     }
 }

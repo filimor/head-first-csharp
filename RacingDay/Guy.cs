@@ -45,6 +45,7 @@ namespace RacingDay
 
             if (amount >= Cash)
             {
+                ClearBet();
                 MyBet = new Bet(amount, dog, this);
                 return true;
             }

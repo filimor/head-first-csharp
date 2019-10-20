@@ -139,7 +139,7 @@
             this.btnRun.TabIndex = 13;
             this.btnRun.Text = "Corram!";
             this.btnRun.UseVisualStyleBackColor = true;
-            this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
+            this.btnRun.Click += new System.EventHandler(this.BtnRun_Click);
             // 
             // nudDog
             // 
