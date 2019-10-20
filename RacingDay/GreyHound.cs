@@ -1,19 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace RacingDay
 {
     public class GreyHound
     {
-        public int StartingPosition { get; set; }
-        public int RacetrackLenght { get; set; }
-        public PictureBox MyPictureBox { get; set; }
-        public int Location { get; set; }
-        public Random MyRandom { get; set; } = new Random();
+        public int StartingPosition { get; }
+        public int RacetrackLenght { get; }
+        public PictureBox MyPictureBox { get; }
+        public int Location { get; private set; }
+        public Random MyRandom { get; } = new Random();
 
         public GreyHound(int startingPosition, int racetrackLenght, PictureBox myPictureBox)
         {
@@ -31,13 +28,23 @@ namespace RacingDay
             // Exemplo:
             // Point p = MyPictureBox.Location;
             // p.X += distance;
-            // MyPictureBox.Location = p;          
+            // MyPictureBox.Location = p;
 
+            int distance = MyRandom.Next(1, 5);
+            Point p = MyPictureBox.Location;
+            Location = p.X += distance;
+            MyPictureBox.Location = p;
+
+            return Location >= RacetrackLenght - MyPictureBox.Width;
         }
 
         public void TakeStartingPosition()
         {
             // Volte minha posição para a linha de partida
+
+            Point p = MyPictureBox.Location;
+            p.X = StartingPosition;
+            MyPictureBox.Location = p;
         }
     }
 }
