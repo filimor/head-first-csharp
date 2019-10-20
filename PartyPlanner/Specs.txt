@@ -1,0 +1,8 @@
+﻿Estimativa de Custo para um Jantar:
+- Para cada convidado custo fixo de R$ 25 com alimentação
+- Opção de bebidas
+	alcoólicas: R$ 20 por pessoa
+	opção saudável: R$ 5 por pessoa + 5% de desconto no total
+- Opçãode decoração
+	normal: R$ 7,50 por pessoa + R$ 30 fixo
+	opção chique: R$ 15 por pessoa + R$ 50 fixo
