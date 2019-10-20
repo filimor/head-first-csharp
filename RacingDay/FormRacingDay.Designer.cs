@@ -133,16 +133,17 @@
             // 
             // btnRun
             // 
-            this.btnRun.Location = new System.Drawing.Point(519, 143);
+            this.btnRun.Location = new System.Drawing.Point(519, 139);
             this.btnRun.Name = "btnRun";
             this.btnRun.Size = new System.Drawing.Size(75, 20);
             this.btnRun.TabIndex = 13;
             this.btnRun.Text = "Corram!";
             this.btnRun.UseVisualStyleBackColor = true;
+            this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
             // 
             // nudDog
             // 
-            this.nudDog.Location = new System.Drawing.Point(335, 141);
+            this.nudDog.Location = new System.Drawing.Point(335, 139);
             this.nudDog.Maximum = new decimal(new int[] {
             4,
             0,
@@ -165,7 +166,7 @@
             // lblBet
             // 
             this.lblBet.AutoSize = true;
-            this.lblBet.Location = new System.Drawing.Point(226, 143);
+            this.lblBet.Location = new System.Drawing.Point(223, 143);
             this.lblBet.Name = "lblBet";
             this.lblBet.Size = new System.Drawing.Size(103, 13);
             this.lblBet.TabIndex = 11;
@@ -173,7 +174,7 @@
             // 
             // nudAmount
             // 
-            this.nudAmount.Location = new System.Drawing.Point(165, 139);
+            this.nudAmount.Location = new System.Drawing.Point(157, 139);
             this.nudAmount.Maximum = new decimal(new int[] {
             15,
             0,
@@ -195,12 +196,13 @@
             // 
             // btnBet
             // 
-            this.btnBet.Location = new System.Drawing.Point(71, 139);
+            this.btnBet.Location = new System.Drawing.Point(69, 139);
             this.btnBet.Name = "btnBet";
             this.btnBet.Size = new System.Drawing.Size(75, 20);
             this.btnBet.TabIndex = 9;
             this.btnBet.Text = "Aposta";
             this.btnBet.UseVisualStyleBackColor = true;
+            this.btnBet.Click += new System.EventHandler(this.BtnBet_Click);
             // 
             // lblBettor
             // 
@@ -214,9 +216,9 @@
             // lblAlfredo
             // 
             this.lblAlfredo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblAlfredo.Location = new System.Drawing.Point(324, 111);
+            this.lblAlfredo.Location = new System.Drawing.Point(335, 111);
             this.lblAlfredo.Name = "lblAlfredo";
-            this.lblAlfredo.Size = new System.Drawing.Size(270, 19);
+            this.lblAlfredo.Size = new System.Drawing.Size(259, 19);
             this.lblAlfredo.TabIndex = 7;
             this.lblAlfredo.Text = "Alfredo ainda não apostou";
             this.lblAlfredo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -224,9 +226,9 @@
             // lblBeto
             // 
             this.lblBeto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblBeto.Location = new System.Drawing.Point(324, 83);
+            this.lblBeto.Location = new System.Drawing.Point(335, 83);
             this.lblBeto.Name = "lblBeto";
-            this.lblBeto.Size = new System.Drawing.Size(270, 19);
+            this.lblBeto.Size = new System.Drawing.Size(259, 19);
             this.lblBeto.TabIndex = 6;
             this.lblBeto.Text = "Beto ainda não apostou";
             this.lblBeto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -234,9 +236,9 @@
             // lblJoao
             // 
             this.lblJoao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblJoao.Location = new System.Drawing.Point(324, 54);
+            this.lblJoao.Location = new System.Drawing.Point(335, 54);
             this.lblJoao.Name = "lblJoao";
-            this.lblJoao.Size = new System.Drawing.Size(270, 19);
+            this.lblJoao.Size = new System.Drawing.Size(259, 19);
             this.lblJoao.TabIndex = 5;
             this.lblJoao.Text = "João ainda não apostou";
             this.lblJoao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -245,7 +247,7 @@
             // 
             this.lblBets.AutoSize = true;
             this.lblBets.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBets.Location = new System.Drawing.Point(321, 29);
+            this.lblBets.Location = new System.Drawing.Point(332, 29);
             this.lblBets.Name = "lblBets";
             this.lblBets.Size = new System.Drawing.Size(52, 13);
             this.lblBets.TabIndex = 4;
@@ -260,6 +262,7 @@
             this.rdoAlfredo.TabIndex = 3;
             this.rdoAlfredo.Text = "Alfredo tem 45 Reais";
             this.rdoAlfredo.UseVisualStyleBackColor = true;
+            this.rdoAlfredo.CheckedChanged += new System.EventHandler(this.RdoAlfredo_CheckedChanged);
             // 
             // rdoBeto
             // 
@@ -270,6 +273,7 @@
             this.rdoBeto.TabIndex = 2;
             this.rdoBeto.Text = "Beto tem 75 Reais";
             this.rdoBeto.UseVisualStyleBackColor = true;
+            this.rdoBeto.CheckedChanged += new System.EventHandler(this.RdoBeto_CheckedChanged);
             // 
             // rdoJoao
             // 
@@ -282,6 +286,7 @@
             this.rdoJoao.TabStop = true;
             this.rdoJoao.Text = "João tem 50 Reais";
             this.rdoJoao.UseVisualStyleBackColor = true;
+            this.rdoJoao.CheckedChanged += new System.EventHandler(this.RdoJoao_CheckedChanged);
             // 
             // lblMinimumBet
             // 

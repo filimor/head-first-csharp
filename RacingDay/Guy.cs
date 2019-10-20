@@ -24,7 +24,11 @@ namespace RacingDay
             // Atribua ao meu rótulo a descrição da minha aposta, e ao rótulo do
             // meu botão de rádio o meu dinheiro ("João tem 43 reais")
 
-            MyLabel.Text = MyBet != null ? $"{Name} apostou {MyBet.Amount} reais no cão número {MyBet.Dog}." : $"{Name} ainda não apostou";
+            if (MyBet == null)
+            {
+                MyBet = new Bet();
+            }
+            MyLabel.Text = MyBet.GetDescription();
             MyRadioButton.Text = $"{Name} tem {Cash} reais";
         }
 

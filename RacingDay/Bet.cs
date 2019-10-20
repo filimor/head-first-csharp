@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RacingDay
+﻿namespace RacingDay
 {
     public class Bet
     {
-        public int Amount { get; set; }
-        public int Dog { get; set; }
-        public Guy Bettor { get; set; }
+        public int Amount { get; }
+        public int Dog { get; }
+        public Guy Bettor { get; }
+
+        public Bet()
+        {
+        }
 
         public Bet(int amount, int dog, Guy bettor)
         {
@@ -25,6 +23,8 @@ namespace RacingDay
             // quanto dinheiro foi apostado e em qual cão ("João apostou 8 no
             // cão 4"). Se a quantidade for zero, a aposta não foi feita
             // ("João não apostou")
+
+            return Amount > 0 ? $"{Bettor.Name} apostou {Amount} reais no cão {Dog}." : $"{Bettor.Name} não apostou.";
         }
 
         public int PayOut(int winner)
@@ -32,6 +32,8 @@ namespace RacingDay
             // O parâmetro deve receber o vencedor da corrida. Se o cão venceu,
             // retorna a quantidade apostada. De outra forma, retorne um valor
             // negativo correspondente ao valor apostado
+
+            return Dog == winner ? Amount : -Amount;
         }
     }
 }
