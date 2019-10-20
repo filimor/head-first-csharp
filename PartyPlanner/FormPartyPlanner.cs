@@ -13,7 +13,7 @@ namespace PartyPlanner
             dinnerParty = new DinnerParty((int)nudDinner.Value,
                 chkHealthyOption.Checked, chkFancyDinner.Checked);
             birthdayParty = new BirthdayParty((int)nudBirthday.Value,
-                txtCakeWriting.Text,chkFancyBirthday.Checked);
+                txtCakeWriting.Text, chkFancyBirthday.Checked);
             DisplayDinnerPartyCost();
             DisplayBirthdayPartyCost();
         }
@@ -25,6 +25,7 @@ namespace PartyPlanner
 
         private void DisplayBirthdayPartyCost()
         {
+            txtCakeWriting.Text = birthdayParty.CakeWriting;
             lblBirthdayCost.Text = birthdayParty.CalculateCost().ToString("c");
         }
 
@@ -62,7 +63,7 @@ namespace PartyPlanner
         private void TxtCakeWriting_TextChanged(object sender, System.EventArgs e)
         {
             birthdayParty.CakeWriting = txtCakeWriting.Text;
-            txtCakeWriting.Text = birthdayParty.CakeWriting;
+            DisplayBirthdayPartyCost();
         }
     }
 }

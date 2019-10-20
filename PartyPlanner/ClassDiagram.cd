@@ -1,17 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="PartyPlanner.DinnerParty">
-    <Position X="0.75" Y="1" Width="2.25" />
+    <Position X="0.5" Y="0.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAACAAAIAAAEAAAIAQBAAAAAAAAAAAAAAAAGIAAAAA=</HashCode>
       <FileName>DinnerParty.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PartyPlanner.FormPartyPlanner">
-    <Position X="3.5" Y="1" Width="2.75" />
+    <Position X="5.5" Y="0.5" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAAAIAAAACAAAgAAAACAIEAGAAABAEAAIAAABAgAIAA=</HashCode>
+      <HashCode>EAAAIAAAQSACQgAAAADAAEAGAAEBAEgRIQEAAAgJCAE=</HashCode>
       <FileName>FormPartyPlanner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PartyPlanner.BirthdayParty">
+    <Position X="3" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>ACAACAAAIAAAEAAANAQBAAAAAAAAAAAAAEAACAAAAAA=</HashCode>
+      <FileName>BirthdayParty.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

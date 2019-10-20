@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace PartyPlanner
 {
@@ -17,16 +12,19 @@ namespace PartyPlanner
         public decimal CostOfDecorations { get; private set; }
         public int CakeSize { get; private set; }
 
-        public string CakeWriting {
+        public string CakeWriting
+        {
             get => _cakeWriting;
             set
             {
                 int maxLength = CakeSize == 20 ? 16 : 40;
-                if(value.Length > maxLength)
+                if (value.Length > maxLength)
                 {
                     MessageBox.Show($"Muitas letras para um bolo de {CakeSize} cm", "Tamanho insuficiente", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     _cakeWriting = _cakeWriting.Substring(0, maxLength);
-                }else{
+                }
+                else
+                {
                     _cakeWriting = value;
                 }
             }
@@ -38,16 +36,24 @@ namespace PartyPlanner
             set
             {
                 _numberOfPeople = value;
-                CakeSize = _numberOfPeople <= 4 ? 20 : 40;
+                CalculateCakeSize();
                 CalculateCostOfDecorations(_fancyDecoration);
+                _cakeWriting = CakeWriting;
             }
         }
 
         public BirthdayParty(int numberOfPeople, string cakeWriting, bool fancyDecoration)
         {
             NumberOfPeople = numberOfPeople;
-            CakeWriting = cakeWriting;
             _fancyDecoration = fancyDecoration;
+            CalculateCakeSize();
+            CakeWriting = cakeWriting;
+            CalculateCostOfDecorations(fancyDecoration);
+        }
+
+        private void CalculateCakeSize()
+        {
+            CakeSize = _numberOfPeople <= 4 ? 20 : 40;
         }
 
         public void CalculateCostOfDecorations(bool fancyDecoration)
@@ -58,7 +64,7 @@ namespace PartyPlanner
 
         public decimal CalculateCost()
         {
-            return (NumberOfPeople * COSTOFFOODPERPERSON) + CostOfDecorations + (CakeWriting.Length * 0.25M);
+            return (NumberOfPeople * COSTOFFOODPERPERSON) + CostOfDecorations + (CakeSize == 20 ? (CakeWriting.Length * 0.25M) + 40M : (CakeWriting.Length * 0.25M) + 75M);
         }
     }
 }
