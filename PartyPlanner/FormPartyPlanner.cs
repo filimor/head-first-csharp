@@ -9,15 +9,14 @@ namespace PartyPlanner
         public FormPartyPlanner()
         {
             InitializeComponent();
-            dinnerParty = new DinnerParty(5);
-            dinnerParty.SetHealthyOption(chkHealthyOption.Checked);
-            dinnerParty.CalculateCostOfDecorations(chkFancyDecoration.Checked);
+            dinnerParty = new DinnerParty((int)nudNumberOfPeople.Value,
+                chkHealthyOption.Checked, chkFancyDecoration.Checked);
             DisplayDinnerPartyCost();
         }
 
         private void DisplayDinnerPartyCost()
         {
-            lblTotalCost.Text = dinnerParty.CalculateCost().ToString("c");
+            lblTotalCost.Text = dinnerParty.CalculateCost(chkHealthyOption.Checked).ToString("c");
         }
 
         private void NudNumberOfPeople_ValueChanged(object sender, System.EventArgs e)

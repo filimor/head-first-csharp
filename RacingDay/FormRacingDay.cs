@@ -62,7 +62,7 @@ namespace RacingDay
 
         private void BtnRun_Click(object sender, EventArgs e)
         {
-            if(guys[0].MyBet.Amount==0 && guys[1].MyBet.Amount == 0 && guys[2].MyBet.Amount == 0)
+            if (guys[0].MyBet.Amount == 0 && guys[1].MyBet.Amount == 0 && guys[2].MyBet.Amount == 0)
             {
                 MessageBox.Show("Ninguém apostou!", "Sem apostadores", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -90,7 +90,7 @@ namespace RacingDay
                 bettor.UpdateLabels();
             }
 
-            MessageBox.Show($"O cão {winner} ganhou a corrida!","Temos um vencedor!",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MessageBox.Show($"O cão {winner} ganhou a corrida!", "Temos um vencedor!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             btnRun.Enabled = true;
             btnBet.Enabled = true;
