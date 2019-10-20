@@ -1,0 +1,16 @@
+﻿- João, Beto e Alfredo apostam numa corrida de cachorros
+- João começa com R$ 50, Beto com R$ 75 e Alfredo com R$ 45
+- Antes de iniciar a corrida, decidem se e quanto querem apostar
+- Podem mudar de ideia antes do início da corrida
+- Valor mínimo de apostas R$ 5 e máximo R$ 15
+- Somente uma aposta por pessoa por corrida
+- Dobro-ou-nada: vencedor dobra o dinheiro apostado ou perde o que apostou
+- Quatro cães correm de forma aleatória
+- Uma matriz de 4 objetos GreyHound e uma de 3 objetos Guy
+
+ADICONAIS:
+- Desenvolver um sistema com vantagens e desvantagens para os cães
+- Permitir lterar valores iniciais e finais
+- Permitir alterar valor das apostas
+- Permitir fim de jogo se dois ficarem sem dinheiro ou um acumular
+	uma quantia X ou após Y rodadas

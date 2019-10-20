@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp4
+namespace RacingDay
 {
-    public partial class Form1 : Form
+    public partial class FormRacingDay : Form
     {
-        public Form1()
+        public FormRacingDay()
         {
             InitializeComponent();
         }
