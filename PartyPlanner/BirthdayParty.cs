@@ -2,14 +2,10 @@
 
 namespace PartyPlanner
 {
-    public class BirthdayParty
+    public class BirthdayParty : Party
     {
-        private int _numberOfPeople;
-        private readonly bool _fancyDecoration;
         private string _cakeWriting;
-        private const int COSTOFFOODPERPERSON = 25;
 
-        public decimal CostOfDecorations { get; private set; }
         public int CakeSize { get; private set; }
 
         public string CakeWriting
@@ -30,41 +26,31 @@ namespace PartyPlanner
             }
         }
 
-        public int NumberOfPeople
+        public override int NumberOfPeople
         {
-            get => _numberOfPeople;
+            get => base.NumberOfPeople;
             set
             {
-                _numberOfPeople = value;
+                base.NumberOfPeople = value;
                 CalculateCakeSize();
-                CalculateCostOfDecorations(_fancyDecoration);
                 _cakeWriting = CakeWriting;
             }
         }
 
-        public BirthdayParty(int numberOfPeople, string cakeWriting, bool fancyDecoration)
+        public BirthdayParty(int numberOfPeople, string cakeWriting, bool fancyDecoration) : base(numberOfPeople, fancyDecoration)
         {
-            NumberOfPeople = numberOfPeople;
-            _fancyDecoration = fancyDecoration;
             CalculateCakeSize();
             CakeWriting = cakeWriting;
-            CalculateCostOfDecorations(fancyDecoration);
         }
 
         private void CalculateCakeSize()
         {
-            CakeSize = _numberOfPeople <= 4 ? 20 : 40;
+            CakeSize = NumberOfPeople <= 4 ? 20 : 40;
         }
 
-        public void CalculateCostOfDecorations(bool fancyDecoration)
+        public override decimal CalculateCost()
         {
-            CostOfDecorations = fancyDecoration ? 50M + (15M * NumberOfPeople) :
-                30M + (7.5M * NumberOfPeople);
-        }
-
-        public decimal CalculateCost()
-        {
-            return (NumberOfPeople * COSTOFFOODPERPERSON) + CostOfDecorations + (CakeSize == 20 ? (CakeWriting.Length * 0.25M) + 40M : (CakeWriting.Length * 0.25M) + 75M);
+            return base.CalculateCost() + (CakeSize == 20 ? (CakeWriting.Length * 0.25M) + 40M : (CakeWriting.Length * 0.25M) + 75M);
         }
     }
 }

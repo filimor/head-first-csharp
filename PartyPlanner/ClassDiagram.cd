@@ -1,24 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="PartyPlanner.DinnerParty">
-    <Position X="0.5" Y="0.5" Width="2.25" />
+  <Class Name="PartyPlanner.BirthdayParty">
+    <Position X="0.5" Y="4.25" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAACAAAIAAAEAAAIAQBAAAAAAAAAAAAAAAAGIAAAAA=</HashCode>
+      <HashCode>ACAACAAAAAAAEAAAFAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>BirthdayParty.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PartyPlanner.DinnerParty">
+    <Position X="3.75" Y="4.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEIAAAAA=</HashCode>
       <FileName>DinnerParty.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PartyPlanner.FormPartyPlanner">
-    <Position X="5.5" Y="0.5" Width="2.75" />
+    <Position X="6.25" Y="0.5" Width="2.75" />
     <TypeIdentifier>
       <HashCode>EAAAIAAAQSACQgAAAADAAEAGAAEBAEgRIQEAAAgJCAE=</HashCode>
       <FileName>FormPartyPlanner.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="PartyPlanner.BirthdayParty">
-    <Position X="3" Y="0.5" Width="2.25" />
+  <Class Name="PartyPlanner.Party">
+    <Position X="2" Y="0.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>ACAACAAAIAAAEAAANAQBAAAAAAAAAAAAAEAACAAAAAA=</HashCode>
-      <FileName>BirthdayParty.cs</FileName>
+      <HashCode>AAAACAAAIAAAEAAAIAQBAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Party.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
