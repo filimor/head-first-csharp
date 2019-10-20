@@ -49,19 +49,38 @@
             // nudNumberOfPeople
             // 
             this.nudNumberOfPeople.Location = new System.Drawing.Point(26, 25);
+            this.nudNumberOfPeople.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.nudNumberOfPeople.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudNumberOfPeople.Name = "nudNumberOfPeople";
             this.nudNumberOfPeople.Size = new System.Drawing.Size(101, 20);
             this.nudNumberOfPeople.TabIndex = 1;
+            this.nudNumberOfPeople.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.nudNumberOfPeople.ValueChanged += new System.EventHandler(this.NudNumberOfPeople_ValueChanged);
             // 
             // chkFancyDecoration
             // 
             this.chkFancyDecoration.AutoSize = true;
+            this.chkFancyDecoration.Checked = true;
+            this.chkFancyDecoration.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkFancyDecoration.Location = new System.Drawing.Point(26, 51);
             this.chkFancyDecoration.Name = "chkFancyDecoration";
             this.chkFancyDecoration.Size = new System.Drawing.Size(114, 17);
             this.chkFancyDecoration.TabIndex = 2;
             this.chkFancyDecoration.Text = "Decoração chique";
             this.chkFancyDecoration.UseVisualStyleBackColor = true;
+            this.chkFancyDecoration.CheckedChanged += new System.EventHandler(this.ChkFancyDecoration_CheckedChanged);
             // 
             // chkHealthyOption
             // 
@@ -72,6 +91,7 @@
             this.chkHealthyOption.TabIndex = 3;
             this.chkHealthyOption.Text = "Opção saudável";
             this.chkHealthyOption.UseVisualStyleBackColor = true;
+            this.chkHealthyOption.CheckedChanged += new System.EventHandler(this.ChkHealthyOption_CheckedChanged);
             // 
             // lblCost
             // 

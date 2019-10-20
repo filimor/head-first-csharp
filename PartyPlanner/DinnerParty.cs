@@ -1,32 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PartyPlanner
+﻿namespace PartyPlanner
 {
     public class DinnerParty
     {
-        public const int COSTOFFOODPERPERSON = 25;
+        private const int COSTOFFOODPERPERSON = 25;
         public int NumberOfPeople { get; set; }
-        public decimal CostOfBeveragesPerPerson { get; set; }
-        public decimal CostOfDecorations { get; set; }
-        public bool HealthtOption { get; set; }
+        public decimal CostOfBeveragesPerPerson { get; private set; }
+        public decimal CostOfDecorations { get; private set; }
+        public bool HealthtOption { get; private set; }
 
-        public void SetHealthyOption()
+        public DinnerParty(int numberOfPeople)
         {
-
+            NumberOfPeople = numberOfPeople;
         }
 
-        public void CalculateCostOfDecorations()
+        public void SetHealthyOption(bool healthyOption)
         {
+            HealthtOption = healthyOption;
+            CostOfBeveragesPerPerson = HealthtOption ? 5M : 20M;
+        }
 
+        public void CalculateCostOfDecorations(bool fancyDecoration)
+        {
+            CostOfDecorations = fancyDecoration ? 50M + (15M * NumberOfPeople) :
+                30M + (7.5M * NumberOfPeople);
         }
 
         public decimal CalculateCost()
         {
+            decimal totalCost = (NumberOfPeople * (COSTOFFOODPERPERSON + CostOfBeveragesPerPerson)) + CostOfDecorations;
 
+            if (HealthtOption)
+            {
+                totalCost *= 0.95M;
+            }
+
+            return totalCost;
         }
     }
 }
