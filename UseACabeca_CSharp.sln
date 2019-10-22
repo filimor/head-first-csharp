@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RacingDay", "RacingDay\Raci
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartyPlanner", "PartyPlanner\PartyPlanner.csproj", "{E0FD8F45-5D4F-436C-8760-B96618EF96BD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeehiveManager", "BeehiveManager\BeehiveManager.csproj", "{32C94541-DBD3-466C-85A7-FE799B4DAE2E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{E0FD8F45-5D4F-436C-8760-B96618EF96BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0FD8F45-5D4F-436C-8760-B96618EF96BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0FD8F45-5D4F-436C-8760-B96618EF96BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32C94541-DBD3-466C-85A7-FE799B4DAE2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32C94541-DBD3-466C-85A7-FE799B4DAE2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32C94541-DBD3-466C-85A7-FE799B4DAE2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32C94541-DBD3-466C-85A7-FE799B4DAE2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
