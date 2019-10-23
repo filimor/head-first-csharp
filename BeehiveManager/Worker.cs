@@ -7,6 +7,7 @@
         private int _shiftsWorked;
 
         public string CurrentJob { get; private set; } = string.Empty;
+
         // retorna a tarefa atual ou se ociosa uma string vazia
         // utilizar IsNullOrEmpty()
         public int ShiftsLeft => _shiftsToWork - _shiftsWorked;
@@ -28,11 +29,17 @@
 
             if (ShiftsLeft == 0)
             {
+                if (!string.IsNullOrEmpty(CurrentJob))
+                {
+                    return false;
+                }
+
                 foreach (string work in _jobsICanDo)
                 {
                     if (work == job)
                     {
                         _shiftsToWork = shifts;
+                        _shiftsWorked = 0;
                         CurrentJob = job;
                         return true;
                     }
@@ -41,7 +48,7 @@
             return false;
         }
 
-        public void WorkOneShift()
+        public bool WorkOneShift()
         {
             // trabalha um turno e controla quantos turnos faltam para a
             // tarefa atual. Se o trabalho terminar, reinicia o trabalho
@@ -49,10 +56,18 @@
 
             // diminui um de shiftNumber
 
-            if(++_shiftsWorked == 0)
+            if (string.IsNullOrEmpty(CurrentJob))
+            {
+                return false;
+            }
+            if (++_shiftsWorked > _shiftsToWork)
             {
                 CurrentJob = string.Empty;
+                _shiftsToWork = 0;
+                _shiftsWorked = 0;
+                return true;
             }
+            return false;
         }
     }
 }

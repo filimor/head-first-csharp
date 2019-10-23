@@ -29,8 +29,7 @@ namespace BeehiveManager
 
             foreach (Worker bee in _workers)
             {
-                if(string.IsNullOrEmpty(bee.CurrentJob) &&
-                    bee.DoThisJob(job, shifts))
+                if (bee.DoThisJob(job, shifts))
                 {
                     return true;
                 }
@@ -51,28 +50,25 @@ namespace BeehiveManager
 
             for (int i = 0; i < _workers.Length; i++)
             {
-                if (string.IsNullOrEmpty(_workers[i].CurrentJob))
-                {
-                    report.Append("Operária ").Append(i + 1).AppendLine(" não está trabalhando.");
-                }else if(_workers[i].ShiftsLeft>=3){
-                    report.Append("Operária ").Append(i + 1).Append(" fará '").Append(_workers[i].CurrentJob).Append("' por mais ").Append(_workers[i].ShiftsLeft).AppendLine(" turnos.");
-                }
-                else if (_workers[i].ShiftsLeft >= 2)
-                {
-                    report.Append("Operária ").Append(i + 1).Append(" fará '").Append(_workers[i].CurrentJob).AppendLine("' por mais 1 turno.");
-                }
-                else if (_workers[i].ShiftsLeft >= 1)
-                {
-                    report.Append("Operária ").Append(i + 1).Append(" terminará '").Append(_workers[i].CurrentJob).AppendLine("' neste turno.");
-                }
-                else
+                if (_workers[i].WorkOneShift())
                 {
                     report.Append("Operária ").Append(i + 1).AppendLine(" terminou o trabalho.");
                 }
-
-                if (!string.IsNullOrEmpty(_workers[i].CurrentJob))
+                else if (string.IsNullOrEmpty(_workers[i].CurrentJob))
                 {
-                    _workers[i].WorkOneShift();
+                    report.Append("Operária ").Append(i + 1).AppendLine(" não está trabalhando.");
+                }
+                else if (_workers[i].ShiftsLeft > 1)
+                {
+                    report.Append("Operária ").Append(i + 1).Append(" fará '").Append(_workers[i].CurrentJob).Append("' por mais ").Append(_workers[i].ShiftsLeft).AppendLine(" turnos.");
+                }
+                else if (_workers[i].ShiftsLeft > 0)
+                {
+                    report.Append("Operária ").Append(i + 1).Append(" fará '").Append(_workers[i].CurrentJob).AppendLine("' por mais 1 turno.");
+                }
+                else
+                {
+                    report.Append("Operária ").Append(i + 1).Append(" terminará '").Append(_workers[i].CurrentJob).AppendLine("' neste turno.");
                 }
             }
 
