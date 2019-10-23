@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBeehiveManager));
             this.grpAssignments = new System.Windows.Forms.GroupBox();
-            this.lblBeeTask = new System.Windows.Forms.Label();
-            this.cboTasks = new System.Windows.Forms.ComboBox();
-            this.btnAssignTask = new System.Windows.Forms.Button();
-            this.lblShifts = new System.Windows.Forms.Label();
             this.nudShifts = new System.Windows.Forms.NumericUpDown();
+            this.lblShifts = new System.Windows.Forms.Label();
+            this.btnAssignTask = new System.Windows.Forms.Button();
+            this.cboTasks = new System.Windows.Forms.ComboBox();
+            this.lblBeeTask = new System.Windows.Forms.Label();
             this.btnNextShift = new System.Windows.Forms.Button();
             this.txtReport = new System.Windows.Forms.TextBox();
             this.grpAssignments.SuspendLayout();
@@ -55,14 +55,46 @@
             this.grpAssignments.TabStop = false;
             this.grpAssignments.Text = "Atribuições de Tarefas de Operárias";
             // 
-            // lblBeeTask
+            // nudShifts
             // 
-            this.lblBeeTask.AutoSize = true;
-            this.lblBeeTask.Location = new System.Drawing.Point(6, 16);
-            this.lblBeeTask.Name = "lblBeeTask";
-            this.lblBeeTask.Size = new System.Drawing.Size(94, 13);
-            this.lblBeeTask.TabIndex = 0;
-            this.lblBeeTask.Text = "Tarefa da operária";
+            this.nudShifts.Location = new System.Drawing.Point(258, 32);
+            this.nudShifts.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.nudShifts.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudShifts.Name = "nudShifts";
+            this.nudShifts.Size = new System.Drawing.Size(65, 20);
+            this.nudShifts.TabIndex = 4;
+            this.nudShifts.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            // 
+            // lblShifts
+            // 
+            this.lblShifts.AutoSize = true;
+            this.lblShifts.Location = new System.Drawing.Point(255, 16);
+            this.lblShifts.Name = "lblShifts";
+            this.lblShifts.Size = new System.Drawing.Size(40, 13);
+            this.lblShifts.TabIndex = 3;
+            this.lblShifts.Text = "Turnos";
+            // 
+            // btnAssignTask
+            // 
+            this.btnAssignTask.Location = new System.Drawing.Point(9, 59);
+            this.btnAssignTask.Name = "btnAssignTask";
+            this.btnAssignTask.Size = new System.Drawing.Size(227, 23);
+            this.btnAssignTask.TabIndex = 2;
+            this.btnAssignTask.Text = "Atribuir essa tarefa a uma abelha";
+            this.btnAssignTask.UseVisualStyleBackColor = true;
+            this.btnAssignTask.Click += new System.EventHandler(this.BtnAssignTask_Click);
             // 
             // cboTasks
             // 
@@ -82,30 +114,14 @@
             this.cboTasks.Size = new System.Drawing.Size(227, 21);
             this.cboTasks.TabIndex = 1;
             // 
-            // btnAssignTask
+            // lblBeeTask
             // 
-            this.btnAssignTask.Location = new System.Drawing.Point(9, 59);
-            this.btnAssignTask.Name = "btnAssignTask";
-            this.btnAssignTask.Size = new System.Drawing.Size(227, 23);
-            this.btnAssignTask.TabIndex = 2;
-            this.btnAssignTask.Text = "Atribuir essa tarefa a uma abelha";
-            this.btnAssignTask.UseVisualStyleBackColor = true;
-            // 
-            // lblShifts
-            // 
-            this.lblShifts.AutoSize = true;
-            this.lblShifts.Location = new System.Drawing.Point(255, 16);
-            this.lblShifts.Name = "lblShifts";
-            this.lblShifts.Size = new System.Drawing.Size(40, 13);
-            this.lblShifts.TabIndex = 3;
-            this.lblShifts.Text = "Turnos";
-            // 
-            // nudShifts
-            // 
-            this.nudShifts.Location = new System.Drawing.Point(258, 32);
-            this.nudShifts.Name = "nudShifts";
-            this.nudShifts.Size = new System.Drawing.Size(65, 20);
-            this.nudShifts.TabIndex = 4;
+            this.lblBeeTask.AutoSize = true;
+            this.lblBeeTask.Location = new System.Drawing.Point(6, 16);
+            this.lblBeeTask.Name = "lblBeeTask";
+            this.lblBeeTask.Size = new System.Drawing.Size(94, 13);
+            this.lblBeeTask.TabIndex = 0;
+            this.lblBeeTask.Text = "Tarefa da operária";
             // 
             // btnNextShift
             // 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRacingDay));
             this.picDog1 = new System.Windows.Forms.PictureBox();
             this.picRaceTrack = new System.Windows.Forms.PictureBox();
             this.picDog2 = new System.Windows.Forms.PictureBox();
@@ -310,6 +311,7 @@
             this.Controls.Add(this.picDog1);
             this.Controls.Add(this.picRaceTrack);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormRacingDay";
             this.Text = "Um dia de corrida";

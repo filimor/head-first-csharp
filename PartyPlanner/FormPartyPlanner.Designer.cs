@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPartyPlanner));
             this.tabEvents = new System.Windows.Forms.TabControl();
             this.tpDinner = new System.Windows.Forms.TabPage();
             this.lblDinnerCost = new System.Windows.Forms.Label();
@@ -257,10 +258,10 @@
             this.ClientSize = new System.Drawing.Size(213, 203);
             this.Controls.Add(this.tabEvents);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormPartyPlanner";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Planejador de Festas";
             this.tabEvents.ResumeLayout(false);
