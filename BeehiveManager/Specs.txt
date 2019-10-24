@@ -1,0 +1,8 @@
+﻿- Todas as abelhas consomem mel
+- As operárias consomem mais mel quando estão trabalhando
+- Consumo da operária = 9 - ShiftsLeft
+- Uma abelha sem tarefa (ShiftsLeft = 0) consome 7.5 por turno
+- Se uma abelha pesa mais de 150mg, usa 35% mais mel
+- A rainha consome tanto mel quanto a operária com o maior ShiftsLeft
+- A rainha consome +20 se houver até 2 trabalhando ou +30 se houver mais
+- Todas as rainhas pesam 275mg

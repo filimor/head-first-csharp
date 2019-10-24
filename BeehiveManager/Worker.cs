@@ -1,6 +1,6 @@
 ﻿namespace BeehiveManager
 {
-    public class Worker
+    public class Worker : Bee
     {
         private readonly string[] _jobsICanDo;
         private int _shiftsToWork;
@@ -10,9 +10,9 @@
 
         // retorna a tarefa atual ou se ociosa uma string vazia
         // utilizar IsNullOrEmpty()
-        public int ShiftsLeft => _shiftsToWork - _shiftsWorked;
+        public override int ShiftsLeft => _shiftsToWork - _shiftsWorked;
 
-        public Worker(string[] jobsICanDo)
+        public Worker(string[] jobsICanDo, int weight) : base(weight)
         {
             _jobsICanDo = jobsICanDo;
         }

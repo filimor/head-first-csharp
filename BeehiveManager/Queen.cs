@@ -2,7 +2,7 @@
 
 namespace BeehiveManager
 {
-    public class Queen
+    public class Queen : Bee
     {
         // A rainnha seleciona a tarefa a ser feita não importando qual abelha
         // e o programa deve descobrir se há uma operária disponível e
@@ -13,7 +13,7 @@ namespace BeehiveManager
         private readonly Worker[] _workers;
         private int _shiftNumber = 1;
 
-        public Queen(Worker[] workers)
+        public Queen(Worker[] workers) : base(275)
         {
             _workers = workers;
         }
@@ -45,6 +45,16 @@ namespace BeehiveManager
             // quais tarefas fizeram e quantos turnos elas trabalharam em cada
             // tarefa
 
+            // alterar o relatório para incluir o consumo de mel de cada operária
+            // já que ela mesma consome mel também, terá de herdar de Bee
+            // e sobrepor seu método GetHoneyConsumption()
+
+            // incluir um laço para somar os consumos de mel para cada operária
+            // e encontrar a de maior consumo - antes de dizer a cada uma para
+            // trabalhar o próximo turno
+
+            // somar os valores ao seu próprio número e incluir no relatório
+
             var report = new StringBuilder();
             report.Append("Relatório para o turno ").Append(_shiftNumber++).AppendLine();
 
@@ -72,7 +82,36 @@ namespace BeehiveManager
                 }
             }
 
+            report.Append("Consumo de Mel Total: ").Append(GetHoneyConsumption().ToString("F2")).AppendLine(" unidades.");
             return report.ToString();
+        }
+
+        public override double GetHoneyConsumption()
+        {
+            double totalConsumption = 0.0;
+            double higherConsumption = 0.0;
+            int totalWorkers = 0;
+
+            foreach (Worker bee in _workers)
+            {
+                if (bee.ShiftsLeft > 0)
+                {
+                    totalWorkers++;
+                }
+
+                double consumption = bee.GetHoneyConsumption();
+                if (consumption > higherConsumption)
+                {
+                    higherConsumption = consumption;
+                }
+
+                totalConsumption += bee.GetHoneyConsumption();
+            }
+
+            totalConsumption += higherConsumption;
+            totalConsumption += totalWorkers > 2 ? 30 : 20;
+            totalConsumption *= 1.35;
+            return totalConsumption;
         }
     }
 }
