@@ -55,6 +55,13 @@ namespace BeehiveManager
 
             // somar os valores ao seu próprio número e incluir no relatório
 
+            double totalConsumption = 0;
+            foreach (Worker bee in _workers)
+            {
+                totalConsumption += bee.GetHoneyConsumption();
+            }
+            totalConsumption += GetHoneyConsumption();
+
             var report = new StringBuilder();
             report.Append("Relatório para o turno ").Append(_shiftNumber++).AppendLine();
 
@@ -82,14 +89,14 @@ namespace BeehiveManager
                 }
             }
 
-            report.Append("Consumo de Mel Total: ").Append(GetHoneyConsumption().ToString("F2")).AppendLine(" unidades.");
+            report.Append("Consumo de Mel Total: ").Append(totalConsumption.ToString("F3")).AppendLine(" unidades.");
             return report.ToString();
         }
 
         public override double GetHoneyConsumption()
         {
-            double totalConsumption = 0.0;
-            double higherConsumption = 0.0;
+            double totalConsumption = 0;
+            double higherConsumption = 0;
             int totalWorkers = 0;
 
             foreach (Worker bee in _workers)
@@ -104,13 +111,10 @@ namespace BeehiveManager
                 {
                     higherConsumption = consumption;
                 }
-
-                totalConsumption += bee.GetHoneyConsumption();
             }
 
             totalConsumption += higherConsumption;
             totalConsumption += totalWorkers > 2 ? 30 : 20;
-            totalConsumption *= 1.35;
             return totalConsumption;
         }
     }
