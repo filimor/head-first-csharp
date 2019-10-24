@@ -6,3 +6,8 @@
 - A rainha consome tanto mel quanto a operária com o maior ShiftsLeft
 - A rainha consome +20 se houver até 2 trabalhando ou +30 se houver mais
 - Todas as rainhas pesam 275mg
+
+- Abelhas patrulheiras com ferrão precisam ser capazes de afia-los,
+procurar por inimigos e ferroá-los
+- Abelhas coletoras de néctar são responsáveis por encontrar flores,
+recolher o néctar e retornar para a colméia
