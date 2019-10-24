@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartyPlanner", "PartyPlanne
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeehiveManager", "BeehiveManager\BeehiveManager.csproj", "{32C94541-DBD3-466C-85A7-FE799B4DAE2E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExploreTheHouse", "ExploreTheHouse\ExploreTheHouse.csproj", "{5F734E71-0AD8-423E-90D6-2F74C6410EB1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{32C94541-DBD3-466C-85A7-FE799B4DAE2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32C94541-DBD3-466C-85A7-FE799B4DAE2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32C94541-DBD3-466C-85A7-FE799B4DAE2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F734E71-0AD8-423E-90D6-2F74C6410EB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F734E71-0AD8-423E-90D6-2F74C6410EB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F734E71-0AD8-423E-90D6-2F74C6410EB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F734E71-0AD8-423E-90D6-2F74C6410EB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
