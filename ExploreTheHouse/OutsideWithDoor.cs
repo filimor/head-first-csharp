@@ -2,12 +2,13 @@
 {
     public class OutsideWithDoor : Outside, IHasExteriorDoor
     {
-        public string DoorDescription => throw new System.NotImplementedException();
+        public string DoorDescription { get; }
 
-        public Location DoorLocation => throw new System.NotImplementedException();
+        public Location DoorLocation { get; }
 
-        public OutsideWithDoor(string name, bool hot) : base(name, hot)
+        public OutsideWithDoor(string name, bool hot, string doorDescription) : base(name, hot)
         {
+            DoorDescription = doorDescription;
         }
     }
 }

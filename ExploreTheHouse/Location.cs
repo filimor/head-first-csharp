@@ -3,7 +3,7 @@
     public abstract class Location
     {
         public string Name { get; }
-        public Location[] Exits { get; }
+        public Location[] Exits { get; set; }
 
         public virtual string Description
         {
