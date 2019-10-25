@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormExplore));
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.btnGoHere = new System.Windows.Forms.Button();
             this.cboExits = new System.Windows.Forms.ComboBox();
@@ -80,6 +81,7 @@
             this.Controls.Add(this.cboExits);
             this.Controls.Add(this.btnGoHere);
             this.Controls.Add(this.txtDescription);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormExplore";
             this.Text = "Explore The House";
             this.ResumeLayout(false);

@@ -6,12 +6,12 @@ namespace ExploreTheHouse
     {
         // btnGoThroughTheDoor só é visível quando existe uma porta externa
         private Location currentLocation;
-        private Location livingRoom;
-        private Location dinningRoom;
-        private Location kitchen;
-        private Location backYard;
-        private Location garden;
-        private Location frontYard;
+        private RoomWithDoor livingRoom;
+        private Room dinningRoom;
+        private RoomWithDoor kitchen;
+        private OutsideWithDoor backYard;
+        private Outside garden;
+        private OutsideWithDoor frontYard;
 
         public FormExplore()
         {
@@ -35,11 +35,17 @@ namespace ExploreTheHouse
             backYard.Exits = new Location[] { frontYard, garden };
             garden.Exits = new Location[] { frontYard, backYard };
             frontYard.Exits = new Location[] { backYard, garden };
+
+            livingRoom.DoorLocation = frontYard;
+            frontYard.DoorLocation = livingRoom;
+            kitchen.DoorLocation = backYard;
+            backYard.DoorLocation = kitchen;
         }
 
         private void MoveToANewLocation(Location location)
         {
             currentLocation = location;
+            cboExits.Items.Clear();
             foreach (Location exit in currentLocation.Exits)
             {
                 cboExits.Items.Add(exit.Name);
