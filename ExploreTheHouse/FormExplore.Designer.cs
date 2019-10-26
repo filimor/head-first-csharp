@@ -33,6 +33,8 @@
             this.btnGoHere = new System.Windows.Forms.Button();
             this.cboExits = new System.Windows.Forms.ComboBox();
             this.btnPassThroughTheDoor = new System.Windows.Forms.Button();
+            this.btnCheck = new System.Windows.Forms.Button();
+            this.btnHide = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtDescription
@@ -51,6 +53,7 @@
             this.btnGoHere.TabIndex = 1;
             this.btnGoHere.Text = "Vá para:";
             this.btnGoHere.UseVisualStyleBackColor = true;
+            this.btnGoHere.Visible = false;
             this.btnGoHere.Click += new System.EventHandler(this.BtnGoHere_Click);
             // 
             // cboExits
@@ -61,6 +64,7 @@
             this.cboExits.Name = "cboExits";
             this.cboExits.Size = new System.Drawing.Size(191, 21);
             this.cboExits.TabIndex = 2;
+            this.cboExits.Visible = false;
             // 
             // btnPassThroughTheDoor
             // 
@@ -70,13 +74,37 @@
             this.btnPassThroughTheDoor.TabIndex = 3;
             this.btnPassThroughTheDoor.Text = "Passe pela porta";
             this.btnPassThroughTheDoor.UseVisualStyleBackColor = true;
+            this.btnPassThroughTheDoor.Visible = false;
             this.btnPassThroughTheDoor.Click += new System.EventHandler(this.BtnPassThroughTheDoor_Click);
+            // 
+            // btnCheck
+            // 
+            this.btnCheck.Location = new System.Drawing.Point(12, 215);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Size = new System.Drawing.Size(272, 23);
+            this.btnCheck.TabIndex = 4;
+            this.btnCheck.Text = "btnCheck";
+            this.btnCheck.UseVisualStyleBackColor = true;
+            this.btnCheck.Visible = false;
+            this.btnCheck.Click += new System.EventHandler(this.BtnCheck_Click);
+            // 
+            // btnHide
+            // 
+            this.btnHide.Location = new System.Drawing.Point(12, 244);
+            this.btnHide.Name = "btnHide";
+            this.btnHide.Size = new System.Drawing.Size(272, 23);
+            this.btnHide.TabIndex = 5;
+            this.btnHide.Text = "Se esconda!";
+            this.btnHide.UseVisualStyleBackColor = true;
+            this.btnHide.Click += new System.EventHandler(this.BtnHide_Click);
             // 
             // FormExplore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(296, 220);
+            this.ClientSize = new System.Drawing.Size(296, 277);
+            this.Controls.Add(this.btnHide);
+            this.Controls.Add(this.btnCheck);
             this.Controls.Add(this.btnPassThroughTheDoor);
             this.Controls.Add(this.cboExits);
             this.Controls.Add(this.btnGoHere);
@@ -95,6 +123,8 @@
         private System.Windows.Forms.Button btnGoHere;
         private System.Windows.Forms.ComboBox cboExits;
         private System.Windows.Forms.Button btnPassThroughTheDoor;
+        private System.Windows.Forms.Button btnCheck;
+        private System.Windows.Forms.Button btnHide;
     }
 }
 

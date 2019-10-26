@@ -1,10 +1,13 @@
 ﻿using System.Windows.Forms;
+using System.Threading;
 
 namespace ExploreTheHouse
 {
     public partial class FormExplore : Form
     {
         // btnGoThroughTheDoor só é visível quando existe uma porta externa
+        // btnGoHere e btnPassThroughTheDoor só são visíveis quando o jogo estiver rodando
+
         private Location currentLocation;
         private RoomWithDoor livingRoom;
         private Room dinningRoom;
@@ -20,11 +23,12 @@ namespace ExploreTheHouse
         private RoomWithHidingPlace bathroom;
         private OutsideWithHidingPlace driveway;
 
+        private Opponent opponent;
+
         public FormExplore()
         {
             InitializeComponent();
             CreateObjects();
-            MoveToANewLocation(livingRoom);
         }
 
         private void CreateObjects()
@@ -42,7 +46,6 @@ namespace ExploreTheHouse
             secondBedroom = new RoomWithHidingPlace("Segundo Quarto", "uma cama pequena", "debaixo da cama");
             bathroom = new RoomWithHidingPlace("Banheiro", "uma pia e um vaso sanitário", "no chuveiro");
             driveway = new OutsideWithHidingPlace("Calçada", false, "na garagem");
-
 
             livingRoom.Exits = new Location[] { dinningRoom, stairs };
             dinningRoom.Exits = new Location[] { livingRoom, kitchen };
@@ -62,6 +65,8 @@ namespace ExploreTheHouse
             frontYard.DoorLocation = livingRoom;
             kitchen.DoorLocation = backYard;
             backYard.DoorLocation = kitchen;
+
+            opponent = new Opponent(frontYard);
     }
 
         private void MoveToANewLocation(Location location)
@@ -77,6 +82,26 @@ namespace ExploreTheHouse
             btnPassThroughTheDoor.Visible = currentLocation is IHasExteriorDoor;
         }
 
+        private void RedrawForm()
+        {
+            // Coloca o texto correto na caixa
+            // Torna os botões visíveis ou invisíveis
+            // Coloca o texto correto no botão do meio
+        }
+
+        private void ResetGame()
+        {
+            // Deve ser executado quando o oponente for encontrado
+            // Mostrar na caixa de texto quando o oponente for encontrado e quantos
+            // movimentos foram feitos para achá-lo
+
+            btnGoHere.Visible = false;
+            cboExits.Visible = false;
+            btnPassThroughTheDoor.Visible = false;
+            btnCheck.Visible = false;
+            btnHide.Visible = true;
+        }
+
         private void BtnGoHere_Click(object sender, System.EventArgs e)
         {
             MoveToANewLocation(currentLocation.Exits[cboExits.SelectedIndex]);
@@ -86,6 +111,29 @@ namespace ExploreTheHouse
         {
             var location = currentLocation as IHasExteriorDoor;
             MoveToANewLocation(location.DoorLocation);
+        }
+
+        private void BtnCheck_Click(object sender, System.EventArgs e)
+        {
+            // Checa um esconderijo na sala
+            // Deve ser visível apenas numa sala qu tenha um
+            // Quando for mostrado, Text = "Olhar" + nome do lugar
+            // Usar o método Check() do inimigo
+            // Se o inimigo for achado o jogo acaba
+        }
+
+        private void BtnHide_Click(object sender, System.EventArgs e)
+        {
+            Application.DoEvents();
+            for (int i = 1; i <= 10; i++)
+            {
+                txtDescription.Text = $"{i}...";
+                opponent.Move();
+                Thread.Sleep(200);
+            }
+            txtDescription.Text = "Pronto ou não, aí vou eu!";
+            Thread.Sleep(500);
+            MoveToANewLocation(livingRoom);
         }
     }
 }
