@@ -53,13 +53,17 @@
       <DependentUpon>FormExplore.cs</DependentUpon>
     </Compile>
     <Compile Include="IHasExteriorDoor.cs" />
+    <Compile Include="IHidingPlace.cs" />
     <Compile Include="Location.cs" />
+    <Compile Include="Opponent.cs" />
     <Compile Include="Outside.cs" />
     <Compile Include="OutsideWithDoor.cs" />
+    <Compile Include="OutsideWithHidingPlace.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Room.cs" />
     <Compile Include="RoomWithDoor.cs" />
+    <Compile Include="RoomWithHidingPlace.cs" />
     <EmbeddedResource Include="FormExplore.resx">
       <DependentUpon>FormExplore.cs</DependentUpon>
     </EmbeddedResource>
@@ -84,6 +88,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Specs.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,4 @@
+﻿- Qualquer quarto  com uma porta deve ter um esconderijo
+- O oponente escolher um local para se esconder aleatoriamente e sua tarefa será encontrá-lo
+- O oponente começa no jardim da frente (informado pelo formulário) e move-se dez vezes quando o jogo inicia
+- Quando encontrar uma porta externa, deve jogar uma odeda pra ver se passa por ela
