@@ -37,7 +37,7 @@ namespace ExploreTheHouse
         private void CreateObjects()
         {
             livingRoom = new RoomWithDoor("Sala de Estar", "um carpete antigo", "dentro do closet", "uma porta de carvalho com uma maçaneta de latão");
-            dinningRoom = new RoomWithHidingPlace("Sala de Jantar", "um candelabro de cristal", "no armário do hall");
+            dinningRoom = new RoomWithHidingPlace("Sala de Jantar", "um candelabro de cristal", "na estante");
             kitchen = new RoomWithDoor("Cozinha", "detalhes em aço inox", "dentro do armário", "uma porta com tela");
             backYard = new OutsideWithDoor("Quintal dos Fundos", true, "uma porta com tela");
             garden = new OutsideWithHidingPlace("Jardim", false, "no galpãozinho");
@@ -96,15 +96,13 @@ namespace ExploreTheHouse
             if (currentLocation is IHidingPlace)
             {
                 var hidingPlace = currentLocation as IHidingPlace;
-                btnCheck.Visible = true;
                 btnCheck.Text = $"Verificar {hidingPlace.HidingPlaceName}";
+                btnCheck.Visible = true;
             }
             else
             {
                 btnCheck.Visible = false;
             }
-            btnCheck.Visible = false;
-
             btnPassThroughTheDoor.Visible = currentLocation is IHasExteriorDoor;
         }
 
