@@ -2,6 +2,6 @@
 {
     public interface IHidingPlace
     {
-        string PlaceToHide { get; }
+        string HidingPlaceName { get; }
     }
 }

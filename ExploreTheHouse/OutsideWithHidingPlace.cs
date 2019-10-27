@@ -2,11 +2,13 @@
 {
     public class OutsideWithHidingPlace : Outside, IHidingPlace
     {
-        public string PlaceToHide { get; }
+        public string HidingPlaceName { get; }
 
-        public OutsideWithHidingPlace(string name, bool hot, string placeToHide) : base(name, hot)
+        public override string Description => $"{base.Description} + Alguém poderia se econder {HidingPlaceName}.";
+
+        public OutsideWithHidingPlace(string name, bool hot, string hidingPlaceName) : base(name, hot)
         {
-            PlaceToHide = placeToHide;
+            HidingPlaceName = hidingPlaceName;
         }
     }
 }

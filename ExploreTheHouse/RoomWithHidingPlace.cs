@@ -2,11 +2,13 @@
 {
     public class RoomWithHidingPlace : Room, IHidingPlace
     {
-        public string PlaceToHide { get; }
+        public string HidingPlaceName { get; }
 
-        public RoomWithHidingPlace(string name, string decoration, string placeToHide) : base(name, decoration)
+        public override string Description => $"{base.Description} Alguém poderia estar escondido {HidingPlaceName}.";
+
+        public RoomWithHidingPlace(string name, string decoration, string hidingPlaceName) : base(name, decoration)
         {
-            PlaceToHide = placeToHide;
+            HidingPlaceName = hidingPlaceName;
         }
     }
 }

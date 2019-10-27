@@ -39,9 +39,12 @@
             // 
             // txtDescription
             // 
+            this.txtDescription.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDescription.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtDescription.Location = new System.Drawing.Point(12, 12);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
+            this.txtDescription.ReadOnly = true;
             this.txtDescription.Size = new System.Drawing.Size(272, 141);
             this.txtDescription.TabIndex = 0;
             // 
@@ -85,7 +88,6 @@
             this.btnCheck.TabIndex = 4;
             this.btnCheck.Text = "btnCheck";
             this.btnCheck.UseVisualStyleBackColor = true;
-            this.btnCheck.Visible = false;
             this.btnCheck.Click += new System.EventHandler(this.BtnCheck_Click);
             // 
             // btnHide
