@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeehiveManager", "BeehiveMa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExploreTheHouse", "ExploreTheHouse\ExploreTheHouse.csproj", "{5F734E71-0AD8-423E-90D6-2F74C6410EB1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeckOfCards", "DeckOfCards\DeckOfCards.csproj", "{CA7AB5F4-1C9C-4DF8-8B5E-0CA07B81E2EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{5F734E71-0AD8-423E-90D6-2F74C6410EB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F734E71-0AD8-423E-90D6-2F74C6410EB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F734E71-0AD8-423E-90D6-2F74C6410EB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA7AB5F4-1C9C-4DF8-8B5E-0CA07B81E2EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA7AB5F4-1C9C-4DF8-8B5E-0CA07B81E2EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA7AB5F4-1C9C-4DF8-8B5E-0CA07B81E2EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA7AB5F4-1C9C-4DF8-8B5E-0CA07B81E2EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
