@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DeckOfCards
 {
     public class Deck
     {
         private List<Card> _cards;
-        private Random _random = new Random();
+        private readonly Random _random = new Random();
 
         public int Count => _cards.Count;
 
@@ -20,7 +17,7 @@ namespace DeckOfCards
             {
                 for (int value = 1; value <= 13; value++)
                 {
-                    _cards.Add(new Card((Card.Suits)suit,(Card.Values)value));
+                    _cards.Add(new Card((Card.Suits)suit, (Card.Values)value));
                 }
             }
         }
@@ -44,12 +41,24 @@ namespace DeckOfCards
 
         public void Shuffle()
         {
-
+            var newCards = new List<Card>();
+            while (_cards.Count > 0)
+            {
+                int cardToMove = _random.Next(_cards.Count);
+                newCards.Add(_cards[cardToMove]);
+                _cards.RemoveAt(cardToMove);
+            }
+            _cards = newCards;
         }
 
         public string[] GetCardNames()
         {
-
+            string[] cardNames = new string[_cards.Count];
+            for (int i = 0; i < _cards.Count; i++)
+            {
+                cardNames[i] = _cards[i].Name;
+            }
+            return cardNames;
         }
 
         public void Sort()

@@ -2,7 +2,7 @@
 
 namespace DeckOfCards
 {
-    public class CardsComparer_bySuit : IComparer<Card>
+    public class CardComparer_bySuit : IComparer<Card>
     {
         public int Compare(Card x, Card y)
         {

@@ -93,7 +93,7 @@
             this.btnShuffleDeck2.TabIndex = 3;
             this.btnShuffleDeck2.Text = "Embaralhar 2";
             this.btnShuffleDeck2.UseVisualStyleBackColor = true;
-            this.btnShuffleDeck2.Click += new System.EventHandler(this.btnShuffleDeck2_Click);
+            this.btnShuffleDeck2.Click += new System.EventHandler(this.BtnShuffleDeck2_Click);
             // 
             // btnShuffleDeck1
             // 
@@ -113,6 +113,7 @@
             this.btnMoveToDeck2.TabIndex = 3;
             this.btnMoveToDeck2.Text = ">>";
             this.btnMoveToDeck2.UseVisualStyleBackColor = true;
+            this.btnMoveToDeck2.Click += new System.EventHandler(this.BtnMoveToDeck2_Click);
             // 
             // btnMoveToDeck1
             // 
@@ -122,6 +123,7 @@
             this.btnMoveToDeck1.TabIndex = 3;
             this.btnMoveToDeck1.Text = "<<";
             this.btnMoveToDeck1.UseVisualStyleBackColor = true;
+            this.btnMoveToDeck1.Click += new System.EventHandler(this.BtnMoveToDeck1_Click);
             // 
             // btnSortDeck2
             // 
