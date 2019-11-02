@@ -1,4 +1,6 @@
-﻿namespace DeckOfCards
+﻿using System.Collections;
+
+namespace DeckOfCards
 {
     public class Card
     {
