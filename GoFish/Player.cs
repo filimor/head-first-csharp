@@ -12,7 +12,7 @@ namespace GoFish
 
         public string Name { get; }
         public int CardCount => _cards.Count;
-        public string[] GetCardNames => _cards.GetCardNames();
+        public string[] CardNames => _cards.GetCardNames();
 
         public Player(string name, Random random, TextBox textBoxOnForm)
         {
@@ -28,6 +28,10 @@ namespace GoFish
             _textBoxOnForm.Text += $"{Name} entrou no jogo.\n";
         }
 
+        /// <summary>
+        /// Gera a lista de livros do jogador.
+        /// </summary>
+        /// <returns>Lista com os livros do jogador.</returns>
         public List<Card.Values> PullOutBooks()
         {
             var books = new List<Card.Values>();
@@ -54,25 +58,42 @@ namespace GoFish
             return books;
         }
 
+        /// <summary>
+        /// Adiciona uma carta à mão do jogador.
+        /// </summary>
+        /// <param name="card">Carta a ser adicionada.</param>
         public void TakeCard(Card card)
         {
             _cards.Add(card);
         }
 
+        /// <summary>
+        /// Espia uma carta de um jogador sem retirá-la da mão.
+        /// </summary>
+        /// <param name="cardNumber">Índice da carta.</param>
+        /// <returns>Carta espiada.</returns>
         public Card Peek(int cardNumber)
         {
             return _cards.Peek(cardNumber);
         }
 
+        /// <summary>
+        /// Organiza a mão do jogador.
+        /// </summary>
         public void SortHand()
         {
             _cards.Sort();
         }
 
+        /// <summary>
+        /// Retorna um valor aleatório que exista no baralho.
+        /// </summary>
+        /// <returns>Valor de carta aleatório.</returns>
         public Card.Values GetRandomValue()
         {
-            // Retorna um valor aleatório - mas deve ser um que exista no baralho!
+
         }
+        
 
         public Deck DoYouHaveAny(Card.Values value)
         {

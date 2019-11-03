@@ -11,11 +11,12 @@ namespace GoFish
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Limpa e repovoa a caixa de listagem que ocntém a mão do jogador, e então atualiza as caixas de texto.
+        /// </summary>
         private void UpdateForm()
         {
-            // Limpa e repovoa a caixa de listagem que ocntém a mão do jogador,
-            // e então atualiza as caixas de texto
-
             lstHand.Items.Clear();
             foreach (string cardName in _game.PlayerCardNames)
             {

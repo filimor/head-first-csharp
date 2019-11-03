@@ -12,15 +12,15 @@ namespace GoFish
         private Deck _stock;
         private TextBox _textBoxOnForm;
 
-        public string[] PlayerCardNames => _players[0].GetCardNames;
+        public string[] PlayerCardNames => _players[0].CardNames;
 
-        public Game(string PlayerName, string[] opponentNames, TextBox textBoxOnForm)
+        public Game(string playerName, string[] opponentNames, TextBox textBoxOnForm)
         {
             var random = new Random();
             _textBoxOnForm = textBoxOnForm;
             _players = new List<Player>
             {
-                new Player(PlayerName, random, textBoxOnForm)
+                new Player(playerName, random, textBoxOnForm)
             };
             foreach (string player in opponentNames)
             {
