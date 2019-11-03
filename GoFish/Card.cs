@@ -1,6 +1,4 @@
-﻿using System.Collections;
-
-namespace GoFish
+﻿namespace GoFish
 {
     public class Card
     {
@@ -39,7 +37,7 @@ namespace GoFish
             Value = value;
         }
 
-        public static string Plural(Card.Values value)
+        public static string Plural(Values value)
         {
             return value == Values.Às
                 ? "Ases"

@@ -11,6 +11,21 @@ namespace GoFish
         {
             InitializeComponent();
         }
+        private void UpdateForm()
+        {
+            // Limpa e repovoa a caixa de listagem que ocntém a mão do jogador,
+            // e então atualiza as caixas de texto
+
+            lstHand.Items.Clear();
+            foreach (string cardName in _game.PlayerCardNames)
+            {
+                lstHand.Items.Add(cardName);
+            }
+            txtBooks.Text = _game.DescribeBooks();
+            txtProgress.Text += _game.DescribePlayerHands();
+            txtProgress.SelectionStart = txtProgress.Text.Length;
+            txtProgress.ScrollToCaret();
+        }
 
         private void BtnStart_Click(object sender, EventArgs e)
         {
@@ -26,22 +41,6 @@ namespace GoFish
             txtName.Enabled = false;
             btnAsk.Enabled = true;
             UpdateForm();
-        }
-
-        private void UpdateForm()
-        {
-            // Limpa e repovoa a caixa de listagem que ocntém a mão do jogador,
-            // e então atualiza as caixas de texto
-
-            lstHand.Items.Clear();
-            foreach (string cardName in _game.PlayerCardNames)
-            {
-                lstHand.Items.Add(cardName);
-            }
-            txtBooks.Text = _game.DescribeBooks();
-            txtProgress.Text += _game.DescribePlayerHands();
-            txtProgress.SelectionStart = txtProgress.Text.Length;
-            txtProgress.ScrollToCaret();
         }
 
         private void BtnAsk_Click(object sender, EventArgs e)

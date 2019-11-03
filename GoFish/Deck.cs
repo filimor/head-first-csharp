@@ -10,10 +10,11 @@ namespace GoFish
 
         public int Count => _cards.Count;
 
+        /// <summary>
+        /// Cria um baralho completo de 52 cartas.
+        /// </summary>
         public Deck()
         {
-            // Caso não seja passado um parâmetro, cria um baralho completo
-
             _cards = new List<Card>();
             for (int suit = 0; suit <= 3; suit++)
             {
@@ -24,48 +25,60 @@ namespace GoFish
             }
         }
 
+        /// <summary>
+        /// Inicializa o baralho com base em uma matriz de cartas.
+        /// </summary>
+        /// <param name="initialCards">Matriz de cartas.</param>
         public Deck(Card[] initialCards)
         {
-            // Recebe um único parâmetro: uma matriz de cartas que carrega como
-            // baralho inicial
-
             _cards = new List<Card>(initialCards);
         }
 
+        /// <summary>
+        /// Adiciona uma carta ao baralho.
+        /// </summary>
+        /// <param name="cardToAdd">Carta a ser adicionada.</param>
         public void Add(Card cardToAdd)
         {
-            // Adiciona uma carta ao baralho.
-
             _cards.Add(cardToAdd);
         }
 
+        /// <summary>
+        /// Permite espiar uma carta sem ter de pegá-la.
+        /// </summary>
+        /// <param name="cardNumber">Índice da carta no baralho.</param>
+        /// <returns>Carta espiada.</returns>
         public Card Peek(int cardNumber)
         {
-            // Permite espiar uma carta sem ter de pegá-la.
-
             return _cards[cardNumber];
         }
 
+        /// <summary>
+        /// Retira uma carta do topo do baralho.
+        /// </summary>
+        /// <returns>Referência para a carta retirada.</returns>
         public Card Deal()
         {
-            // Caso não seja passado nenhum parâmetro, dá a carta do topo do baralho.
-
             return Deal(0);
         }
 
+        /// <summary>
+        /// Retira uma carta do baralho e retorna uma referência pra ela.
+        /// </summary>
+        /// <param name="index">Índice da carta no baralho.</param>
+        /// <returns>Referência para a carta retirada.</returns>
         public Card Deal(int index)
         {
-            // Retira uma carta do baralho e retorna uma referência pra ela.
-
             Card cardToDeal = _cards[index];
             _cards.RemoveAt(index);
             return cardToDeal;
         }
 
+        /// <summary>
+        /// Embaralha as cartas.
+        /// </summary>
         public void Shuffle()
         {
-            // Embaralha as cartas
-
             var newCards = new List<Card>();
             while (_cards.Count > 0)
             {
@@ -76,10 +89,12 @@ namespace GoFish
             _cards = newCards;
         }
 
+        /// <summary>
+        /// Retorna um string array com o nome da cada carta.
+        /// </summary>
+        /// <returns>String Array com o nome das cartas.</returns>
         public string[] GetCardNames()
         {
-            // Retorna um string array com o nome da cada carta
-
             string[] cardNames = new string[_cards.Count];
             for (int i = 0; i < _cards.Count; i++)
             {
@@ -88,10 +103,13 @@ namespace GoFish
             return cardNames;
         }
 
+        /// <summary>
+        /// Procura por cartas de um valor pelo baralho.
+        /// </summary>
+        /// <param name="value">Valor da carta.</param>
+        /// <returns>Retorna true se encontrar a carta.</returns>
         public bool ContainsValue(Card.Values value)
         {
-            // Procura por cartas de um valor pelo baralho e retorna true se encontrar.
-
             foreach (Card card in _cards)
             {
                 if (card.Value == value)
@@ -102,15 +120,17 @@ namespace GoFish
             return false;
         }
 
+        /// <summary>
+        /// Procura por qualquer carta com determinado valor e tira-as do baralho.
+        /// </summary>
+        /// <param name="value">Valor da carta</param>
+        /// <returns>Retorna um baralho novo sem aquelas cartas.</returns>
         public Deck PullOutValues(Card.Values value)
         {
-            // Procura por qualquer carta com determinado valor, tira-as do baralho e
-            // retorna um baralho novo sem aquelas cartas.
-
             var deckToReturn = new Deck(new Card[] { });
             for (int i = _cards.Count - 1; i >= 0; i--)
             {
-                if(_cards[i].Value == value)
+                if (_cards[i].Value == value)
                 {
                     deckToReturn.Add(Deal(i));
                 }
@@ -118,15 +138,19 @@ namespace GoFish
             return deckToReturn;
         }
 
+        /// <summary>
+        /// Checa o baralho para ver se ele contém um livro de qualquer valor.
+        /// </summary>
+        /// <param name="value">Valor da carta</param>
+        /// <returns>Retorna true se há um livro no baralho.</returns>
         public bool HasBook(Card.Values value)
         {
-            // Checa o baralho para ver se ele contém um livro de qualquer valor.
-            // Retorna true se existir um livro no baralho.
+            //
 
             int numberOfCards = 0;
             foreach (Card card in _cards)
             {
-                if(card.Value == value)
+                if (card.Value == value)
                 {
                     numberOfCards++;
                 }
@@ -134,10 +158,11 @@ namespace GoFish
             return numberOfCards == 4;
         }
 
+        /// <summary>
+        /// Ordena o baralho
+        /// </summary>
         public void Sort()
         {
-            // Ordena o baralho
-
             _cards.Sort(new CardComparer_byValue());
         }
     }

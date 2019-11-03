@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GoFish
@@ -26,8 +23,9 @@ namespace GoFish
 
             Name = name;
             _random = random;
-            _textBoxOnForm = textBoxOnForm;
             _cards = new Deck();
+            _textBoxOnForm = textBoxOnForm;
+            _textBoxOnForm.Text += $"{Name} entrou no jogo.\n";
         }
 
         public List<Card.Values> PullOutBooks()
@@ -39,12 +37,12 @@ namespace GoFish
                 int howMany = 0;
                 for (int card = 0; card < _cards.Count; card++)
                 {
-                    if(_cards.Peek(card).Value == value)
+                    if (_cards.Peek(card).Value == value)
                     {
                         howMany++;
                     }
                 }
-                if(howMany == 4)
+                if (howMany == 4)
                 {
                     books.Add(value);
                     for (int card = _cards.Count; card >= 0; card--)
