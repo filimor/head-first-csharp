@@ -1,0 +1,26 @@
+﻿- O jogo começa com um baralho de 52 cartas. 5 são dadas para cada jogador. As restantes
+são chamadas de monte. Cada jogador, na sua vez, pergunta por um valor ("alguém tem sete?").
+Qualquer outro jogador que tenha as cartas com aquele valor deve entregá-las. Se ninguém
+tiver uma, o jogador precisa "ir pescar" no monte, pegando uma carte dele.
+
+- O objetivo do jogo é fazer "livros", que são conjuntos completos de todas as quatro
+cartas com o mesmo valor. O jogador com a maior quantidade deles no fim do jogo é o
+vencedor. Tão logo um jogador tenha montado um livro, ele o coloca virado para cima na
+mesa para que todos possam ver quais livros cada um tem.
+
+- Quando um jogador coloca um livro na mesa, isso pode fazer com que ele fique sem cartas.
+Se for o caso, ele tem que pegar mais cinco do monte. Se sobraram menos de cinco nela, ele
+tem que pegar todas. O jogo acaba assim que o monte acabar. O vencedor é então aquele que
+tiver mais livros.
+
+- Para essa versão devem existir dois jogadores programados e um jogador humano. Todos os
+turnos começam com o jogador humano selecionando uma das cartas em sua mão, que deverá ser
+visível somente para ele. Ele faz isso escolhendo uma de suas cartas e indicando que ele
+vai perguntar por um valor. Os dois jogadores programados então devem, em seguida, pedir
+seus valores também. O resultado de cada turno deve ser exibido. Isso se repetirá até
+que algum dos jogadores vença.
+
+- O jogo deve cuidar de todos os detalhes de troca de cartas e montagem de livros
+automaticamente. Uma vez que um jogador tenha vencido, o jogo termina. O nome do vencedor
+deve então ser exibido (ou dos vencedores, se houver empate). Nenhuma outraa ação pode ser
+feita - o jogador deve reiniciar o programa para começar outro jogo.
