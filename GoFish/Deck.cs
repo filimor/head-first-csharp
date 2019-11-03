@@ -129,7 +129,7 @@ namespace GoFish
                 if(card.Value == value)
                 {
                     numberOfCards++;
-                } 
+                }
             }
             return numberOfCards == 4;
         }

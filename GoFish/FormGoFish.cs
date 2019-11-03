@@ -34,7 +34,7 @@ namespace GoFish
             // e então atualiza as caixas de texto
 
             lstHand.Items.Clear();
-            foreach (var cardName in _game.GetPlayerCardNames())
+            foreach (string cardName in _game.PlayerCardNames)
             {
                 lstHand.Items.Add(cardName);
             }

@@ -42,7 +42,7 @@ namespace GoFish
         public static string Plural(Card.Values value)
         {
             return value == Values.Às
-                ? "Àses"
+                ? "Ases"
                 : value == Values.Dois || value == Values.Três || value == Values.Seis || value == Values.Dez
                 ? value.ToString()
                 : value.ToString() + "s";

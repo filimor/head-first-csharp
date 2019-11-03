@@ -15,7 +15,7 @@ namespace GoFish
 
         public string Name { get; }
         public int CardCount => _cards.Count;
-        public string[] CardNames => _cards.GetCardNames();
+        public string[] GetCardNames => _cards.GetCardNames();
 
         public Player(string name, Random random, TextBox textBoxOnForm)
         {
@@ -90,7 +90,7 @@ namespace GoFish
             // baralho usando GetRandomValue() e pergunte por ele usando AskForACard().
         }
 
-        public void AskForACard(List<Player>, int myIndex, Deck stock, Card.Values value)
+        public void AskForACard(List<Player> players, int myIndex, Deck stock, Card.Values value)
         {
             // Pergunte para os outros jogadores se eles tem um dado valor. Primeiro adicione
             // uma linha na caixa de texto que diz "João pergunta se alguém tem alguma Rainha",
