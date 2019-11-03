@@ -1,17 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GoFish
 {
     public partial class FormGoFish : Form
     {
+        private Game _game;
+
         public FormGoFish()
         {
             InitializeComponent();
@@ -19,9 +14,55 @@ namespace GoFish
 
         private void BtnStart_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtName.Text))
+            {
+                MessageBox.Show("Por favor digite seu nome", "Impossível iniciar",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            _game = new Game(txtName.Text, new string[] { "Joe", "Bob" }, txtProgress);
             btnStart.Enabled = false;
             txtName.Enabled = false;
             btnAsk.Enabled = true;
+            UpdateForm();
+        }
+
+        private void UpdateForm()
+        {
+            // Limpa e repovoa a caixa de listagem que ocntém a mão do jogador,
+            // e então atualiza as caixas de texto
+
+            lstHand.Items.Clear();
+            foreach (var cardName in _game.GetPlayerCardNames())
+            {
+                lstHand.Items.Add(cardName);
+            }
+            txtBooks.Text = _game.DescribeBooks();
+            txtProgress.Text += _game.DescribePlayerHands();
+            txtProgress.SelectionStart = txtProgress.Text.Length;
+            txtProgress.ScrollToCaret();
+        }
+
+        private void BtnAsk_Click(object sender, EventArgs e)
+        {
+            txtProgress.Text = string.Empty;
+            if (lstHand.SelectedIndex < 0)
+            {
+                MessageBox.Show("Por favor escolha uma carta", "Impossível jogar",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (_game.PlayOneRound(lstHand.SelectedIndex))
+            {
+                txtProgress.Text += $"O vencedor é... {_game.GetWinnerName()}";
+                txtBooks.Text = _game.DescribeBooks();
+                btnAsk.Enabled = false;
+            }
+            else
+            {
+                UpdateForm();
+            }
         }
     }
 }

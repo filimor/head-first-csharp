@@ -127,6 +127,7 @@
             this.btnAsk.TabIndex = 8;
             this.btnAsk.Text = "Pergunta por uma carta";
             this.btnAsk.UseVisualStyleBackColor = true;
+            this.btnAsk.Click += new System.EventHandler(this.BtnAsk_Click);
             // 
             // FormGoFish
             // 
