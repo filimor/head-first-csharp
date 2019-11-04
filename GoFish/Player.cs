@@ -91,7 +91,8 @@ namespace GoFish
         /// <returns>Valor de carta aleatório.</returns>
         public Card.Values GetRandomValue()
         {
-
+            Card card = Peek(_random.Next(1,CardCount));
+            return card.Value;
         }
         
 
@@ -101,12 +102,22 @@ namespace GoFish
             // usando Deck.PullOutValues() para retirar os valores. Adicione uma
             // linha na caixa de texto que diz "João tem 3 Seis" - use o novo
             // método estático Card.Plural().
+
+            var deck = new Deck(new Card[] { });
+            if (_cards.ContainsValue(value))
+            {
+                deck = _cards.PullOutValues(value);
+                _textBoxOnForm.Text += $"{Name} tem {deck.Count} {Card.Plural(value)}.\n";
+            }
+            return deck;
         }
 
         public void AskForACard(List<Player> players, int myIndex, Deck stock)
         {
             // Uma sobrecarga de AskForACard() - escolha um valor aleatório do
             // baralho usando GetRandomValue() e pergunte por ele usando AskForACard().
+
+            AskForACard(players, myIndex, stock, GetRandomValue());
         }
 
         public void AskForACard(List<Player> players, int myIndex, Deck stock, Card.Values value)
@@ -119,6 +130,25 @@ namespace GoFish
             // de quantas cartas foram adicionadas. Se forem zero, teremos que pegar uma do
             // monte (que também foir passado como parâmetro), e nesse caso uma linha
             // "João tem que pegar uma carta da pilha" deve ser adicionada.
+
+            int howMany = 0;
+            _textBoxOnForm.Text += $"{Name} pergunta se alguém tem algum(a) {value.ToString()}.\n";
+            foreach (Player player in players)
+            {
+                Deck deck = player.DoYouHaveAny(value);
+                if(deck.Count > 0){
+                    for (int i = 0; i < deck.Count; i++)
+                    {
+                        TakeCard(deck.Deal(i));
+                    }
+                    howMany++;
+                }
+            }
+            if (howMany == 0)
+            {
+                _textBoxOnForm.Text += $"{Name} tem que pegar uma carta do monte.\n";
+                stock.Deal();
+            }
         }
     }
 }
