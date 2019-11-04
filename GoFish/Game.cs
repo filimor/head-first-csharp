@@ -32,6 +32,10 @@ namespace GoFish
             _players[0].SortHand();
         }
 
+        /// <summary>
+        /// Retorna uma string com a descrição da mão do jogador e das cartas do monte.
+        /// </summary>
+        /// <returns>Retorna uma string com a descrição.</returns>
         public string DescribePlayerHands()
         {
             var description = new StringBuilder();
@@ -49,8 +53,28 @@ namespace GoFish
             // Será aqui o método A PARTIR DO QUAL o jogo começa - ele será chamado apenas no
             // início do jogo. Ele embaralha o monte, dá cinco cartas para cada jogador e
             // usa um laço foreach para chamar o método PullOutBooks() de cada um.
+
+            _stock = new Deck();
+            _stock.Shuffle();
+            foreach (Player player in _players)
+            {
+                for (int i = 0; i < 5; i++)
+                {
+                    player.TakeCard(_stock.Deal());
+                }
+                foreach (Card.Values card in player.PullOutBooks())
+                {
+                    _books.Add(card, player);
+                }
+            }
+            
         }
 
+        /// <summary>
+        /// Executa um turno do jogo.
+        /// </summary>
+        /// <param name="selectedPlayerCard">Carta que o jogador selecionou na sua mão.</param>
+        /// <returns>Retorna true se o jogo acabou.</returns>
         public bool PlayOneRound(int selectedPlayerCard)
         {
             // Execute um turno do jogo. O parâmetro será a carta que o jogador selecionou
@@ -63,14 +87,44 @@ namespace GoFish
             // formulário). Verifique se o monte ainda tem cartas. Se não tem, apague o texto
             // da caixa e escreva "O monte está sem cartas. O jogo acabou!" e retorne true.
             // Se não for o caso, o jogo ainda não acabou, logo retorne false.
+
+            //_players[0].AskForACard(_players, selectedPlayerCard, _stock);
+            for (int i = 0; i < _players.Count; i++)
+            {
+                _players[i].AskForACard(_players, selectedPlayerCard, _stock);
+                if (PullOutBooks(_players[i]))
+                {
+                    int maxCards = _stock.Count < 5 ? _stock.Count : 5;
+                    for (int j = 0; j < maxCards; j++)
+                    {
+                        _players[i].TakeCard(_stock.Deal());
+                    }
+                }
+            }
+            _players[0].SortHand();
+            if (_stock.Count == 0)
+            {
+                _textBoxOnForm.Text = "O monte está sem cartas. O jogo acabou!";
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public bool PullOutBooks(Player player)
         {
-            // Monte um livro para um jogador. Retorne true seo jogador ficar sem cartas. Se
+            // Monte um livro para um jogador. Retorne true se o jogador ficar sem cartas. Se
             // não for o caso, retorne false. Cada livro deve ser adicionado ao dicionário
             // _books. Um jogador fica sem cartas quando usar todas as suas restantes para
             // montar um livro - e assim tentar ganhar o jogo.
+
+            foreach (Card.Values book in player.PullOutBooks())
+            {
+                _books.Add(book, player);
+            }
+            return player.CardCount == 0;
         }
 
         public string DescribeBooks()
@@ -78,6 +132,13 @@ namespace GoFish
             // Retorna uma longa string que descreve os livros de todos, composta examinando
             // o dicionário _books. "João tem um livro de seis. (quebra de linha) Edu tem um
             // livro de Ases".
+
+            var description = new StringBuilder();
+            foreach (KeyValuePair<Card.Values, Player> book in _books)
+            {
+                description.Append(book.Value.Name).Append(" tem um livro de ").Append(book.Key.ToString()).AppendLine(".");
+            }
+            return description.ToString();
         }
 
         public string GetWinnerName()
@@ -92,6 +153,12 @@ namespace GoFish
             // com o nome dos vencedores ("João e Edu", por exemplo). Se temos um único
             // vencedor, ele deve retornar uma string como "Edu com três livros". Se temos mais
             // de um, ele deve retornar algo como "um empate entre João e Beto com 2 livros".
+
+            var winners = new Dictionary<string, int>();
+            foreach (Card.Values value in _books.Keys)
+            {
+                
+            }
         }
     }
 }

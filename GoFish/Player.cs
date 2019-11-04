@@ -95,7 +95,11 @@ namespace GoFish
             return card.Value;
         }
         
-
+        /// <summary>
+        /// Um oponente pergunta se o jogador tem cartas de um certo valor.
+        /// </summary>
+        /// <param name="value">Valor a ser perguntado.</param>
+        /// <returns>Retorna um baralho com as cartas pescadas.</returns>
         public Deck DoYouHaveAny(Card.Values value)
         {
             // Um oponente pergunta se o jogador tem cartas de um certo valor
@@ -112,6 +116,12 @@ namespace GoFish
             return deck;
         }
 
+        /// <summary>
+        /// Pergunta por um valor aleatório
+        /// </summary>
+        /// <param name="players">Lista de oponentes.</param>
+        /// <param name="myIndex">?</param>
+        /// <param name="stock">Cartas no monte.</param>
         public void AskForACard(List<Player> players, int myIndex, Deck stock)
         {
             // Uma sobrecarga de AskForACard() - escolha um valor aleatório do
@@ -120,6 +130,13 @@ namespace GoFish
             AskForACard(players, myIndex, stock, GetRandomValue());
         }
 
+        /// <summary>
+        /// Pergunta aos outros jogadores se eles tem um dado valor.
+        /// </summary>
+        /// <param name="players">Lista de oponentes.</param>
+        /// <param name="myIndex">?</param>
+        /// <param name="stock">Cartas do monte</param>
+        /// <param name="value">Valor a ser perguntado.</param>
         public void AskForACard(List<Player> players, int myIndex, Deck stock, Card.Values value)
         {
             // Pergunte para os outros jogadores se eles tem um dado valor. Primeiro adicione
@@ -128,7 +145,7 @@ namespace GoFish
             // cada um deles pergunte se ele tem o valor (usando seu método DoYouHaveAny).
             // Ele deve passar a você um baralho - adicione este ao seu. Mantenha registro
             // de quantas cartas foram adicionadas. Se forem zero, teremos que pegar uma do
-            // monte (que também foir passado como parâmetro), e nesse caso uma linha
+            // monte (que também foi passado como parâmetro), e nesse caso uma linha
             // "João tem que pegar uma carta da pilha" deve ser adicionada.
 
             int howMany = 0;
