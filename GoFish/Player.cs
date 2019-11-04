@@ -14,6 +14,12 @@ namespace GoFish
         public int CardCount => _cards.Count;
         public string[] CardNames => _cards.GetCardNames();
 
+        /// <summary>
+        /// Inicializa os campos private e adiciona uma linha no controle TextBox.
+        /// </summary>
+        /// <param name="name">Nome do jogador.</param>
+        /// <param name="random">Número aleatório.</param>
+        /// <param name="textBoxOnForm">Caixa de texto no formulário.</param>
         public Player(string name, Random random, TextBox textBoxOnForm)
         {
             // O construtor para a classe Player inicializa quatro campos private, e então

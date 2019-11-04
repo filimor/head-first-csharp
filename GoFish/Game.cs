@@ -14,6 +14,12 @@ namespace GoFish
 
         public string[] PlayerCardNames => _players[0].CardNames;
 
+        /// <summary>
+        /// Instância do jogo.
+        /// </summary>
+        /// <param name="playerName">Nome do jogador real.</param>
+        /// <param name="opponentNames">Vetor com os oponentes.</param>
+        /// <param name="textBoxOnForm">Caixa de texto no formulário.</param>
         public Game(string playerName, string[] opponentNames, TextBox textBoxOnForm)
         {
             var random = new Random();
@@ -48,6 +54,9 @@ namespace GoFish
             return description.ToString();
         }
 
+        /// <summary>
+        /// Inicializa o jogo embaralhando as cartas, distribuindo as mãos e definindo os livros.
+        /// </summary>
         private void Deal()
         {
             // Será aqui o método A PARTIR DO QUAL o jogo começa - ele será chamado apenas no
@@ -112,6 +121,11 @@ namespace GoFish
             }
         }
 
+        /// <summary>
+        /// Monta um livro para o jogador.
+        /// </summary>
+        /// <param name="player">Jogador.</param>
+        /// <returns>Retorna true se o jogador ficar sem cartas.</returns>
         public bool PullOutBooks(Player player)
         {
             // Monte um livro para um jogador. Retorne true se o jogador ficar sem cartas. Se
@@ -126,6 +140,10 @@ namespace GoFish
             return player.CardCount == 0;
         }
 
+        /// <summary>
+        /// Descreve os livros de todos examinando o dicionário Books.
+        /// </summary>
+        /// <returns>Retorna uma string com os livros.</returns>
         public string DescribeBooks()
         {
             // Retorna uma longa string que descreve os livros de todos, composta examinando
@@ -140,6 +158,10 @@ namespace GoFish
             return description.ToString();
         }
 
+        /// <summary>
+        /// Determina o(s) nome(s) do(s) vencedor(es).
+        /// </summary>
+        /// <returns>Retorna uma string com a descrição dos vencedores.</returns>
         public string GetWinnerName()
         {
             // Este método será chamado no final do jogo. Ele usa seu próprio dicionário
