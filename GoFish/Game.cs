@@ -7,10 +7,10 @@ namespace GoFish
 {
     public class Game
     {
-        private List<Player> _players;
-        private Dictionary<Card.Values, Player> _books;
+        private readonly List<Player> _players;
+        private readonly Dictionary<Card.Values, Player> _books;
         private Deck _stock;
-        private TextBox _textBoxOnForm;
+        private readonly TextBox _textBoxOnForm;
 
         public string[] PlayerCardNames => _players[0].CardNames;
 
@@ -67,7 +67,6 @@ namespace GoFish
                     _books.Add(card, player);
                 }
             }
-            
         }
 
         /// <summary>
@@ -157,8 +156,35 @@ namespace GoFish
             var winners = new Dictionary<string, int>();
             foreach (Card.Values value in _books.Keys)
             {
-                
+                winners.Add(_books.Values.ToString(), (int)value);
             }
+
+            int maxBooks = 0;
+            string theWinner = string.Empty;
+            int theBooks = 0;
+            string description = string.Empty;
+
+            foreach (KeyValuePair<string, int> winner in winners)
+            {
+                if (winner.Value> maxBooks)
+                {
+                    theWinner = winner.Key;
+                    theBooks = winner.Value;
+                    maxBooks = winner.Value;
+                }
+            }
+
+            description = $"{theWinner} com {theBooks} livros.";
+
+            foreach (KeyValuePair<string, int> winner in winners)
+            {
+                if (winner.Value == maxBooks)
+                {
+                    description = $"Um empate entre {theWinner} e {winner.Key} com {winner.Value} livros.";
+                }
+            }
+
+            return description;
         }
     }
 }

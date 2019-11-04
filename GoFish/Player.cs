@@ -6,9 +6,9 @@ namespace GoFish
 {
     public class Player
     {
-        private Random _random;
-        private Deck _cards;
-        private TextBox _textBoxOnForm;
+        private readonly Random _random;
+        private readonly Deck _cards;
+        private readonly TextBox _textBoxOnForm;
 
         public string Name { get; }
         public int CardCount => _cards.Count;
@@ -94,7 +94,7 @@ namespace GoFish
             Card card = Peek(_random.Next(1,CardCount));
             return card.Value;
         }
-        
+
         /// <summary>
         /// Um oponente pergunta se o jogador tem cartas de um certo valor.
         /// </summary>
