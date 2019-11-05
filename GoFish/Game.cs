@@ -9,7 +9,7 @@ namespace GoFish
     {
         private readonly List<Player> _players;
         private readonly Dictionary<Card.Values, Player> _books;
-        private Deck _stock;
+        private readonly Deck _stock;
         private readonly TextBox _textBoxOnForm;
 
         public string[] PlayerCardNames => _players[0].CardNames;
@@ -63,7 +63,6 @@ namespace GoFish
             // início do jogo. Ele embaralha o monte, dá cinco cartas para cada jogador e
             // usa um laço foreach para chamar o método PullOutBooks() de cada um.
 
-            _stock = new Deck();
             _stock.Shuffle();
             foreach (Player player in _players)
             {
@@ -71,10 +70,7 @@ namespace GoFish
                 {
                     player.TakeCard(_stock.Deal());
                 }
-                foreach (Card.Values card in player.PullOutBooks())
-                {
-                    _books.Add(card, player);
-                }
+                PullOutBooks(player);
             }
         }
 
@@ -99,9 +95,18 @@ namespace GoFish
             //_players[0].AskForACard(_players, selectedPlayerCard, _stock);
             for (int i = 0; i < _players.Count; i++)
             {
-                _players[i].AskForACard(_players, selectedPlayerCard, _stock);
+                Card.Values cardToAskFor = _players[0].Peek(selectedPlayerCard).Value;
+                if (i == 0)
+                {
+                    _players[0].AskForACard(_players, 0, _stock, cardToAskFor);
+                }
+                else
+                {
+                    _players[0].AskForACard(_players, i, _stock);
+                }
                 if (PullOutBooks(_players[i]))
                 {
+                    _textBoxOnForm.Text += $"{_players[i].Name} fez uma nova mão\n";
                     int maxCards = _stock.Count < 5 ? _stock.Count : 5;
                     for (int j = 0; j < maxCards; j++)
                     {
@@ -115,10 +120,8 @@ namespace GoFish
                 _textBoxOnForm.Text = "O monte está sem cartas. O jogo acabou!";
                 return true;
             }
-            else
-            {
-                return false;
-            }
+
+            return false;
         }
 
         /// <summary>
@@ -155,6 +158,10 @@ namespace GoFish
             {
                 description.Append(book.Value.Name).Append(" tem um livro de ").Append(book.Key.ToString()).AppendLine(".");
             }
+            //////foreach (Card.Values value in _books.Keys)
+            //////{
+            //////    description.Append(_books[value].Name).Append(" tem um livro de ").Append(Card.Plural(value)).AppendLine(".");
+            //////}
             return description.ToString();
         }
 
@@ -178,35 +185,45 @@ namespace GoFish
             var winners = new Dictionary<string, int>();
             foreach (Card.Values value in _books.Keys)
             {
-                winners.Add(_books.Values.ToString(), (int)value);
+                string name = _books[value].Name;
+                if (winners.ContainsKey(name))
+                {
+                    winners[name]++;
+                }
+                else
+                {
+                    winners.Add(name, 1);
+                }
             }
 
             int maxBooks = 0;
-            string theWinner = string.Empty;
-            int theBooks = 0;
-            string description = string.Empty;
+            bool tie = false;
+            var description = new StringBuilder();
 
-            foreach (KeyValuePair<string, int> winner in winners)
+            foreach (string name in winners.Keys)
             {
-                if (winner.Value> maxBooks)
+                if (winners[name] > maxBooks)
                 {
-                    theWinner = winner.Key;
-                    theBooks = winner.Value;
-                    maxBooks = winner.Value;
+                    maxBooks = winners[name];
                 }
             }
 
-            description = $"{theWinner} com {theBooks} livros.";
-
-            foreach (KeyValuePair<string, int> winner in winners)
+            foreach (string name in winners.Keys)
             {
-                if (winner.Value == maxBooks)
+                if (winners[name] == maxBooks)
                 {
-                    description = $"Um empate entre {theWinner} e {winner.Key} com {winner.Value} livros.";
+                    if (!string.IsNullOrEmpty(description.ToString()))
+                    {
+                        description.Append(" e ");
+                        tie = true;
+                    }
+                    description.Append(name);
                 }
             }
 
-            return description;
+            description.Append("com ").Append(maxBooks).Append(" livros.");
+
+            return tie ? description.Insert(0, "Um empate entre ").ToString() : description.ToString();
         }
     }
 }

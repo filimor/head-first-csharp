@@ -29,7 +29,7 @@ namespace GoFish
 
             Name = name;
             _random = random;
-            _cards = new Deck();
+            _cards = new Deck(new Card[] { });
             _textBoxOnForm = textBoxOnForm;
             _textBoxOnForm.Text += $"{Name} entrou no jogo.\n";
         }
@@ -97,7 +97,7 @@ namespace GoFish
         /// <returns>Valor de carta aleatório.</returns>
         public Card.Values GetRandomValue()
         {
-            Card card = Peek(_random.Next(1,CardCount));
+            Card card = _cards.Peek(_random.Next(_cards.Count));
             return card.Value;
         }
 
@@ -113,12 +113,8 @@ namespace GoFish
             // linha na caixa de texto que diz "João tem 3 Seis" - use o novo
             // método estático Card.Plural().
 
-            var deck = new Deck(new Card[] { });
-            if (_cards.ContainsValue(value))
-            {
-                deck = _cards.PullOutValues(value);
-                _textBoxOnForm.Text += $"{Name} tem {deck.Count} {Card.Plural(value)}.\n";
-            }
+            Deck deck = _cards.PullOutValues(value);
+            _textBoxOnForm.Text += $"{Name} tem {deck.Count} {Card.Plural(value)}.\n";
             return deck;
         }
 
@@ -155,22 +151,24 @@ namespace GoFish
             // "João tem que pegar uma carta da pilha" deve ser adicionada.
 
             int howMany = 0;
-            _textBoxOnForm.Text += $"{Name} pergunta se alguém tem algum(a) {value.ToString()}.\n";
-            foreach (Player player in players)
+            _textBoxOnForm.Text += $"{Name} pergunta se alguém tem algum(a) {value}.\n";
+            for (int i = 0; i < players.Count; i++)
             {
-                Deck deck = player.DoYouHaveAny(value);
-                if(deck.Count > 0){
-                    for (int i = 0; i < deck.Count; i++)
+                if (i != myIndex)
+                {
+                    Player player = players[i];
+                    Deck cards = player.DoYouHaveAny(value);
+                    howMany += cards.Count;
+                    while (cards.Count > 0)
                     {
-                        TakeCard(deck.Deal(i));
+                        _cards.Add(cards.Deal());
                     }
-                    howMany++;
                 }
             }
             if (howMany == 0)
             {
                 _textBoxOnForm.Text += $"{Name} tem que pegar uma carta do monte.\n";
-                stock.Deal();
+                _cards.Add(stock.Deal());
             }
         }
     }
