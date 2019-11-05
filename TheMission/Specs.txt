@@ -1,0 +1,9 @@
+﻿- Sistema de turnos: o jogador faz um movimento e os inimigos fazem também.
+- O jogador poed se mover ou atacar e cada inimigo tem a mesma chance.
+- Os inimigos têm uma pequena vantagem - eles pode mover-se em toda jogada
+e depois disso atacarão se o jogador estiver ao alcance deles.
+- O jogo continua até que o jogador derrote todos os inimigos nos sete níveis
+ou morra.
+
+- O jogador e os inimigos movem-se pela masmorra
+- O jogador pode pegar armas e poções pelo caminho.
