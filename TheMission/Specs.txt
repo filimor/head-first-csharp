@@ -7,3 +7,22 @@ ou morra.
 
 - O jogador e os inimigos movem-se pela masmorra
 - O jogador pode pegar armas e poções pelo caminho.
+- O inventário mostra os itens que o jogador pegou e uma caixa em torno do item
+em uso no momento. O jogador clica em um item para prepará-lo e usa o botão
+Ataque para usá=lo.
+- O jogo mostra o PV do jogador e inimigos. Quando o jogador ataca um inimigo,
+os PVs caem. Quanto chegam a zero, o inimigo ou o jogador morre.
+- Para pegar uma arma ou poção basta ir até ela. Ela desaparece do chão e
+aparece no inventário.
+- Armas tem alcances diversos, algumas só atacam em uma direção enquanto outras
+tem alcance maior, e causam diferentes níveis de dano.
+
+- Há tres tipos de inimigos: morcego, fantasma e zumbi. O primeiro nível tem
+apenas um morcego. O sétimo e último tem os tr~es.
+- Um morcego move-se um tanto aleatoriamente e causa um pequeno dnao.
+- O fantasma move-se vagarosamente na direção do jogador e causa dano médio.
+- Um zumbi move-se rapidamente na direção do jogador e causa grande dano.
+
+- Quando o jogador prepara uma das armas, o formulário deve configurar o
+BorderStyle dela para FixedSingle e o das restantes como None.
+- O formulário só interage com a classe Game, que controla Jogador, Armas e Inimigos.

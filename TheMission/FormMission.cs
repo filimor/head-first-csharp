@@ -16,5 +16,14 @@ namespace TheMission
         {
             InitializeComponent();
         }
+
+        private void UpdateCharacters()
+        {
+            // Lê a localização do jogador, dos inimiogs e de qualquer arma
+            // presente na masmorra no momento e certifica-se de que as caixas
+            // de imagem estejam nos lugares certos.
+            // Também checa o inventário do jogador e certifica-se de que os ícones
+            // corretos sejam exibidos no pergaminho de inventário.
+        }
     }
 }
