@@ -191,7 +191,7 @@
             // 
             this.pictureBox10.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox10.Image = global::TheMission.Properties.Resources.mace;
-            this.pictureBox10.Location = new System.Drawing.Point(305, 317);
+            this.pictureBox10.Location = new System.Drawing.Point(305, 319);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(50, 50);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -203,7 +203,7 @@
             // 
             this.pictureBox11.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox11.Image = global::TheMission.Properties.Resources.potion_red;
-            this.pictureBox11.Location = new System.Drawing.Point(249, 317);
+            this.pictureBox11.Location = new System.Drawing.Point(249, 319);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(50, 50);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -215,7 +215,7 @@
             // 
             this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox12.Image = global::TheMission.Properties.Resources.potion_blue;
-            this.pictureBox12.Location = new System.Drawing.Point(193, 317);
+            this.pictureBox12.Location = new System.Drawing.Point(193, 319);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(50, 50);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -227,7 +227,7 @@
             // 
             this.pictureBox13.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox13.Image = global::TheMission.Properties.Resources.bow;
-            this.pictureBox13.Location = new System.Drawing.Point(137, 317);
+            this.pictureBox13.Location = new System.Drawing.Point(137, 319);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(50, 50);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -239,7 +239,7 @@
             // 
             this.pictureBox14.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox14.Image = global::TheMission.Properties.Resources.sword;
-            this.pictureBox14.Location = new System.Drawing.Point(81, 317);
+            this.pictureBox14.Location = new System.Drawing.Point(81, 319);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(50, 50);
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

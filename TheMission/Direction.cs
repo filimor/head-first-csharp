@@ -4,7 +4,7 @@
     {
         Up,
         Down,
-        Right,
-        Left
+        Left,
+        Right
     }
 }
