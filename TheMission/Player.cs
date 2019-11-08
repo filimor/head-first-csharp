@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TheMission
 {
@@ -11,11 +8,13 @@ namespace TheMission
     {
         // Todas as propriedades de Player estão ocultas para acesso direto.
 
-        private Weapon _eqquipedWeapon; 
+        private Weapon _eqquipedWeapon;
 
         public int HitPoints { get; set; }
         public List<Weapon> Inventory { get; set; } = new List<Weapon>();
-        public List<string> Weapons {
+
+        public List<string> Weapons
+        {
             // O jogador pode guardar muitas armas no inventário, mas só pode
             // usar uma de cada vez.
 
@@ -38,7 +37,6 @@ namespace TheMission
 
         //public void Attack(Direction direction, Random random)
         //{
-
         //}
 
         public void Hit(int health, Random random)
@@ -65,7 +63,7 @@ namespace TheMission
 
             foreach (Weapon weapon in Inventory)
             {
-                if(weapon.Name == weaponName)
+                if (weapon.Name == weaponName)
                 {
                     _eqquipedWeapon = weapon;
                 }

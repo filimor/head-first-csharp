@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Drawing; // Acesso à classe Rectangle
 
 namespace TheMission
@@ -35,7 +32,7 @@ namespace TheMission
 
             return new Point(Boundaries.Left +
                 (random.Next((Boundaries.Right / 10) - (Boundaries.Left / 10)) * 10),
-                Boundaries.Top + 
+                Boundaries.Top +
                 (random.Next((Boundaries.Bottom / 10) - (Boundaries.Top / 10)) * 10));
         }
 
@@ -45,7 +42,7 @@ namespace TheMission
             // mova cada inimigo em uma direção aleatória.
 
             _player.Move(direction);
-            foreach(Enemy enemy in Enemies)
+            foreach (Enemy enemy in Enemies)
             {
                 enemy.Move(random);
             }
@@ -80,7 +77,6 @@ namespace TheMission
 
         public void NewLevel(Random random)
         {
-
             // Adicionar comandos case para outros níveis.
             // Se o jogador já possui a poção de uma cor, o jogo não deve
             // adicioná-la ao nível.

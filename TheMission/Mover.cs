@@ -5,7 +5,7 @@ namespace TheMission
 {
     public abstract class Mover
     {
-        private const int MoveInterval = 10;
+        private const int MOVEINTERVAL = 10;
 
         protected Point location;
         protected Game game;
@@ -43,30 +43,30 @@ namespace TheMission
             switch (direction)
             {
                 case Direction.Up:
-                    if (newLocation.Y - MoveInterval >= boundaries.Top)
+                    if (newLocation.Y - MOVEINTERVAL >= boundaries.Top)
                     {
-                        newLocation.Y -= MoveInterval;
+                        newLocation.Y -= MOVEINTERVAL;
                     }
                     break;
 
                 case Direction.Down:
-                    if (newLocation.Y - MoveInterval <= boundaries.Bottom)
+                    if (newLocation.Y - MOVEINTERVAL <= boundaries.Bottom)
                     {
-                        newLocation.Y += MoveInterval;
+                        newLocation.Y += MOVEINTERVAL;
                     }
                     break;
 
                 case Direction.Left:
-                    if (newLocation.X - MoveInterval >= boundaries.Left)
+                    if (newLocation.X - MOVEINTERVAL >= boundaries.Left)
                     {
-                        newLocation.X -= MoveInterval;
+                        newLocation.X -= MOVEINTERVAL;
                     }
                     break;
 
                 case Direction.Right:
-                    if (newLocation.X + MoveInterval <= boundaries.Right)
+                    if (newLocation.X + MOVEINTERVAL <= boundaries.Right)
                     {
-                        newLocation.X += MoveInterval;
+                        newLocation.X += MOVEINTERVAL;
                     }
                     break;
             }
