@@ -72,9 +72,31 @@ namespace TheMission
             }
         }
 
+        public void Attack(Direction direction, Random random)
+        {
+            // O método é chamado quando um dos botões de ataque do formulário é clicado.
+            // Todas armas têm um método Attack(). Esse método verifica qual arma está
+            // preparada e chama o Attack() da arma. Se a arma for uma poção, Attack()
+            // remove-a do inventário após o jogador bebê-la.
+            // Potions implementará uma interface IPotion, então pode-se usar a palavra
+            // is para ver se Weapon é uma implementação de IPotion.
+        }
+
         public override Point Move(Direction direction)
         {
-            
+            // Game chama o método Move() de Player quando um dos botões de
+            // movimento do formulário é clicado.
+
+            location = Move(direction, game.Boundaries);
+            if (!game.WeaponInRoom.PickedUp)
+            {
+                // Veja se tem uma arma por perto, se for possivel, pegue-a.
+                // Se a arma for a única do jogador, prepare-a imediatamente.
+                // Weapon e o formulário serão responsáveis por deixar a PictureBox
+                // da arma invisível quando o jogador pegar, e não Player.
+                // Quando o jogador pega uma arma, ela precisa desaparecer da
+                // masmorra e aparecer no inventário.
+            }
         }
     }
 }
