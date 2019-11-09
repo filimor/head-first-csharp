@@ -5,7 +5,7 @@ namespace TheMission
 {
     public sealed class Ghost : Enemy
     {
-        private Ghost(Game game, Point location, Rectangle boundaries) :
+        public Ghost(Game game, Point location, Rectangle boundaries) :
             base(game, location, boundaries, 8)
         { }
 

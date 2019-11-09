@@ -80,7 +80,7 @@ namespace TheMission
             // is para ver se Weapon é uma implementação de IPotion.
         }
 
-        public override Point Move(Direction direction)
+        public void Move(Direction direction)
         {
             // Game chama o método Move() de Player quando um dos botões de
             // movimento do formulário é clicado.

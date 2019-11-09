@@ -111,13 +111,13 @@ namespace TheMission
             weaponControl.Visible = _game.WeaponInRoom.PickedUp;
             if (_game.PlayerHitPoints <= 0)
             {
-                MessageBox.Show("Você morreu!", "Fim de jogo", 
+                MessageBox.Show("Você morreu!", "Fim de jogo",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Application.Exit();
             }
             if (enemiesShown < 1)
             {
-                MessageBox.Show("Você derrotou todos os inimigos neste nível!", "Parabéns", 
+                MessageBox.Show("Você derrotou todos os inimigos neste nível!", "Parabéns",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 _game.NewLevel(_random);
                 UpdateCharacters();
@@ -139,49 +139,40 @@ namespace TheMission
         // que nenhum dos outros itens têm uma caixa em volta deles.
         private void PicSwordWeapon_Click(object sender, EventArgs e)
         {
-
         }
 
         private void PicBowWeapon_Click(object sender, EventArgs e)
         {
-
         }
 
         private void PicBluePotionWeapon_Click(object sender, EventArgs e)
         {
-
         }
 
         private void PicRedPotionWeapon_Click(object sender, EventArgs e)
         {
-
         }
 
         private void PicMaceWeapon_Click(object sender, EventArgs e)
         {
-
         }
 
         // Primeiro o botão chama _game.Move() com o valor de Direction
         // apropriado, e então chama o método UpdateCharacters().
         private void BtnMoveUp_Click(object sender, EventArgs e)
         {
-
         }
 
         private void BtnMoveRight_Click(object sender, EventArgs e)
         {
-
         }
 
         private void BtnMoveDown_Click(object sender, EventArgs e)
         {
-
         }
 
         private void BtnMoveLeft_Click(object sender, EventArgs e)
         {
-
         }
 
         // Cada botão chama _game.Attack() e então o método UpdateCharacters().
@@ -191,22 +182,18 @@ namespace TheMission
         // preparar uma poção e altere o texto no botão Para Cima pra "Beber".
         private void BtnAttackUp_Click(object sender, EventArgs e)
         {
-
         }
 
         private void BtnAttackRight_Click(object sender, EventArgs e)
         {
-
         }
 
         private void BtnAttackDown_Click(object sender, EventArgs e)
         {
-
         }
 
         private void BtnAttackLeft_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

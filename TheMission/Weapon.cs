@@ -8,22 +8,22 @@ namespace TheMission
         // Weapon herda de Mover porque ela usa seus métodos
         // Nearby() e Move() em DamageEnemy().
 
-        protected Game _game;
+        protected Game game;
 
         // Uma arma recolhida não deveria mais ser exibida. O formulário
         // pode usar esse acessador get para descobrir isso.
         public bool PickedUp { get; private set; }
 
         // Toda arma possui uma posição na masmorra do jogo.
-        public Point Location { get; }
+        new public Point Location { get; }
 
         // Cada classe de arma precisa implementar uma propriedade Name e
         // um método Attack() que determina como essa arma ataca.
         public abstract string Name { get; }
 
-        protected Weapon(Game game, Point location)
+        protected Weapon(Game game, Point location):base(game,location)
         {
-            _game = game;
+            this.game = game;
             Location = location;
             PickedUp = false;
         }
@@ -40,7 +40,7 @@ namespace TheMission
         protected bool DamageEnemy(Direction direction, int radius, int damage, Random random)
         {
             // O método DamageEnemy() é chamado por Attack(). Ele tenta achar
-            // um inimiog em uma certa direção e raio. Se ele achar, chama o
+            // um inimigo em uma certa direção e raio. Se ele achar, chama o
             // método Hit() do inimigo e retorna true. Se nenhum inimigo for
             // encontrado, ele retorna false.
 
@@ -49,13 +49,15 @@ namespace TheMission
             {
                 foreach (Enemy enemy in _game.Enemies)
                 {
-                    if (Nearby(enemy.Location, target, radius))
+                    //if (Nearby(enemy.Location, target, radius))
+                    if (Nearby(target, radius))
                     {
                         enemy.Hit(damage, random);
                         return true;
                     }
                 }
-                target = Move(direction, target, _game.Boundaries);
+                //target = Move(direction, target, _game.Boundaries);
+                target = Move(direction, _game.Boundaries);
             }
             return false;
         }

@@ -4,6 +4,10 @@ namespace TheMission
 {
     public class RedPotion : Weapon, IPotion
     {
+        protected RedPotion(Game game, System.Drawing.Point location) : base(game, location)
+        {
+        }
+
         public override string Name => "Poção Vermelha";
 
         public bool Used { get; }

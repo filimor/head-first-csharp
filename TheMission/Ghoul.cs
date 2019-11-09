@@ -5,7 +5,7 @@ namespace TheMission
 {
     public sealed class Ghoul : Enemy
     {
-        private Ghoul(Game game, Point location, Rectangle boundaries) :
+        public Ghoul(Game game, Point location, Rectangle boundaries) :
             base(game, location, boundaries, 10)
         { }
 

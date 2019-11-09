@@ -5,7 +5,7 @@ namespace TheMission
 {
     public sealed class Bat : Enemy
     {
-        private Bat(Game game, Point location, Rectangle boundaries) :
+        public Bat(Game game, Point location, Rectangle boundaries) :
             base(game, location, boundaries, 6)
         { }
 

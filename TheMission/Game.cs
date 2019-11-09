@@ -6,7 +6,7 @@ namespace TheMission
 {
     public class Game
     {
-        private Player _player; // o formulário interage com Player apenas através dos métodos em Game
+        private readonly Player _player; // o formulário interage com Player apenas através dos métodos em Game
 
         public int Level { get; private set; }
         public Rectangle Boundaries { get; } // Rectangle possui os campos Top, Bottom, Left e Right
@@ -93,11 +93,8 @@ namespace TheMission
             switch (Level)
             {
                 case 1:
-                    Enemies = new List<Enemy>
-                    {
-                        new Bat(this, GetRandomLocation(random), Boundaries)
-                    };
-                    WeaponsInRoom = new Sword(this, GetRandomLocation(random));
+                    Enemies = new List<Enemy> { new Bat(this, GetRandomLocation(random), Boundaries) };
+                    WeaponInRoom = new Sword(this, GetRandomLocation(random));
                     break;
             }
         }
