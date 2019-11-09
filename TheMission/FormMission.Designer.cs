@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMission));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picPlayer = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -38,31 +38,31 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.picMaceWeapon = new System.Windows.Forms.PictureBox();
+            this.picRedPotion = new System.Windows.Forms.PictureBox();
+            this.picBluePotion = new System.Windows.Forms.PictureBox();
+            this.picBowWeapon = new System.Windows.Forms.PictureBox();
+            this.picSwordWeapon = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.lblGhoulHitPoints = new System.Windows.Forms.Label();
+            this.lblGhoul = new System.Windows.Forms.Label();
+            this.lblGhostHitPoints = new System.Windows.Forms.Label();
+            this.lblGhost = new System.Windows.Forms.Label();
+            this.lblBatHitPoints = new System.Windows.Forms.Label();
+            this.lblBat = new System.Windows.Forms.Label();
+            this.lblPlayerHitPoints = new System.Windows.Forms.Label();
+            this.lblPlayer = new System.Windows.Forms.Label();
+            this.lblMove = new System.Windows.Forms.Label();
+            this.btnMoveUp = new System.Windows.Forms.Button();
+            this.btnMoveLeft = new System.Windows.Forms.Button();
+            this.btnMoveRight = new System.Windows.Forms.Button();
+            this.btnMoveDown = new System.Windows.Forms.Button();
+            this.btnAttackDown = new System.Windows.Forms.Button();
+            this.btnAttackRight = new System.Windows.Forms.Button();
+            this.btnAttackLeft = new System.Windows.Forms.Button();
+            this.btnAttackUp = new System.Windows.Forms.Button();
+            this.lblAttack = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -71,25 +71,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMaceWeapon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRedPotion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBluePotion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBowWeapon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSwordWeapon)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // picPlayer
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::TheMission.Properties.Resources.player;
-            this.pictureBox1.Location = new System.Drawing.Point(81, 61);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Visible = false;
+            this.picPlayer.BackColor = System.Drawing.Color.Transparent;
+            this.picPlayer.Image = global::TheMission.Properties.Resources.player;
+            this.picPlayer.Location = new System.Drawing.Point(81, 61);
+            this.picPlayer.Name = "picPlayer";
+            this.picPlayer.Size = new System.Drawing.Size(30, 30);
+            this.picPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picPlayer.TabIndex = 0;
+            this.picPlayer.TabStop = false;
+            this.picPlayer.Visible = false;
             // 
             // pictureBox2
             // 
@@ -187,65 +187,70 @@
             this.pictureBox9.TabStop = false;
             this.pictureBox9.Visible = false;
             // 
-            // pictureBox10
+            // picMaceWeapon
             // 
-            this.pictureBox10.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox10.Image = global::TheMission.Properties.Resources.mace;
-            this.pictureBox10.Location = new System.Drawing.Point(305, 319);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox10.TabIndex = 13;
-            this.pictureBox10.TabStop = false;
-            this.pictureBox10.Visible = false;
+            this.picMaceWeapon.BackColor = System.Drawing.Color.Transparent;
+            this.picMaceWeapon.Image = global::TheMission.Properties.Resources.mace;
+            this.picMaceWeapon.Location = new System.Drawing.Point(305, 319);
+            this.picMaceWeapon.Name = "picMaceWeapon";
+            this.picMaceWeapon.Size = new System.Drawing.Size(50, 50);
+            this.picMaceWeapon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picMaceWeapon.TabIndex = 13;
+            this.picMaceWeapon.TabStop = false;
+            this.picMaceWeapon.Visible = false;
+            this.picMaceWeapon.Click += new System.EventHandler(this.PicMaceWeapon_Click);
             // 
-            // pictureBox11
+            // picRedPotion
             // 
-            this.pictureBox11.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox11.Image = global::TheMission.Properties.Resources.potion_red;
-            this.pictureBox11.Location = new System.Drawing.Point(249, 319);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox11.TabIndex = 12;
-            this.pictureBox11.TabStop = false;
-            this.pictureBox11.Visible = false;
+            this.picRedPotion.BackColor = System.Drawing.Color.Transparent;
+            this.picRedPotion.Image = global::TheMission.Properties.Resources.potion_red;
+            this.picRedPotion.Location = new System.Drawing.Point(249, 319);
+            this.picRedPotion.Name = "picRedPotion";
+            this.picRedPotion.Size = new System.Drawing.Size(50, 50);
+            this.picRedPotion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picRedPotion.TabIndex = 12;
+            this.picRedPotion.TabStop = false;
+            this.picRedPotion.Visible = false;
+            this.picRedPotion.Click += new System.EventHandler(this.PicRedPotion_Click);
             // 
-            // pictureBox12
+            // picBluePotion
             // 
-            this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox12.Image = global::TheMission.Properties.Resources.potion_blue;
-            this.pictureBox12.Location = new System.Drawing.Point(193, 319);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox12.TabIndex = 11;
-            this.pictureBox12.TabStop = false;
-            this.pictureBox12.Visible = false;
+            this.picBluePotion.BackColor = System.Drawing.Color.Transparent;
+            this.picBluePotion.Image = global::TheMission.Properties.Resources.potion_blue;
+            this.picBluePotion.Location = new System.Drawing.Point(193, 319);
+            this.picBluePotion.Name = "picBluePotion";
+            this.picBluePotion.Size = new System.Drawing.Size(50, 50);
+            this.picBluePotion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBluePotion.TabIndex = 11;
+            this.picBluePotion.TabStop = false;
+            this.picBluePotion.Visible = false;
+            this.picBluePotion.Click += new System.EventHandler(this.PicBluePotion_Click);
             // 
-            // pictureBox13
+            // picBowWeapon
             // 
-            this.pictureBox13.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox13.Image = global::TheMission.Properties.Resources.bow;
-            this.pictureBox13.Location = new System.Drawing.Point(137, 319);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox13.TabIndex = 10;
-            this.pictureBox13.TabStop = false;
-            this.pictureBox13.Visible = false;
+            this.picBowWeapon.BackColor = System.Drawing.Color.Transparent;
+            this.picBowWeapon.Image = global::TheMission.Properties.Resources.bow;
+            this.picBowWeapon.Location = new System.Drawing.Point(137, 319);
+            this.picBowWeapon.Name = "picBowWeapon";
+            this.picBowWeapon.Size = new System.Drawing.Size(50, 50);
+            this.picBowWeapon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBowWeapon.TabIndex = 10;
+            this.picBowWeapon.TabStop = false;
+            this.picBowWeapon.Visible = false;
+            this.picBowWeapon.Click += new System.EventHandler(this.PicBowWeapon_Click);
             // 
-            // pictureBox14
+            // picSwordWeapon
             // 
-            this.pictureBox14.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox14.Image = global::TheMission.Properties.Resources.sword;
-            this.pictureBox14.Location = new System.Drawing.Point(81, 319);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox14.TabIndex = 9;
-            this.pictureBox14.TabStop = false;
-            this.pictureBox14.Visible = false;
+            this.picSwordWeapon.BackColor = System.Drawing.Color.Transparent;
+            this.picSwordWeapon.Image = global::TheMission.Properties.Resources.sword;
+            this.picSwordWeapon.Location = new System.Drawing.Point(81, 319);
+            this.picSwordWeapon.Name = "picSwordWeapon";
+            this.picSwordWeapon.Size = new System.Drawing.Size(50, 50);
+            this.picSwordWeapon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picSwordWeapon.TabIndex = 9;
+            this.picSwordWeapon.TabStop = false;
+            this.picSwordWeapon.Visible = false;
+            this.picSwordWeapon.Click += new System.EventHandler(this.PicSwordWeapon_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -253,14 +258,14 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
-            this.tableLayoutPanel1.Controls.Add(this.label10, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label9, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label8, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label6, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblGhoulHitPoints, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.lblGhoul, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.lblGhostHitPoints, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lblGhost, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lblBatHitPoints, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lblBat, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lblPlayerHitPoints, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblPlayer, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(615, 225);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
@@ -271,175 +276,183 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(173, 160);
             this.tableLayoutPanel1.TabIndex = 14;
             // 
-            // label10
+            // lblGhoulHitPoints
             // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(88, 133);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(56, 13);
-            this.label10.TabIndex = 7;
-            this.label10.Text = "vidaZumbi";
+            this.lblGhoulHitPoints.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblGhoulHitPoints.AutoSize = true;
+            this.lblGhoulHitPoints.Location = new System.Drawing.Point(88, 133);
+            this.lblGhoulHitPoints.Name = "lblGhoulHitPoints";
+            this.lblGhoulHitPoints.Size = new System.Drawing.Size(56, 13);
+            this.lblGhoulHitPoints.TabIndex = 7;
+            this.lblGhoulHitPoints.Text = "vidaZumbi";
             // 
-            // label9
+            // lblGhoul
             // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 133);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(36, 13);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "Zumbi";
+            this.lblGhoul.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblGhoul.AutoSize = true;
+            this.lblGhoul.Location = new System.Drawing.Point(12, 133);
+            this.lblGhoul.Name = "lblGhoul";
+            this.lblGhoul.Size = new System.Drawing.Size(36, 13);
+            this.lblGhoul.TabIndex = 6;
+            this.lblGhoul.Text = "Zumbi";
             // 
-            // label8
+            // lblGhostHitPoints
             // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(80, 93);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(73, 13);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "vidaFantasma";
+            this.lblGhostHitPoints.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblGhostHitPoints.AutoSize = true;
+            this.lblGhostHitPoints.Location = new System.Drawing.Point(80, 93);
+            this.lblGhostHitPoints.Name = "lblGhostHitPoints";
+            this.lblGhostHitPoints.Size = new System.Drawing.Size(73, 13);
+            this.lblGhostHitPoints.TabIndex = 5;
+            this.lblGhostHitPoints.Text = "vidaFantasma";
             // 
-            // label7
+            // lblGhost
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 93);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 13);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Fantasma";
+            this.lblGhost.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblGhost.AutoSize = true;
+            this.lblGhost.Location = new System.Drawing.Point(3, 93);
+            this.lblGhost.Name = "lblGhost";
+            this.lblGhost.Size = new System.Drawing.Size(53, 13);
+            this.lblGhost.TabIndex = 4;
+            this.lblGhost.Text = "Fantasma";
             // 
-            // label6
+            // lblBatHitPoints
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(82, 53);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 13);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "vidaMorcego";
+            this.lblBatHitPoints.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblBatHitPoints.AutoSize = true;
+            this.lblBatHitPoints.Location = new System.Drawing.Point(82, 53);
+            this.lblBatHitPoints.Name = "lblBatHitPoints";
+            this.lblBatHitPoints.Size = new System.Drawing.Size(69, 13);
+            this.lblBatHitPoints.TabIndex = 3;
+            this.lblBatHitPoints.Text = "vidaMorcego";
             // 
-            // label5
+            // lblBat
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(5, 53);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 13);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Morcego";
+            this.lblBat.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblBat.AutoSize = true;
+            this.lblBat.Location = new System.Drawing.Point(5, 53);
+            this.lblBat.Name = "lblBat";
+            this.lblBat.Size = new System.Drawing.Size(49, 13);
+            this.lblBat.TabIndex = 2;
+            this.lblBat.Text = "Morcego";
             // 
-            // label4
+            // lblPlayerHitPoints
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(84, 13);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 13);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "vidaJogador";
+            this.lblPlayerHitPoints.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblPlayerHitPoints.AutoSize = true;
+            this.lblPlayerHitPoints.Location = new System.Drawing.Point(84, 13);
+            this.lblPlayerHitPoints.Name = "lblPlayerHitPoints";
+            this.lblPlayerHitPoints.Size = new System.Drawing.Size(65, 13);
+            this.lblPlayerHitPoints.TabIndex = 1;
+            this.lblPlayerHitPoints.Text = "vidaJogador";
             // 
-            // label3
+            // lblPlayer
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Jogador";
+            this.lblPlayer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblPlayer.AutoSize = true;
+            this.lblPlayer.Location = new System.Drawing.Point(7, 13);
+            this.lblPlayer.Name = "lblPlayer";
+            this.lblPlayer.Size = new System.Drawing.Size(45, 13);
+            this.lblPlayer.TabIndex = 0;
+            this.lblPlayer.Text = "Jogador";
             // 
-            // label1
+            // lblMove
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(622, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 13);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Movimento:";
+            this.lblMove.AutoSize = true;
+            this.lblMove.Location = new System.Drawing.Point(622, 9);
+            this.lblMove.Name = "lblMove";
+            this.lblMove.Size = new System.Drawing.Size(62, 13);
+            this.lblMove.TabIndex = 15;
+            this.lblMove.Text = "Movimento:";
             // 
-            // button1
+            // btnMoveUp
             // 
-            this.button1.Location = new System.Drawing.Point(665, 25);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Para cima";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnMoveUp.Location = new System.Drawing.Point(665, 25);
+            this.btnMoveUp.Name = "btnMoveUp";
+            this.btnMoveUp.Size = new System.Drawing.Size(75, 23);
+            this.btnMoveUp.TabIndex = 16;
+            this.btnMoveUp.Text = "Para cima";
+            this.btnMoveUp.UseVisualStyleBackColor = true;
+            this.btnMoveUp.Click += new System.EventHandler(this.BtnMoveUp_Click);
             // 
-            // button2
+            // btnMoveLeft
             // 
-            this.button2.Location = new System.Drawing.Point(625, 54);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "Esquerda";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnMoveLeft.Location = new System.Drawing.Point(625, 54);
+            this.btnMoveLeft.Name = "btnMoveLeft";
+            this.btnMoveLeft.Size = new System.Drawing.Size(75, 23);
+            this.btnMoveLeft.TabIndex = 17;
+            this.btnMoveLeft.Text = "Esquerda";
+            this.btnMoveLeft.UseVisualStyleBackColor = true;
+            this.btnMoveLeft.Click += new System.EventHandler(this.BtnMoveLeft_Click);
             // 
-            // button3
+            // btnMoveRight
             // 
-            this.button3.Location = new System.Drawing.Point(706, 54);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 18;
-            this.button3.Text = "Direita";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnMoveRight.Location = new System.Drawing.Point(706, 54);
+            this.btnMoveRight.Name = "btnMoveRight";
+            this.btnMoveRight.Size = new System.Drawing.Size(75, 23);
+            this.btnMoveRight.TabIndex = 18;
+            this.btnMoveRight.Text = "Direita";
+            this.btnMoveRight.UseVisualStyleBackColor = true;
+            this.btnMoveRight.Click += new System.EventHandler(this.BtnMoveRight_Click);
             // 
-            // button4
+            // btnMoveDown
             // 
-            this.button4.Location = new System.Drawing.Point(665, 83);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 19;
-            this.button4.Text = "Para baixo";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnMoveDown.Location = new System.Drawing.Point(665, 83);
+            this.btnMoveDown.Name = "btnMoveDown";
+            this.btnMoveDown.Size = new System.Drawing.Size(75, 23);
+            this.btnMoveDown.TabIndex = 19;
+            this.btnMoveDown.Text = "Para baixo";
+            this.btnMoveDown.UseVisualStyleBackColor = true;
+            this.btnMoveDown.Click += new System.EventHandler(this.BtnMoveDown_Click);
             // 
-            // button5
+            // btnAttackDown
             // 
-            this.button5.Location = new System.Drawing.Point(665, 196);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 24;
-            this.button5.Text = "Para baixo";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnAttackDown.Location = new System.Drawing.Point(665, 196);
+            this.btnAttackDown.Name = "btnAttackDown";
+            this.btnAttackDown.Size = new System.Drawing.Size(75, 23);
+            this.btnAttackDown.TabIndex = 24;
+            this.btnAttackDown.Text = "Para baixo";
+            this.btnAttackDown.UseVisualStyleBackColor = true;
+            this.btnAttackDown.Click += new System.EventHandler(this.BtnAttackDown_Click);
             // 
-            // button6
+            // btnAttackRight
             // 
-            this.button6.Location = new System.Drawing.Point(706, 167);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 23;
-            this.button6.Text = "Direita";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnAttackRight.Location = new System.Drawing.Point(706, 167);
+            this.btnAttackRight.Name = "btnAttackRight";
+            this.btnAttackRight.Size = new System.Drawing.Size(75, 23);
+            this.btnAttackRight.TabIndex = 23;
+            this.btnAttackRight.Text = "Direita";
+            this.btnAttackRight.UseVisualStyleBackColor = true;
+            this.btnAttackRight.Click += new System.EventHandler(this.BtnAttackRight_Click);
             // 
-            // button7
+            // btnAttackLeft
             // 
-            this.button7.Location = new System.Drawing.Point(625, 167);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 22;
-            this.button7.Text = "Esquerda";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnAttackLeft.Location = new System.Drawing.Point(625, 167);
+            this.btnAttackLeft.Name = "btnAttackLeft";
+            this.btnAttackLeft.Size = new System.Drawing.Size(75, 23);
+            this.btnAttackLeft.TabIndex = 22;
+            this.btnAttackLeft.Text = "Esquerda";
+            this.btnAttackLeft.UseVisualStyleBackColor = true;
+            this.btnAttackLeft.Click += new System.EventHandler(this.BtnAttackLeft_Click);
             // 
-            // button8
+            // btnAttackUp
             // 
-            this.button8.Location = new System.Drawing.Point(665, 138);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 21;
-            this.button8.Text = "Para cima";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnAttackUp.Location = new System.Drawing.Point(665, 138);
+            this.btnAttackUp.Name = "btnAttackUp";
+            this.btnAttackUp.Size = new System.Drawing.Size(75, 23);
+            this.btnAttackUp.TabIndex = 21;
+            this.btnAttackUp.Text = "Para cima";
+            this.btnAttackUp.UseVisualStyleBackColor = true;
+            this.btnAttackUp.Click += new System.EventHandler(this.BtnAttackUp_Click);
             // 
-            // label2
+            // lblAttack
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(622, 122);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "Ataque:";
+            this.lblAttack.AutoSize = true;
+            this.lblAttack.Location = new System.Drawing.Point(622, 122);
+            this.lblAttack.Name = "lblAttack";
+            this.lblAttack.Size = new System.Drawing.Size(44, 13);
+            this.lblAttack.TabIndex = 20;
+            this.lblAttack.Text = "Ataque:";
             // 
             // FormMission
             // 
@@ -448,23 +461,23 @@
             this.BackgroundImage = global::TheMission.Properties.Resources.dungeon600x400;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(800, 399);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.picPlayer);
+            this.Controls.Add(this.btnAttackDown);
+            this.Controls.Add(this.btnAttackRight);
+            this.Controls.Add(this.btnAttackLeft);
+            this.Controls.Add(this.btnAttackUp);
+            this.Controls.Add(this.lblAttack);
+            this.Controls.Add(this.btnMoveDown);
+            this.Controls.Add(this.btnMoveRight);
+            this.Controls.Add(this.btnMoveLeft);
+            this.Controls.Add(this.btnMoveUp);
+            this.Controls.Add(this.lblMove);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.pictureBox10);
-            this.Controls.Add(this.pictureBox11);
-            this.Controls.Add(this.pictureBox12);
-            this.Controls.Add(this.pictureBox13);
-            this.Controls.Add(this.pictureBox14);
+            this.Controls.Add(this.picMaceWeapon);
+            this.Controls.Add(this.picRedPotion);
+            this.Controls.Add(this.picBluePotion);
+            this.Controls.Add(this.picBowWeapon);
+            this.Controls.Add(this.picSwordWeapon);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox5);
@@ -473,12 +486,14 @@
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox2);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormMission";
             this.Text = "A Missão";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.FormMission_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -487,11 +502,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMaceWeapon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRedPotion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBluePotion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBowWeapon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSwordWeapon)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -501,7 +516,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picPlayer;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
@@ -510,30 +525,30 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.PictureBox pictureBox13;
-        private System.Windows.Forms.PictureBox pictureBox14;
+        private System.Windows.Forms.PictureBox picMaceWeapon;
+        private System.Windows.Forms.PictureBox picRedPotion;
+        private System.Windows.Forms.PictureBox picBluePotion;
+        private System.Windows.Forms.PictureBox picBowWeapon;
+        private System.Windows.Forms.PictureBox picSwordWeapon;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblMove;
+        private System.Windows.Forms.Button btnMoveUp;
+        private System.Windows.Forms.Button btnMoveLeft;
+        private System.Windows.Forms.Button btnMoveRight;
+        private System.Windows.Forms.Button btnMoveDown;
+        private System.Windows.Forms.Button btnAttackDown;
+        private System.Windows.Forms.Button btnAttackRight;
+        private System.Windows.Forms.Button btnAttackLeft;
+        private System.Windows.Forms.Button btnAttackUp;
+        private System.Windows.Forms.Label lblAttack;
+        private System.Windows.Forms.Label lblGhoulHitPoints;
+        private System.Windows.Forms.Label lblGhoul;
+        private System.Windows.Forms.Label lblGhostHitPoints;
+        private System.Windows.Forms.Label lblGhost;
+        private System.Windows.Forms.Label lblBatHitPoints;
+        private System.Windows.Forms.Label lblBat;
+        private System.Windows.Forms.Label lblPlayerHitPoints;
+        private System.Windows.Forms.Label lblPlayer;
     }
 }
 
