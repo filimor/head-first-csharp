@@ -36,7 +36,7 @@ namespace TheMission
             // O método NearPlayer() usa o método estático Mover.Nearby()
             // para descobrir se o inimigo está perto do jogador.
 
-            return Nearby(game.PlayerLocation, NEARPLAYERDISTANCE);
+            return Nearby(_game.PlayerLocation, NEARPLAYERDISTANCE);
         }
 
         protected Direction FindPlayerDirection(Point playerLocation)
@@ -46,9 +46,9 @@ namespace TheMission
             // ao inimigo e retornará uma enum Direction que informa em qual
             // direção o inimigo precisa se mover para se aproximar do jogador.
 
-            return playerLocation.X > location.X + 10
-                ? Direction.Right : playerLocation.X < location.X - 10
-                ? Direction.Left : playerLocation.Y < location.Y - 10
+            return playerLocation.X > _location.X + 10
+                ? Direction.Right : playerLocation.X < _location.X - 10
+                ? Direction.Left : playerLocation.Y < _location.Y - 10
                 ? Direction.Up : Direction.Down;
         }
     }

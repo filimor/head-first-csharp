@@ -85,8 +85,8 @@ namespace TheMission
             // Game chama o método Move() de Player quando um dos botões de
             // movimento do formulário é clicado.
 
-            location = Move(direction, game.Boundaries);
-            if (!game.WeaponInRoom.PickedUp)
+            _location = Move(direction, _game.Boundaries);
+            if (!_game.WeaponInRoom.PickedUp)
             {
                 // Veja se tem uma arma por perto, se for possivel, pegue-a.
                 // Se a arma for a única do jogador, prepare-a imediatamente.

@@ -23,6 +23,8 @@ apenas um morcego. O sétimo e último tem os tr~es.
 - O fantasma move-se vagarosamente na direção do jogador e causa dano médio.
 - Um zumbi move-se rapidamente na direção do jogador e causa grande dano.
 
+- Armas: Sword (espada), Mace (bastão), Bow (arco).
+
 - Quando o jogador prepara uma das armas, o formulário deve configurar o
 BorderStyle dela para FixedSingle e o das restantes como None.
 - O formulário só interage com a classe Game, que controla Jogador, Armas e Inimigos.
