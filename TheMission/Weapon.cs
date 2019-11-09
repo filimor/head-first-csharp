@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TheMission
 {
@@ -13,11 +9,14 @@ namespace TheMission
         // Nearby() e Move() em DamageEnemy().
 
         protected Game _game;
+
         // Uma arma recolhida não deveria mais ser exibida. O formulário
         // pode usar esse acessador get para descobrir isso.
         public bool PickedUp { get; private set; }
+
         // Toda arma possui uma posição na masmorra do jogo.
         public Point Location { get; }
+
         // Cada classe de arma precisa implementar uma propriedade Name e
         // um método Attack() que determina como essa arma ataca.
         public abstract string Name { get; }
@@ -60,7 +59,5 @@ namespace TheMission
             }
             return false;
         }
-
-        
     }
 }
