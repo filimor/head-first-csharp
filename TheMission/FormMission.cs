@@ -21,6 +21,107 @@ namespace TheMission
             // de imagem estejam nos lugares certos.
             // Também checa o inventário do jogador e certifica-se de que os ícones
             // corretos sejam exibidos no pergaminho de inventário.
+
+            // Quando todos os objetos tenham se movido e atuados uns sobre os outros,
+            // o formulário atualiza tudo. Então as armas que foram pegas têm sua
+            // propriedade Visible de suas caixas de imagem igualadas a false,
+            // inimigos e jogadores são colocados em seus novos lugares (e os mortos
+            // ficam invisíveis) e o inventário é atualizado.
+
+            picPlayer.Location = _game.PlayerLocation;
+            lblPlayerHitPoints.Text = _game.PlayerHitPoints.ToString();
+            bool showBat = false;
+            bool showGhost = false;
+            bool showGhoul = false;
+            int enemiesShown = 0;
+            Control weaponControl = null;
+
+            foreach (Enemy enemy in _game.Enemies)
+            {
+                if(enemy is Bat)
+                {
+                    picBat.Location = enemy.Location;
+                    lblBatHitPoints.Text = enemy.HitPoints.ToString();
+                    if (enemy.HitPoints > 0)
+                    {
+                        showBat = true;
+                        enemiesShown++;
+                    }
+                }
+                if (enemy is Ghost)
+                {
+                    picGhost.Location = enemy.Location;
+                    lblGhostHitPoints.Text = enemy.HitPoints.ToString();
+                    if (enemy.HitPoints > 0)
+                    {
+                        showGhost = true;
+                        enemiesShown++;
+                    }
+                }
+                if (enemy is Ghoul)
+                {
+                    picGhoul.Location = enemy.Location;
+                    lblGhoulHitPoints.Text = enemy.HitPoints.ToString();
+                    if (enemy.HitPoints > 0)
+                    {
+                        showGhoul = true;
+                        enemiesShown++;
+                    }
+                }
+            }
+
+            // Depois que você iterou por todos os inimigos no nível, cheque
+            // a variável showBat. Se o morcego foi morto, então será false,
+            // logo deixe sua PictureBox invisível e apague seu rótulo de pontos
+            // de vida. Depois faça o mesmo para showGhost e showGhoul.
+
+            picSword.Visible = false;
+            picBow.Visible = false;
+            picRedPotion.Visible = false;
+            picBluePotion.Visible = false;
+            picMace.Visible = false;
+
+            switch (_game.WeaponInRoom.Name)
+            {
+                case "Espada":
+                    weaponControl = picSword;
+                    break;
+                case "Arco":
+                    weaponControl = picBow;
+                    break;
+                case "Poção Azul":
+                    weaponControl = picBluePotion;
+                    break;
+                case "Poção Vermelha":
+                    weaponControl = picRedPotion;
+                    break;
+                case "Bastão":
+                    weaponControl = picMace;
+                    break;
+            }
+
+            weaponControl.Visible = true;
+
+            // Use o método CheckPlayerInventory() do objeto Game para descobrir
+            // se os diversos ícones no inventário devem ser exibidos.
+
+            weaponControl.Location = _game.WeaponInRoom.Location;
+            // Todo nível tem uma arma. Se ela foi recolhida, precisamos deixar
+            // seu ícone invisível.
+            weaponControl.Visible = _game.WeaponInRoom.PickedUp;
+            if (_game.PlayerHitPoints <= 0)
+            {
+                MessageBox.Show("Você morreu!", "Fim de jogo", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Application.Exit();
+            }
+            if (enemiesShown < 1)
+            {
+                MessageBox.Show("Você derrotou todos os inimigos neste nível!", "Parabéns", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _game.NewLevel(_random);
+                UpdateCharacters();
+            }
         }
 
         private void FormMission_Load(object sender, EventArgs e)
@@ -46,12 +147,12 @@ namespace TheMission
 
         }
 
-        private void PicBluePotion_Click(object sender, EventArgs e)
+        private void PicBluePotionWeapon_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void PicRedPotion_Click(object sender, EventArgs e)
+        private void PicRedPotionWeapon_Click(object sender, EventArgs e)
         {
 
         }
