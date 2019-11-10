@@ -5,38 +5,48 @@ namespace TheMission
 {
     public abstract class Mover
     {
+        /// <summary>
+        /// Tamanho do passo do jogador ou inimigo.
+        /// </summary>
         private const int MOVEINTERVAL = 10;
         protected Game _game;
 
-        protected Point Location { get; private set; }
+        /// <summary>
+        /// Localização do jogador ou inimigo.
+        /// </summary>
+        public virtual Point Location { get; private set; }
 
+        /// <summary>
+        /// Instâncias de Mover recebem como parâmetro o objeto Game e uma posição atual.
+        /// </summary>
+        /// <param name="game">Instância de Game</param>
+        /// <param name="location">Posição atual.</param>
         protected Mover(Game game, Point location)
         {
-            // Instâncias de Mover recebem como parâmetro o objeto Game
-            // e uma posição atual.
-
             _game = game;
             Location = location;
         }
 
+        /// <summary>
+        /// Calcula se um dado ponto está a uma certa distânciado jogador ou inimigo.
+        /// </summary>
+        /// <param name="locationToCheck">Ponto a verificar.</param>
+        /// <param name="distance">Raio de distância.</param>
+        /// <returns>Retorna true se estiver dentro do raio especificado.</returns>
         public bool Nearby(Point locationToCheck, int distance)
         {
-            // Pega um ponto e calcula se ele está a uma certa distância do objeto.
-            // Checa a distância de um Point em relação à posição atual do objeto.
-            // Se eles estierem a uma distância - definida por distance - de cada um,
-            // ele retorna true; senão, retorna false.
-
             return Math.Abs(Location.X - locationToCheck.X) < distance &&
                 Math.Abs(Location.Y - locationToCheck.Y) < distance;
         }
 
+        /// <summary>
+        /// Calcula o ponto final do movimento e tenta mover-se um passo nessa direção.
+        /// </summary>
+        /// <param name="direction">Direção do movimento.</param>
+        /// <param name="boundaries">Limites da masmorra.</param>
+        /// <returns>Se conseguir, retorna o novo Point; se ultrapassar os limites, o Point original.</returns>
         public virtual Point Move(Direction direction, Rectangle boundaries)
         {
-            // Recebe uma direção, assim como os limites da masmorra, e calcula
-            // onde seria o ponto final desse movimento.
-            // Tenta move-se um passo em uma direção. Se conseguir, retorna o novo
-            // Point. Se chegar em um dos limites, retorna o Point original.
-
             Point newLocation = Location;
             switch (direction)
             {
