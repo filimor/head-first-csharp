@@ -146,40 +146,117 @@ namespace TheMission
         // que nenhum dos outros itens têm uma caixa em volta deles.
         private void PicSwordWeapon_Click(object sender, EventArgs e)
         {
+            if(_game.CheckPlayerInventory("Espada")){
+                _game.Equip("Espada");
+                picSwordWeapon.BorderStyle = BorderStyle.FixedSingle;
+                picBowWeapon.BorderStyle = BorderStyle.None;
+                picMaceWeapon.BorderStyle = BorderStyle.None;
+                picRedPotionWeapon.BorderStyle = BorderStyle.None;
+                picBluePotionWeapon.BorderStyle = BorderStyle.None;
+
+                btnAttackDown.Visible = true;
+                btnAttackLeft.Visible = true;
+                btnAttackRight.Visible = true;
+                btnAttackUp.Text = "Para cima";
+            }
         }
 
         private void PicBowWeapon_Click(object sender, EventArgs e)
         {
+            if (_game.CheckPlayerInventory("Arco"))
+            {
+                _game.Equip("Arco");
+                picSwordWeapon.BorderStyle = BorderStyle.None;
+                picBowWeapon.BorderStyle = BorderStyle.FixedSingle;
+                picMaceWeapon.BorderStyle = BorderStyle.None;
+                picRedPotionWeapon.BorderStyle = BorderStyle.None;
+                picBluePotionWeapon.BorderStyle = BorderStyle.None;
+
+                btnAttackDown.Visible = true;
+                btnAttackLeft.Visible = true;
+                btnAttackRight.Visible = true;
+                btnAttackUp.Text = "Para cima";
+            }
         }
 
         private void PicBluePotionWeapon_Click(object sender, EventArgs e)
         {
+            if (_game.CheckPlayerInventory("Poção Azul"))
+            {
+                _game.Equip("Poção Azul");
+                picSwordWeapon.BorderStyle = BorderStyle.None;
+                picBowWeapon.BorderStyle = BorderStyle.None;
+                picMaceWeapon.BorderStyle = BorderStyle.None;
+                picRedPotionWeapon.BorderStyle = BorderStyle.None;
+                picBluePotionWeapon.BorderStyle = BorderStyle.FixedSingle;
+
+                btnAttackDown.Visible = false;
+                btnAttackLeft.Visible = false;
+                btnAttackRight.Visible = false;
+                btnAttackUp.Text = "Beber";
+            }
         }
 
         private void PicRedPotionWeapon_Click(object sender, EventArgs e)
         {
+            if (_game.CheckPlayerInventory("Poção Vermelha"))
+            {
+                _game.Equip("Poção Vermelha");
+                picSwordWeapon.BorderStyle = BorderStyle.None;
+                picBowWeapon.BorderStyle = BorderStyle.None;
+                picMaceWeapon.BorderStyle = BorderStyle.None;
+                picRedPotionWeapon.BorderStyle = BorderStyle.FixedSingle;
+                picBluePotionWeapon.BorderStyle = BorderStyle.None;
+
+                btnAttackDown.Visible = false;
+                btnAttackLeft.Visible = false;
+                btnAttackRight.Visible = false;
+                btnAttackUp.Text = "Beber";
+            }
         }
 
         private void PicMaceWeapon_Click(object sender, EventArgs e)
         {
+            if (_game.CheckPlayerInventory("Bastão"))
+            {
+                _game.Equip("Bastão");
+                picSwordWeapon.BorderStyle = BorderStyle.None;
+                picBowWeapon.BorderStyle = BorderStyle.None;
+                picMaceWeapon.BorderStyle = BorderStyle.FixedSingle;
+                picRedPotionWeapon.BorderStyle = BorderStyle.None;
+                picBluePotionWeapon.BorderStyle = BorderStyle.None;
+
+                btnAttackDown.Visible = true;
+                btnAttackLeft.Visible = true;
+                btnAttackRight.Visible = true;
+                btnAttackUp.Text = "Para cima";
+            }
         }
 
         // Primeiro o botão chama _game.Move() com o valor de Direction
         // apropriado, e então chama o método UpdateCharacters().
         private void BtnMoveUp_Click(object sender, EventArgs e)
         {
+            _game.Move(Direction.Up, _random);
+            UpdateCharacters();
         }
 
         private void BtnMoveRight_Click(object sender, EventArgs e)
         {
+            _game.Move(Direction.Right, _random);
+            UpdateCharacters();
         }
 
         private void BtnMoveDown_Click(object sender, EventArgs e)
         {
+            _game.Move(Direction.Down, _random);
+            UpdateCharacters();
         }
 
         private void BtnMoveLeft_Click(object sender, EventArgs e)
         {
+            _game.Move(Direction.Left, _random);
+            UpdateCharacters();
         }
 
         // Cada botão chama _game.Attack() e então o método UpdateCharacters().
@@ -189,18 +266,26 @@ namespace TheMission
         // preparar uma poção e altere o texto no botão Para Cima pra "Beber".
         private void BtnAttackUp_Click(object sender, EventArgs e)
         {
+            _game.Attack(Direction.Up, _random); 
+            UpdateCharacters();
         }
 
         private void BtnAttackRight_Click(object sender, EventArgs e)
         {
+            _game.Attack(Direction.Right, _random);
+            UpdateCharacters();
         }
 
         private void BtnAttackDown_Click(object sender, EventArgs e)
         {
+            _game.Attack(Direction.Down, _random);
+            UpdateCharacters();
         }
 
         private void BtnAttackLeft_Click(object sender, EventArgs e)
         {
+            _game.Attack(Direction.Left, _random);
+            UpdateCharacters();
         }
     }
 }
