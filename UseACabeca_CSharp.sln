@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoFish", "GoFish\GoFish.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheMission", "TheMission\TheMission.csproj", "{08DE28A6-477C-4ADD-BAF4-0E05E961A96F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcuseManager", "ExcuseGenerator\ExcuseManager.csproj", "{426F84BF-5525-449A-9D84-B49D0A626CD0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{08DE28A6-477C-4ADD-BAF4-0E05E961A96F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08DE28A6-477C-4ADD-BAF4-0E05E961A96F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08DE28A6-477C-4ADD-BAF4-0E05E961A96F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{426F84BF-5525-449A-9D84-B49D0A626CD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{426F84BF-5525-449A-9D84-B49D0A626CD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{426F84BF-5525-449A-9D84-B49D0A626CD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{426F84BF-5525-449A-9D84-B49D0A626CD0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
