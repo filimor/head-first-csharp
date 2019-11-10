@@ -17,6 +17,11 @@ namespace TheMission
             // do jogadr e 50% de que seja uma direção aleatória. Depois que o
             // morcego se moveu, ele checa se está perto do jogador - se estiver,
             // então ele ataca com até 2 pontos de dano.
+
+            if (NearPlayer())
+            {
+                //_game.HitPlayer();
+            }
         }
     }
 }

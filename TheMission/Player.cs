@@ -92,6 +92,7 @@ namespace TheMission
                 // Quando o jogador pega uma arma, ela precisa desaparecer da
                 // masmorra e aparecer no inventário.
             }
+
         }
     }
 }

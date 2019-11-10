@@ -8,7 +8,7 @@ namespace TheMission
         public override string Name => "Poção Vermelha";
         public bool Used { get; }
 
-        protected RedPotion(Game game, Point location) : base(game, location)
+        public RedPotion(Game game, Point location) : base(game, location)
         {
         }
 

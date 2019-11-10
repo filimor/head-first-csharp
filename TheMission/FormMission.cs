@@ -36,6 +36,13 @@ namespace TheMission
             int enemiesShown = 0;
             Control weaponControl = null;
 
+            lblBat.Text = string.Empty;
+            lblGhost.Text = string.Empty;
+            lblGhoul.Text = string.Empty;
+            lblBatHitPoints.Text = string.Empty;
+            lblGhostHitPoints.Text = string.Empty;
+            lblGhoulHitPoints.Text = string.Empty;
+
             foreach (Enemy enemy in _game.Enemies)
             {
                 if(enemy is Bat)
