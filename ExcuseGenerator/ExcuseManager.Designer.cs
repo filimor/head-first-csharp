@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.lblExcuse = new System.Windows.Forms.Label();
-            this.lblResult = new System.Windows.Forms.Label();
+            this.lblResults = new System.Windows.Forms.Label();
             this.lblLastUsed = new System.Windows.Forms.Label();
             this.lblFileDate = new System.Windows.Forms.Label();
-            this.txtResult = new System.Windows.Forms.TextBox();
+            this.txtResults = new System.Windows.Forms.TextBox();
             this.txtExcuse = new System.Windows.Forms.TextBox();
             this.lblFileDateDescription = new System.Windows.Forms.Label();
             this.btnFolder = new System.Windows.Forms.Button();
@@ -40,6 +40,9 @@
             this.btnOpen = new System.Windows.Forms.Button();
             this.btnRandomExcuse = new System.Windows.Forms.Button();
             this.dtpLastUsed = new System.Windows.Forms.DateTimePicker();
+            this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // lblExcuse
@@ -51,14 +54,14 @@
             this.lblExcuse.TabIndex = 0;
             this.lblExcuse.Text = "Desculpa";
             // 
-            // lblResult
+            // lblResults
             // 
-            this.lblResult.AutoSize = true;
-            this.lblResult.Location = new System.Drawing.Point(12, 41);
-            this.lblResult.Name = "lblResult";
-            this.lblResult.Size = new System.Drawing.Size(60, 13);
-            this.lblResult.TabIndex = 1;
-            this.lblResult.Text = "Resultados";
+            this.lblResults.AutoSize = true;
+            this.lblResults.Location = new System.Drawing.Point(12, 41);
+            this.lblResults.Name = "lblResults";
+            this.lblResults.Size = new System.Drawing.Size(60, 13);
+            this.lblResults.TabIndex = 1;
+            this.lblResults.Text = "Resultados";
             // 
             // lblLastUsed
             // 
@@ -78,13 +81,14 @@
             this.lblFileDate.TabIndex = 3;
             this.lblFileDate.Text = "Data do Arquivo";
             // 
-            // txtResult
+            // txtResults
             // 
-            this.txtResult.Location = new System.Drawing.Point(148, 38);
-            this.txtResult.Name = "txtResult";
-            this.txtResult.Size = new System.Drawing.Size(284, 20);
-            this.txtResult.TabIndex = 5;
-            this.txtResult.Text = "Não funcionou - o chefe sabe que não tenho cachorro.";
+            this.txtResults.Location = new System.Drawing.Point(148, 38);
+            this.txtResults.Name = "txtResults";
+            this.txtResults.Size = new System.Drawing.Size(284, 20);
+            this.txtResults.TabIndex = 5;
+            this.txtResults.Text = "Não funcionou - o chefe sabe que não tenho cachorro.";
+            this.txtResults.TextChanged += new System.EventHandler(this.TxtResults_TextChanged);
             // 
             // txtExcuse
             // 
@@ -93,6 +97,7 @@
             this.txtExcuse.Size = new System.Drawing.Size(284, 20);
             this.txtExcuse.TabIndex = 6;
             this.txtExcuse.Text = "Meu cachorro está com dor de cabeça.";
+            this.txtExcuse.TextChanged += new System.EventHandler(this.TxtExcuse_TextChanged);
             // 
             // lblFileDateDescription
             // 
@@ -112,6 +117,7 @@
             this.btnFolder.TabIndex = 9;
             this.btnFolder.Text = "Pasta";
             this.btnFolder.UseVisualStyleBackColor = true;
+            this.btnFolder.Click += new System.EventHandler(this.BtnFolder_Click);
             // 
             // btnSave
             // 
@@ -122,6 +128,7 @@
             this.btnSave.TabIndex = 10;
             this.btnSave.Text = "Salvar";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // btnOpen
             // 
@@ -132,6 +139,7 @@
             this.btnOpen.TabIndex = 11;
             this.btnOpen.Text = "Abrir";
             this.btnOpen.UseVisualStyleBackColor = true;
+            this.btnOpen.Click += new System.EventHandler(this.BtnOpen_Click);
             // 
             // btnRandomExcuse
             // 
@@ -142,6 +150,7 @@
             this.btnRandomExcuse.TabIndex = 12;
             this.btnRandomExcuse.Text = "Desculpa Aleatória";
             this.btnRandomExcuse.UseVisualStyleBackColor = true;
+            this.btnRandomExcuse.Click += new System.EventHandler(this.BtnRandomExcuse_Click);
             // 
             // dtpLastUsed
             // 
@@ -149,6 +158,7 @@
             this.dtpLastUsed.Name = "dtpLastUsed";
             this.dtpLastUsed.Size = new System.Drawing.Size(284, 20);
             this.dtpLastUsed.TabIndex = 13;
+            this.dtpLastUsed.ValueChanged += new System.EventHandler(this.DtpLastUsed_ValueChanged);
             // 
             // FormExcuseManager
             // 
@@ -162,10 +172,10 @@
             this.Controls.Add(this.btnFolder);
             this.Controls.Add(this.lblFileDateDescription);
             this.Controls.Add(this.txtExcuse);
-            this.Controls.Add(this.txtResult);
+            this.Controls.Add(this.txtResults);
             this.Controls.Add(this.lblFileDate);
             this.Controls.Add(this.lblLastUsed);
-            this.Controls.Add(this.lblResult);
+            this.Controls.Add(this.lblResults);
             this.Controls.Add(this.lblExcuse);
             this.Name = "FormExcuseManager";
             this.Text = "Gerenciador de Desculpas";
@@ -177,10 +187,10 @@
         #endregion
 
         private System.Windows.Forms.Label lblExcuse;
-        private System.Windows.Forms.Label lblResult;
+        private System.Windows.Forms.Label lblResults;
         private System.Windows.Forms.Label lblLastUsed;
         private System.Windows.Forms.Label lblFileDate;
-        private System.Windows.Forms.TextBox txtResult;
+        private System.Windows.Forms.TextBox txtResults;
         private System.Windows.Forms.TextBox txtExcuse;
         private System.Windows.Forms.Label lblFileDateDescription;
         private System.Windows.Forms.Button btnFolder;
@@ -188,6 +198,9 @@
         private System.Windows.Forms.Button btnOpen;
         private System.Windows.Forms.Button btnRandomExcuse;
         private System.Windows.Forms.DateTimePicker dtpLastUsed;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }
 
