@@ -18,8 +18,8 @@ aparece no inventário.
 tem alcance maior, e causam diferentes níveis de dano.
 
 - Há tres tipos de inimigos: morcego, fantasma e zumbi. O primeiro nível tem
-apenas um morcego. O sétimo e último tem os tr~es.
-- Um morcego move-se um tanto aleatoriamente e causa um pequeno dnao.
+apenas um morcego. O sétimo e último tem os três.
+- Um morcego move-se um tanto aleatoriamente e causa um pequeno dano.
 - O fantasma move-se vagarosamente na direção do jogador e causa dano médio.
 - Um zumbi move-se rapidamente na direção do jogador e causa grande dano.
 

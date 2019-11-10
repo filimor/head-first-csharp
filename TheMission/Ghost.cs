@@ -15,6 +15,21 @@ namespace TheMission
             // com 8 pontos. Existe uma chance em três que ele vá na direção
             // do jogador e duas chances de permanecer parado. Se estiver perto
             // do jogador, ele ataca com até 3 pontos de dano.
+            // 
+
+            if (HitPoints >= 1)
+            {
+                Direction playerDirection = FindPlayerDirection(_game.PlayerLocation);
+                if (random.Next(2) == 2)
+                {
+                    Move(playerDirection, _game.Boundaries);
+                }
+            }
+
+            if (NearPlayer())
+            {
+                _game.HitPlayer(3, random);
+            }
         }
     }
 }

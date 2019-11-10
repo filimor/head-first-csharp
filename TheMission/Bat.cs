@@ -18,9 +18,36 @@ namespace TheMission
             // morcego se moveu, ele checa se está perto do jogador - se estiver,
             // então ele ataca com até 2 pontos de dano.
 
+            if (HitPoints >= 1)
+            {
+                Direction playerDirection = FindPlayerDirection(_game.PlayerLocation);
+                if (random.Next(1) == 1)
+                {
+                    Move(playerDirection,_game.Boundaries);
+                }
+                else
+                {
+                    switch (random.Next(3))
+                    {
+                        case 1:
+                            Move(Direction.Up, _game.Boundaries);
+                            break;
+                        case 2:
+                            Move(Direction.Down, _game.Boundaries);
+                            break;
+                        case 3:
+                            Move(Direction.Right, _game.Boundaries);
+                            break;
+                        case 4:
+                            Move(Direction.Left, _game.Boundaries);
+                            break;
+                    }
+                }
+            }
+
             if (NearPlayer())
             {
-                //_game.HitPlayer();
+                _game.HitPlayer(2,random);
             }
         }
     }
