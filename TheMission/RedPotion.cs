@@ -5,18 +5,23 @@ namespace TheMission
 {
     public class RedPotion : Weapon, IPotion
     {
+        private readonly Player _player;
         public override string Name => "Poção Vermelha";
-        public bool Used { get; }
+        public bool Used { get; private set; }
 
-        public RedPotion(Game game, Point location) : base(game, location)
+        public RedPotion(Game game, Point location, Player player) : base(game, location)
         {
+            _player = player;
         }
 
         public override void Attack(Direction direction, Random random)
         {
-            // Aumenta a vida do jogadro em até 10 pontos chamando seu
+            // Aumenta a vida do jogador em até 10 pontos chamando seu
             // método IncreasePlayerHealth(). Depois de usada, o método
             // Used() deve retornar true.
+
+            _player.IncreaseHealth(10, random);
+            Used = true;
         }
     }
 }

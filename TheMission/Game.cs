@@ -157,7 +157,7 @@ namespace TheMission
                     {
                         new Ghost(this, GetRandomLocation(random), Boundaries)
                     };
-                    WeaponInRoom = new BluePotion(this, GetRandomLocation(random));
+                    WeaponInRoom = new BluePotion(this, GetRandomLocation(random), _player);
                     break;
                 case 3:
                     Enemies = new List<Enemy>
@@ -174,7 +174,7 @@ namespace TheMission
                     };
                     WeaponInRoom = !_player.Weapons.Contains("Arco") ?
                         new Bow(this, GetRandomLocation(random)) :
-                        (Weapon)new BluePotion(this, GetRandomLocation(random));
+                        (Weapon)new BluePotion(this, GetRandomLocation(random), _player);
 
                     break;
                 case 5:
@@ -183,7 +183,7 @@ namespace TheMission
                         new Bat(this, GetRandomLocation(random), Boundaries),
                         new Ghoul(this, GetRandomLocation(random), Boundaries)
                     };
-                    WeaponInRoom = new RedPotion(this, GetRandomLocation(random));
+                    WeaponInRoom = new RedPotion(this, GetRandomLocation(random), _player);
                     break;
                 case 6:
                     Enemies = new List<Enemy>
@@ -202,7 +202,7 @@ namespace TheMission
                     };
                     WeaponInRoom = !_player.Weapons.Contains("Bastão") ?
                         new Mace(this, GetRandomLocation(random)) :
-                        (Weapon)new RedPotion(this, GetRandomLocation(random));
+                        (Weapon)new RedPotion(this, GetRandomLocation(random), _player);
                     break;
                 case 8:
                     MessageBox.Show("Você concluiu o jogo!", "Vitória",
