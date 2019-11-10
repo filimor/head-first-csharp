@@ -1,11 +1,6 @@
 ﻿using System;
 using System.IO;
 
-// Cada desculpa é salva num arquivo de texto separado.
-// A primeira linha do arquivo é uma desculpa, a segunda
-// é o resultado e a terceira é a dta quando foi usada
-// pela última vez (use o método ToString() de DateTimePicker()
-
 namespace ExcuseManager
 {
     public class Excuse
@@ -15,21 +10,20 @@ namespace ExcuseManager
         public DateTime LastUsed { get; set; }
         public string ExcusePath { get; set; }
 
-        public Excuse(Random random)
+        public Excuse()
         {
-            // Olha na pasta de desculpas, escolhe uma delas aleatoriamente
-            // e a abre.
+            ExcusePath = string.Empty;
         }
 
-        public Excuse(string description)
+        public Excuse(string path)
         {
-            Description = description;
+            ExcusePath = path;
         }
 
-        public Excuse(string description, DateTime lastUsed, string excusePath) : this(description)
+        public Excuse(Random random, string path)
         {
-            LastUsed = lastUsed;
-            ExcusePath = excusePath;
+            string[] fileNames = Directory.GetFiles(path,"*.txt");
+            OpenFile(fileNames[random.Next(fileNames.Length)]);
         }
 
         public void OpenFile(string path)

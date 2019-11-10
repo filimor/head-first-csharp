@@ -9,23 +9,24 @@ namespace ExcuseManager
         private string _currentPath;
         private bool _formChanged;
         private Excuse _currentExcuse;
-        private Random _random;
+        private Random _random = new Random();
 
         public FormExcuseManager()
         {
             InitializeComponent();
+            _currentExcuse = new Excuse();
         }
 
         private void UpdateForm(bool changed)
         {
             if (!changed)
             {
-                txtExcuse.Text = _currentExcuse.Description;
+                txtDescription.Text = _currentExcuse.Description;
                 txtResults.Text = _currentExcuse.Results;
                 dtpLastUsed.Value = _currentExcuse.LastUsed;
                 if (!string.IsNullOrEmpty(_currentExcuse.ExcusePath))
                 {
-                    dtpLastUsed.Text = File.GetLastWriteTime(_currentExcuse.ExcusePath).ToString();
+                    lblFileDateDescription.Text = File.GetLastWriteTime(_currentExcuse.ExcusePath).ToString();
                 }
                 Text = "Gerenciador de Desculpas";
             }
@@ -38,85 +39,80 @@ namespace ExcuseManager
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            if (txtExcuse.Text?.Length == 0 || txtResults.Text?.Length == 0)
+            if (CheckChanged())
             {
-                MessageBox.Show("Por favor, especifique uma desculpa e um resultado.",
-                    "Impossível salvar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
+                saveFileDialog.InitialDirectory = _currentPath;
+                saveFileDialog.Filter = "Arquivos de Texto (*.txt)|*.txt|" +
+                    "Todos os Arquivos (*.*)|*.*";
+                saveFileDialog.FileName = txtDescription.Text + ".txt";
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    _currentExcuse.Save(saveFileDialog.FileName);
+                    MessageBox.Show("Desculpa Salva");
+                    UpdateForm(false);
+                }
             }
-
-            saveFileDialog.InitialDirectory = _currentPath;
-            saveFileDialog.Filter = "Arquivo de Texto (*.txt)|*.txt|" +
-                "Todos os Arquivos (*.*)|*.*";
-            saveFileDialog.ShowDialog();
-            if (!string.IsNullOrWhiteSpace(saveFileDialog.FileName))
-            {
-                _currentExcuse.Description = txtExcuse.Text;
-                _currentExcuse.Results = txtResults.Text;
-                _currentExcuse.LastUsed = dtpLastUsed.Value;
-                _currentExcuse.Save(saveFileDialog.FileName);
-            }
-            MessageBox.Show("Desculpa Salva");
-            UpdateForm(false);
         }
 
         private void BtnFolder_Click(object sender, EventArgs e)
         {
-            folderBrowserDialog.ShowDialog();
-            if (folderBrowserDialog.SelectedPath != string.Empty)
+            folderBrowserDialog.SelectedPath = _currentPath;
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK &&
+                folderBrowserDialog.SelectedPath != string.Empty)
             {
                 btnSave.Enabled = true;
                 btnOpen.Enabled = true;
                 btnRandomExcuse.Enabled = true;
-            }
-            else
-            {
                 _currentPath = folderBrowserDialog.SelectedPath;
             }
         }
 
-        private void TxtExcuse_TextChanged(object sender, EventArgs e)
+        private void TxtDescription_TextChanged(object sender, EventArgs e)
         {
+            _currentExcuse.Description = txtDescription.Text;
             UpdateForm(true);
         }
 
         private void TxtResults_TextChanged(object sender, EventArgs e)
         {
+            _currentExcuse.Results = txtResults.Text;
             UpdateForm(true);
         }
 
         private void DtpLastUsed_ValueChanged(object sender, EventArgs e)
         {
+            _currentExcuse.LastUsed = dtpLastUsed.Value;
             UpdateForm(true);
         }
 
         private void BtnOpen_Click(object sender, EventArgs e)
         {
-            if (_formChanged && MessageBox.Show("A desculpa atual não foi salva. Deseja continuar?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
-                == DialogResult.No)
+            if (CheckChanged())
             {
-                return;
+                openFileDialog.InitialDirectory = _currentPath;
+                saveFileDialog.Filter = "Arquivos de Texto (*.txt)|*.txt|" +
+                    "Todos os Arquivos (*.*)|*.*";
+                saveFileDialog.FileName = txtDescription.Text + ".txt";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    _currentExcuse.OpenFile(openFileDialog.FileName);
+                    UpdateForm(false);
+                    MessageBox.Show("Desculpa salva");
+                }
             }
-
-            openFileDialog.InitialDirectory = _currentPath;
-            openFileDialog.ShowDialog();
-            if (!string.IsNullOrWhiteSpace(openFileDialog.FileName))
-            {
-                _currentExcuse.OpenFile(openFileDialog.FileName);
-            }
-            UpdateForm(false);
         }
 
         private void BtnRandomExcuse_Click(object sender, EventArgs e)
         {
-            if (_formChanged && MessageBox.Show("A desculpa atual não foi salva. Deseja continuar?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
-                == DialogResult.No)
-            {
-                return;
-            }
-
-            _currentExcuse = new Excuse(_random);
+            _currentExcuse = new Excuse(_random, _currentPath);
             UpdateForm(false);
+        }
+
+        private bool CheckChanged()
+        {
+            return !_formChanged || MessageBox.Show("A desculpa atual não foi salva. Deseja" +
+                " continuar?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
+                != DialogResult.No;
         }
     }
 }

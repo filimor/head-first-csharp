@@ -34,7 +34,7 @@
             this.lblLastUsed = new System.Windows.Forms.Label();
             this.lblFileDate = new System.Windows.Forms.Label();
             this.txtResults = new System.Windows.Forms.TextBox();
-            this.txtExcuse = new System.Windows.Forms.TextBox();
+            this.txtDescription = new System.Windows.Forms.TextBox();
             this.lblFileDateDescription = new System.Windows.Forms.Label();
             this.btnFolder = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -85,20 +85,22 @@
             // txtResults
             // 
             this.txtResults.Location = new System.Drawing.Point(148, 38);
+            this.txtResults.MaxLength = 200;
             this.txtResults.Name = "txtResults";
             this.txtResults.Size = new System.Drawing.Size(284, 20);
             this.txtResults.TabIndex = 5;
             this.txtResults.Text = "Não funcionou - o chefe sabe que não tenho cachorro.";
             this.txtResults.TextChanged += new System.EventHandler(this.TxtResults_TextChanged);
             // 
-            // txtExcuse
+            // txtDescription
             // 
-            this.txtExcuse.Location = new System.Drawing.Point(148, 6);
-            this.txtExcuse.Name = "txtExcuse";
-            this.txtExcuse.Size = new System.Drawing.Size(284, 20);
-            this.txtExcuse.TabIndex = 6;
-            this.txtExcuse.Text = "Meu cachorro está com dor de cabeça.";
-            this.txtExcuse.TextChanged += new System.EventHandler(this.TxtExcuse_TextChanged);
+            this.txtDescription.Location = new System.Drawing.Point(148, 6);
+            this.txtDescription.MaxLength = 200;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(284, 20);
+            this.txtDescription.TabIndex = 6;
+            this.txtDescription.Text = "Meu cachorro está com dor de cabeça.";
+            this.txtDescription.TextChanged += new System.EventHandler(this.TxtDescription_TextChanged);
             // 
             // lblFileDateDescription
             // 
@@ -172,7 +174,7 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnFolder);
             this.Controls.Add(this.lblFileDateDescription);
-            this.Controls.Add(this.txtExcuse);
+            this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.txtResults);
             this.Controls.Add(this.lblFileDate);
             this.Controls.Add(this.lblLastUsed);
@@ -193,7 +195,7 @@
         private System.Windows.Forms.Label lblLastUsed;
         private System.Windows.Forms.Label lblFileDate;
         private System.Windows.Forms.TextBox txtResults;
-        private System.Windows.Forms.TextBox txtExcuse;
+        private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label lblFileDateDescription;
         private System.Windows.Forms.Button btnFolder;
         private System.Windows.Forms.Button btnSave;
