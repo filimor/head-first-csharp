@@ -82,6 +82,16 @@ namespace TheMission
             // logo deixe sua PictureBox invisível e apague seu rótulo de pontos
             // de vida. Depois faça o mesmo para showGhost e showGhoul.
 
+            picBat.Visible = showBat;
+            picGhost.Visible = showGhost;
+            picGhoul.Visible = showGhoul;
+            lblBat.Visible = showBat;
+            lblGhost.Visible = showGhost;
+            lblGhoul.Visible = showGhoul;
+            lblBatHitPoints.Visible = showBat;
+            lblGhostHitPoints.Visible = showGhost;
+            lblGhoulHitPoints.Visible = showGhoul;
+
             picSword.Visible = false;
             picBow.Visible = false;
             picRedPotion.Visible = false;
@@ -111,6 +121,12 @@ namespace TheMission
 
             // Use o método CheckPlayerInventory() do objeto Game para descobrir
             // se os diversos ícones no inventário devem ser exibidos.
+
+            picSwordWeapon.Visible = _game.CheckPlayerInventory("Espada");
+            picBowWeapon.Visible = _game.CheckPlayerInventory("Arco");
+            picMaceWeapon.Visible = _game.CheckPlayerInventory("Bastão");
+            picBluePotionWeapon.Visible = _game.CheckPlayerInventory("Poção Azul");
+            picRedPotionWeapon.Visible = _game.CheckPlayerInventory("Poção Vermelha");
 
             weaponControl.Location = _game.WeaponInRoom.Location;
             // Todo nível tem uma arma. Se ela foi recolhida, precisamos deixar
