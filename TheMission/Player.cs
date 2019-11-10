@@ -4,21 +4,23 @@ using System.Drawing;
 
 namespace TheMission
 {
+    /// <summary>
+    /// Todas as propriedades de Player estão ocultas para acesso direto.
+    /// </summary>
     public class Player : Mover
     {
-        // Todas as propriedades de Player estão ocultas para acesso direto.
-
         private Weapon _eqquipedWeapon;
+        private const int WEAPONCATCHRADIUS = 10;
 
-        public int HitPoints { get; set; }
+        public int HitPoints { get; set; } = 10;
         new public Point Location { get; private set; }
         public List<Weapon> Inventory { get; set; } = new List<Weapon>();
 
+        /// <summary>
+        /// O jogador pode guardar muitas armas no inventário, mas só pode usar uma de cada vez.
+        /// </summary>
         public List<string> Weapons
         {
-            // O jogador pode guardar muitas armas no inventário, mas só pode
-            // usar uma de cada vez.
-
             get
             {
                 var names = new List<string>();
@@ -32,30 +34,36 @@ namespace TheMission
 
         public Player(Game game, Point location, Rectangle boundaries) : base(game, location)
         {
-            HitPoints = 10;
-            // Substituir o construtor por uma atribuição de valor na propriedade?
+            // HitPoints = 10;
         }
 
+        /// <summary>
+        /// Quando um inimigo ataca o jogador, ele causa uma quantidade de dano aleatória.
+        /// </summary>
+        /// <param name="health">Pontos de vida do jogador</param>
+        /// <param name="random">Variável do tipo aleatória.</param>
         public void Hit(int health, Random random)
         {
-            // Quando um inimigo ataca o jogador, ele causa uma quantidade
-            // de dano aleatória.
-
             HitPoints -= random.Next(1, health);
         }
 
+        /// <summary>
+        /// Quando o jogador usa uma poção, ele recebe uma quantidade de pontos de vida aleatória.
+        /// </summary>
+        /// <param name="health">Pontos de vida do jogador.</param>
+        /// <param name="random">Variável do tipo aleatória.</param>
         public void IncreaseHealth(int health, Random random)
         {
-            // Quando o jogador usa uma poção, ele recebe uma quantidade
-            // de pontos de vida aleatória.
-
             HitPoints += random.Next(1, health);
         }
 
+        /// <summary>
+        /// Diz ao jogador para usar uma de suas armas.
+        /// </summary>
+        /// <param name="weaponName">Nome da arma.</param>
         public void Equip(string weaponName)
         {
-            // Diz ao jogador para usar uma de suas armas. O objeto Game chama
-            // esse método quando um dos ícones no inventário é clicado.
+            // O objeto Game chama esse método quando um dos ícones no inventário é clicado.
             // Um objeto Player só pode ter um objeto Weapon em uso por vez.
 
             foreach (Weapon weapon in Inventory)
@@ -67,23 +75,34 @@ namespace TheMission
             }
         }
 
+        /// <summary>
+        /// Chama o Attack() da arma que está preparada. Se for uma poção, emove-a do inventário.
+        /// </summary>
+        /// <param name="direction">Direção do ataque.</param>
+        /// <param name="random">Variável tipo aleatória.</param>
         public void Attack(Direction direction, Random random)
         {
             // O método é chamado quando um dos botões de ataque do formulário é clicado.
-            // Todas armas têm um método Attack(). Esse método verifica qual arma está
-            // preparada e chama o Attack() da arma. Se a arma for uma poção, Attack()
-            // remove-a do inventário após o jogador bebê-la.
-            // Potions implementará uma interface IPotion, então pode-se usar a palavra
-            // is para ver se Weapon é uma implementação de IPotion.
+ 
+            _eqquipedWeapon.Attack(direction, random);
+            if(_eqquipedWeapon is IPotion)
+            {
+                Inventory.Remove(_eqquipedWeapon);
+            }
         }
 
+        /// <summary>
+        /// Move o jogador na direção especificada.
+        /// </summary>
+        /// <param name="direction">Direção do movimento.</param>
         public void Move(Direction direction)
         {
             // Game chama o método Move() de Player quando um dos botões de
             // movimento do formulário é clicado.
 
+            Weapon weaponInRoom = _game.WeaponInRoom;
             Location = Move(direction, _game.Boundaries);
-            if (!_game.WeaponInRoom.PickedUp)
+            if (!weaponInRoom.PickedUp)
             {
                 // Veja se tem uma arma por perto, se for possivel, pegue-a.
                 // Se a arma for a única do jogador, prepare-a imediatamente.
@@ -91,6 +110,24 @@ namespace TheMission
                 // da arma invisível quando o jogador pegar, e não Player.
                 // Quando o jogador pega uma arma, ela precisa desaparecer da
                 // masmorra e aparecer no inventário.
+
+                if(Nearby(weaponInRoom.Location, WEAPONCATCHRADIUS))
+                {
+                    int totalWeapons = 0;
+                    Inventory.Add(weaponInRoom);
+                    foreach (Weapon weapon in Inventory)
+                    {
+                        if(!(weapon is IPotion))
+                        {
+                            totalWeapons++;
+                        }
+                        if (totalWeapons == 1)
+                        {
+                            Equip(weapon.Name);
+                        }
+                    }
+                    weaponInRoom.PickUpWeapon();
+                }
             }
 
         }
