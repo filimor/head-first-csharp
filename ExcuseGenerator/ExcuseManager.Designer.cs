@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormExcuseManager));
             this.lblExcuse = new System.Windows.Forms.Label();
             this.lblResults = new System.Windows.Forms.Label();
             this.lblLastUsed = new System.Windows.Forms.Label();
@@ -177,6 +178,7 @@
             this.Controls.Add(this.lblLastUsed);
             this.Controls.Add(this.lblResults);
             this.Controls.Add(this.lblExcuse);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormExcuseManager";
             this.Text = "Gerenciador de Desculpas";
             this.ResumeLayout(false);

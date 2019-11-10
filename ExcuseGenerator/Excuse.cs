@@ -1,8 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
+
+// Cada desculpa é salva num arquivo de texto separado.
+// A primeira linha do arquivo é uma desculpa, a segunda
+// é o resultado e a terceira é a dta quando foi usada
+// pela última vez (use o método ToString() de DateTimePicker()
 
 namespace ExcuseManager
 {
@@ -32,12 +34,22 @@ namespace ExcuseManager
 
         public void OpenFile(string path)
         {
-
+            using (var sr = new StreamReader(path))
+            {
+                Description = sr.ReadLine();
+                Results = sr.ReadLine();
+                LastUsed = Convert.ToDateTime(sr.ReadLine());
+            }
         }
 
-        public void Save(string excuse)
+        public void Save(string path)
         {
-            
+            using (var sw = new StreamWriter(path))
+            {
+                sw.WriteLine(Description);
+                sw.WriteLine(Results);
+                sw.WriteLine(LastUsed);
+            }
         }
     }
 }

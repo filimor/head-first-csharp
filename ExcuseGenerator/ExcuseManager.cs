@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
 namespace ExcuseManager
@@ -31,7 +25,7 @@ namespace ExcuseManager
                 dtpLastUsed.Value = _currentExcuse.LastUsed;
                 if (!string.IsNullOrEmpty(_currentExcuse.ExcusePath))
                 {
-                    dtpLastUsed.Text = File.GetLastWriteTime(_currentExcuse.ExcusePath).ToString();   
+                    dtpLastUsed.Text = File.GetLastWriteTime(_currentExcuse.ExcusePath).ToString();
                 }
                 Text = "Gerenciador de Desculpas";
             }
@@ -44,12 +38,7 @@ namespace ExcuseManager
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            // Cada desculpa é salva num arquivo de texto separado.
-            // A primeira linha do arquivo é uma desculpa, a segunda
-            // é o resultado e a terceira é a dta quando foi usada
-            // pela última vez (use o método ToString() de DateTimePicker()
-
-            if(txtExcuse.Text?.Length == 0 || txtResults.Text?.Length == 0)
+            if (txtExcuse.Text?.Length == 0 || txtResults.Text?.Length == 0)
             {
                 MessageBox.Show("Por favor, especifique uma desculpa e um resultado.",
                     "Impossível salvar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -62,6 +51,9 @@ namespace ExcuseManager
             saveFileDialog.ShowDialog();
             if (!string.IsNullOrWhiteSpace(saveFileDialog.FileName))
             {
+                _currentExcuse.Description = txtExcuse.Text;
+                _currentExcuse.Results = txtResults.Text;
+                _currentExcuse.LastUsed = dtpLastUsed.Value;
                 _currentExcuse.Save(saveFileDialog.FileName);
             }
             MessageBox.Show("Desculpa Salva");
@@ -123,7 +115,7 @@ namespace ExcuseManager
                 return;
             }
 
-            _currentExcuse = new Excuse(random);
+            _currentExcuse = new Excuse(_random);
             UpdateForm(false);
         }
     }
