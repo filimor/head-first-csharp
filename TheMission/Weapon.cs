@@ -3,18 +3,21 @@ using System.Drawing;
 
 namespace TheMission
 {
+    /// <summary>
+    /// Weapon herda de Mover porque ela usa seus métodos Nearby() e Move() em DamageEnemy().
+    /// </summary>
     public abstract class Weapon : Mover
     {
-        // Weapon herda de Mover porque ela usa seus métodos
-        // Nearby() e Move() em DamageEnemy().
-
         protected Game game;
 
-        // Uma arma recolhida não deveria mais ser exibida. O formulário
-        // pode usar esse acessador get para descobrir isso.
+        /// <summary>
+        /// Uma arma recolhida não deveria mais ser exibida. O formulário pode usar esse acessador get para descobrir isso.
+        /// </summary>
         public bool PickedUp { get; private set; }
 
-        // Toda arma possui uma posição na masmorra do jogo.
+        /// <summary>
+        /// Posição da arma na masmorra do jogo.
+        /// </summary>
         new public Point Location { get; }
 
         // Cada classe de arma precisa implementar uma propriedade Name e
@@ -28,6 +31,9 @@ namespace TheMission
             PickedUp = false;
         }
 
+        /// <summary>
+        /// Pega a arma e altera sua propriedade PickedUp para true.
+        /// </summary>
         public void PickUpWeapon()
         {
             PickedUp = true;
@@ -37,13 +43,16 @@ namespace TheMission
         // por isso implementam o método Attack de forma diferente.
         public abstract void Attack(Direction direction, Random random);
 
+        /// <summary>
+        /// Chamado por Attack(). Tentar achar um inimigo em certa direção e raio. Se achar, chama o método Hit() do inimigo.
+        /// </summary>
+        /// <param name="direction">Direção a procurar o inimigo.</param>
+        /// <param name="radius">Raio de procura.</param>
+        /// <param name="damage">Dano causado.</param>
+        /// <param name="random">Variável do tipo aleatória.</param>
+        /// <returns>Retorna true se algum inimigo for encontrado.</returns>
         protected bool DamageEnemy(Direction direction, int radius, int damage, Random random)
         {
-            // O método DamageEnemy() é chamado por Attack(). Ele tenta achar
-            // um inimigo em uma certa direção e raio. Se ele achar, chama o
-            // método Hit() do inimigo e retorna true. Se nenhum inimigo for
-            // encontrado, ele retorna false.
-
             Point target = _game.PlayerLocation;
             for (int distance = 0; distance < radius; distance++)
             {
