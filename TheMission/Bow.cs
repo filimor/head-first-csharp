@@ -19,6 +19,8 @@ namespace TheMission
             // direções (porque o jogador a movimenta num grande arco),
             // quando o jogador usa o arco em uma direção, ele apenas atira
             // nessa única direção.
+
+            DamageEnemy(direction, 30, 1, random);
         }
     }
 }

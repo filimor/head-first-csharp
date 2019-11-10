@@ -24,6 +24,54 @@ namespace TheMission
 
             // Pense cuidadosamente sobre isso... o que é a direita da esquerda?
             // O que é a esquerda da direção para cima?
+
+            switch (direction)
+            {
+                case Direction.Up:
+                    if (DamageEnemy(Direction.Up, 10, 3, random))
+                    {
+                        return;
+                    }
+                    if (DamageEnemy(Direction.Left, 10, 3, random))
+                    {
+                        return;
+                    }
+                    DamageEnemy(Direction.Right, 10, 3, random);
+                    break;
+                case Direction.Down:
+                    if (DamageEnemy(Direction.Down, 10, 3, random))
+                    {
+                        return;
+                    }
+                    if (DamageEnemy(Direction.Right, 10, 3, random))
+                    {
+                        return;
+                    }
+                    DamageEnemy(Direction.Left, 10, 3, random);
+                    break;
+                case Direction.Right:
+                    if (DamageEnemy(Direction.Right, 10, 3, random))
+                    {
+                        return;
+                    }
+                    if (DamageEnemy(Direction.Up, 10, 3, random))
+                    {
+                        return;
+                    }
+                    DamageEnemy(Direction.Down, 10, 3, random);
+                    break;
+                case Direction.Left:
+                    if (DamageEnemy(Direction.Left, 10, 3, random))
+                    {
+                        return;
+                    }
+                    if (DamageEnemy(Direction.Down, 10, 3, random))
+                    {
+                        return;
+                    }
+                    DamageEnemy(Direction.Up, 10, 3, random);
+                    break;
+            }
         }
     }
 }
