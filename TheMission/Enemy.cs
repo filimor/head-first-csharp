@@ -16,6 +16,8 @@ namespace TheMission
         // deve ser visível na masmorra do jogo.
         public bool Dead => HitPoints <= 0;
 
+        new public Point Location { get; private set; }
+
         protected Enemy(Game game, Point location, Rectangle boundaries, int hitPoints) : base(game, location)
         {
             HitPoints = hitPoints;
@@ -46,9 +48,9 @@ namespace TheMission
             // ao inimigo e retornará uma enum Direction que informa em qual
             // direção o inimigo precisa se mover para se aproximar do jogador.
 
-            return playerLocation.X > _location.X + 10
-                ? Direction.Right : playerLocation.X < _location.X - 10
-                ? Direction.Left : playerLocation.Y < _location.Y - 10
+            return playerLocation.X > Location.X + 10
+                ? Direction.Right : playerLocation.X < Location.X - 10
+                ? Direction.Left : playerLocation.Y < Location.Y - 10
                 ? Direction.Up : Direction.Down;
         }
     }

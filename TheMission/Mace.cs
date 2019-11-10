@@ -5,11 +5,11 @@ namespace TheMission
 {
     public class Mace : Weapon
     {
+        public override string Name => "Bastão";
+
         public Mace(Game game, Point location) : base(game, location)
         {
         }
-
-        public override string Name => "Bastão";
 
         public override void Attack(Direction direction, Random random)
         {

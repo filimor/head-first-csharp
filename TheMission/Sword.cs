@@ -5,11 +5,11 @@ namespace TheMission
 {
     public class Sword : Weapon
     {
+        public override string Name => "Espada";
+
         public Sword(Game game, Point location) : base(game, location)
         {
         }
-
-        public override string Name => "Espada";
 
         public override void Attack(Direction direction, Random random)
         {

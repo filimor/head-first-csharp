@@ -1,16 +1,16 @@
 ﻿using System;
+using System.Drawing;
 
 namespace TheMission
 {
     public class RedPotion : Weapon, IPotion
     {
-        protected RedPotion(Game game, System.Drawing.Point location) : base(game, location)
+        public override string Name => "Poção Vermelha";
+        public bool Used { get; }
+
+        protected RedPotion(Game game, Point location) : base(game, location)
         {
         }
-
-        public override string Name => "Poção Vermelha";
-
-        public bool Used { get; }
 
         public override void Attack(Direction direction, Random random)
         {

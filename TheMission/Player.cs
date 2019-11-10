@@ -11,6 +11,7 @@ namespace TheMission
         private Weapon _eqquipedWeapon;
 
         public int HitPoints { get; set; }
+        new public Point Location { get; private set; }
         public List<Weapon> Inventory { get; set; } = new List<Weapon>();
 
         public List<string> Weapons
@@ -34,10 +35,6 @@ namespace TheMission
             HitPoints = 10;
             // Substituir o construtor por uma atribuição de valor na propriedade?
         }
-
-        //public void Attack(Direction direction, Random random)
-        //{
-        //}
 
         public void Hit(int health, Random random)
         {
@@ -85,7 +82,7 @@ namespace TheMission
             // Game chama o método Move() de Player quando um dos botões de
             // movimento do formulário é clicado.
 
-            _location = Move(direction, _game.Boundaries);
+            Location = Move(direction, _game.Boundaries);
             if (!_game.WeaponInRoom.PickedUp)
             {
                 // Veja se tem uma arma por perto, se for possivel, pegue-a.

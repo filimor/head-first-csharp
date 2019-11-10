@@ -6,11 +6,9 @@ namespace TheMission
     public abstract class Mover
     {
         private const int MOVEINTERVAL = 10;
-
-        protected Point _location;
         protected Game _game;
 
-        public Point Location => _location;
+        protected Point Location { get; private set; }
 
         protected Mover(Game game, Point location)
         {
@@ -18,7 +16,7 @@ namespace TheMission
             // e uma posição atual.
 
             _game = game;
-            _location = location;
+            Location = location;
         }
 
         public bool Nearby(Point locationToCheck, int distance)
@@ -28,8 +26,8 @@ namespace TheMission
             // Se eles estierem a uma distância - definida por distance - de cada um,
             // ele retorna true; senão, retorna false.
 
-            return Math.Abs(_location.X - locationToCheck.X) < distance &&
-                Math.Abs(_location.Y - locationToCheck.Y) < distance;
+            return Math.Abs(Location.X - locationToCheck.X) < distance &&
+                Math.Abs(Location.Y - locationToCheck.Y) < distance;
         }
 
         public virtual Point Move(Direction direction, Rectangle boundaries)
@@ -39,7 +37,7 @@ namespace TheMission
             // Tenta move-se um passo em uma direção. Se conseguir, retorna o novo
             // Point. Se chegar em um dos limites, retorna o Point original.
 
-            Point newLocation = _location;
+            Point newLocation = Location;
             switch (direction)
             {
                 case Direction.Up:

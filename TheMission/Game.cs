@@ -6,12 +6,12 @@ namespace TheMission
 {
     public class Game
     {
-        private readonly Player _player; // o formulário interage com Player apenas através dos métodos em Game
+        private readonly Player _player; // O formulário interage com Player apenas através dos métodos em Game.
 
         public int Level { get; private set; }
-        public Rectangle Boundaries { get; } // Rectangle possui os campos Top, Bottom, Left e Right
-        public List<Enemy> Enemies { get; set; } // Públicas desde que as classes estejam bem encapsuladas
-        public Weapon WeaponInRoom { get; set; } // Públicas desde que as classes estejam bem encapsuladas
+        public Rectangle Boundaries { get; } // Rectangle possui os campos Top, Bottom, Left e Right.
+        public List<Enemy> Enemies { get; set; } // Públicas desde que as classes estejam bem encapsuladas.
+        public Weapon WeaponInRoom { get; set; } // Públicas desde que as classes estejam bem encapsuladas.
 
         public Point PlayerLocation => _player.Location;
         public int PlayerHitPoints => _player.HitPoints;
@@ -65,7 +65,7 @@ namespace TheMission
 
         public void Attack(Direction direction, Random random)
         {
-            // Attack() é quase igual a Move(). O jogador ataca e todos o
+            // Attack() é quase igual a Move(). O jogador ataca e todos os
             // inimigos têm sua vez de jogar.
 
             _player.Attack(direction, random);

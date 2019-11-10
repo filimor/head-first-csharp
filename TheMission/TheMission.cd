@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="TheMission.Bat">
+    <Position X="26.5" Y="7.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Bat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheMission.BluePotion">
+    <Position X="9" Y="7.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAIAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>BluePotion.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TheMission.Bow">
+    <Position X="13.25" Y="7.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Bow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheMission.Enemy">
+    <Position X="30.75" Y="4" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAgKAAAAAAAAIABAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Enemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheMission.FormMission">
+    <Position X="46.25" Y="0.5" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AgiCyAACgCGAQEECQACAsBFCJATAAAQQOIAKcAABQGU=</HashCode>
+      <FileName>FormMission.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheMission.Game">
+    <Position X="42.5" Y="0.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAgAAIAACAIAAAgACAAAAIEABAEhCAAAABAAAAA=</HashCode>
+      <FileName>Game.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheMission.Ghost">
+    <Position X="31" Y="7.75" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Ghost.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheMission.Ghoul">
+    <Position X="35.75" Y="7.75" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Ghoul.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheMission.Mace">
+    <Position X="0.5" Y="7.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mace.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheMission.Mover">
+    <Position X="18.25" Y="0.5" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgABIAAAAAAAAIAAAAAAAAAAAAAACAAAAAAAAQ=</HashCode>
+      <FileName>Mover.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheMission.Player">
+    <Position X="21.75" Y="4" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAABAAAIABAAAAIBAAAAgAAAAAgAAABA=</HashCode>
+      <FileName>Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheMission.Program">
+    <Position X="43.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheMission.RedPotion">
+    <Position X="17.5" Y="7.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAIAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>RedPotion.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TheMission.Sword">
+    <Position X="4.75" Y="7.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sword.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheMission.Weapon">
+    <Position X="8.25" Y="4" Width="5.25" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAIAAAQAAIEAAAAIAAAAAAABAAA=</HashCode>
+      <FileName>Weapon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheMission.Properties.Resources">
+    <Position X="39" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AgAACAAAAAAAAAAAAAAFEgAAAQAAAAQBQQAAEAIAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheMission.Properties.Settings">
+    <Position X="43.25" Y="7.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="TheMission.IPotion">
+    <Position X="37" Y="2.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>IPotion.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="TheMission.Direction">
+    <Position X="37" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAAAAI=</HashCode>
+      <FileName>Direction.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
