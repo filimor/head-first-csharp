@@ -11,6 +11,7 @@ namespace TheMission
     {
         private Weapon _eqquipedWeapon;
         private const int WEAPONCATCHRADIUS = 10;
+        private Rectangle _boundaries;
 
         public int HitPoints { get; set; } = 10;
         new public Point Location { get; private set; }
@@ -35,6 +36,7 @@ namespace TheMission
         public Player(Game game, Point location, Rectangle boundaries) : base(game, location)
         {
             // HitPoints = 10;
+            _boundaries = boundaries;
         }
 
         /// <summary>
@@ -83,11 +85,14 @@ namespace TheMission
         public void Attack(Direction direction, Random random)
         {
             // O método é chamado quando um dos botões de ataque do formulário é clicado.
- 
-            _eqquipedWeapon.Attack(direction, random);
-            if(_eqquipedWeapon is IPotion)
+
+            if (_eqquipedWeapon != null)
             {
-                Inventory.Remove(_eqquipedWeapon);
+                _eqquipedWeapon.Attack(direction, random);
+                if (_eqquipedWeapon is IPotion)
+                {
+                    Inventory.Remove(_eqquipedWeapon);
+                }
             }
         }
 
@@ -101,7 +106,7 @@ namespace TheMission
             // movimento do formulário é clicado.
 
             Weapon weaponInRoom = _game.WeaponInRoom;
-            Location = Move(direction, _game.Boundaries);
+            Location = Move(direction, _boundaries);
             if (!weaponInRoom.PickedUp)
             {
                 // Veja se tem uma arma por perto, se for possivel, pegue-a.
@@ -126,10 +131,9 @@ namespace TheMission
                             Equip(weapon.Name);
                         }
                     }
-                    weaponInRoom.PickUpWeapon();
+                    weaponInRoom.PickupWeapon();
                 }
             }
-
         }
     }
 }

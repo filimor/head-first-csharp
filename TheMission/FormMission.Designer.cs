@@ -89,7 +89,6 @@
             this.picPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picPlayer.TabIndex = 0;
             this.picPlayer.TabStop = false;
-            this.picPlayer.Visible = false;
             // 
             // picSword
             // 
@@ -254,7 +253,7 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
@@ -278,9 +277,9 @@
             // 
             // lblGhoulHitPoints
             // 
-            this.lblGhoulHitPoints.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblGhoulHitPoints.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblGhoulHitPoints.AutoSize = true;
-            this.lblGhoulHitPoints.Location = new System.Drawing.Point(88, 133);
+            this.lblGhoulHitPoints.Location = new System.Drawing.Point(63, 133);
             this.lblGhoulHitPoints.Name = "lblGhoulHitPoints";
             this.lblGhoulHitPoints.Size = new System.Drawing.Size(56, 13);
             this.lblGhoulHitPoints.TabIndex = 7;
@@ -288,19 +287,20 @@
             // 
             // lblGhoul
             // 
-            this.lblGhoul.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblGhoul.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblGhoul.AutoSize = true;
-            this.lblGhoul.Location = new System.Drawing.Point(12, 133);
+            this.lblGhoul.Location = new System.Drawing.Point(21, 133);
             this.lblGhoul.Name = "lblGhoul";
             this.lblGhoul.Size = new System.Drawing.Size(36, 13);
             this.lblGhoul.TabIndex = 6;
             this.lblGhoul.Text = "Zumbi";
+            this.lblGhoul.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblGhostHitPoints
             // 
-            this.lblGhostHitPoints.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblGhostHitPoints.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblGhostHitPoints.AutoSize = true;
-            this.lblGhostHitPoints.Location = new System.Drawing.Point(80, 93);
+            this.lblGhostHitPoints.Location = new System.Drawing.Point(63, 93);
             this.lblGhostHitPoints.Name = "lblGhostHitPoints";
             this.lblGhostHitPoints.Size = new System.Drawing.Size(73, 13);
             this.lblGhostHitPoints.TabIndex = 5;
@@ -308,19 +308,20 @@
             // 
             // lblGhost
             // 
-            this.lblGhost.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblGhost.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblGhost.AutoSize = true;
-            this.lblGhost.Location = new System.Drawing.Point(3, 93);
+            this.lblGhost.Location = new System.Drawing.Point(4, 93);
             this.lblGhost.Name = "lblGhost";
             this.lblGhost.Size = new System.Drawing.Size(53, 13);
             this.lblGhost.TabIndex = 4;
             this.lblGhost.Text = "Fantasma";
+            this.lblGhost.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblBatHitPoints
             // 
-            this.lblBatHitPoints.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblBatHitPoints.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblBatHitPoints.AutoSize = true;
-            this.lblBatHitPoints.Location = new System.Drawing.Point(82, 53);
+            this.lblBatHitPoints.Location = new System.Drawing.Point(63, 53);
             this.lblBatHitPoints.Name = "lblBatHitPoints";
             this.lblBatHitPoints.Size = new System.Drawing.Size(69, 13);
             this.lblBatHitPoints.TabIndex = 3;
@@ -328,19 +329,20 @@
             // 
             // lblBat
             // 
-            this.lblBat.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblBat.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblBat.AutoSize = true;
-            this.lblBat.Location = new System.Drawing.Point(5, 53);
+            this.lblBat.Location = new System.Drawing.Point(8, 53);
             this.lblBat.Name = "lblBat";
             this.lblBat.Size = new System.Drawing.Size(49, 13);
             this.lblBat.TabIndex = 2;
             this.lblBat.Text = "Morcego";
+            this.lblBat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblPlayerHitPoints
             // 
-            this.lblPlayerHitPoints.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblPlayerHitPoints.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblPlayerHitPoints.AutoSize = true;
-            this.lblPlayerHitPoints.Location = new System.Drawing.Point(84, 13);
+            this.lblPlayerHitPoints.Location = new System.Drawing.Point(63, 13);
             this.lblPlayerHitPoints.Name = "lblPlayerHitPoints";
             this.lblPlayerHitPoints.Size = new System.Drawing.Size(65, 13);
             this.lblPlayerHitPoints.TabIndex = 1;
@@ -348,13 +350,14 @@
             // 
             // lblPlayer
             // 
-            this.lblPlayer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblPlayer.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblPlayer.AutoSize = true;
-            this.lblPlayer.Location = new System.Drawing.Point(7, 13);
+            this.lblPlayer.Location = new System.Drawing.Point(12, 13);
             this.lblPlayer.Name = "lblPlayer";
             this.lblPlayer.Size = new System.Drawing.Size(45, 13);
             this.lblPlayer.TabIndex = 0;
             this.lblPlayer.Text = "Jogador";
+            this.lblPlayer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblMove
             // 

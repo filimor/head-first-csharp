@@ -131,7 +131,7 @@ namespace TheMission
             weaponControl.Location = _game.WeaponInRoom.Location;
             // Todo nível tem uma arma. Se ela foi recolhida, precisamos deixar
             // seu ícone invisível.
-            weaponControl.Visible = _game.WeaponInRoom.PickedUp;
+            weaponControl.Visible = !_game.WeaponInRoom.PickedUp;
             if (_game.PlayerHitPoints <= 0)
             {
                 MessageBox.Show("Você morreu!", "Fim de jogo",
@@ -282,7 +282,7 @@ namespace TheMission
         // preparar uma poção e altere o texto no botão Para Cima pra "Beber".
         private void BtnAttackUp_Click(object sender, EventArgs e)
         {
-            _game.Attack(Direction.Up, _random); 
+            _game.Attack(Direction.Up, _random);
             UpdateCharacters();
         }
 

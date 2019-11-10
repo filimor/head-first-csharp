@@ -23,23 +23,23 @@ namespace TheMission
                 Direction playerDirection = FindPlayerDirection(_game.PlayerLocation);
                 if (random.Next(1) == 1)
                 {
-                    Move(playerDirection,_game.Boundaries);
+                    Location = Move(playerDirection,_game.Boundaries);
                 }
                 else
                 {
                     switch (random.Next(3))
                     {
+                        case 0:
+                            Location = Move(Direction.Up, _game.Boundaries);
+                            break;
                         case 1:
-                            Move(Direction.Up, _game.Boundaries);
+                            Location = Move(Direction.Down, _game.Boundaries);
                             break;
                         case 2:
-                            Move(Direction.Down, _game.Boundaries);
+                            Location = Move(Direction.Right, _game.Boundaries);
                             break;
                         case 3:
-                            Move(Direction.Right, _game.Boundaries);
-                            break;
-                        case 4:
-                            Move(Direction.Left, _game.Boundaries);
+                            Location = Move(Direction.Left, _game.Boundaries);
                             break;
                     }
                 }

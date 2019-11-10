@@ -88,7 +88,6 @@ namespace TheMission
                     }
                     DamageEnemy(Direction.Down, 10, 3, random);
                     break;
-
             }
         }
     }

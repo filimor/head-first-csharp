@@ -22,7 +22,7 @@ namespace TheMission
                 Direction playerDirection = FindPlayerDirection(_game.PlayerLocation);
                 if (random.Next(2) == 2)
                 {
-                    Move(playerDirection, _game.Boundaries);
+                    Location = Move(playerDirection, _game.Boundaries);
                 }
             }
 

@@ -16,14 +16,17 @@ namespace TheMission
         /// Nível atual.
         /// </summary>
         public int Level { get; private set; }
+
         /// <summary>
         /// Limites e dimensões da masmorra.
         /// </summary>
         public Rectangle Boundaries { get; }
+
         /// <summary>
         /// Lista de inimigos do nível atual.
         /// </summary>
         public List<Enemy> Enemies { get; set; }
+
         /// <summary>
         /// Arma disponível no nível atual.
         /// </summary>
@@ -33,10 +36,12 @@ namespace TheMission
         /// Localização atual do jogador.
         /// </summary>
         public Point PlayerLocation => _player.Location;
+
         /// <summary>
         /// Pontos de vida do jogador.
         /// </summary>
         public int PlayerHitPoints => _player.HitPoints;
+
         /// <summary>
         /// Lista de armas e itens do jogador.
         /// </summary>

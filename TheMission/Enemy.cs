@@ -20,7 +20,7 @@ namespace TheMission
         /// <summary>
         /// Localização atual do inimigo.
         /// </summary>
-        new public Point Location { get; private set; }
+        new public Point Location { get; set; }
 
         protected Enemy(Game game, Point location, Rectangle boundaries, int hitPoints) : base(game, location)
         {

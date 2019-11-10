@@ -58,7 +58,7 @@ namespace TheMission
                     break;
 
                 case Direction.Down:
-                    if (newLocation.Y - MOVEINTERVAL <= boundaries.Bottom)
+                    if (newLocation.Y + MOVEINTERVAL <= boundaries.Bottom)
                     {
                         newLocation.Y += MOVEINTERVAL;
                     }
@@ -78,7 +78,9 @@ namespace TheMission
                     }
                     break;
             }
-            return newLocation;
+
+            Location = newLocation;
+            return Location;
         }
     }
 }

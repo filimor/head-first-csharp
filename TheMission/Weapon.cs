@@ -34,7 +34,7 @@ namespace TheMission
         /// <summary>
         /// Pega a arma e altera sua propriedade PickedUp para true.
         /// </summary>
-        public void PickUpWeapon()
+        public void PickupWeapon()
         {
             PickedUp = true;
         }
