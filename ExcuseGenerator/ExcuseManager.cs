@@ -14,7 +14,12 @@ namespace ExcuseManager
         public FormExcuseManager()
         {
             InitializeComponent();
-            _currentExcuse = new Excuse();
+            _currentExcuse = new Excuse
+            {
+                Description = txtDescription.Text,
+                Results = txtResults.Text,
+                LastUsed = dtpLastUsed.Value
+            };
         }
 
         private void UpdateForm(bool changed)
@@ -39,18 +44,18 @@ namespace ExcuseManager
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            if (CheckChanged())
+            saveFileDialog.InitialDirectory = _currentPath;
+            //saveFileDialog.Filter = "Arquivos de Texto (*.txt)|*.txt|" +
+            //    "Todos os Arquivos (*.*)|*.*";
+            //saveFileDialog.FileName = txtDescription.Text + ".txt";
+            saveFileDialog.Filter = "Arquivos de desculpa (*.excuse)|*.excuse|" +
+                "Todos os Arquivos (*.*)|*.*";
+            saveFileDialog.FileName = txtDescription.Text + ".excuse";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                saveFileDialog.InitialDirectory = _currentPath;
-                saveFileDialog.Filter = "Arquivos de Texto (*.txt)|*.txt|" +
-                    "Todos os Arquivos (*.*)|*.*";
-                saveFileDialog.FileName = txtDescription.Text + ".txt";
-                if (saveFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    _currentExcuse.Save(saveFileDialog.FileName);
-                    MessageBox.Show("Desculpa Salva");
-                    UpdateForm(false);
-                }
+                _currentExcuse.Save(saveFileDialog.FileName);
+                MessageBox.Show("Desculpa Salva");
+                UpdateForm(false);
             }
         }
 
@@ -90,14 +95,16 @@ namespace ExcuseManager
             if (CheckChanged())
             {
                 openFileDialog.InitialDirectory = _currentPath;
-                saveFileDialog.Filter = "Arquivos de Texto (*.txt)|*.txt|" +
+                //saveFileDialog.Filter = "Arquivos de Texto (*.txt)|*.txt|" +
+                //    "Todos os Arquivos (*.*)|*.*";
+                //saveFileDialog.FileName = txtDescription.Text + ".txt";
+                saveFileDialog.Filter = "Arquivos de desculpa (*.excuse)|*.excuse|" +
                     "Todos os Arquivos (*.*)|*.*";
-                saveFileDialog.FileName = txtDescription.Text + ".txt";
+                saveFileDialog.FileName = txtDescription.Text + ".excuse";
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     _currentExcuse.OpenFile(openFileDialog.FileName);
                     UpdateForm(false);
-                    MessageBox.Show("Desculpa salva");
                 }
             }
         }
