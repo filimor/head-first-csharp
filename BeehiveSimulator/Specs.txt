@@ -1,0 +1,25 @@
+﻿Estrutura:
+Formulário Principal
+	Objeto World
+		Objeto Hive
+		Lista de objetos Flower
+		Lista de objetos Bee 
+
+- O objeto World (mundo) mantém registro detudo o que acontece no simulador: 
+estado da colméia, cada abelha e flor.
+- Cada abelha conhece sua própria posição (fora da colméia no ponto 174, 36,
+por exemplo) e seu estado ("voando para uma flor", "recolhendo néctar",
+"fazendo mel").
+
+PARTE 1
+1. Desenvolver uma classe Flower que envelhece, produz néctar e, eventualmente,
+murcha e morre.
+2. Criar uma classe Bee com diversos estados diferentes (recolher néctar de uma
+flor, retornar à colméia, etc.) e saberá o que fazer de acordo com esse estado.
+3. Produzir uma classe Hive que terá uma entrada, uma saída, um local para as
+abelhas nascerem e uma área para fabricação para converter néctar coletado em
+mel.
+4. Fazer uma classe World (mundo que gerenciará a colméia, as flores e as
+abelhas a qualquer momento).
+5. Associar tudo num formulário principal que calculará estatísticas se baseando
+nas demais classes e manterá o mundo funcionando.
