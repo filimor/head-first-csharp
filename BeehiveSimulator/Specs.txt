@@ -5,11 +5,16 @@ Formulário Principal
 		Lista de objetos Flower
 		Lista de objetos Bee 
 
-- O objeto World (mundo) mantém registro detudo o que acontece no simulador: 
+- O objeto World mantém registro detudo o que acontece no simulador: 
 estado da colméia, cada abelha e flor.
 - Cada abelha conhece sua própria posição (fora da colméia no ponto 174, 36,
 por exemplo) e seu estado ("voando para uma flor", "recolhendo néctar",
 "fazendo mel").
+- O objeto Hive controla quanto mel está armazenado. É preciso usar mel para
+a colméia funcionar e criar novas abelhas. Além disso, a fábrica deve
+empregar o néctar coletado pelas abelhas e transformá-lo em mel.
+- Para cada unidade de néctar que entra, 0.25 unidades de mel podem ser
+criadas.
 
 PARTE 1
 1. Desenvolver uma classe Flower que envelhece, produz néctar e, eventualmente,

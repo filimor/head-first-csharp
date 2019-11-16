@@ -9,7 +9,7 @@ namespace BeehiveSimulator
         private const int MOVERATE = 3;
         private const double MINIMUMFLOWERNECTAR = 1.5; // Como ela sabe quais flores podem ser coletadas.
         private const int CAREERSPAN = 1000;
-        private const double MAKEHONEYRATE = 0.5;
+        private const double ADDNECTARRATE = 0.5;
 
         private int _id; // Cada abelha receberá um número exclusivo de identificação.
         private Flower _destinationFlower;
@@ -67,7 +67,7 @@ namespace BeehiveSimulator
                     }
                     break;
                 case BeeState.MakingHoney:
-                    if (NectarCollected < MAKEHONEYRATE)
+                    if (NectarCollected < ADDNECTARRATE)
                     {
                         NectarCollected = 0;
                         CurrentState = BeeState.Idle;
