@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BeehiveSimulator
 {
@@ -38,7 +34,7 @@ namespace BeehiveSimulator
             // coletado. Adicionar a quantidade colhida a NectarHarvested, que manterá
             // o total de néctar coletado de cada flor em particular.
 
-            if ( NECTARGATHEREDPERTURN > Nectar)
+            if (NECTARGATHEREDPERTURN > Nectar)
             {
                 return 0;
             }
@@ -53,7 +49,7 @@ namespace BeehiveSimulator
         public void Go()
         {
             // Faz as flores funcionarem. Cada vez que esse método for chamado, um ciclo
-            // se passará, então atualize a idade da flor corretamente. Ver se a idade é 
+            // se passará, então atualize a idade da flor corretamente. Ver se a idade é
             // maior do que o tempo de vida, e se for o caso, a flor deve morrer.
             // Se a flor continuar viva, será preciso adicionar a quantidade de néctar
             // que cada flor produz num ciclo. Não ultrapassar o limite de néctar que
