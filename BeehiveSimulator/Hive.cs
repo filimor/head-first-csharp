@@ -41,20 +41,46 @@ namespace BeehiveSimulator
 
         public bool AddHoney(double nectar)
         {
+            double HoneyToAdd = nectar + NECTARTOHONEYRATIO;
+            if (HoneyToAdd + Honey > MAXIMUMHONEY)
+            {
+                return false;
+            }
+            Honey += HoneyToAdd;
             return true;
         }
 
         public bool ConsumeHoney(double amount)
         {
-            return true;
+            if (amount > Honey)
+            {
+                return false;
+            }
+            else
+            {
+                Honey -= amount;
+                return true;
+            }
         }
 
-        public void AddBee(Random random)
+        private void AddBee(Random random)
         {
+            _beeCount++;
+            int r1 = random.Next(100) - 50;
+            int r2 = random.Next(100) - 50;
+            var startPoint = new Point(_locations["Nursery"].X + r1,
+                _locations["Nursery"].Y + r2);
+            var newBee = new Bee(_beeCount, startPoint);
+            // Adicionar abelha ao sistema.
         }
 
         public void Go(Random random)
         {
+            if (Honey > MINIMUMHONEYFORCREATINGBEES && random.Next(10) == 1)
+            {
+                AddBee(random);
+            }
+            // Adicionar restrição para o número máximo de abelhas.
         }
 
         public Point GetLocation(string location)
