@@ -23,6 +23,9 @@ namespace BeehiveSimulator
         public BeeState CurrentState { get; private set; } = BeeState.Idle;
         public Point Location => _location;
 
+        public delegate void BeeMessage(int id, string message);
+        public BeeMessage MessageSender;
+
         public Bee(int id, Point location, Hive hive, World world)
         {
             _id = id;
@@ -34,6 +37,7 @@ namespace BeehiveSimulator
         public void Go(Random random)
         {
             Age++;
+            BeeState oldState = CurrentState;
             switch (CurrentState)
             {
                 case BeeState.Idle:
@@ -114,6 +118,11 @@ namespace BeehiveSimulator
                 case BeeState.Retired:
                     // Não faz nada, já que está aposentada.
                     break;
+            }
+
+            if(oldState!=CurrentState && MessageSender!= null)
+            {
+                MessageSender(_id, CurrentState.ToString());
             }
         }
 

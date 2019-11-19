@@ -19,11 +19,14 @@ namespace BeehiveSimulator
         private World _world;
 
         public double Honey { get; private set; } = INITIALHONEY;
-        
 
-        public Hive(Random random, World world)
+        public Bee.BeeMessage MessageSender;
+
+        public Hive(Random random, World world,
+            Bee.BeeMessage messageSender)
         {
             InitializeLocations();
+            MessageSender = messageSender;
             random = new Random();
             _world = world;
             for (int i = 1; i <= INITIALBEES; i++)
@@ -67,20 +70,20 @@ namespace BeehiveSimulator
 
         private void AddBee(Random random)
         {
-            
-                _beeCount++;
-                int r1 = random.Next(100) - 50;
-                int r2 = random.Next(100) - 50;
-                var startPoint = new Point(_locations["Nursery"].X + r1,
-                    _locations["Nursery"].Y + r2);
-                var newBee = new Bee(_beeCount, startPoint, this, _world);
-                _world.Bees.Add(newBee);
+            _beeCount++;
+            int r1 = random.Next(100) - 50;
+            int r2 = random.Next(100) - 50;
+            var startPoint = new Point(_locations["Nursery"].X + r1,
+                _locations["Nursery"].Y + r2);
+            var newBee = new Bee(_beeCount, startPoint, this, _world);
+            newBee.MessageSender += MessageSender;
+            _world.Bees.Add(newBee);
         }
 
         public void Go(Random random)
         {
             if (_world.Bees.Count < MAXIMUMBEES &&
-                        Honey > MINIMUMHONEYFORCREATINGBEES && 
+                        Honey > MINIMUMHONEYFORCREATINGBEES &&
                         random.Next(10) == 1)
             {
                 AddBee(random);

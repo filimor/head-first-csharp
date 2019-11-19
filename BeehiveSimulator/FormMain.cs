@@ -14,7 +14,7 @@ namespace BeehiveSimulator
         public FormMain()
         {
             InitializeComponent();
-            _world = new World();
+            _world = new World(new Bee.BeeMessage(SendMessage));
             tmrTimer.Interval = 50;
             tmrTimer.Tick += RunFrame;
             tmrTimer.Enabled = false;
@@ -34,7 +34,34 @@ namespace BeehiveSimulator
             lblNectarInFlowers.Text = nectar.ToString("F3");
             lblFramesRun.Text = _framesRun.ToString();
             double milliSeconds = frameDuration.TotalMilliseconds;
-            lblFrameRate.Text = milliSeconds != 0.0 ? $"{1000 / milliSeconds:F0} ({milliSeconds:F1} ms" : "N/A";
+            lblFrameRate.Text = milliSeconds != 0.0 ? $"{1000 / milliSeconds:F0} ({milliSeconds:F1} ms)" : "N/A";
+        }
+
+        private void SendMessage(int id, string message)
+        {
+            string status = string.Empty;
+            switch (message)
+            {
+                case "Idle":
+                    status = "Ociosa.";
+                    break;
+                case "FlyingToFlower":
+                    status = "Voando para uma flor.";
+                    break;
+                case "GatheringNectar":
+                    status = "Obtendo néctar.";
+                    break;
+                case "ReturningToHive":
+                    status = "Retornando para a colméia.";
+                    break;
+                case "MakingHoney":
+                    status = "Fabricando mel.";
+                    break;
+                case "Retired":
+                    status = "Aposentada.";
+                    break;
+            }
+            sslblSimulationStatus.Text = $"Abelha {id}: {status}";
         }
 
         private void RunFrame(object sender, EventArgs e)
@@ -60,12 +87,12 @@ namespace BeehiveSimulator
                 tmrTimer.Stop();
                 tsbtnStartSimulation.Text = "Recomeçar Simulação";
                 sslblSimulationStatus.Text = "Simulação pausada.";
-            }           
+            }
         }
 
         private void TsbtnReset_Click(object sender, EventArgs e)
         {
-            _world = new World();
+            _world = new World(new Bee.BeeMessage(SendMessage));
             _framesRun = 0;
             if (!tmrTimer.Enabled)
             {

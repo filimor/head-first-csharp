@@ -16,10 +16,10 @@ namespace BeehiveSimulator
         public List<Bee> Bees = new List<Bee>();
         public List<Flower> Flowers = new List<Flower>();
 
-        public World()
+        public World(Bee.BeeMessage messageSender)
         {
             var random = new Random();
-            Hive = new Hive(random, this);
+            Hive = new Hive(random, this, messageSender);
             for (int i = 0; i < 10; i++)
             {
                 AddFlower(random);
