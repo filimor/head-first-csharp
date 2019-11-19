@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Windows.Forms;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace BeehiveSimulator
 {
@@ -38,38 +38,9 @@ namespace BeehiveSimulator
             lblFrameRate.Text = milliSeconds != 0.0 ? $"{1000 / milliSeconds:F0} ({milliSeconds:F1} ms)" : "N/A";
         }
 
-
-
-        private void SendMessage(int id, string message)
+        private void SendMessage(int id, BeeState message)
         {
-            string status = string.Empty;
-            switch (message)
-            {
-                case "Idle":
-                    status = "Ociosa.";
-                    break;
-
-                case "FlyingToFlower":
-                    status = "Voando para uma flor.";
-                    break;
-
-                case "GatheringNectar":
-                    status = "Obtendo néctar.";
-                    break;
-
-                case "ReturningToHive":
-                    status = "Retornando para a colméia.";
-                    break;
-
-                case "MakingHoney":
-                    status = "Fabricando mel.";
-                    break;
-
-                case "Retired":
-                    status = "Aposentada.";
-                    break;
-            }
-            sslblSimulationStatus.Text = $"Abelha {id}: {status}";
+            sslblSimulationStatus.Text = $"Abelha {id}: {message.GetDescription()}";
 
             var beeGroups =
                 from bee in _world.Bees
@@ -81,7 +52,7 @@ namespace BeehiveSimulator
             {
                 string s = group.Count() == 1 ? "" : "s";
                 lstReport.Items.Add($"{group.Key.GetDescription()}: {group.Count()} abelha{s}");
-                if(group.Key == BeeState.Idle
+                if (group.Key == BeeState.Idle
                     && group.Count() == _world.Bees.Count
                     && _framesRun > 0)
                 {

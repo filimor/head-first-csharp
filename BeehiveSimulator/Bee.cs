@@ -23,7 +23,7 @@ namespace BeehiveSimulator
         public BeeState CurrentState { get; private set; } = BeeState.Idle;
         public Point Location => _location;
 
-        public delegate void BeeMessage(int id, string message);
+        public delegate void BeeMessage(int id, BeeState message);
         public BeeMessage MessageSender;
 
         public Bee(int id, Point location, Hive hive, World world)
@@ -122,7 +122,7 @@ namespace BeehiveSimulator
 
             if(oldState!=CurrentState && MessageSender!= null)
             {
-                MessageSender(_id, CurrentState.ToString());
+                MessageSender(_id, CurrentState);
             }
         }
 
