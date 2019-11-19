@@ -35,6 +35,39 @@ namespace BeehiveSimulator
             lblFramesRun.Text = _framesRun.ToString();
             double milliSeconds = frameDuration.TotalMilliseconds;
             lblFrameRate.Text = milliSeconds != 0.0 ? $"{1000 / milliSeconds:F0} ({milliSeconds:F1} ms)" : "N/A";
+
+            int beeFlying = 0;
+            int beeGathering = 0;
+            int beeMaking = 0;
+            int beeReturning = 0;
+
+            foreach (Bee bee in _world.Bees)
+            {
+                switch (bee.CurrentState)
+                {
+                    case BeeState.FlyingToFlower:
+                        beeFlying++;
+                        break;
+
+                    case BeeState.GatheringNectar:
+                        beeGathering++;
+                        break;
+
+                    case BeeState.MakingHoney:
+                        beeMaking++;
+                        break;
+
+                    case BeeState.ReturningToHive:
+                        beeReturning++;
+                        break;
+                }
+
+                lstReport.Items.Clear();
+                lstReport.Items.Add($"Voando para uma flor: {beeFlying}.");
+                lstReport.Items.Add($"Recolhendo néctar: {beeGathering}.");
+                lstReport.Items.Add($"Retornando para a colméia: {beeReturning}.");
+                lstReport.Items.Add($"Fazendo mel: {beeMaking}.");
+            }
         }
 
         private void SendMessage(int id, string message)
@@ -45,18 +78,23 @@ namespace BeehiveSimulator
                 case "Idle":
                     status = "Ociosa.";
                     break;
+
                 case "FlyingToFlower":
                     status = "Voando para uma flor.";
                     break;
+
                 case "GatheringNectar":
                     status = "Obtendo néctar.";
                     break;
+
                 case "ReturningToHive":
                     status = "Retornando para a colméia.";
                     break;
+
                 case "MakingHoney":
                     status = "Fabricando mel.";
                     break;
+
                 case "Retired":
                     status = "Aposentada.";
                     break;
@@ -76,7 +114,7 @@ namespace BeehiveSimulator
 
         private void TsbtnStartSimulation_Click(object sender, EventArgs e)
         {
-            if(!tmrTimer.Enabled)
+            if (!tmrTimer.Enabled)
             {
                 tmrTimer.Start();
                 tsbtnStartSimulation.Text = "Pausar Simulação";

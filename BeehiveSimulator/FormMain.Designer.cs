@@ -49,6 +49,7 @@
             this.lblNectarInFlowers = new System.Windows.Forms.Label();
             this.lblFramesRun = new System.Windows.Forms.Label();
             this.lblFrameRate = new System.Windows.Forms.Label();
+            this.lstReport = new System.Windows.Forms.ListBox();
             this.tsToolbar.SuspendLayout();
             this.ssStatusbar.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -61,7 +62,7 @@
             this.tsbtnReset});
             this.tsToolbar.Location = new System.Drawing.Point(0, 0);
             this.tsToolbar.Name = "tsToolbar";
-            this.tsToolbar.Size = new System.Drawing.Size(397, 25);
+            this.tsToolbar.Size = new System.Drawing.Size(386, 25);
             this.tsToolbar.TabIndex = 0;
             this.tsToolbar.Text = "toolStrip1";
             // 
@@ -89,9 +90,9 @@
             // 
             this.ssStatusbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sslblSimulationStatus});
-            this.ssStatusbar.Location = new System.Drawing.Point(0, 201);
+            this.ssStatusbar.Location = new System.Drawing.Point(0, 346);
             this.ssStatusbar.Name = "ssStatusbar";
-            this.ssStatusbar.Size = new System.Drawing.Size(397, 22);
+            this.ssStatusbar.Size = new System.Drawing.Size(386, 22);
             this.ssStatusbar.TabIndex = 1;
             this.ssStatusbar.Text = "statusStrip1";
             // 
@@ -118,7 +119,7 @@
             this.tableLayoutPanel1.Controls.Add(this.lblNectarInFlowers, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.lblFramesRun, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.lblFrameRate, 1, 5);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 25);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
@@ -128,7 +129,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(397, 176);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(386, 176);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // lblBeesLabel
@@ -188,7 +189,7 @@
             // lblBees
             // 
             this.lblBees.AutoSize = true;
-            this.lblBees.Location = new System.Drawing.Point(201, 0);
+            this.lblBees.Location = new System.Drawing.Point(196, 0);
             this.lblBees.Name = "lblBees";
             this.lblBees.Size = new System.Drawing.Size(31, 13);
             this.lblBees.TabIndex = 6;
@@ -197,7 +198,7 @@
             // lblFlowers
             // 
             this.lblFlowers.AutoSize = true;
-            this.lblFlowers.Location = new System.Drawing.Point(201, 29);
+            this.lblFlowers.Location = new System.Drawing.Point(196, 29);
             this.lblFlowers.Name = "lblFlowers";
             this.lblFlowers.Size = new System.Drawing.Size(43, 13);
             this.lblFlowers.TabIndex = 7;
@@ -206,7 +207,7 @@
             // lblHoneyInHive
             // 
             this.lblHoneyInHive.AutoSize = true;
-            this.lblHoneyInHive.Location = new System.Drawing.Point(201, 58);
+            this.lblHoneyInHive.Location = new System.Drawing.Point(196, 58);
             this.lblHoneyInHive.Name = "lblHoneyInHive";
             this.lblHoneyInHive.Size = new System.Drawing.Size(69, 13);
             this.lblHoneyInHive.TabIndex = 8;
@@ -215,7 +216,7 @@
             // lblNectarInFlowers
             // 
             this.lblNectarInFlowers.AutoSize = true;
-            this.lblNectarInFlowers.Location = new System.Drawing.Point(201, 87);
+            this.lblNectarInFlowers.Location = new System.Drawing.Point(196, 87);
             this.lblNectarInFlowers.Name = "lblNectarInFlowers";
             this.lblNectarInFlowers.Size = new System.Drawing.Size(84, 13);
             this.lblNectarInFlowers.TabIndex = 9;
@@ -224,7 +225,7 @@
             // lblFramesRun
             // 
             this.lblFramesRun.AutoSize = true;
-            this.lblFramesRun.Location = new System.Drawing.Point(201, 116);
+            this.lblFramesRun.Location = new System.Drawing.Point(196, 116);
             this.lblFramesRun.Name = "lblFramesRun";
             this.lblFramesRun.Size = new System.Drawing.Size(61, 13);
             this.lblFramesRun.TabIndex = 10;
@@ -233,21 +234,34 @@
             // lblFrameRate
             // 
             this.lblFrameRate.AutoSize = true;
-            this.lblFrameRate.Location = new System.Drawing.Point(201, 145);
+            this.lblFrameRate.Location = new System.Drawing.Point(196, 145);
             this.lblFrameRate.Name = "lblFrameRate";
             this.lblFrameRate.Size = new System.Drawing.Size(59, 13);
             this.lblFrameRate.TabIndex = 11;
             this.lblFrameRate.Text = "FrameRate";
             // 
+            // lstReport
+            // 
+            this.lstReport.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lstReport.FormattingEnabled = true;
+            this.lstReport.Location = new System.Drawing.Point(0, 199);
+            this.lstReport.Margin = new System.Windows.Forms.Padding(10);
+            this.lstReport.Name = "lstReport";
+            this.lstReport.Size = new System.Drawing.Size(386, 147);
+            this.lstReport.TabIndex = 3;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(397, 223);
+            this.ClientSize = new System.Drawing.Size(386, 368);
+            this.Controls.Add(this.lstReport);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.ssStatusbar);
             this.Controls.Add(this.tsToolbar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FormMain";
             this.Text = "Simulador de Colméia";
             this.tsToolbar.ResumeLayout(false);
@@ -282,6 +296,7 @@
         private System.Windows.Forms.Label lblNectarInFlowers;
         private System.Windows.Forms.Label lblFramesRun;
         private System.Windows.Forms.Label lblFrameRate;
+        private System.Windows.Forms.ListBox lstReport;
     }
 }
 
