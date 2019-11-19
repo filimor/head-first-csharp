@@ -6,11 +6,19 @@ namespace BeehiveSimulator
     public partial class FormMain : Form
     {
         private World _world;
+        private Random _random = new Random();
+        private DateTime _start = DateTime.Now;
+        private DateTime _end;
+        private int _framesRun;
 
         public FormMain()
         {
             InitializeComponent();
             _world = new World();
+            tmrTimer.Interval = 50;
+            tmrTimer.Tick += RunFrame;
+            tmrTimer.Enabled = false;
+            UpdateStats(new TimeSpan());
         }
 
         private void UpdateStats(TimeSpan frameDuration)
@@ -26,13 +34,43 @@ namespace BeehiveSimulator
             lblNectarInFlowers.Text = nectar.ToString("F3");
             lblFramesRun.Text = _framesRun.ToString();
             double milliSeconds = frameDuration.TotalMilliseconds;
-            if (milliSeconds != 0.0)
+            lblFrameRate.Text = milliSeconds != 0.0 ? $"{1000 / milliSeconds:F0} ({milliSeconds:F1} ms" : "N/A";
+        }
+
+        private void RunFrame(object sender, EventArgs e)
+        {
+            _framesRun++;
+            _world.Go(_random);
+            _end = DateTime.Now;
+            TimeSpan frameDuration = _end - _start;
+            _start = _end;
+            UpdateStats(frameDuration);
+        }
+
+        private void TsbtnStartSimulation_Click(object sender, EventArgs e)
+        {
+            if(!tmrTimer.Enabled)
             {
-                lblFrameRate.Text = $"{1000 / milliSeconds:F0} ({milliSeconds:F1} ms";
+                tmrTimer.Start();
+                tsbtnStartSimulation.Text = "Pausar Simulação";
+                sslblSimulationStatus.Text = "Simulação em curso.";
             }
             else
             {
-                lblFrameRate.Text = "N/A";
+                tmrTimer.Stop();
+                tsbtnStartSimulation.Text = "Recomeçar Simulação";
+                sslblSimulationStatus.Text = "Simulação pausada.";
+            }           
+        }
+
+        private void TsbtnReset_Click(object sender, EventArgs e)
+        {
+            _world = new World();
+            _framesRun = 0;
+            if (!tmrTimer.Enabled)
+            {
+                tsbtnStartSimulation.Text = "Iniciar Simulação";
+                sslblSimulationStatus.Text = "Simulação encerrada.";
             }
         }
     }

@@ -31,11 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.tsToolbar = new System.Windows.Forms.ToolStrip();
+            this.tsbtnStartSimulation = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnReset = new System.Windows.Forms.ToolStripButton();
             this.ssStatusbar = new System.Windows.Forms.StatusStrip();
+            this.sslblSimulationStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.tmrTimer = new System.Windows.Forms.Timer(this.components);
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblBeesLabel = new System.Windows.Forms.Label();
             this.lblFlowersLabel = new System.Windows.Forms.Label();
@@ -57,47 +57,49 @@
             // tsToolbar
             // 
             this.tsToolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2});
+            this.tsbtnStartSimulation,
+            this.tsbtnReset});
             this.tsToolbar.Location = new System.Drawing.Point(0, 0);
             this.tsToolbar.Name = "tsToolbar";
             this.tsToolbar.Size = new System.Drawing.Size(397, 25);
             this.tsToolbar.TabIndex = 0;
             this.tsToolbar.Text = "toolStrip1";
             // 
+            // tsbtnStartSimulation
+            // 
+            this.tsbtnStartSimulation.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbtnStartSimulation.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnStartSimulation.Image")));
+            this.tsbtnStartSimulation.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnStartSimulation.Name = "tsbtnStartSimulation";
+            this.tsbtnStartSimulation.Size = new System.Drawing.Size(101, 22);
+            this.tsbtnStartSimulation.Text = "Iniciar Simulação";
+            this.tsbtnStartSimulation.Click += new System.EventHandler(this.TsbtnStartSimulation_Click);
+            // 
+            // tsbtnReset
+            // 
+            this.tsbtnReset.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbtnReset.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnReset.Image")));
+            this.tsbtnReset.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnReset.Name = "tsbtnReset";
+            this.tsbtnReset.Size = new System.Drawing.Size(56, 22);
+            this.tsbtnReset.Text = "Reiniciar";
+            this.tsbtnReset.Click += new System.EventHandler(this.TsbtnReset_Click);
+            // 
             // ssStatusbar
             // 
             this.ssStatusbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
+            this.sslblSimulationStatus});
             this.ssStatusbar.Location = new System.Drawing.Point(0, 201);
             this.ssStatusbar.Name = "ssStatusbar";
             this.ssStatusbar.Size = new System.Drawing.Size(397, 22);
             this.ssStatusbar.TabIndex = 1;
             this.ssStatusbar.Text = "statusStrip1";
             // 
-            // toolStripButton1
+            // sslblSimulationStatus
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(101, 22);
-            this.toolStripButton1.Text = "Iniciar Simulação";
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(56, 22);
-            this.toolStripButton2.Text = "Reiniciar";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(119, 17);
-            this.toolStripStatusLabel1.Text = "Simulação em Pausa.";
+            this.sslblSimulationStatus.Name = "sslblSimulationStatus";
+            this.sslblSimulationStatus.Size = new System.Drawing.Size(119, 17);
+            this.sslblSimulationStatus.Text = "Simulação em Pausa.";
             // 
             // tableLayoutPanel1
             // 
@@ -264,9 +266,9 @@
         private System.Windows.Forms.ToolStrip tsToolbar;
         private System.Windows.Forms.StatusStrip ssStatusbar;
         private System.Windows.Forms.Timer tmrTimer;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripButton tsbtnStartSimulation;
+        private System.Windows.Forms.ToolStripButton tsbtnReset;
+        private System.Windows.Forms.ToolStripStatusLabel sslblSimulationStatus;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lblBeesLabel;
         private System.Windows.Forms.Label lblFlowersLabel;
