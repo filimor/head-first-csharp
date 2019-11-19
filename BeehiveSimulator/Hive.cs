@@ -67,22 +67,24 @@ namespace BeehiveSimulator
 
         private void AddBee(Random random)
         {
-            _beeCount++;
-            int r1 = random.Next(100) - 50;
-            int r2 = random.Next(100) - 50;
-            var startPoint = new Point(_locations["Nursery"].X + r1,
-                _locations["Nursery"].Y + r2);
-            var newBee = new Bee(_beeCount, startPoint, this, _world);
-            // Adicionar abelha ao sistema.
+            
+                _beeCount++;
+                int r1 = random.Next(100) - 50;
+                int r2 = random.Next(100) - 50;
+                var startPoint = new Point(_locations["Nursery"].X + r1,
+                    _locations["Nursery"].Y + r2);
+                var newBee = new Bee(_beeCount, startPoint, this, _world);
+                _world.Bees.Add(newBee);
         }
 
         public void Go(Random random)
         {
-            if (Honey > MINIMUMHONEYFORCREATINGBEES && random.Next(10) == 1)
+            if (_world.Bees.Count < MAXIMUMBEES &&
+                        Honey > MINIMUMHONEYFORCREATINGBEES && 
+                        random.Next(10) == 1)
             {
                 AddBee(random);
             }
-            // Adicionar restrição para o número máximo de abelhas.
         }
 
         public Point GetLocation(string location)
