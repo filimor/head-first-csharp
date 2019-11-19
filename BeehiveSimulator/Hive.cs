@@ -16,14 +16,16 @@ namespace BeehiveSimulator
 
         private int _beeCount;
         private Dictionary<string, Point> _locations;
+        private World _world;
 
         public double Honey { get; private set; } = INITIALHONEY;
         
 
-        public Hive(Random random)
+        public Hive(Random random, World world)
         {
             InitializeLocations();
             random = new Random();
+            _world = world;
             for (int i = 1; i <= INITIALBEES; i++)
             {
                 AddBee(random);
@@ -70,7 +72,7 @@ namespace BeehiveSimulator
             int r2 = random.Next(100) - 50;
             var startPoint = new Point(_locations["Nursery"].X + r1,
                 _locations["Nursery"].Y + r2);
-            var newBee = new Bee(_beeCount, startPoint);
+            var newBee = new Bee(_beeCount, startPoint, this, _world);
             // Adicionar abelha ao sistema.
         }
 

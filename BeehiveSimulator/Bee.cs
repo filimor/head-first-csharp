@@ -13,17 +13,22 @@ namespace BeehiveSimulator
 
         private int _id; // Cada abelha receberá um número exclusivo de identificação.
         private Flower _destinationFlower;
+        private World _world;
+        private Hive _hive;
+        private Point _location;
 
         public int Age { get; private set; }
         public bool InsideHive { get; private set; } = true;
         public double NectarCollected { get; private set; }
         public BeeState CurrentState { get; private set; } = BeeState.Idle;
-        public Point Location { get; set; }
+        public Point Location => _location;
 
-        public Bee(int id, Point location, Hive hive,)
+        public Bee(int id, Point location, Hive hive, World world)
         {
             _id = id;
-            Location = location;
+            _hive = hive;
+            _world = world;
+            _location = location;
         }
 
         public void Go(Random random)
@@ -46,7 +51,7 @@ namespace BeehiveSimulator
                     break;
                 case BeeState.GatheringNectar:
                     double nectar = _destinationFlower.HarvestNectar();
-                    if (nectar>0)
+                    if (nectar > 0)
                     {
                         NectarCollected += nectar;
                     }
@@ -93,19 +98,19 @@ namespace BeehiveSimulator
                 }
                 if (destination.X > Location.X)
                 {
-                    Location.X += MOVERATE;
+                    _location.X += MOVERATE;
                 }
                 else if (destination.X < Location.X)
                 {
-                    Location.X -= MOVERATE;
+                    _location.X -= MOVERATE;
                 }
                 if (destination.Y > Location.Y)
                 {
-                    Location.Y += MOVERATE;
+                    _location.Y += MOVERATE;
                 }
                 else if (destination.Y < Location.Y)
                 {
-                    Location.Y -= MOVERATE;
+                    _location.Y -= MOVERATE;
                 }
             }
             return false;
