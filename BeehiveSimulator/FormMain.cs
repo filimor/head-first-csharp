@@ -100,5 +100,33 @@ namespace BeehiveSimulator
                 sslblSimulationStatus.Text = "Simulação encerrada.";
             }
         }
+
+        private void TsbtnSave_Click(object sender, EventArgs e)
+        {
+            tmrTimer.Stop();
+            _world.Hive.MessageSender = null;
+            foreach (Bee bee in _world.Bees)
+            {
+                bee.MessageSender = null;
+            }
+
+            if (sfdSaveFile.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+            
+
+            _world.Hive.MessageSender = new Bee.BeeMessage(SendMessage);
+            foreach (Bee bee in _world.Bees)
+            {
+                bee.MessageSender += _world.Hive.MessageSender;
+            }
+            tmrTimer.Start();
+        }
+
+        private void TsbtnOpen_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

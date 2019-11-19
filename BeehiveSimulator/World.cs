@@ -4,6 +4,7 @@ using System.Drawing;
 
 namespace BeehiveSimulator
 {
+    [Serializable]
     public class World
     {
         private const double NECTARHARVESTEDPERNEWFLOWER = 50.0;

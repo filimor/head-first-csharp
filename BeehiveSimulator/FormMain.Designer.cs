@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.tsToolbar = new System.Windows.Forms.ToolStrip();
+            this.tsbtnOpen = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnSave = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbtnStartSimulation = new System.Windows.Forms.ToolStripButton();
             this.tsbtnReset = new System.Windows.Forms.ToolStripButton();
             this.ssStatusbar = new System.Windows.Forms.StatusStrip();
@@ -50,6 +53,8 @@
             this.lblFramesRun = new System.Windows.Forms.Label();
             this.lblFrameRate = new System.Windows.Forms.Label();
             this.lstReport = new System.Windows.Forms.ListBox();
+            this.sfdSaveFile = new System.Windows.Forms.SaveFileDialog();
+            this.ofdOpenFile = new System.Windows.Forms.OpenFileDialog();
             this.tsToolbar.SuspendLayout();
             this.ssStatusbar.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -58,6 +63,9 @@
             // tsToolbar
             // 
             this.tsToolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbtnOpen,
+            this.tsbtnSave,
+            this.toolStripSeparator1,
             this.tsbtnStartSimulation,
             this.tsbtnReset});
             this.tsToolbar.Location = new System.Drawing.Point(0, 0);
@@ -65,6 +73,33 @@
             this.tsToolbar.Size = new System.Drawing.Size(386, 25);
             this.tsToolbar.TabIndex = 0;
             this.tsToolbar.Text = "toolStrip1";
+            // 
+            // tsbtnOpen
+            // 
+            this.tsbtnOpen.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbtnOpen.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnOpen.Image")));
+            this.tsbtnOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnOpen.Name = "tsbtnOpen";
+            this.tsbtnOpen.Size = new System.Drawing.Size(23, 22);
+            this.tsbtnOpen.Text = "toolStripButton2";
+            this.tsbtnOpen.ToolTipText = "Abrir";
+            this.tsbtnOpen.Click += new System.EventHandler(this.TsbtnOpen_Click);
+            // 
+            // tsbtnSave
+            // 
+            this.tsbtnSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbtnSave.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnSave.Image")));
+            this.tsbtnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnSave.Name = "tsbtnSave";
+            this.tsbtnSave.Size = new System.Drawing.Size(23, 22);
+            this.tsbtnSave.Text = "toolStripButton1";
+            this.tsbtnSave.ToolTipText = "Salvar";
+            this.tsbtnSave.Click += new System.EventHandler(this.TsbtnSave_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // tsbtnStartSimulation
             // 
@@ -250,6 +285,18 @@
             this.lstReport.Size = new System.Drawing.Size(386, 147);
             this.lstReport.TabIndex = 3;
             // 
+            // sfdSaveFile
+            // 
+            this.sfdSaveFile.FileName = "Colmeia.col";
+            this.sfdSaveFile.Filter = "Arquivos de colméia (*.col)|*.col|Todos os arquivos (*.*)|*.*";
+            this.sfdSaveFile.Title = "Salvar Colméia";
+            // 
+            // ofdOpenFile
+            // 
+            this.ofdOpenFile.FileName = "Colmeia.col";
+            this.ofdOpenFile.Filter = "Arquivos de colméia (*.col)|*.col|Todos os arquivos (*.*)|*.*";
+            this.ofdOpenFile.Title = "Carregar Colméia";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -297,6 +344,11 @@
         private System.Windows.Forms.Label lblFramesRun;
         private System.Windows.Forms.Label lblFrameRate;
         private System.Windows.Forms.ListBox lstReport;
+        private System.Windows.Forms.SaveFileDialog sfdSaveFile;
+        private System.Windows.Forms.OpenFileDialog ofdOpenFile;
+        private System.Windows.Forms.ToolStripButton tsbtnSave;
+        private System.Windows.Forms.ToolStripButton tsbtnOpen;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
 

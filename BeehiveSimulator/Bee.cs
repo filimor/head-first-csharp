@@ -24,6 +24,7 @@ namespace BeehiveSimulator
         public Point Location => _location;
 
         public delegate void BeeMessage(int id, BeeState message);
+
         public BeeMessage MessageSender;
 
         public Bee(int id, Point location, Hive hive, World world)
@@ -48,18 +49,20 @@ namespace BeehiveSimulator
                     else if (_world.Flowers.Count > 0 && _hive.ConsumeHoney(HONEYCONSUMED))
                     {
                         Flower flower = _world.Flowers[random.Next(_world.Flowers.Count)];
-                        if(flower.Nectar >= MINIMUMFLOWERNECTAR && flower.Alive)
+                        if (flower.Nectar >= MINIMUMFLOWERNECTAR && flower.Alive)
                         {
                             _destinationFlower = flower;
                             CurrentState = BeeState.FlyingToFlower;
                         }
                     }
                     break;
+
                 case BeeState.FlyingToFlower:
                     if (!_world.Flowers.Contains(_destinationFlower))
                     {
                         CurrentState = BeeState.ReturningToHive;
-                    }else if (InsideHive)
+                    }
+                    else if (InsideHive)
                     {
                         if (MoveTowardsLocation(_hive.GetLocation("Exit")))
                         {
@@ -72,6 +75,7 @@ namespace BeehiveSimulator
                         CurrentState = BeeState.GatheringNectar;
                     }
                     break;
+
                 case BeeState.GatheringNectar:
                     double nectar = _destinationFlower.HarvestNectar();
                     if (nectar > 0)
@@ -83,6 +87,7 @@ namespace BeehiveSimulator
                         CurrentState = BeeState.ReturningToHive;
                     }
                     break;
+
                 case BeeState.ReturningToHive:
                     if (!InsideHive)
                     {
@@ -100,6 +105,7 @@ namespace BeehiveSimulator
                         }
                     }
                     break;
+
                 case BeeState.MakingHoney:
                     if (NectarCollected < ADDNECTARRATE)
                     {
@@ -115,12 +121,13 @@ namespace BeehiveSimulator
                         NectarCollected = 0;
                     }
                     break;
+
                 case BeeState.Retired:
                     // Não faz nada, já que está aposentada.
                     break;
             }
 
-            if(oldState!=CurrentState && MessageSender!= null)
+            if (oldState != CurrentState && MessageSender != null)
             {
                 MessageSender(_id, CurrentState);
             }
