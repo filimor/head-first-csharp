@@ -13,18 +13,17 @@ namespace BeehiveSimulator
 
         private int _id; // Cada abelha receberá um número exclusivo de identificação.
         private Flower _destinationFlower;
-        private Point _location;
 
         public int Age { get; private set; }
         public bool InsideHive { get; private set; } = true;
         public double NectarCollected { get; private set; }
         public BeeState CurrentState { get; private set; } = BeeState.Idle;
-        public Point Location => _location;
+        public Point Location { get; set; }
 
-        public Bee(int id, Point location)
+        public Bee(int id, Point location, Hive hive,)
         {
             _id = id;
-            _location = location;
+            Location = location;
         }
 
         public void Go(Random random)
@@ -94,19 +93,19 @@ namespace BeehiveSimulator
                 }
                 if (destination.X > Location.X)
                 {
-                    _location.X += MOVERATE;
+                    Location.X += MOVERATE;
                 }
                 else if (destination.X < Location.X)
                 {
-                    _location.X -= MOVERATE;
+                    Location.X -= MOVERATE;
                 }
                 if (destination.Y > Location.Y)
                 {
-                    _location.Y += MOVERATE;
+                    Location.Y += MOVERATE;
                 }
                 else if (destination.Y < Location.Y)
                 {
-                    _location.Y -= MOVERATE;
+                    Location.Y -= MOVERATE;
                 }
             }
             return false;
