@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace BeehiveSimulator
 {
@@ -35,39 +36,6 @@ namespace BeehiveSimulator
             lblFramesRun.Text = _framesRun.ToString();
             double milliSeconds = frameDuration.TotalMilliseconds;
             lblFrameRate.Text = milliSeconds != 0.0 ? $"{1000 / milliSeconds:F0} ({milliSeconds:F1} ms)" : "N/A";
-
-            int beeFlying = 0;
-            int beeGathering = 0;
-            int beeMaking = 0;
-            int beeReturning = 0;
-
-            foreach (Bee bee in _world.Bees)
-            {
-                switch (bee.CurrentState)
-                {
-                    case BeeState.FlyingToFlower:
-                        beeFlying++;
-                        break;
-
-                    case BeeState.GatheringNectar:
-                        beeGathering++;
-                        break;
-
-                    case BeeState.MakingHoney:
-                        beeMaking++;
-                        break;
-
-                    case BeeState.ReturningToHive:
-                        beeReturning++;
-                        break;
-                }
-
-                lstReport.Items.Clear();
-                lstReport.Items.Add($"Voando para uma flor: {beeFlying}.");
-                lstReport.Items.Add($"Recolhendo néctar: {beeGathering}.");
-                lstReport.Items.Add($"Retornando para a colméia: {beeReturning}.");
-                lstReport.Items.Add($"Fazendo mel: {beeMaking}.");
-            }
         }
 
         private void SendMessage(int id, string message)
@@ -100,6 +68,27 @@ namespace BeehiveSimulator
                     break;
             }
             sslblSimulationStatus.Text = $"Abelha {id}: {status}";
+
+            var beeGroups =
+                from bee in _world.Bees
+                group bee by bee.CurrentState into beeGroup
+                orderby beeGroup.Key
+                select beeGroup;
+            lstReport.Items.Clear();
+            foreach (var group in beeGroups)
+            {
+                string s = group.Count() == 1 ? "" : "s";
+                lstReport.Items.Add($"{group.Key.ToString()}: {group.Count()} abelha{s}");
+                if(group.Key == BeeState.Idle
+                    && group.Count() == _world.Bees.Count
+                    && _framesRun > 0)
+                {
+                    lstReport.Items.Add("Simulação encerrada: todas as abelhas estão ociosas.");
+                    tsbtnStartSimulation.Text = "Simulação encerrada";
+                    sslblSimulationStatus.Text = "Simulação encerrada";
+                    tmrTimer.Enabled = false;
+                }
+            }
         }
 
         private void RunFrame(object sender, EventArgs e)
