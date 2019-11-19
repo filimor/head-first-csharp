@@ -38,6 +38,8 @@ namespace BeehiveSimulator
             lblFrameRate.Text = milliSeconds != 0.0 ? $"{1000 / milliSeconds:F0} ({milliSeconds:F1} ms)" : "N/A";
         }
 
+
+
         private void SendMessage(int id, string message)
         {
             string status = string.Empty;
@@ -78,7 +80,7 @@ namespace BeehiveSimulator
             foreach (var group in beeGroups)
             {
                 string s = group.Count() == 1 ? "" : "s";
-                lstReport.Items.Add($"{group.Key.ToString()}: {group.Count()} abelha{s}");
+                lstReport.Items.Add($"{group.Key.GetDescription()}: {group.Count()} abelha{s}");
                 if(group.Key == BeeState.Idle
                     && group.Count() == _world.Bees.Count
                     && _framesRun > 0)
