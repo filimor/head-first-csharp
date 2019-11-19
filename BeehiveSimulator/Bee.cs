@@ -41,13 +41,32 @@ namespace BeehiveSimulator
                     {
                         CurrentState = BeeState.Retired;
                     }
-                    else
+                    else if (_world.Flowers.Count > 0 && _hive.ConsumeHoney(HONEYCONSUMED))
                     {
-                        // O que fazer quando está desocupada?
+                        Flower flower = _world.Flowers[random.Next(_world.Flowers.Count)];
+                        if(flower.Nectar >= MINIMUMFLOWERNECTAR && flower.Alive)
+                        {
+                            _destinationFlower = flower;
+                            CurrentState = BeeState.FlyingToFlower;
+                        }
                     }
                     break;
                 case BeeState.FlyingToFlower:
-                    // Vá no sentido de uma flor
+                    if (!_world.Flowers.Contains(_destinationFlower))
+                    {
+                        CurrentState = BeeState.ReturningToHive;
+                    }else if (InsideHive)
+                    {
+                        if (MoveTowardsLocation(_hive.GetLocation("Exit")))
+                        {
+                            InsideHive = false;
+                            _location = _hive.GetLocation("Entrance");
+                        }
+                    }
+                    else if (MoveTowardsLocation(_destinationFlower.Location))
+                    {
+                        CurrentState = BeeState.GatheringNectar;
+                    }
                     break;
                 case BeeState.GatheringNectar:
                     double nectar = _destinationFlower.HarvestNectar();
@@ -63,11 +82,18 @@ namespace BeehiveSimulator
                 case BeeState.ReturningToHive:
                     if (!InsideHive)
                     {
-                        // Avança no sentido da colméia.
+                        if (MoveTowardsLocation(_hive.GetLocation("Entrance")))
+                        {
+                            InsideHive = true;
+                            _location = _hive.GetLocation("Exit");
+                        }
                     }
                     else
                     {
-                        // O que fazer no interior da colméia?
+                        if (MoveTowardsLocation(_hive.GetLocation("HoneyFactory")))
+                        {
+                            CurrentState = BeeState.MakingHoney;
+                        }
                     }
                     break;
                 case BeeState.MakingHoney:
@@ -76,9 +102,13 @@ namespace BeehiveSimulator
                         NectarCollected = 0;
                         CurrentState = BeeState.Idle;
                     }
+                    else if (_hive.AddHoney(ADDNECTARRATE))
+                    {
+                        NectarCollected -= ADDNECTARRATE;
+                    }
                     else
                     {
-                        // Uma vez que temos um enxame, vamos tornar o néctar em mel
+                        NectarCollected = 0;
                     }
                     break;
                 case BeeState.Retired:
