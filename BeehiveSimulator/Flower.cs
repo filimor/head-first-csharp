@@ -13,7 +13,7 @@ namespace BeehiveSimulator
         private const double NECTARADDEDPERTURN = 0.01; // Néctar adicionado ao envelhecer
         private const double NECTARGATHEREDPERTURN = 0.3; // Néctar recolhido por turno
 
-        private int _lifespan;
+        private readonly int _lifespan;
 
         public Point Location { get; private set; }
         public int Age { get; private set; }

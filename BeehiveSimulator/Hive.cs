@@ -17,7 +17,7 @@ namespace BeehiveSimulator
 
         private int _beeCount;
         private Dictionary<string, Point> _locations;
-        private World _world;
+        private readonly World _world;
 
         public double Honey { get; private set; } = INITIALHONEY;
 
@@ -38,11 +38,13 @@ namespace BeehiveSimulator
 
         public void InitializeLocations()
         {
-            _locations = new Dictionary<string, Point>();
-            _locations.Add("Entrance", new Point(600, 100));
-            _locations.Add("Nursery", new Point(95, 174));
-            _locations.Add("HoneyFactory", new Point(175, 98));
-            _locations.Add("Exit", new Point(194, 213));
+            _locations = new Dictionary<string, Point>
+            {
+                { "Entrance", new Point(600, 100) },
+                { "Nursery", new Point(95, 174) },
+                { "HoneyFactory", new Point(175, 98) },
+                { "Exit", new Point(194, 213) }
+            };
         }
 
         public bool AddHoney(double nectar)

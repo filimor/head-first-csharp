@@ -12,16 +12,18 @@ namespace BeehiveSimulator
         private const int CAREERSPAN = 1000;
         private const double ADDNECTARRATE = 0.5;
 
-        private int _id; // Cada abelha receberá um número exclusivo de identificação.
+        private readonly int _id; // Cada abelha receberá um número exclusivo de identificação.
         private Flower _destinationFlower;
-        private World _world;
-        private Hive _hive;
+        private readonly World _world;
+        private readonly Hive _hive;
+#pragma warning disable IDE0032 // Use auto property
         private Point _location;
+#pragma warning restore IDE0032 // Use auto property
 
         public int Age { get; private set; }
         public bool InsideHive { get; private set; } = true;
         public double NectarCollected { get; private set; }
-        public BeeState CurrentState { get; private set; } = BeeState.Idle;
+        public BeeState CurrentState { get; private set; }
         public Point Location => _location;
 
         public delegate void BeeMessage(int id, BeeState message);
@@ -136,7 +138,7 @@ namespace BeehiveSimulator
 
         private bool MoveTowardsLocation(Point destination)
         {
-            if (destination != null)
+            if (destination != Point.Empty)
             {
                 if (Math.Abs(destination.X - Location.X) <= MOVERATE &&
                     Math.Abs(destination.Y - Location.Y) <= MOVERATE)

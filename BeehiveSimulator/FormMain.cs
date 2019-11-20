@@ -4,7 +4,6 @@ using System.Windows.Forms;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
-
 namespace BeehiveSimulator
 {
     [Serializable]
@@ -47,13 +46,13 @@ namespace BeehiveSimulator
         {
             sslblSimulationStatus.Text = $"Abelha {id}: {message.GetDescription()}";
 
-            var beeGroups =
+            IOrderedEnumerable<IGrouping<BeeState, Bee>> beeGroups =
                 from bee in _world.Bees
                 group bee by bee.CurrentState into beeGroup
                 orderby beeGroup.Key
                 select beeGroup;
             lstReport.Items.Clear();
-            foreach (var group in beeGroups)
+            foreach (IGrouping<BeeState, Bee> group in beeGroups)
             {
                 string s = group.Count() == 1 ? "" : "s";
                 lstReport.Items.Add($"{group.Key.GetDescription()}: {group.Count()} abelha{s}");
@@ -113,7 +112,7 @@ namespace BeehiveSimulator
             {
                 tmrTimer.Stop();
             }
-            
+
             _world.Hive.MessageSender = null;
             foreach (Bee bee in _world.Bees)
             {
@@ -189,7 +188,6 @@ namespace BeehiveSimulator
             {
                 tmrTimer.Start();
             }
-
         }
     }
 }
