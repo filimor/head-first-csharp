@@ -3,6 +3,7 @@ using System.Linq;
 using System.Windows.Forms;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Drawing;
 
 namespace BeehiveSimulator
 {
@@ -17,8 +18,8 @@ namespace BeehiveSimulator
         private int _framesRun;
         private BinaryFormatter _formatter;
 
-        private Form frmHive = new FormHive();
-        private Form frmField = new FormField();
+        private FormHive _hiveForm = new FormHive();
+        private FormField _fieldForm = new FormField();
 
         public FormMain()
         {
@@ -28,8 +29,10 @@ namespace BeehiveSimulator
             tmrTimer.Tick += RunFrame;
             tmrTimer.Enabled = false;
             UpdateStats(new TimeSpan());
-            frmHive.Show(this);
-            frmField.Show(this);
+            MoveChildForms();
+            _hiveForm.Show(this);
+            _fieldForm.Show(this);
+            ResetSimulator();
         }
 
         private void UpdateStats(TimeSpan frameDuration)
@@ -85,6 +88,20 @@ namespace BeehiveSimulator
             UpdateStats(frameDuration);
         }
 
+        private void MoveChildForms()
+        {
+            _hiveForm.Location = new Point(Location.X + Width + 10, Location.Y);
+            _fieldForm.Location = new Point(Location.X, Location.Y +
+                Math.Max(Height, _hiveForm.Height) + 10);
+        }
+
+        private void ResetSimulator()
+        {
+            _world = new World(new Bee.BeeMessage(SendMessage));
+            _renderer = new Renderer(_world, _hiveForm, _fieldForm);
+            _framesRun = 0; 
+        }
+
         private void TsbtnStartSimulation_Click(object sender, EventArgs e)
         {
             if (!tmrTimer.Enabled)
@@ -103,8 +120,8 @@ namespace BeehiveSimulator
 
         private void TsbtnReset_Click(object sender, EventArgs e)
         {
-            _world = new World(new Bee.BeeMessage(SendMessage));
-            _framesRun = 0;
+            _renderer.Reset();
+            ResetSimulator();
             if (!tmrTimer.Enabled)
             {
                 tsbtnStartSimulation.Text = "Iniciar Simulação";
@@ -195,6 +212,13 @@ namespace BeehiveSimulator
             {
                 tmrTimer.Start();
             }
+            _renderer.Reset();
+            _renderer = new Renderer(_world, _hiveForm, _fieldForm);
+        }
+
+        private void FormMain_Move(object sender, EventArgs e)
+        {
+            MoveChildForms();
         }
     }
 }

@@ -33,6 +33,7 @@
             this.tsToolbar = new System.Windows.Forms.ToolStrip();
             this.tsbtnOpen = new System.Windows.Forms.ToolStripButton();
             this.tsbtnSave = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnPrint = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbtnStartSimulation = new System.Windows.Forms.ToolStripButton();
             this.tsbtnReset = new System.Windows.Forms.ToolStripButton();
@@ -55,7 +56,6 @@
             this.lstReport = new System.Windows.Forms.ListBox();
             this.sfdSaveFile = new System.Windows.Forms.SaveFileDialog();
             this.ofdOpenFile = new System.Windows.Forms.OpenFileDialog();
-            this.tsbtnPrint = new System.Windows.Forms.ToolStripButton();
             this.tsToolbar.SuspendLayout();
             this.ssStatusbar.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -97,6 +97,15 @@
             this.tsbtnSave.Text = "toolStripButton1";
             this.tsbtnSave.ToolTipText = "Salvar";
             this.tsbtnSave.Click += new System.EventHandler(this.TsbtnSave_Click);
+            // 
+            // tsbtnPrint
+            // 
+            this.tsbtnPrint.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbtnPrint.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnPrint.Image")));
+            this.tsbtnPrint.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnPrint.Name = "tsbtnPrint";
+            this.tsbtnPrint.Size = new System.Drawing.Size(23, 22);
+            this.tsbtnPrint.Text = "Imprimir";
             // 
             // toolStripSeparator1
             // 
@@ -299,15 +308,6 @@
             this.ofdOpenFile.Filter = "Arquivos de colméia (*.bee)|*.bee|Todos os arquivos (*.*)|*.*";
             this.ofdOpenFile.Title = "Carregar Colméia";
             // 
-            // tsbtnPrint
-            // 
-            this.tsbtnPrint.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbtnPrint.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnPrint.Image")));
-            this.tsbtnPrint.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnPrint.Name = "tsbtnPrint";
-            this.tsbtnPrint.Size = new System.Drawing.Size(23, 22);
-            this.tsbtnPrint.Text = "Imprimir";
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -322,6 +322,7 @@
             this.MaximizeBox = false;
             this.Name = "FormMain";
             this.Text = "Simulador de Colméia";
+            this.Move += new System.EventHandler(this.FormMain_Move);
             this.tsToolbar.ResumeLayout(false);
             this.tsToolbar.PerformLayout();
             this.ssStatusbar.ResumeLayout(false);
