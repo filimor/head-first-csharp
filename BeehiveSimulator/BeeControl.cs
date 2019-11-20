@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace BeeControl
+namespace BeehiveSimulator
 {
     public partial class BeeControl : UserControl
     {

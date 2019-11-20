@@ -16,6 +16,9 @@ namespace BeehiveSimulator
         private int _framesRun;
         private BinaryFormatter _formatter;
 
+        private Form frmHive = new FormHive();
+        private Form frmField = new FormField();
+
         public FormMain()
         {
             InitializeComponent();
@@ -24,6 +27,8 @@ namespace BeehiveSimulator
             tmrTimer.Tick += RunFrame;
             tmrTimer.Enabled = false;
             UpdateStats(new TimeSpan());
+            frmHive.Show(this);
+            frmField.Show(this);
         }
 
         private void UpdateStats(TimeSpan frameDuration)
