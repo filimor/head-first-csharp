@@ -40,10 +40,10 @@ namespace BeehiveSimulator
         {
             _locations = new Dictionary<string, Point>
             {
-                { "Entrance", new Point(600, 100) },
-                { "Nursery", new Point(95, 174) },
-                { "HoneyFactory", new Point(175, 98) },
-                { "Exit", new Point(194, 213) }
+                { "Entrance", new Point(690, 110) },
+                { "Nursery", new Point(103, 210) },
+                { "HoneyFactory", new Point(198, 107) },
+                { "Exit", new Point(224, 258) }
             };
         }
 

@@ -76,21 +76,30 @@
     <Compile Include="Hive.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Renderer.cs" />
     <Compile Include="World.cs" />
+    <EmbeddedResource Include="BeeControl.resx">
+      <DependentUpon>BeeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormField.resx">
+      <DependentUpon>FormField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHive.resx">
+      <DependentUpon>FormHive.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -109,6 +118,9 @@
     <None Include="Resources\Bee animation 2.png" />
     <None Include="Resources\Bee animation 3.png" />
     <None Include="Resources\Bee animation 4.png" />
+    <None Include="Resources\Flower.png" />
+    <None Include="Resources\Hive %28inside%29.png" />
+    <None Include="Resources\Hive %28outside%29.png" />
     <Content Include="Specs.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

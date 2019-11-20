@@ -10,6 +10,7 @@ namespace BeehiveSimulator
     public partial class FormMain : Form
     {
         private World _world;
+        private Renderer _renderer;
         private Random _random = new Random();
         private DateTime _start = DateTime.Now;
         private DateTime _end;
@@ -77,6 +78,7 @@ namespace BeehiveSimulator
         {
             _framesRun++;
             _world.Go(_random);
+            _renderer.Render();
             _end = DateTime.Now;
             TimeSpan frameDuration = _end - _start;
             _start = _end;
