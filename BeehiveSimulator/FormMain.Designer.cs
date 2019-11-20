@@ -287,14 +287,14 @@
             // 
             // sfdSaveFile
             // 
-            this.sfdSaveFile.FileName = "Colmeia.col";
-            this.sfdSaveFile.Filter = "Arquivos de colméia (*.col)|*.col|Todos os arquivos (*.*)|*.*";
+            this.sfdSaveFile.FileName = "Colmeia.bee";
+            this.sfdSaveFile.Filter = "Arquivos de colméia (*.bee)|*.bee|Todos os arquivos (*.*)|*.*";
             this.sfdSaveFile.Title = "Salvar Colméia";
             // 
             // ofdOpenFile
             // 
-            this.ofdOpenFile.FileName = "Colmeia.col";
-            this.ofdOpenFile.Filter = "Arquivos de colméia (*.col)|*.col|Todos os arquivos (*.*)|*.*";
+            this.ofdOpenFile.FileName = "Colmeia.bee";
+            this.ofdOpenFile.Filter = "Arquivos de colméia (*.bee)|*.bee|Todos os arquivos (*.*)|*.*";
             this.ofdOpenFile.Title = "Carregar Colméia";
             // 
             // FormMain

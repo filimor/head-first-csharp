@@ -5,6 +5,7 @@ using System.Linq;
 
 namespace BeehiveSimulator
 {
+    [Serializable]
     public class Hive
     {
         private const int INITIALBEES = 6;

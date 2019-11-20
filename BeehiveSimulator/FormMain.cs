@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+
 
 namespace BeehiveSimulator
 {
+    [Serializable]
     public partial class FormMain : Form
     {
         private World _world;
@@ -11,6 +15,7 @@ namespace BeehiveSimulator
         private DateTime _start = DateTime.Now;
         private DateTime _end;
         private int _framesRun;
+        private BinaryFormatter _formatter;
 
         public FormMain()
         {
@@ -103,7 +108,12 @@ namespace BeehiveSimulator
 
         private void TsbtnSave_Click(object sender, EventArgs e)
         {
-            tmrTimer.Stop();
+            bool enabled = tmrTimer.Enabled;
+            if (enabled)
+            {
+                tmrTimer.Stop();
+            }
+            
             _world.Hive.MessageSender = null;
             foreach (Bee bee in _world.Bees)
             {
@@ -112,20 +122,73 @@ namespace BeehiveSimulator
 
             if (sfdSaveFile.ShowDialog() == DialogResult.OK)
             {
-
+                try
+                {
+                    _formatter = new BinaryFormatter();
+                    using (Stream output = File.OpenWrite(sfdSaveFile.FileName))
+                    {
+                        _formatter.Serialize(output, _world);
+                        _formatter.Serialize(output, _framesRun);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Impossível salvar o arquivo\n" + ex.Message,
+                        "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            
 
             _world.Hive.MessageSender = new Bee.BeeMessage(SendMessage);
             foreach (Bee bee in _world.Bees)
             {
-                bee.MessageSender += _world.Hive.MessageSender;
+                bee.MessageSender = new Bee.BeeMessage(SendMessage);
             }
-            tmrTimer.Start();
+            if (enabled)
+            {
+                tmrTimer.Start();
+            }
         }
 
         private void TsbtnOpen_Click(object sender, EventArgs e)
         {
+            World currentWorld = _world;
+            int currentFramesRun = _framesRun;
+            bool enabled = tmrTimer.Enabled;
+
+            if (enabled)
+            {
+                tmrTimer.Stop();
+            }
+
+            if(ofdOpenFile.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    _formatter = new BinaryFormatter();
+                    using (Stream input = File.OpenRead(ofdOpenFile.FileName))
+                    {
+                        _world = (World)_formatter.Deserialize(input);
+                        _framesRun = (int)_formatter.Deserialize(input);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Impossível abrir o arquivo\n" + ex.Message,
+                        "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    _world = currentWorld;
+                    _framesRun = currentFramesRun;
+                }
+            }
+
+            _world.Hive.MessageSender = new Bee.BeeMessage(SendMessage);
+            foreach (Bee bee in _world.Bees)
+            {
+                bee.MessageSender = new Bee.BeeMessage(SendMessage);
+            }
+            if (enabled)
+            {
+                tmrTimer.Start();
+            }
 
         }
     }

@@ -3,6 +3,7 @@ using System.Drawing;
 
 namespace BeehiveSimulator
 {
+    [Serializable]
     public class Flower
     {
         private const int LIFESPANMIN = 15000; // Mínimo de vida da flor

@@ -3,6 +3,7 @@ using System.Drawing;
 
 namespace BeehiveSimulator
 {
+    [Serializable]
     public class Bee
     {
         private const double HONEYCONSUMED = 0.5;
