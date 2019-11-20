@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcuseManager", "ExcuseGene
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeehiveSimulator", "BeehiveSimulator\BeehiveSimulator.csproj", "{693EBE60-8799-4AB2-BD3F-66B5CB880B64}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeeControl", "BeeControl\BeeControl.csproj", "{EE72CB84-6321-4B21-A079-442BB38101A4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{693EBE60-8799-4AB2-BD3F-66B5CB880B64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{693EBE60-8799-4AB2-BD3F-66B5CB880B64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{693EBE60-8799-4AB2-BD3F-66B5CB880B64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE72CB84-6321-4B21-A079-442BB38101A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE72CB84-6321-4B21-A079-442BB38101A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE72CB84-6321-4B21-A079-442BB38101A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE72CB84-6321-4B21-A079-442BB38101A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

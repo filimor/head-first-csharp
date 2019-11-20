@@ -55,6 +55,7 @@
             this.lstReport = new System.Windows.Forms.ListBox();
             this.sfdSaveFile = new System.Windows.Forms.SaveFileDialog();
             this.ofdOpenFile = new System.Windows.Forms.OpenFileDialog();
+            this.tsbtnPrint = new System.Windows.Forms.ToolStripButton();
             this.tsToolbar.SuspendLayout();
             this.ssStatusbar.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -65,6 +66,7 @@
             this.tsToolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbtnOpen,
             this.tsbtnSave,
+            this.tsbtnPrint,
             this.toolStripSeparator1,
             this.tsbtnStartSimulation,
             this.tsbtnReset});
@@ -297,6 +299,15 @@
             this.ofdOpenFile.Filter = "Arquivos de colméia (*.bee)|*.bee|Todos os arquivos (*.*)|*.*";
             this.ofdOpenFile.Title = "Carregar Colméia";
             // 
+            // tsbtnPrint
+            // 
+            this.tsbtnPrint.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbtnPrint.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnPrint.Image")));
+            this.tsbtnPrint.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnPrint.Name = "tsbtnPrint";
+            this.tsbtnPrint.Size = new System.Drawing.Size(23, 22);
+            this.tsbtnPrint.Text = "Imprimir";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -349,6 +360,7 @@
         private System.Windows.Forms.ToolStripButton tsbtnSave;
         private System.Windows.Forms.ToolStripButton tsbtnOpen;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton tsbtnPrint;
     }
 }
 
