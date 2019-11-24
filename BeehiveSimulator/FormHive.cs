@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace BeehiveSimulator
 {
@@ -15,6 +7,8 @@ namespace BeehiveSimulator
         public FormHive()
         {
             InitializeComponent();
+            BackgroundImage = Renderer.ResizeImage(Properties.Resources.Hive__inside_,
+                ClientRectangle.Width, ClientRectangle.Height);
         }
     }
 }

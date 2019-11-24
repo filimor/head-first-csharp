@@ -35,7 +35,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "BeeControl";
-            this.Size = new System.Drawing.Size(47, 45);
+            this.Size = new System.Drawing.Size(234, 208);
+            this.Resize += new System.EventHandler(this.BeeControl_Resize);
             this.ResumeLayout(false);
 
         }

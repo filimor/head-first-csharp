@@ -50,6 +50,16 @@ namespace BeehiveSimulator
             _beeLockup.Clear();
         }
 
+        public static Bitmap ResizeImage(Bitmap picture, int width, int height)
+        {
+            var resizedPicture = new Bitmap(width, height);
+            using(var graphics = Graphics.FromImage(resizedPicture))
+            {
+                graphics.DrawImage(picture, 0, 0, width, height);
+            }
+            return resizedPicture;
+        }
+
         private void DrawFlowers()
         {
             foreach (Flower flower in _world.Flowers)
