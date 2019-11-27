@@ -42,6 +42,7 @@
             this.Name = "FormHive";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "A Colméia";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormHive_Paint);
             this.ResumeLayout(false);
 
         }

@@ -56,6 +56,7 @@
             this.lstReport = new System.Windows.Forms.ListBox();
             this.sfdSaveFile = new System.Windows.Forms.SaveFileDialog();
             this.ofdOpenFile = new System.Windows.Forms.OpenFileDialog();
+            this.tmrBees = new System.Windows.Forms.Timer(this.components);
             this.tsToolbar.SuspendLayout();
             this.ssStatusbar.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -308,6 +309,11 @@
             this.ofdOpenFile.Filter = "Arquivos de colméia (*.bee)|*.bee|Todos os arquivos (*.*)|*.*";
             this.ofdOpenFile.Title = "Carregar Colméia";
             // 
+            // tmrBees
+            // 
+            this.tmrBees.Interval = 150;
+            this.tmrBees.Tick += new System.EventHandler(this.TmrBees_Tick);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -362,6 +368,7 @@
         private System.Windows.Forms.ToolStripButton tsbtnOpen;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton tsbtnPrint;
+        private System.Windows.Forms.Timer tmrBees;
     }
 }
 

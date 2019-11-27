@@ -50,10 +50,12 @@
             this.ClientSize = new System.Drawing.Size(740, 452);
             this.ControlBox = false;
             this.Controls.Add(this.picHive);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormField";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "O Campo";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormField_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.picHive)).EndInit();
             this.ResumeLayout(false);
 

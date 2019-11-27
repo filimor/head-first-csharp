@@ -81,11 +81,12 @@ namespace BeehiveSimulator
         {
             _framesRun++;
             _world.Go(_random);
-            _renderer.Render();
             _end = DateTime.Now;
             TimeSpan frameDuration = _end - _start;
             _start = _end;
             UpdateStats(frameDuration);
+            _hiveForm.Invalidate();
+            _fieldForm.Invalidate();
         }
 
         private void MoveChildForms()
@@ -99,7 +100,14 @@ namespace BeehiveSimulator
         {
             _world = new World(new Bee.BeeMessage(SendMessage));
             _renderer = new Renderer(_world, _hiveForm, _fieldForm);
-            _framesRun = 0; 
+            _framesRun = 0;
+        }
+
+        private void CreateRenderer()
+        {
+            _renderer = new Renderer(_world, _hiveForm, _fieldForm);
+            _hiveForm.Renderer = _renderer;
+            _fieldForm.Renderer = _renderer;
         }
 
         private void TsbtnStartSimulation_Click(object sender, EventArgs e)
@@ -120,7 +128,7 @@ namespace BeehiveSimulator
 
         private void TsbtnReset_Click(object sender, EventArgs e)
         {
-            _renderer.Reset();
+            CreateRenderer();
             ResetSimulator();
             if (!tmrTimer.Enabled)
             {
@@ -212,13 +220,18 @@ namespace BeehiveSimulator
             {
                 tmrTimer.Start();
             }
-            _renderer.Reset();
+            CreateRenderer();
             _renderer = new Renderer(_world, _hiveForm, _fieldForm);
         }
 
         private void FormMain_Move(object sender, EventArgs e)
         {
             MoveChildForms();
+        }
+
+        private void TmrBees_Tick(object sender, EventArgs e)
+        {
+            _renderer.AnimateBees();
         }
     }
 }
