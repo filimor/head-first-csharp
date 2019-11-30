@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Drawing;
-using System.Windows.Forms;
+﻿using System.Drawing;
 
 namespace BeehiveSimulator
 {
@@ -22,13 +20,15 @@ namespace BeehiveSimulator
             _world = world;
             _hiveForm = hiveForm;
             _fieldForm = fieldForm;
+            _fieldForm.Renderer = this;
+            _hiveForm.Renderer = this;
             InitializeImages();
         }
 
         public static Bitmap ResizeImage(Image picture, int width, int height)
         {
             var resizedPicture = new Bitmap(width, height);
-            using(var graphics = Graphics.FromImage(resizedPicture))
+            using (var graphics = Graphics.FromImage(resizedPicture))
             {
                 graphics.DrawImage(picture, 0, 0, width, height);
             }
@@ -47,21 +47,27 @@ namespace BeehiveSimulator
                 case 0:
                     _cell = 0;
                     break;
+
                 case 1:
                     _cell = 1;
                     break;
+
                 case 2:
                     _cell = 2;
                     break;
+
                 case 3:
                     _cell = 3;
                     break;
+
                 case 4:
                     _cell = 4;
                     break;
+
                 case 5:
                     _cell = 5;
                     break;
+
                 default:
                     _cell = 0;
                     break;
@@ -86,7 +92,7 @@ namespace BeehiveSimulator
 
         public void PaintField(Graphics g)
         {
-            using(var brownPen = new Pen(Color.Brown, 6.0F))
+            using (var brownPen = new Pen(Color.Brown, 6.0F))
             {
                 g.FillRectangle(Brushes.SkyBlue, 0, 0,
                     _fieldForm.ClientSize.Width, _fieldForm.ClientSize.Height / 2);

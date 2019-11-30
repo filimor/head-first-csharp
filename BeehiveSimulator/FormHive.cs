@@ -4,7 +4,7 @@ namespace BeehiveSimulator
 {
     public partial class FormHive : Form
     {
-        public Renderer Renderer;
+        public Renderer Renderer { get; set; }
 
         public FormHive()
         {

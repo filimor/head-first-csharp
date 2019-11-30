@@ -17,7 +17,6 @@ namespace BeehiveSimulator
         private DateTime _end;
         private int _framesRun;
         private BinaryFormatter _formatter;
-
         private FormHive _hiveForm = new FormHive();
         private FormField _fieldForm = new FormField();
 
