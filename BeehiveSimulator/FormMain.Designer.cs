@@ -57,6 +57,8 @@
             this.sfdSaveFile = new System.Windows.Forms.SaveFileDialog();
             this.ofdOpenFile = new System.Windows.Forms.OpenFileDialog();
             this.tmrBees = new System.Windows.Forms.Timer(this.components);
+            this.ppdPrintPreview = new System.Windows.Forms.PrintPreviewDialog();
+            this.pdcPrintDocument = new System.Drawing.Printing.PrintDocument();
             this.tsToolbar.SuspendLayout();
             this.ssStatusbar.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -107,6 +109,7 @@
             this.tsbtnPrint.Name = "tsbtnPrint";
             this.tsbtnPrint.Size = new System.Drawing.Size(23, 22);
             this.tsbtnPrint.Text = "Imprimir";
+            this.tsbtnPrint.Click += new System.EventHandler(this.TsbtnPrint_Click);
             // 
             // toolStripSeparator1
             // 
@@ -314,6 +317,20 @@
             this.tmrBees.Interval = 150;
             this.tmrBees.Tick += new System.EventHandler(this.TmrBees_Tick);
             // 
+            // ppdPrintPreview
+            // 
+            this.ppdPrintPreview.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.ppdPrintPreview.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.ppdPrintPreview.ClientSize = new System.Drawing.Size(400, 300);
+            this.ppdPrintPreview.Enabled = true;
+            this.ppdPrintPreview.Icon = ((System.Drawing.Icon)(resources.GetObject("ppdPrintPreview.Icon")));
+            this.ppdPrintPreview.Name = "ppdPrintPreview";
+            this.ppdPrintPreview.Visible = false;
+            // 
+            // pdcPrintDocument
+            // 
+            this.pdcPrintDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.PdcPrintDocument_PrintPage);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -369,6 +386,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton tsbtnPrint;
         private System.Windows.Forms.Timer tmrBees;
+        private System.Windows.Forms.PrintPreviewDialog ppdPrintPreview;
+        private System.Drawing.Printing.PrintDocument pdcPrintDocument;
     }
 }
 
