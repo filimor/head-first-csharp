@@ -26,3 +26,7 @@ tiro atinge algo ou desaparece, outro pode ser disparado.
 - Se um tiro atinge um invasor, ambos desaparecem. Se não for o caso, o tiro desaparece
 quando atinge o topo da tela.
 - As setas para a esquerda ou para a direita movem a nave.
+
+- Dica: iniciar o projeto com apenas um formulário, uma classe Game e uma classe Stars.
+Ver se consegue fazer com que um retângulo preto representando o céu seja desenhado
+cheio de estrelas.
