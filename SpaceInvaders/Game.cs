@@ -138,6 +138,9 @@ namespace SpaceInvaders
 
             // O jogo avança cada invasor e permite que eles disparem.
 
+            MoveInvaders();
+            ReturnFire();
+
             // 4. Checar colisões.
             // Se o tiro do jogador atingir um invador, Game deverá retirá-lo da lista
             // apropriada. Em seguida, deverá checar se algum dos tiros invasores colidiu
@@ -151,6 +154,9 @@ namespace SpaceInvaders
             // passou por cima de algum invasor (e nesse caso ambos são removidos de suas
             // listas) e se o jogador foi atingido. Usar o método Contains() da propriedade
             // Area e determinar se a área da nave se sobrepõe à de um tiro.
+
+            CheckForInvaderCollisions();
+            CheckForPlayerCollisions();
         } 
 
         /// <summary>
@@ -166,27 +172,20 @@ namespace SpaceInvaders
         }
 
         /// <summary>
-        /// Verifica se o jogador foi atingido.
-        /// </summary>
-        private void CheckForPlayerCollisions()
-        {
-
-        }
-
-        /// <summary>
-        /// Verifica se algum dos invasores foi atingido.
-        /// </summary>
-        private void CheckForInvaderCollisions()
-        {
-
-        }
-
-        /// <summary>
         /// Move todos os invasores.
         /// </summary>
         private void MoveInvaders()
         {
-
+            // Os invasores precisam mudar de direção se qualquer um deles estiver dentro
+            // de uma área de 100 pixels da borda do campo de batalha. Quando isso acontece,
+            // eles precisam descer e mudar de direção.
+            // A primeira coisa a fazer é verificar e atualizar o campo privado frameSkipped
+            // e retornar se o quadro em que estivermos tiver de ser pulado (dependendo do
+            // número da horda). Então ele deve checar para qual direção os invasores estão
+            // se movendo e usar LINQ para procuar na lista InvaderCollection por qualquer
+            // invasor a menos de 100 pixels do limite. Se algum for encontrado, eles devem
+            // ser informados para marchar para baixo e invaderDirection deve ser alterado.
+            // Se nenhum for encontrado, eles devem marchar na mesma direção.
         }
 
         /// <summary>
@@ -194,7 +193,44 @@ namespace SpaceInvaders
         /// </summary>
         private void ReturnFire()
         {
-
+            // Primeiro ele deve retornar se a lista de tiros dos invasores já possuir
+            // wave + 1 tiro. Ele também deve retornar se Random.Next(10) < 10 - wave
+            // (para que os invasores não disparem o tempo todo).
+            // Se os testes falharem, ele pode usar LINQ para agrupar os invasores por suas
+            // Location.X e ordenar usando descending. Uma vez que se tenham os grupos,
+            // pode-se escolher um deles ao acaso e usar seu método First() para achar o
+            // invasor mais abaixo da coluna. Então você pode adicionar um disparo na lista
+            // de tiros dos invasores exatamente abaixo do meio desse invasor (usar a Area
+            // dos invasores para determinar a posição do tiro).
         }
+
+        // Existem três tipos de colisão para verificar e o método Contains() da struct
+        // Rectangle será muito útil - passe a ele qualquer Point e ele retornará true
+        // se o ponto estiver dentro do retângulo.
+
+        /// <summary>
+        /// Verifica se algum dos invasores foi atingido.
+        /// </summary>
+        private void CheckForInvaderCollisions()
+        {
+            // Use LINQ para achar qualquer invasor morto iterando pelos tiros da lista
+            // de disparos do jogador e selecione qualquer invasor cuja Area contiver
+            // a posição do tiro. Remova o invasor e o tiro.
+            // Adicione uma consulta para determinar se qualquer invasor atingiu a parte
+            // inferior da tela - se for o caso, encerre o jogo.
+        }
+
+        /// <summary>
+        /// Verifica se o jogador foi atingido.
+        /// </summary>
+        private void CheckForPlayerCollisions()
+        {
+            // Você não vai precisar de LINQ para procurar por tiros colididos com o jogador,
+            // apenas um laço e a propriedade Area dele (lembre-se, você não pode modificar
+            // uma coleção dentro de um laço foreach. Se tentar, vai conseguir uma
+            // InvalidOperationException dizendo que a coleção foi modificada).
+        }
+
+
     }
 }
