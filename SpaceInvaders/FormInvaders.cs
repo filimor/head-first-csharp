@@ -21,6 +21,7 @@ namespace SpaceInvaders
         private bool _gameOver;
         private int _counter;
 
+
         public FormInvaders()
         {
             InitializeComponent();

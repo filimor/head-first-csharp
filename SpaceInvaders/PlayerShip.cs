@@ -9,7 +9,14 @@ namespace SpaceInvaders
 {
     public class PlayerShip
     {
+        public Rectangle Area { get; set; }
+
         public void Draw(Graphics g)
+        {
+
+        }
+
+        public void Move(Direction direction)
         {
 
         }

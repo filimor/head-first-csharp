@@ -13,5 +13,10 @@ namespace SpaceInvaders
         {
 
         }
+
+        public bool Move(Direction direction)
+        {
+
+        }
     }
 }

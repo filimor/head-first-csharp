@@ -9,6 +9,8 @@ namespace SpaceInvaders
 {
     public class Invader
     {
+        public Rectangle Area { get; set; }
+
         public void Move(Direction direction)
         {
 
