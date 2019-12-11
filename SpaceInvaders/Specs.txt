@@ -1,0 +1,28 @@
+﻿- Os invasores atacam em hordas de 30. A primeira horda move-se vagarosamente e dispara
+alguns tiros por vez. A próxima horada se move mais rápido e dispara mais tiros e com
+mais frequência. Se todos os 30 invadores de uma horda forem destruídos, a próxima ataca.
+- O jogador inicia com três naves. A primeira entra direto em jogo e as outras duas são
+mantidas na reserva. As naves sobressalentes são mostradas no canto superior direito.
+- As estrelas coloridas no fundo piscam, mas não afetam o jogo em nada.
+- Conforme o jogador destrói os invasores, sua pontuação sobe. Ela é mostrada no canto
+superior esquerdo.
+- O jogador moviment aa nave para a esquerda e para a direita e dispara contra os invasores.
+Se um tiro atingir um deles, ele é destruído e a pontuação do jogador sobe.
+- Os invasores disparam de volta. Se um dos tiros atingir a nave, o jogador perde uma vida.
+Se todas as vidas acabarem, ou se os invasores alcançarem a parte inferior da tela, o
+jogo termina com um grande FIM DE JOGO no meio da tela.
+
+- Os invasores mais abaixo têm a forma de estrelas e valem 10 pontos. As naves valem 20,
+os discos valem 30, os insetos 40 e os satélites 50. O jogador começa com três vidas.
+- Os invasores começam na parte de cima da tela e movem-se para a esquerda até atingirem
+a borda da tela. Então, eles descem e começam a mover-se para a direita. Quando atingem
+a borda direita, descem de novo e voltam a andar para a esquerda.
+- A primeira horda de invasores pode disparar dois tiros de cada vez - eles pararão de
+atirar se houver mais de dois tiros na tela. A próxima horda dispara três, a próxima
+quatro e assim por diante.
+
+- A barra de espaço dispara. Mas só pode haver dois tiros na tela de cada vez. Quando um
+tiro atinge algo ou desaparece, outro pode ser disparado.
+- Se um tiro atinge um invasor, ambos desaparecem. Se não for o caso, o tiro desaparece
+quando atinge o topo da tela.
+- As setas para a esquerda ou para a direita movem a nave.
