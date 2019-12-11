@@ -14,15 +14,18 @@ namespace SpaceInvaders
     {
         // A tecla no índice 0 será sempre a mais recentemente pressionada.
         private List<Keys> _keysPressed = new List<Keys>();
-        private Game _game = new Game();
+        private Game _game;
         // Adicionar um tratador de evento no objeto Game chamado GameOver
         // que pare o timer do jogo (mas não a animação), atribua true para
         // _gameOver e chame o método Refresh() do formulário.
         private bool _gameOver;
+        private int _counter;
 
         public FormInvaders()
         {
             InitializeComponent();
+            _game = new Game(DisplayRectangle);
+
         }
 
         /// <summary>
@@ -33,7 +36,22 @@ namespace SpaceInvaders
         /// <param name="e"></param>
         private void TmrAnimator_Tick(object sender, EventArgs e)
         {
-            
+            switch (_counter)
+            {
+                case 0:
+                    _counter++;
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    _counter--;
+                    break;
+            }
+
+            _game.Twinkle();
+            Refresh();
         }
 
         /// <summary>
@@ -44,7 +62,7 @@ namespace SpaceInvaders
         /// <param name="e"></param>
         private void TmrGame_Tick(object sender, EventArgs e)
         {
-            if(_keysPressed.Count() >= 1)
+            if(_keysPressed.Count >= 1)
             {
                 switch (_keysPressed[0])
                 {
@@ -56,7 +74,7 @@ namespace SpaceInvaders
                         break;
                 }
             }
-            _game.Go();
+            _game.Go(); // Mantém o controle sobre o estado do jogo e avança um quadro.
         }
 
         private void FormInvaders_KeyDown(object sender, KeyEventArgs e)
@@ -92,6 +110,14 @@ namespace SpaceInvaders
             {
                 _keysPressed.Remove(e.KeyCode);
             }
+        }
+
+        private void FormInvaders_Paint(object sender, PaintEventArgs e)
+        {
+            // Caso _gameOver seja verdadeiro, escrever FIM DO JOGO com letras grandes amarelas
+            // no meio da tela. Em seguida, escrever "Pressione S para iniciar um novo jogo ou
+            // Q para sair" no canto inferior direito.
+            _game.Draw(g, animationCell);
         }
     }
 }

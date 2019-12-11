@@ -54,6 +54,7 @@
             this.MinimizeBox = false;
             this.Name = "FormInvaders";
             this.Text = "Invasores";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormInvaders_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormInvaders_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FormInvaders_KeyUp);
             this.ResumeLayout(false);
