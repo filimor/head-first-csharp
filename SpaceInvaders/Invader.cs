@@ -10,7 +10,7 @@ namespace SpaceInvaders
     public class Invader
     {
         /// <summary>
-        /// Quantos pixels um invasor de move a cada vez que ele dá um passo.
+        /// Quantos pixels um invasor se move a cada vez que ele dá um passo.
         /// </summary>
         private const int HORIZONTALINTERVAL = 10;
         /// <summary>
@@ -18,11 +18,11 @@ namespace SpaceInvaders
         /// campo de batalha.
         /// </summary>
         private const int VERTICALINTERVAL = 40;
-        private Bitmap image;
+        private Bitmap _image;
 
         public Point Location { get; private set; }
         public Type InvaderType { get; private set; }
-        public Rectangle Area => new Rectangle(Location, image.Size);
+        public Rectangle Area => new Rectangle(Location, _image.Size);
         public int Score { get; private set; }
         public enum Type
         {
@@ -38,7 +38,7 @@ namespace SpaceInvaders
             InvaderType = invaderType;
             Location = location;
             Score = score;
-            image = InvaderImage(0);
+            _image = InvaderImage(0);
         }
 
         /// <summary>

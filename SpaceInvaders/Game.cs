@@ -27,7 +27,6 @@ namespace SpaceInvaders
         private List<Shot> _invaderShots;
         private Stars _stars;
 
-        public bool Alive { get; set; }
         /// <summary>
         /// O objeto Game dispara o evento GameOver quando o jogador morre.
         /// </summary>
@@ -88,7 +87,7 @@ namespace SpaceInvaders
         /// <param name="direction">Direção do movimento.</param>
         public void MovePlayer(Direction direction)
         {
-            if (Alive)
+            if (_playerShip.Alive)
             {
                 _playerShip.Move(direction);
             }
@@ -116,11 +115,12 @@ namespace SpaceInvaders
             // O formulário deverá parar o timer de animação com seu método Stop().
             // Nessas condições, o método Go() não fará mais nada até que o jogador
             // esteja vivo de novo, ele deve apenas retornar.
-            if (!Alive)
+            if (!_playerShip.Alive)
             {
                 
                 return;
             }
+
             // 2. Movimentar cada um dos tiros.
             // Os disparos dos invasores movem-se para baixo e os do jogador para cima.
             // Qualquer tiro que se mover para fora da tela deve ser removido da lista.
