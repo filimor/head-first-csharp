@@ -31,7 +31,7 @@ namespace SpaceInvaders
         /// <param name="g">Objeto Graphics</param>
         public void Draw(Graphics g)
         {
-            
+
         }
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace SpaceInvaders
         /// <returns>Retorna true se o tiro ainda estiver dentro dos limites do jogo.</returns>
         public bool Move(Direction direction)
         {
-            
+            return true;
         }
     }
 }

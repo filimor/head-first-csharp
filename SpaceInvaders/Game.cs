@@ -12,6 +12,7 @@ namespace SpaceInvaders
         private int _score;
         private int _livesLeft = 2;
         private int _wave;
+
         /// <summary>
         /// Usado para deixar os invasores mais lentos no começo do jogo.
         /// A primeira horda pula 6 quadros antes de se mover, a próxima
@@ -117,7 +118,6 @@ namespace SpaceInvaders
             // esteja vivo de novo, ele deve apenas retornar.
             if (!_playerShip.Alive)
             {
-                
                 return;
             }
 
@@ -157,7 +157,7 @@ namespace SpaceInvaders
 
             CheckForInvaderCollisions();
             CheckForPlayerCollisions();
-        } 
+        }
 
         /// <summary>
         /// Cria uma nova horda de invasores.
@@ -230,7 +230,5 @@ namespace SpaceInvaders
             // uma coleção dentro de um laço foreach. Se tentar, vai conseguir uma
             // InvalidOperationException dizendo que a coleção foi modificada).
         }
-
-
     }
 }

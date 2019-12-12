@@ -18,6 +18,7 @@ namespace SpaceInvaders
 
         public Point Location { get; private set; }
         public Rectangle Area => new Rectangle(Location, _image.Size);
+
         /// <summary>
         /// Quando a nave é atingida por um disparo, o jogo atribui false para sua
         /// propriedade Alive, impedindo os invasores de se moverem até que a nave

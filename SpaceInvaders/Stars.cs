@@ -57,6 +57,7 @@ namespace SpaceInvaders
         private Pen RandomPen()
         {
             // Gera um número de 0 a 4 e seleciona um objeto Pen correspondente.
+            return Pens.White;
         }
     }
 }

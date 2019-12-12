@@ -39,14 +39,28 @@ namespace SpaceInvaders
             switch (_counter)
             {
                 case 0:
+                    _animationCell = 0;
                     _counter++;
                     break;
                 case 1:
+                    _animationCell = 1;
+                    _counter++;
                     break;
                 case 2:
+                    _animationCell = 2;
+                    _counter++;
                     break;
                 case 3:
-                    _counter--;
+                    _animationCell = 3;
+                    _counter++;
+                    break;
+                case 4:
+                    _animationCell = 2;
+                    _counter++;
+                    break;
+                case 5:
+                    _animationCell = 1;
+                    _counter = 0;
                     break;
             }
 
@@ -83,15 +97,15 @@ namespace SpaceInvaders
             {
                 Application.Exit();
             }
-            if (_gameOver)
+            if (_gameOver && e.KeyCode == Keys.S)
             {
-                if(e.KeyCode == Keys.S)
-                {
-                    // Aqui vai o código para reiniciar o jogo e resetar os timers.
-                    return;
-                }
+                // Aqui vai o código para reiniciar o jogo e resetar os timers.
+                _game = new Game(DisplayRectangle);
+                _keysPressed.Clear();
+                tmrGame.Start();
+                return;
             }
-            if(e.KeyCode == Keys.Space)
+            if (e.KeyCode == Keys.Space)
             {
                 _game.FireShot();
             }
@@ -101,7 +115,7 @@ namespace SpaceInvaders
             }
             _keysPressed.Add(e.KeyCode);
             // Removendo a tecla a adicionando-a novamente, fazemos com que ela seja a última
-            // (mais atual contida na lista.
+            // (mais atual) contida na lista.
         }
 
         private void FormInvaders_KeyUp(object sender, KeyEventArgs e)
@@ -118,6 +132,16 @@ namespace SpaceInvaders
             // no meio da tela. Em seguida, escrever "Pressione S para iniciar um novo jogo ou
             // Q para sair" no canto inferior direito.
             _game.Draw(_g, _animationCell);
+            if (_gameOver)
+            {
+                using (var arial24 = new Font("Arial", 24))
+                using (var arial12 = new Font("Arial", 12))
+                {
+                    _g.DrawString("FIM DE JOGO", arial24, Brushes.Yellow, DisplayRectangle.X / 2, DisplayRectangle.Y / 2);
+                    _g.DrawString("Pressione S para iniciar um novo jogo ou Q para sair...", arial12, Brushes.White,
+                        DisplayRectangle.X - 100, DisplayRectangle.Y - 10);
+                }
+            }
         }
 
         private void FormInvaders_OnGameOver(object sender, EventArgs e)
@@ -125,6 +149,9 @@ namespace SpaceInvaders
             // Adicionar um tratador de evento no objeto Game chamado GameOver
             // que pare o timer do jogo (mas não a animação), atribua true para
             // _gameOver e chame o método Refresh() do formulário.
+            tmrGame.Stop();
+            _gameOver = true;
+            Refresh();
         }
     }
 }

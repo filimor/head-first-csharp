@@ -13,6 +13,7 @@ namespace SpaceInvaders
         /// Quantos pixels um invasor se move a cada vez que ele dá um passo.
         /// </summary>
         private const int HORIZONTALINTERVAL = 10;
+
         /// <summary>
         /// O número de pixels que um invasor desce quando a formação chega à borda do
         /// campo de batalha.
@@ -24,6 +25,7 @@ namespace SpaceInvaders
         public Type InvaderType { get; private set; }
         public Rectangle Area => new Rectangle(Location, _image.Size);
         public int Score { get; private set; }
+
         public enum Type
         {
             Bug,
@@ -67,7 +69,7 @@ namespace SpaceInvaders
         /// <returns></returns>
         private Bitmap InvaderImage(int animationCell)
         {
-
+            return new Bitmap(100, 100);
         }
     }
 }
