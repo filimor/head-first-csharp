@@ -78,7 +78,7 @@ namespace SpaceInvaders
         /// </summary>
         public void Twinkle()
         {
-            _stars.Twinkle();
+            _stars.Twinkle(_random);
         }
 
         /// <summary>
