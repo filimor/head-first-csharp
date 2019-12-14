@@ -50,6 +50,7 @@ namespace SpaceInvaders
             {
                 // Reinicie o campo _deadShipHeight da nave usando a propriedade Location.
                 _deadShipHeight = Area.Height;
+                g.DrawImage(Resources.player, Location);
             }
             else
             {

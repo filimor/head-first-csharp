@@ -35,11 +35,13 @@
             // 
             // tmrAnimator
             // 
+            this.tmrAnimator.Enabled = true;
             this.tmrAnimator.Interval = 33;
             this.tmrAnimator.Tick += new System.EventHandler(this.TmrAnimator_Tick);
             // 
             // tmrGame
             // 
+            this.tmrGame.Enabled = true;
             this.tmrGame.Interval = 10;
             this.tmrGame.Tick += new System.EventHandler(this.TmrGame_Tick);
             // 
