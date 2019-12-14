@@ -367,6 +367,7 @@ namespace SpaceInvaders
                     {
                         _playerShots.Remove(shot);
                         _invaders.Remove(invader);
+                        _score += invader.Score;
                     }
                 }
                 if (invader.Location.Y >= _boundaries.Height - invader.Area.Height)
@@ -399,6 +400,7 @@ namespace SpaceInvaders
                 {
                     _invaderShots.Remove(_invaderShots[i]);
                     _playerShip.Alive = false;
+                    _livesLeft--;
                     if (_livesLeft == 0)
                     {
                         GameOver(this, EventArgs.Empty);

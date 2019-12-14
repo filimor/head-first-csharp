@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 
 namespace SpaceInvaders
 {
@@ -11,9 +6,10 @@ namespace SpaceInvaders
     {
         // Esses valores podem ser alterados para tornar o jogo mais fácil ou mais difícil.
         private const int MOVEINTERVAL = 20;
+
         private const int WIDTH = 5;
-        private const int HEGHT = 15;
-        private Direction _direction;
+        private const int HEIGHT = 15;
+        private readonly Direction _direction;
         private Rectangle _boundaries;
 
         public Point Location { get; private set; }
@@ -31,7 +27,7 @@ namespace SpaceInvaders
         /// <param name="g">Objeto Graphics</param>
         public void Draw(Graphics g)
         {
-
+            g.FillRectangle(Brushes.Yellow, new Rectangle(Location, new Size(WIDTH, HEIGHT)));
         }
 
         /// <summary>
@@ -42,7 +38,17 @@ namespace SpaceInvaders
         /// <returns>Retorna true se o tiro ainda estiver dentro dos limites do jogo.</returns>
         public bool Move(Direction direction)
         {
-            return true;
+            switch (direction)
+            {
+                case Direction.Up:
+                    Location = new Point(Location.X, Location.Y - MOVEINTERVAL);
+                    break;
+
+                case Direction.Down:
+                    Location = new Point(Location.X, Location.Y + MOVEINTERVAL);
+                    break;
+            }
+            return !_boundaries.Contains(Location);
         }
     }
 }
