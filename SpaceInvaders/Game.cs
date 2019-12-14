@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Drawing;
+using System.Linq;
 
 namespace SpaceInvaders
 {
@@ -17,6 +17,7 @@ namespace SpaceInvaders
         /// 5 e assim por diante.
         /// </summary>
         private int _framesSkipped = 6;
+
         private Rectangle _boundaries;
         private Random _random;
         private Direction _invaderDirection;
@@ -125,7 +126,7 @@ namespace SpaceInvaders
         {
             // Verifica se existem menos de dois tiros do jogador na tela. Se for o caso,
             // ele deve adicionar um novo tiro na lista _playerShots na posição correta.
-            if(_playerShots.Count < 2)
+            if (_playerShots.Count < 2)
             {
                 _playerShots.Add(new Shot(new Point(_playerShip.Location.X, _playerShip.Location.Y - 10), Direction.Up, _boundaries));
             }
@@ -166,7 +167,7 @@ namespace SpaceInvaders
             }
             for (int j = 0; j < _invaderShots.Count; j++)
             {
-                if(!_invaderShots[j].Move(Direction.Down))
+                if (!_invaderShots[j].Move(Direction.Down))
                 {
                     _invaderShots.Remove(_invaderShots[j]);
                 }
@@ -185,14 +186,6 @@ namespace SpaceInvaders
             ReturnFire();
 
             // 4. Checar colisões.
-            // Se o tiro do jogador atingir um invasor, Game deverá retirá-lo da lista
-            // apropriada. Em seguida, deverá checar se algum dos tiros invasores colidiu
-            // com a nave do jogador. Nesse caso, ele mata-o atribuindo false à sua
-            // propriedade Alive. Se o jogador não tiver mais vidas, Game deverá levantar
-            // o evento GameOver para informar o formulário que o jogo acabou. O tratador
-            // de evento GameOver do formulário interrompe o timer do jogo, então Go() não
-            // será mais chamada.
-
             // Finalmente, checa para ver se colisões ocorreram. Primeiro se algum tiro
             // passou por cima de algum invasor (e nesse caso ambos são removidos de suas
             // listas) e se o jogador foi atingido. Usar o método Contains() da propriedade
@@ -236,11 +229,7 @@ namespace SpaceInvaders
 
             _wave++;
             _invaderDirection = Direction.Right;
-            _framesSkipped--;
-            if (_framesSkipped == 0)
-            {
-                _framesSkipped = 1;
-            }
+            _framesSkipped = 7 - _wave;
         }
 
         /// <summary>
@@ -258,6 +247,63 @@ namespace SpaceInvaders
             // invasor a menos de 100 pixels do limite. Se algum for encontrado, eles devem
             // ser informados para marchar para baixo e invaderDirection deve ser alterado.
             // Se nenhum for encontrado, eles devem marchar na mesma direção.
+
+            _framesSkipped--;
+            if (_framesSkipped < 0)
+            {
+                _framesSkipped = 7 - _wave;
+            }
+            else if (_framesSkipped != 0)
+            {
+                return;
+            }
+
+            switch (_invaderDirection)
+            {
+                case Direction.Right:
+                    IEnumerable<Invader> invadersToRight =
+                        from invader in _invaders
+                        where invader.Location.X >= _boundaries.Width - 100
+                        select invader;
+                    if (invadersToRight.Any())
+                    {
+                        foreach (Invader invader in _invaders)
+                        {
+                            invader.Move(Direction.Down);
+                        }
+                        _invaderDirection = Direction.Left;
+                    }
+                    else
+                    {
+                        foreach (Invader invader in _invaders)
+                        {
+                            invader.Move(Direction.Right);
+                        }
+                    }
+                    break;
+
+                case Direction.Left:
+                    IEnumerable<Invader> invadersToLeft =
+                        from invader in _invaders
+                        where invader.Location.X <= _boundaries.X + 100
+                        select invader;
+                    if (invadersToLeft.Any())
+                    {
+                        foreach (Invader invader in _invaders)
+                        {
+                            invader.Move(Direction.Down);
+                        }
+                        _invaderDirection = Direction.Right;
+                    }
+                    else
+                    {
+                        foreach (Invader invader in _invaders)
+                        {
+                            invader.Move(Direction.Left);
+                        }
+                    }
+                    break;
+            }
         }
 
         /// <summary>
@@ -274,6 +320,20 @@ namespace SpaceInvaders
             // invasor mais abaixo da coluna. Então você pode adicionar um disparo na lista
             // de tiros dos invasores exatamente abaixo do meio desse invasor (usar a Area
             // dos invasores para determinar a posição do tiro).
+
+            if (_invaderShots.Count >= _wave + 1 || _random.Next(10) < 10 - _wave)
+            {
+                return;
+            }
+
+            IOrderedEnumerable<IGrouping<int, Invader>> invadersQuery =
+                from invader in _invaders
+                group invader by invader.Location.X into invaderGroup
+                orderby invaderGroup.Key descending
+                select invaderGroup;
+            IGrouping<int, Invader> selectedGroup = invadersQuery.ElementAt(_random.Next(1, invadersQuery.Count()));
+            Invader selectedInvader = selectedGroup.First();
+            _invaderShots.Add(new Shot(new Point(selectedInvader.Area.X + 3, selectedInvader.Area.Y + 5), Direction.Down, _boundaries));
         }
 
         // Existem três tipos de colisão para verificar e o método Contains() da struct
@@ -290,6 +350,30 @@ namespace SpaceInvaders
             // a posição do tiro. Remova o invasor e o tiro.
             // Adicione uma consulta para determinar se qualquer invasor atingiu a parte
             // inferior da tela - se for o caso, encerre o jogo.
+
+            IEnumerable<Shot> shotsQuery =
+                from shot in _playerShots
+                select shot;
+
+            IEnumerable<Invader> invadersQuery =
+                from invader in _invaders
+                select invader;
+
+            foreach (Invader invader in invadersQuery)
+            {
+                foreach (Shot shot in shotsQuery)
+                {
+                    if (invader.Area.Contains(shot.Location))
+                    {
+                        _playerShots.Remove(shot);
+                        _invaders.Remove(invader);
+                    }
+                }
+                if (invader.Location.Y >= _boundaries.Height - invader.Area.Height)
+                {
+                    GameOver(this, EventArgs.Empty);
+                }
+            }
         }
 
         /// <summary>
@@ -301,6 +385,26 @@ namespace SpaceInvaders
             // apenas um laço e a propriedade Area dele (lembre-se, você não pode modificar
             // uma coleção dentro de um laço foreach. Se tentar, vai conseguir uma
             // InvalidOperationException dizendo que a coleção foi modificada).
+
+            // Em seguida, deverá checar se algum dos tiros invasores colidiu
+            // com a nave do jogador. Nesse caso, ele mata-o atribuindo false à sua
+            // propriedade Alive. Se o jogador não tiver mais vidas, Game deverá levantar
+            // o evento GameOver para informar o formulário que o jogo acabou. O tratador
+            // de evento GameOver do formulário interrompe o timer do jogo, então Go() não
+            // será mais chamada.
+
+            for (int i = 0; i < _invaderShots.Count; i++)
+            {
+                if (_playerShip.Area.Contains(_invaderShots[i].Location))
+                {
+                    _invaderShots.Remove(_invaderShots[i]);
+                    _playerShip.Alive = false;
+                    if (_livesLeft == 0)
+                    {
+                        GameOver(this, EventArgs.Empty);
+                    }
+                }
+            }
         }
     }
 }
