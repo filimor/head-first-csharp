@@ -47,13 +47,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(809, 504);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormInvaders";
             this.Text = "Invasores";
+            this.TransparencyKey = System.Drawing.Color.Transparent;
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormInvaders_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormInvaders_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FormInvaders_KeyUp);

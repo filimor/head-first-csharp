@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SpaceInvaders
@@ -14,17 +9,18 @@ namespace SpaceInvaders
     {
         // A tecla no índice 0 será sempre a mais recentemente pressionada.
         private List<Keys> _keysPressed = new List<Keys>();
+
         private Game _game;
         private bool _gameOver;
         private int _counter;
         private Graphics _g;
         private int _animationCell;
+        private Random _random = new Random();
 
         public FormInvaders()
         {
             InitializeComponent();
-            _game = new Game(DisplayRectangle);
-            _g = CreateGraphics();
+            _game = new Game(DisplayRectangle, _random);
             _game.GameOver += FormInvaders_OnGameOver;
         }
 
@@ -42,22 +38,27 @@ namespace SpaceInvaders
                     _animationCell = 0;
                     _counter++;
                     break;
+
                 case 1:
                     _animationCell = 1;
                     _counter++;
                     break;
+
                 case 2:
                     _animationCell = 2;
                     _counter++;
                     break;
+
                 case 3:
                     _animationCell = 3;
                     _counter++;
                     break;
+
                 case 4:
                     _animationCell = 2;
                     _counter++;
                     break;
+
                 case 5:
                     _animationCell = 1;
                     _counter = 0;
@@ -76,13 +77,14 @@ namespace SpaceInvaders
         /// <param name="e"></param>
         private void TmrGame_Tick(object sender, EventArgs e)
         {
-            if(_keysPressed.Count >= 1)
+            if (_keysPressed.Count >= 1)
             {
                 switch (_keysPressed[0])
                 {
                     case Keys.Left:
                         _game.MovePlayer(Direction.Left);
                         break;
+
                     case Keys.Right:
                         _game.MovePlayer(Direction.Right);
                         break;
@@ -93,14 +95,14 @@ namespace SpaceInvaders
 
         private void FormInvaders_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Q)
+            if (e.KeyCode == Keys.Q)
             {
                 Application.Exit();
             }
             if (_gameOver && e.KeyCode == Keys.S)
             {
                 // Aqui vai o código para reiniciar o jogo e resetar os timers.
-                _game = new Game(DisplayRectangle);
+                _game = new Game(DisplayRectangle, _random);
                 _keysPressed.Clear();
                 tmrGame.Start();
                 return;
@@ -128,20 +130,8 @@ namespace SpaceInvaders
 
         private void FormInvaders_Paint(object sender, PaintEventArgs e)
         {
-            // Caso _gameOver seja verdadeiro, escrever FIM DO JOGO com letras grandes amarelas
-            // no meio da tela. Em seguida, escrever "Pressione S para iniciar um novo jogo ou
-            // Q para sair" no canto inferior direito.
-            _game.Draw(_g, _animationCell);
-            if (_gameOver)
-            {
-                using (var arial24 = new Font("Arial", 24))
-                using (var arial12 = new Font("Arial", 12))
-                {
-                    _g.DrawString("FIM DE JOGO", arial24, Brushes.Yellow, DisplayRectangle.X / 2, DisplayRectangle.Y / 2);
-                    _g.DrawString("Pressione S para iniciar um novo jogo ou Q para sair...", arial12, Brushes.White,
-                        DisplayRectangle.X - 100, DisplayRectangle.Y - 10);
-                }
-            }
+            _g = e.Graphics;
+            _game.Draw(_g, _animationCell, _gameOver);
         }
 
         private void FormInvaders_OnGameOver(object sender, EventArgs e)

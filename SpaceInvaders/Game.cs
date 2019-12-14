@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Drawing;
 
 namespace SpaceInvaders
@@ -18,7 +16,7 @@ namespace SpaceInvaders
         /// A primeira horda pula 6 quadros antes de se mover, a próxima
         /// 5 e assim por diante.
         /// </summary>
-        private int _framesSkipped;
+        private int _framesSkipped = 6;
         private Rectangle _boundaries;
         private Random _random;
         private Direction _invaderDirection;
@@ -33,7 +31,7 @@ namespace SpaceInvaders
         /// </summary>
         public event EventHandler GameOver;
 
-        public Game(Rectangle boundaries)
+        public Game(Rectangle boundaries, Random random)
         {
             // O objeto Game precisa criar todos os demais objetos: os Invader, o PlayerShip,
             // as listas de tiros e o objeto Stars. O formulário passa um objeto Random
@@ -42,6 +40,13 @@ namespace SpaceInvaders
             // os tiros saíram da tela e se os invasores atingiram oas bordas.
 
             _boundaries = boundaries;
+            _random = random;
+            _invaders = new List<Invader>();
+            _playerShip = new PlayerShip();
+            _playerShots = new List<Shot>();
+            _invaderShots = new List<Shot>();
+            _stars = new Stars(_boundaries, _random);
+            NextWave();
         }
 
         /// <summary>
@@ -49,28 +54,47 @@ namespace SpaceInvaders
         /// </summary>
         /// <param name="g">Objeto Graphics</param>
         /// <param name="animationCell">Número de 0 a 3 com a célula de animação.</param>
-        public void Draw(Graphics g, int animationCell)
+        public void Draw(Graphics g, int animationCell, bool gameOver)
         {
             // Primeiro, ele deve desenhar um retângulo preto que preencha todo o formulário
             // (usando o retângulo de exibição em _boundaries, recebido do formulário). Então
-            // o método deve desenhar as estrelas, os invasores, a neve do jogo e depois os
-            // tiros. Finalmente, ele deve desenhar a pontuação no canto superioresquerdo,
+            // o método deve desenhar as estrelas, os invasores, a nave do jogo e depois os
+            // tiros. Finalmente, ele deve desenhar a pontuação no canto superior esquerdo,
             // as naves do jogador no superior direito e um grande "FIM DE JOGO" em letras
             // amarelas se gameOver for true.
 
+            g.FillRectangle(Brushes.Black, _boundaries);
+
             _stars.Draw(g);
-            foreach(Invader invader in _invaders)
+            foreach (Invader invader in _invaders)
             {
                 invader.Draw(g, animationCell);
             }
             _playerShip.Draw(g);
-            foreach(Shot shot in _playerShots)
+            foreach (Shot shot in _playerShots)
             {
                 shot.Draw(g);
             }
-            foreach(Shot shot in _invaderShots)
+            foreach (Shot shot in _invaderShots)
             {
                 shot.Draw(g);
+            }
+
+            using (var arial12 = new Font("Arial", 12))
+            {
+                g.DrawString(_score.ToString(), arial12, Brushes.White, 10, 10);
+                g.DrawString(_livesLeft.ToString(), arial12, Brushes.White, _boundaries.Width - 30, 10);
+            }
+
+            if (gameOver)
+            {
+                using (var arial24 = new Font("Arial", 24))
+                using (var arial12 = new Font("Arial", 12))
+                {
+                    g.DrawString("FIM DE JOGO", arial24, Brushes.Yellow, (_boundaries.Width / 2) - 100, (_boundaries.Height / 2) - 10);
+                    g.DrawString("Pressione S para iniciar um novo jogo ou Q para sair...", arial12, Brushes.White,
+                        _boundaries.Width - 400, _boundaries.Height - 30);
+                }
             }
         }
 
@@ -101,6 +125,10 @@ namespace SpaceInvaders
         {
             // Verifica se existem menos de dois tiros do jogador na tela. Se for o caso,
             // ele deve adicionar um novo tiro na lista _playerShots na posição correta.
+            if(_playerShots.Count < 2)
+            {
+                _playerShots.Add(new Shot(new Point(_playerShip.Location.X, _playerShip.Location.Y - 10), Direction.Up, _boundaries));
+            }
         }
 
         /// <summary>
@@ -129,6 +157,21 @@ namespace SpaceInvaders
             // de cada tiro encontrado. Se algum desses métodos retornar false, ou seja,
             // esse tiro saiu da tela - então ele deve ser apagado da lista.
 
+            for (int i = 0; i < _playerShots.Count; i++)
+            {
+                if (!_playerShots[i].Move(Direction.Up))
+                {
+                    _playerShots.Remove(_playerShots[i]);
+                }
+            }
+            for (int j = 0; j < _invaderShots.Count; j++)
+            {
+                if(!_invaderShots[j].Move(Direction.Down))
+                {
+                    _invaderShots.Remove(_invaderShots[j]);
+                }
+            }
+
             // 3. Movimentar cada um dos invasores.
             // Chamar o método Move() de cada um dos invasores e dizer-lhes para que lado ir.
             // Manter o registro das posições para o caso de precisar movimentá-los para
@@ -142,7 +185,7 @@ namespace SpaceInvaders
             ReturnFire();
 
             // 4. Checar colisões.
-            // Se o tiro do jogador atingir um invador, Game deverá retirá-lo da lista
+            // Se o tiro do jogador atingir um invasor, Game deverá retirá-lo da lista
             // apropriada. Em seguida, deverá checar se algum dos tiros invasores colidiu
             // com a nave do jogador. Nesse caso, ele mata-o atribuindo false à sua
             // propriedade Alive. Se o jogador não tiver mais vidas, Game deverá levantar
@@ -168,7 +211,36 @@ namespace SpaceInvaders
             // colocando 30 invasores em suas posições iniciais em seis colunas, aumentar
             // o campo wave em 1 e configurar o campo invaderDirection para que os invasores
             // comecem a se movimentar inicialmente para o lado direito da tela. Ele também
-            // deve mudaro campo framesSkipped.
+            // deve mudar o campo framesSkipped.
+
+            for (int i = 1; i < 6; i++)
+            {
+                _invaders.Add(new Invader(Invader.Type.Satellite, new Point(_boundaries.X + (20 * i), _boundaries.Y + 30), 50));
+            }
+            for (int i = 1; i < 6; i++)
+            {
+                _invaders.Add(new Invader(Invader.Type.Bug, new Point(_boundaries.X + (20 * i), _boundaries.Y + 40), 40));
+            }
+            for (int i = 1; i < 6; i++)
+            {
+                _invaders.Add(new Invader(Invader.Type.Saucer, new Point(_boundaries.X + (20 * i), _boundaries.Y + 50), 30));
+            }
+            for (int i = 1; i < 6; i++)
+            {
+                _invaders.Add(new Invader(Invader.Type.Spaceship, new Point(_boundaries.X + (20 * i), _boundaries.Y + 60), 20));
+            }
+            for (int i = 1; i < 6; i++)
+            {
+                _invaders.Add(new Invader(Invader.Type.Star, new Point(_boundaries.X + (20 * i), _boundaries.Y + 70), 10));
+            }
+
+            _wave++;
+            _invaderDirection = Direction.Right;
+            _framesSkipped--;
+            if (_framesSkipped == 0)
+            {
+                _framesSkipped = 1;
+            }
         }
 
         /// <summary>

@@ -6,7 +6,7 @@ mantidas na reserva. As naves sobressalentes são mostradas no canto superior di
 - As estrelas coloridas no fundo piscam, mas não afetam o jogo em nada.
 - Conforme o jogador destrói os invasores, sua pontuação sobe. Ela é mostrada no canto
 superior esquerdo.
-- O jogador moviment aa nave para a esquerda e para a direita e dispara contra os invasores.
+- O jogador movimenta a nave para a esquerda e para a direita e dispara contra os invasores.
 Se um tiro atingir um deles, ele é destruído e a pontuação do jogador sobe.
 - Os invasores disparam de volta. Se um dos tiros atingir a nave, o jogador perde uma vida.
 Se todas as vidas acabarem, ou se os invasores alcançarem a parte inferior da tela, o
