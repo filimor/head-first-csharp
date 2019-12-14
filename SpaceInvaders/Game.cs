@@ -208,23 +208,23 @@ namespace SpaceInvaders
 
             for (int i = 1; i < 6; i++)
             {
-                _invaders.Add(new Invader(Invader.Type.Satellite, new Point(_boundaries.X + (20 * i), _boundaries.Y + 30), 50));
+                _invaders.Add(new Invader(Invader.Type.Satellite, new Point(_boundaries.X + (40 * i) + 20, _boundaries.Y + 20), 50));
             }
             for (int i = 1; i < 6; i++)
             {
-                _invaders.Add(new Invader(Invader.Type.Bug, new Point(_boundaries.X + (20 * i), _boundaries.Y + 40), 40));
+                _invaders.Add(new Invader(Invader.Type.Bug, new Point(_boundaries.X + (40 * i) + 20, _boundaries.Y + 40), 60));
             }
             for (int i = 1; i < 6; i++)
             {
-                _invaders.Add(new Invader(Invader.Type.Saucer, new Point(_boundaries.X + (20 * i), _boundaries.Y + 50), 30));
+                _invaders.Add(new Invader(Invader.Type.Saucer, new Point(_boundaries.X + (40 * i) + 20, _boundaries.Y + 100), 30));
             }
             for (int i = 1; i < 6; i++)
             {
-                _invaders.Add(new Invader(Invader.Type.Spaceship, new Point(_boundaries.X + (20 * i), _boundaries.Y + 60), 20));
+                _invaders.Add(new Invader(Invader.Type.Spaceship, new Point(_boundaries.X + (40 * i) + 20, _boundaries.Y + 140), 20));
             }
             for (int i = 1; i < 6; i++)
             {
-                _invaders.Add(new Invader(Invader.Type.Star, new Point(_boundaries.X + (20 * i), _boundaries.Y + 70), 10));
+                _invaders.Add(new Invader(Invader.Type.Star, new Point(_boundaries.X + (40 * i) + 20, _boundaries.Y + 180), 10));
             }
 
             _wave++;
