@@ -48,7 +48,7 @@ namespace SpaceInvaders
                     Location = new Point(Location.X, Location.Y + MOVEINTERVAL);
                     break;
             }
-            return !_boundaries.Contains(Location);
+            return _boundaries.Contains(Location);
         }
     }
 }

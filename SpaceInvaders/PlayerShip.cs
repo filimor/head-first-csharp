@@ -15,7 +15,7 @@ namespace SpaceInvaders
         private DateTime _dateTime;
         private bool _alive = true;
 
-        public Point Location { get; private set; }
+        public Point Location { get; set; }
         public Rectangle Area => new Rectangle(Location, _image.Size);
 
         /// <summary>

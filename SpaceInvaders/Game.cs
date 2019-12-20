@@ -19,13 +19,13 @@ namespace SpaceInvaders
         private int _framesSkipped = 6;
 
         private Rectangle _boundaries;
-        private Random _random;
+        private readonly Random _random;
         private Direction _invaderDirection;
-        private List<Invader> _invaders;
-        private PlayerShip _playerShip;
-        private List<Shot> _playerShots;
-        private List<Shot> _invaderShots;
-        private Stars _stars;
+        private readonly List<Invader> _invaders;
+        private readonly PlayerShip _playerShip;
+        private readonly List<Shot> _playerShots;
+        private readonly List<Shot> _invaderShots;
+        private readonly Stars _stars;
 
         /// <summary>
         /// O objeto Game dispara o evento GameOver quando o jogador morre.
@@ -43,7 +43,7 @@ namespace SpaceInvaders
             _boundaries = boundaries;
             _random = random;
             _invaders = new List<Invader>();
-            _playerShip = new PlayerShip();
+            _playerShip = new PlayerShip() { Location = new Point(boundaries.X, boundaries.Height - 40) };
             _playerShots = new List<Shot>();
             _invaderShots = new List<Shot>();
             _stars = new Stars(_boundaries, _random);
@@ -115,6 +115,14 @@ namespace SpaceInvaders
         {
             if (_playerShip.Alive)
             {
+                if (_playerShip.Location.X <= _boundaries.X && direction == Direction.Left)
+                {
+                    return;
+                }
+                if (_playerShip.Location.X >= _boundaries.Width - _playerShip.Area.Width - 5 && direction == Direction.Right)
+                {
+                    return;
+                }
                 _playerShip.Move(direction);
             }
         }

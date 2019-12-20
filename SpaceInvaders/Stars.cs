@@ -23,7 +23,7 @@ namespace SpaceInvaders
         /// <summary>
         /// Armazena 300 structs Star.
         /// </summary>
-        private List<Star> StarsOnScreen { get; set; }
+        private List<Star> StarsOnScreen { get; }
 
         /// <summary>
         /// Povoa a lista de estrelas.
