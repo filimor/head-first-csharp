@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using RacingDay.Properties;
+using System.Windows.Forms;
 
 namespace RacingDay
 {
@@ -19,30 +20,36 @@ namespace RacingDay
             UpdateLabels();
         }
 
+        /// <summary>
+        /// Assign my bet description to my label, and my money to my radio button label ("John has
+        /// 43 dollars").
+        /// </summary>
         public void UpdateLabels()
         {
-            // Atribua ao meu rótulo a descrição da minha aposta, e ao rótulo do
-            // meu botão de rádio o meu dinheiro ("João tem 43 reais")
-
             if (MyBet == null)
             {
                 MyBet = new Bet(0, 0, this);
             }
             MyLabel.Text = MyBet.GetDescription();
-            MyRadioButton.Text = $"{Name} tem {Cash} reais";
+            MyRadioButton.Text = $"{Name} {Resources.has} {Cash} {Resources.dollars}.";
         }
 
+        /// <summary>
+        /// Reset my bet to zero.
+        /// </summary>
         public void ClearBet()
         {
-            // Reinicialize minha aposta para que ela zere
             MyBet = null;
         }
 
+        /// <summary>
+        /// Make a new bet and store it in my Bet field.
+        /// </summary>
+        /// <param name="amount">Amount to bet.</param>
+        /// <param name="dog">Dog number to bet.</param>
+        /// <returns>Return true if the guy has enough money to bet.</returns>
         public bool PlaceBet(int amount, int dog)
         {
-            // Crie uma nova aposta e armazene-a no meu campo bet
-            // Retorne verdadeiro se o cara tem dinheiro suficiente para apostar
-
             if (Cash >= amount)
             {
                 ClearBet();
@@ -52,11 +59,12 @@ namespace RacingDay
             return false;
         }
 
+        /// <summary>
+        /// Charge my bet if I won. Key: use the Bet object.
+        /// </summary>
+        /// <param name="winner"></param>
         public void Collect(int winner)
         {
-            // Cobre minha aposta se eu ganhei
-            // Chave: usar o objeto Bet
-
             Cash += MyBet.PayOut(winner);
         }
     }

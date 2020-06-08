@@ -118,223 +118,661 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="picDog1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="picDog1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 20</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="picDog1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>AutoSize</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="picDog1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;picDog1.Name" xml:space="preserve">
+    <value>picDog1</value>
+  </data>
+  <data name="&gt;&gt;picDog1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;picDog1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;picDog1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="picRaceTrack.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="picRaceTrack.Size" type="System.Drawing.Size, System.Drawing">
+    <value>600, 200</value>
+  </data>
+  <data name="picRaceTrack.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>AutoSize</value>
+  </data>
+  <data name="picRaceTrack.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;picRaceTrack.Name" xml:space="preserve">
+    <value>picRaceTrack</value>
+  </data>
+  <data name="&gt;&gt;picRaceTrack.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;picRaceTrack.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;picRaceTrack.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="picDog2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 72</value>
+  </data>
+  <data name="picDog2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 20</value>
+  </data>
+  <data name="picDog2.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>AutoSize</value>
+  </data>
+  <data name="picDog2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;picDog2.Name" xml:space="preserve">
+    <value>picDog2</value>
+  </data>
+  <data name="&gt;&gt;picDog2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;picDog2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;picDog2.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="picDog3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 125</value>
+  </data>
+  <data name="picDog3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 20</value>
+  </data>
+  <data name="picDog3.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>AutoSize</value>
+  </data>
+  <data name="picDog3.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;picDog3.Name" xml:space="preserve">
+    <value>picDog3</value>
+  </data>
+  <data name="&gt;&gt;picDog3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;picDog3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;picDog3.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="picDog4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 179</value>
+  </data>
+  <data name="picDog4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 20</value>
+  </data>
+  <data name="picDog4.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>AutoSize</value>
+  </data>
+  <data name="picDog4.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;picDog4.Name" xml:space="preserve">
+    <value>picDog4</value>
+  </data>
+  <data name="&gt;&gt;picDog4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;picDog4.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;picDog4.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnRun.Location" type="System.Drawing.Point, System.Drawing">
+    <value>519, 139</value>
+  </data>
+  <data name="btnRun.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 20</value>
+  </data>
+  <data name="btnRun.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="btnRun.Text" xml:space="preserve">
+    <value>Run!</value>
+  </data>
+  <data name="&gt;&gt;btnRun.Name" xml:space="preserve">
+    <value>btnRun</value>
+  </data>
+  <data name="&gt;&gt;btnRun.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnRun.Parent" xml:space="preserve">
+    <value>grpCounter</value>
+  </data>
+  <data name="&gt;&gt;btnRun.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="nudDog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>335, 139</value>
+  </data>
+  <data name="nudDog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 20</value>
+  </data>
+  <data name="nudDog.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;nudDog.Name" xml:space="preserve">
+    <value>nudDog</value>
+  </data>
+  <data name="&gt;&gt;nudDog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudDog.Parent" xml:space="preserve">
+    <value>grpCounter</value>
+  </data>
+  <data name="&gt;&gt;nudDog.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblBet.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblBet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>219, 143</value>
+  </data>
+  <data name="lblBet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 13</value>
+  </data>
+  <data name="lblBet.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="lblBet.Text" xml:space="preserve">
+    <value>dollars on dog number</value>
+  </data>
+  <data name="&gt;&gt;lblBet.Name" xml:space="preserve">
+    <value>lblBet</value>
+  </data>
+  <data name="&gt;&gt;lblBet.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblBet.Parent" xml:space="preserve">
+    <value>grpCounter</value>
+  </data>
+  <data name="&gt;&gt;lblBet.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="nudAmount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>157, 139</value>
+  </data>
+  <data name="nudAmount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 20</value>
+  </data>
+  <data name="nudAmount.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;nudAmount.Name" xml:space="preserve">
+    <value>nudAmount</value>
+  </data>
+  <data name="&gt;&gt;nudAmount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudAmount.Parent" xml:space="preserve">
+    <value>grpCounter</value>
+  </data>
+  <data name="&gt;&gt;nudAmount.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnBet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 139</value>
+  </data>
+  <data name="btnBet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 20</value>
+  </data>
+  <data name="btnBet.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="btnBet.Text" xml:space="preserve">
+    <value>Bets</value>
+  </data>
+  <data name="&gt;&gt;btnBet.Name" xml:space="preserve">
+    <value>btnBet</value>
+  </data>
+  <data name="&gt;&gt;btnBet.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnBet.Parent" xml:space="preserve">
+    <value>grpCounter</value>
+  </data>
+  <data name="&gt;&gt;btnBet.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblBettor.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblBettor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 143</value>
+  </data>
+  <data name="lblBettor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 13</value>
+  </data>
+  <data name="lblBettor.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="lblBettor.Text" xml:space="preserve">
+    <value>João</value>
+  </data>
+  <data name="&gt;&gt;lblBettor.Name" xml:space="preserve">
+    <value>lblBettor</value>
+  </data>
+  <data name="&gt;&gt;lblBettor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblBettor.Parent" xml:space="preserve">
+    <value>grpCounter</value>
+  </data>
+  <data name="&gt;&gt;lblBettor.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lblAlfredo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>335, 111</value>
+  </data>
+  <data name="lblAlfredo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>259, 19</value>
+  </data>
+  <data name="lblAlfredo.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="lblAlfredo.Text" xml:space="preserve">
+    <value>Alfred didn't bet yet.</value>
+  </data>
+  <data name="lblAlfredo.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;lblAlfredo.Name" xml:space="preserve">
+    <value>lblAlfredo</value>
+  </data>
+  <data name="&gt;&gt;lblAlfredo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAlfredo.Parent" xml:space="preserve">
+    <value>grpCounter</value>
+  </data>
+  <data name="&gt;&gt;lblAlfredo.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lblBeto.Location" type="System.Drawing.Point, System.Drawing">
+    <value>335, 83</value>
+  </data>
+  <data name="lblBeto.Size" type="System.Drawing.Size, System.Drawing">
+    <value>259, 19</value>
+  </data>
+  <data name="lblBeto.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lblBeto.Text" xml:space="preserve">
+    <value>Bob didn't bet yet.</value>
+  </data>
+  <data name="lblBeto.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;lblBeto.Name" xml:space="preserve">
+    <value>lblBeto</value>
+  </data>
+  <data name="&gt;&gt;lblBeto.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblBeto.Parent" xml:space="preserve">
+    <value>grpCounter</value>
+  </data>
+  <data name="&gt;&gt;lblBeto.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="lblJoao.Location" type="System.Drawing.Point, System.Drawing">
+    <value>335, 54</value>
+  </data>
+  <data name="lblJoao.Size" type="System.Drawing.Size, System.Drawing">
+    <value>259, 19</value>
+  </data>
+  <data name="lblJoao.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="lblJoao.Text" xml:space="preserve">
+    <value>John didn't bet yet.</value>
+  </data>
+  <data name="lblJoao.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;lblJoao.Name" xml:space="preserve">
+    <value>lblJoao</value>
+  </data>
+  <data name="&gt;&gt;lblJoao.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblJoao.Parent" xml:space="preserve">
+    <value>grpCounter</value>
+  </data>
+  <data name="&gt;&gt;lblJoao.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="lblBets.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblBets.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="lblBets.Location" type="System.Drawing.Point, System.Drawing">
+    <value>332, 29</value>
+  </data>
+  <data name="lblBets.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 13</value>
+  </data>
+  <data name="lblBets.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lblBets.Text" xml:space="preserve">
+    <value>Bets</value>
+  </data>
+  <data name="&gt;&gt;lblBets.Name" xml:space="preserve">
+    <value>lblBets</value>
+  </data>
+  <data name="&gt;&gt;lblBets.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblBets.Parent" xml:space="preserve">
+    <value>grpCounter</value>
+  </data>
+  <data name="&gt;&gt;lblBets.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="rdoAlfredo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rdoAlfredo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 112</value>
+  </data>
+  <data name="rdoAlfredo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 17</value>
+  </data>
+  <data name="rdoAlfredo.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="rdoAlfredo.Text" xml:space="preserve">
+    <value>Alfred has 45 dollars</value>
+  </data>
+  <data name="&gt;&gt;rdoAlfredo.Name" xml:space="preserve">
+    <value>rdoAlfredo</value>
+  </data>
+  <data name="&gt;&gt;rdoAlfredo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdoAlfredo.Parent" xml:space="preserve">
+    <value>grpCounter</value>
+  </data>
+  <data name="&gt;&gt;rdoAlfredo.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="rdoBeto.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rdoBeto.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 84</value>
+  </data>
+  <data name="rdoBeto.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 17</value>
+  </data>
+  <data name="rdoBeto.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="rdoBeto.Text" xml:space="preserve">
+    <value>Bob has 75 dollars</value>
+  </data>
+  <data name="&gt;&gt;rdoBeto.Name" xml:space="preserve">
+    <value>rdoBeto</value>
+  </data>
+  <data name="&gt;&gt;rdoBeto.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdoBeto.Parent" xml:space="preserve">
+    <value>grpCounter</value>
+  </data>
+  <data name="&gt;&gt;rdoBeto.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="rdoJoao.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rdoJoao.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 55</value>
+  </data>
+  <data name="rdoJoao.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 17</value>
+  </data>
+  <data name="rdoJoao.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="rdoJoao.Text" xml:space="preserve">
+    <value>John has 50 dollars</value>
+  </data>
+  <data name="&gt;&gt;rdoJoao.Name" xml:space="preserve">
+    <value>rdoJoao</value>
+  </data>
+  <data name="&gt;&gt;rdoJoao.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdoJoao.Parent" xml:space="preserve">
+    <value>grpCounter</value>
+  </data>
+  <data name="&gt;&gt;rdoJoao.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="lblMinimumBet.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblMinimumBet.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="lblMinimumBet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 29</value>
+  </data>
+  <data name="lblMinimumBet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 13</value>
+  </data>
+  <data name="lblMinimumBet.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblMinimumBet.Text" xml:space="preserve">
+    <value>Minimum bet: 5 dollars</value>
+  </data>
+  <data name="&gt;&gt;lblMinimumBet.Name" xml:space="preserve">
+    <value>lblMinimumBet</value>
+  </data>
+  <data name="&gt;&gt;lblMinimumBet.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblMinimumBet.Parent" xml:space="preserve">
+    <value>grpCounter</value>
+  </data>
+  <data name="&gt;&gt;lblMinimumBet.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="grpCounter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 218</value>
+  </data>
+  <data name="grpCounter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>600, 171</value>
+  </data>
+  <data name="grpCounter.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="grpCounter.Text" xml:space="preserve">
+    <value>Betting counter</value>
+  </data>
+  <data name="&gt;&gt;grpCounter.Name" xml:space="preserve">
+    <value>grpCounter</value>
+  </data>
+  <data name="&gt;&gt;grpCounter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grpCounter.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;grpCounter.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>626, 400</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        AAABAAEAQEAAAAEAGAAoMgAAFgAAACgAAABAAAAAgAAAAAEAGAAAAAAAAAAAAEgAAABIAAAAAAAAAAAA
+        AAABAAEAMDAAAAEAGACoHAAAFgAAACgAAAAwAAAAYAAAAAEAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAkLzeD
+        y/2FzP2HzP2KzPuMzfqRzfqUz/qX0Pqb0fqf0/qj1vun2Pys2/2Pe4VnHRZqHRZsHhdwIBdzIhl3Jhp8
+        KR2BLSCEMCKELyGALB97KB13JBtzIRhwHhhsHRZpHBVoHRYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAABYdYqKzPyKy/uMzPuOzfuQzfqTzvqWzvmZz/md0fqg0/ql1/up2fyt
+        2PlrIxxpHRVrHhZtHhZvHxd0Ihl3JRt9KR2ALB+DLiGBLiB+Kh56Jx11JBpyIRluHxdqHhZnHhVsJh8A
+        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
+        vv9ZvP9Tuf9Ltv9Ds/9Uuf5/yv5+yPyAyPuGyfuOy/md0fqj1fqr2v2m2/+b1v+R0v97krFoKCYRCQkA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABJntlPtf1Wuf5gvv5pwv5x
+        xv90x/9zxv9yxv9wxf9vxP9txP9qw/9lwf9gv/9bvf9Uuv86qvkdkOYcjeMml+tfufmGyvuOzPqd0fql
+        1vup2vyj2v+Z1f+O0f+Dzf9vn8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAACBAVWuP5cu/5ivv5qwf9wxv91x/93yP53yf92yP91x/9zxv9xxf9uxP9sw/9nwf9hv/9cvf8h
+        lOkgjeIhjuIij+Iij+NHqvSNzPud0vql1vqp2f2h2f+X1f+M0P+BzP89Wm4AAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATJjhSoNtkv/5nwP1sw/9vxf9xxP5xxv91x/93x/94
+        yP93yP91x/9yxv9vxf9sxP9owv9iv/8kj+QmkOMokOIpkOIokOInkeRNrvWUz/ul1vyo2v2g2P+V1P+L
+        0P+CzP0EBgcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVLUgZLkdD
+        f69mwP1nwf5nwf5owf5qwv5txP5yxf92x/94yP94yP92yP9zxv9wxf9sxP9nwv8okuMqkuQsk+Qsk+Qs
+        k+QqkeMpkuNatveQ0P2f1v2e2P6W1P+L0P95s9gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAQKUYPJUMWMlRhv/5evf1dvP1fvf5hvv5nwP5sw/5yxv92x/94yf94yP92
+        yP9zxv9vxf9sw/8tlOQulOQvlOUvleUvlOUulOQsk+MsludfvPyBzP+N0P6P0f6L0P9Qc4kAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVKT0zaZZJlc1Xuv1Tt/xRtvxT
+        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
+        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
+        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
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAEEERsGHS8DDxgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAENNlsSUIISUIISUIIHJj0AAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBQgSUIISUIISUIISUIIRSHgAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALM1QSUIIS
-        UIISUIISTYEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgMAAQEAAAAAAAAA
-        AAAAAAAAAQIMN1gSUIISUIIORXIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBAcLNFUS
-        TYARSHgHITUAAAAAAAAAAAAAAQIPQmwSUIISUIIKLUkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAALME4SUIISUIISUIISUH8CCQ8AAAAAAAAGGywSUIISUIISUIIDDRUAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAKKkUSUIISUIISUIISUIIFFCEAAAAAAAALNFUSUIISUIIPQGoAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQIHITUSUIISUIISUIICCA0AAAAAAAAOPGQSUIIS
-        UIIMNlkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADDRYSUIISUIINPGEAAAAA
-        AAAAAAAORnESUIISUIINNlsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALME0S
-        UIISUIIGHC0AAAAAAAAAAQISTn8SUIISUIINO2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAEIIjgPQ2sPSnkLM1QAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAOO2ISUIISUIIDDRQAAAAAAAACChESUIISUIISUIIMPmUAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGGywSUIISUIISUIISUIICCAwAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAPQGgSUIISUIIDDRQAAAAAAAAGGioSUIISUIISUIIPQmwAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADDRYPS3kSUIISUIISUIIBBAYAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOSHISUIISUIIDDxgAAAAAAAALLkwSUIISUIIS
-        UIIQSHUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBQgAAQEAAAAAAAAAAAADDBQSTn8SUIIS
-        TYEAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAESTH0SUIISUIIFFiMAAAAB
-        BgoRS3oSUIISUIISUIIPTHoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEEBoJM1UOQGkLMlIAAAAAAAAA
-        AAAAAAAPQ2sSUIIPSXoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBQgSUIIS
-        UIISUIIOPWQJKUMNQ20SUIISUIISUIISUIISUH8AAQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAMN1sOQGkO
-        QGkOP2YAAAAAAAAAAAAAAAAORHASUIIORXIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAADCxISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIIBBAcAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAGHTAOP2YOQGkOQGkBAwUAAAAAAAAAAAERS34SUIIOQGoAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAIJTwSUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIILL0wFFCEA
-        AAEAAAAAAAAAAAAAAAAAAAAAAAAGHC0OQGkOQGkCCA0AAAAAAAAEEx8SUIISUIINO2EAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADDxgPTX4SUIISUIISUIISUIISUIISUIISUIISUIISUIIS
-        UIISUIISUIISUIIPQWcFFCEAAAAAAAAAAAAAAAAAAAACCAwOQGkOQGkDDRYBBAYIJj4PS3kSUIISUIIL
-        NVcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBAcQQ24SUIISUIISUIISUIISUIISUIIS
-        UIISUIISUIISUIISUIISUIISUIISUIISUIISUIIKK0UAAAEAAAAAAAAAAAACCAwOQGkOQGkIIjcQR3MS
-        UIISUIISUIISUIIHITYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALMU4SUIISUIISUIIS
-        UIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIIKLksAAAEAAAAAAAACCAwO
-        QGkPRG8STX0SUIISUIISUIISUIINOFwAAQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADDRUS
-        UH8SUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIIJ
-        Jj4AAAABAwQJKEIOQGkSTX0SUIISUIISUIISUIIOPWQBAwUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAKLUkSUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIIS
-        UIISUIISUIISUIISUIIMM1ULO2IOQGkPQWwSUIISUIISUIISUIISUIIGHS8AAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAPQGgSUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIIS
-        UIISUIISUIISUIISUIISUIISUIISUIISUIIRT38PRG4OQGkQRnMSUIISUIISUIISUIISUIIHITUAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOSHYSUIISUIISUIISUIISUIISUIISUIISUIIS
-        UIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISTIAPRXERTX4SUIISUIISUIIS
-        UIISUIILMlAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAORnMSUIISUIISUIISUIIS
-        UIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIIS
-        UIISUIISUIISUIISUIISUIIRSHUAAQIAAAAAAAAAAAADDBMIIzoCChEAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQRXAS
-        UIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIIS
-        UIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIIFFyUAAAAAAAAIIjgST4ARS3cDDhcAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAORW8YRGYaPlsaP10WRm0ST4ASUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIIS
-        UIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIIKLksAAAEKKkUSUIIPRXAC
-        CxEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAElKCsmJiYmJiYlJSUiIiIhKC4aP1wTUIESUIISUIISUIISUIISUIIS
-        UIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIILNlgK
-        K0YSUIISTH0DDRQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFCQ4aPlsVSXITTXwRQmoUN1QZKzkhISIhMj8TT34S
-        UIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIIS
-        UIISUIISUIIRSngSUIISUIILL00AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGGioSUIISUIISUIIPRG4RTX4S
-        Tn8TO1sgJCchMT8TT38SUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIIS
-        UIISUIISUIISUIISUIISUIISUIISUIISUIIST4ACChAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQIOPWMSUIIS
-        UIISUIIQRnESUIISUIIST4ASPF0jJikfNUcSUIESUIISUIISUIISUIISUIISUIISUIISUIISUIISUIIS
-        UIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIILL00AAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAwQHHzILL00N
-        OFwQQ24SUIISUIISUIISUIIQSHUSUIISUIISUIISTn4TPF4mKCobO1UOSHIPSXQSUIISUIISUIISUIIS
-        UIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIIPS3sCCQ4AAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAMM1USUIISUIISUIISUIISUIISUIISUIISUIIRSnkSUIESUIISUIISUIIRTHsWQWMbJS8AAAAAAAAC
-        CQ8IJDoORGwSUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIII
-        JT0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAgQUR3UTTn4SUIISUIISUIISUIISUIISUIISUIISTn4STn4SUIISUIISUIISUIIR
-        SXoBBgkAAAAAAAAAAAAAAAAAAQEGGSgOQGkSUIISUIISUIISUIISUIISUIISUIISUIISUIISUIISUIIS
-        UIISUIISUIIMN1kAAQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAgIkKS4kKi8UTXsSUIISUIISUIISUIISUIISUIISUIIRTX4S
-        UIISUIISUIISUIISUIICCAwAAAAAAAAAAAAAAAAAAAAAAAAAAAEGGysPRXASUIISUIISUIISUIISUIIS
-        UIISUIISUIISUIISUIISTH0JKEEAAQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAICAgmJiYmJiYWR24SUIISUIISUIITTn4d
-        N0wXRmsSUIIST4ASUIISUIISUIISUIILL00AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgMIIjcP
-        SXQSUIISUIISUIISUIISUIISUIIST4AMNFMDDBMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASFxwRLkMPS3sS
-        UIISUIISUIIVSnQcOlETUIESUIISUIISUIISUIISUIIQRnIBBAcAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAABAwUGGysKLksMN1oMOFoLL0wHHjABBwsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAABBgkLLkwSUIESUIISUIISUIISUIISUIISUIISUIISUIIPTX0EERsAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFCxATTXwSUIISUIISUIISUIISUIISUIISUIIQRnIEERwAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJJj4SUIISUIISUIISUIISUIIPTX0J
-        KUMBAwYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALME0SUIIS
-        UIINQ20JJj4BBwsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAQIEEx4DCxIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/////////////
-        ////////////////////////////////////////////h/////////8D/////////wP/////////g///
-        /////+eD////////g4P///////+Bg////////4GH////////gYf////////Dh////////8MH/+B/////
-        wwf/4H/////DB//gf////8MH/nB/////ggf4eP////+AA/h4/////4AD+DD/////gAD8MP////8AAHwA
-        /////gAAHAD////+AAAMAP////wAAAgB/////AAAAAP////8AAAAA/////wAAAAD/////AAAAAHH///8
-        AAAAAYf///wAAAAAD///+AAAAAAf///4AAAAAD////gAAAAAP///8AAAAAB///8AAAAAAH///wAAYAAA
-        ///+AAB4AAD///4AAH4AAf///gAA/4AH////AAD/4B/////AAf///////+AD////////8Af////////4
-        H/////////j/////////////////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////////////////////////////////////
-        /////////////////////////////w==
+        AAAAAAAAAAAAAAAAAAD///////8AAP///////wAA////////AAD//AAAAAEAAP/8AAAAAQAA//wAAAAB
+        AAD//AAAAAEAAP/8AAAAAwAA//wAAAADAAD//AAAAAMAAP/8AAAABwAA//wAAAAHAAD//AAAAA8AAP/4
+        AAAADwAA//gAAAAPAAD/+AAAAB8AAP/8AAAAHwAA//wAAAA/AAD//AAAAH8AAP/8AAAAfwAA//wAAAD/
+        AAD//AAAAf8AAP/8AAAD/wAA//wAAAP/AAD/8AAAB/8AAPwAAAAP/wAA8AAAAA//AADAAAAAH/8AAMAA
+        AAAf/wAAwAAAAD//AACAAAAAP/8AAIAAAAA//wAAgAAAAH//AACAAAAAf/8AAIAAAAB//wAAwAAAAP//
+        AAD4AAAA//8AAP4AAAD//wAA/4AAAf//AAD/gAAB//8AAP+AAAH//wAA/8AAAf//AAD/4AAD//8AAP/w
+        AAP//wAA//gAB///AAD//AAf//8AAP///////wAA////////AAA=
 </value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Racing day</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FormRacingDay</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

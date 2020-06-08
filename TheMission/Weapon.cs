@@ -11,7 +11,8 @@ namespace TheMission
         protected Game game;
 
         /// <summary>
-        /// Uma arma recolhida não deveria mais ser exibida. O formulário pode usar esse acessador get para descobrir isso.
+        /// Uma arma recolhida não deveria mais ser exibida. O formulário pode usar esse acessador
+        /// get para descobrir isso.
         /// </summary>
         public bool PickedUp { get; private set; }
 
@@ -20,11 +21,11 @@ namespace TheMission
         /// </summary>
         new public Point Location { get; }
 
-        // Cada classe de arma precisa implementar uma propriedade Name e
-        // um método Attack() que determina como essa arma ataca.
+        // Cada classe de arma precisa implementar uma propriedade Name e um método Attack() que
+        // determina como essa arma ataca.
         public abstract string Name { get; }
 
-        protected Weapon(Game game, Point location):base(game,location)
+        protected Weapon(Game game, Point location) : base(game, location)
         {
             this.game = game;
             Location = location;
@@ -39,12 +40,13 @@ namespace TheMission
             PickedUp = true;
         }
 
-        // Cada arma possui um alcance e padrão de ataque próprios, e
-        // por isso implementam o método Attack de forma diferente.
+        // Cada arma possui um alcance e padrão de ataque próprios, e por isso implementam o método
+        // Attack de forma diferente.
         public abstract void Attack(Direction direction, Random random);
 
         /// <summary>
-        /// Chamado por Attack(). Tentar achar um inimigo em certa direção e raio. Se achar, chama o método Hit() do inimigo.
+        /// Chamado por Attack(). Tentar achar um inimigo em certa direção e raio. Se achar, chama o
+        /// método Hit() do inimigo.
         /// </summary>
         /// <param name="direction">Direção a procurar o inimigo.</param>
         /// <param name="radius">Raio de procura.</param>

@@ -65,8 +65,8 @@ namespace TheMission
         /// <param name="weaponName">Nome da arma.</param>
         public void Equip(string weaponName)
         {
-            // O objeto Game chama esse método quando um dos ícones no inventário é clicado.
-            // Um objeto Player só pode ter um objeto Weapon em uso por vez.
+            // O objeto Game chama esse método quando um dos ícones no inventário é clicado. Um
+            // objeto Player só pode ter um objeto Weapon em uso por vez.
 
             foreach (Weapon weapon in Inventory)
             {
@@ -102,27 +102,25 @@ namespace TheMission
         /// <param name="direction">Direção do movimento.</param>
         public void Move(Direction direction)
         {
-            // Game chama o método Move() de Player quando um dos botões de
-            // movimento do formulário é clicado.
+            // Game chama o método Move() de Player quando um dos botões de movimento do formulário
+            // é clicado.
 
             Weapon weaponInRoom = _game.WeaponInRoom;
             Location = Move(direction, _boundaries);
             if (!weaponInRoom.PickedUp)
             {
-                // Veja se tem uma arma por perto, se for possivel, pegue-a.
-                // Se a arma for a única do jogador, prepare-a imediatamente.
-                // Weapon e o formulário serão responsáveis por deixar a PictureBox
-                // da arma invisível quando o jogador pegar, e não Player.
-                // Quando o jogador pega uma arma, ela precisa desaparecer da
-                // masmorra e aparecer no inventário.
+                // Veja se tem uma arma por perto, se for possivel, pegue-a. Se a arma for a única
+                // do jogador, prepare-a imediatamente. Weapon e o formulário serão responsáveis por
+                // deixar a PictureBox da arma invisível quando o jogador pegar, e não Player.
+                // Quando o jogador pega uma arma, ela precisa desaparecer da masmorra e aparecer no inventário.
 
-                if(Nearby(weaponInRoom.Location, WEAPONCATCHRADIUS))
+                if (Nearby(weaponInRoom.Location, WEAPONCATCHRADIUS))
                 {
                     int totalWeapons = 0;
                     Inventory.Add(weaponInRoom);
                     foreach (Weapon weapon in Inventory)
                     {
-                        if(!(weapon is IPotion))
+                        if (!(weapon is IPotion))
                         {
                             totalWeapons++;
                         }

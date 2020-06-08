@@ -8,8 +8,7 @@
 
         public string CurrentJob { get; private set; } = string.Empty;
 
-        // retorna a tarefa atual ou se ociosa uma string vazia
-        // utilizar IsNullOrEmpty()
+        // retorna a tarefa atual ou se ociosa uma string vazia utilizar IsNullOrEmpty()
         public override int ShiftsLeft => _shiftsToWork - _shiftsWorked;
 
         public Worker(string[] jobsICanDo, int weight) : base(weight)
@@ -19,13 +18,11 @@
 
         public bool DoThisJob(string job, int shifts)
         {
-            // a rainha tenta atribuir uma tarefa à operária usando este
-            // método. Se estiver desocupada e souber fazer, ela aceitará
-            // e retornará true
+            // a rainha tenta atribuir uma tarefa à operária usando este método. Se estiver
+            // desocupada e souber fazer, ela aceitará e retornará true
 
-            // o objeto checa sua matriz para ver se pode realizar o trabalho
-            // e então associa shiftsToWork à duração do trabalho, CurrentJob
-            // ao trabalho e shiftNumber a zero
+            // o objeto checa sua matriz para ver se pode realizar o trabalho e então associa
+            // shiftsToWork à duração do trabalho, CurrentJob ao trabalho e shiftNumber a zero
 
             if (ShiftsLeft == 0)
             {
@@ -50,9 +47,8 @@
 
         public bool WorkOneShift()
         {
-            // trabalha um turno e controla quantos turnos faltam para a
-            // tarefa atual. Se o trabalho terminar, reinicia o trabalho
-            // atual para uma string vazia
+            // trabalha um turno e controla quantos turnos faltam para a tarefa atual. Se o trabalho
+            // terminar, reinicia o trabalho atual para uma string vazia
 
             // diminui um de shiftNumber
 

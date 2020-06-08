@@ -1,6 +1,4 @@
-﻿using System.Collections;
-
-namespace DeckOfCards
+﻿namespace DeckOfCards
 {
     public class Card
     {

@@ -25,8 +25,7 @@ namespace SpaceInvaders
         }
 
         /// <summary>
-        /// Mantem a animação, fazendo as estrelas piscarem e as imagens dos invasores
-        /// mudarem de quadro.
+        /// Mantem a animação, fazendo as estrelas piscarem e as imagens dos invasores mudarem de quadro.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -116,8 +115,8 @@ namespace SpaceInvaders
                 _keysPressed.Remove(e.KeyCode);
             }
             _keysPressed.Add(e.KeyCode);
-            // Removendo a tecla a adicionando-a novamente, fazemos com que ela seja a última
-            // (mais atual) contida na lista.
+            // Removendo a tecla a adicionando-a novamente, fazemos com que ela seja a última (mais
+            // atual) contida na lista.
         }
 
         private void FormInvaders_KeyUp(object sender, KeyEventArgs e)
@@ -136,9 +135,8 @@ namespace SpaceInvaders
 
         private void FormInvaders_OnGameOver(object sender, EventArgs e)
         {
-            // Adicionar um tratador de evento no objeto Game chamado GameOver
-            // que pare o timer do jogo (mas não a animação), atribua true para
-            // _gameOver e chame o método Refresh() do formulário.
+            // Adicionar um tratador de evento no objeto Game chamado GameOver que pare o timer do
+            // jogo (mas não a animação), atribua true para _gameOver e chame o método Refresh() do formulário.
             tmrGame.Stop();
             _gameOver = true;
             Refresh();

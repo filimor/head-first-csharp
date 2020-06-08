@@ -5,8 +5,8 @@ namespace ExploreTheHouse
 {
     public partial class FormExplore : Form
     {
-        // btnGoThroughTheDoor só é visível quando existe uma porta externa
-        // btnGoHere e btnPassThroughTheDoor só são visíveis quando o jogo estiver rodando
+        // btnGoThroughTheDoor só é visível quando existe uma porta externa btnGoHere e
+        // btnPassThroughTheDoor só são visíveis quando o jogo estiver rodando
 
         private Location currentLocation;
         private RoomWithDoor livingRoom;
@@ -81,9 +81,8 @@ namespace ExploreTheHouse
 
         private void RedrawForm()
         {
-            // Coloca o texto correto na caixa
-            // Torna os botões visíveis ou invisíveis
-            // Coloca o texto correto no botão do meio
+            // Coloca o texto correto na caixa Torna os botões visíveis ou invisíveis Coloca o texto
+            // correto no botão do meio
 
             cboExits.Items.Clear();
             foreach (Location exit in currentLocation.Exits)
@@ -108,9 +107,8 @@ namespace ExploreTheHouse
 
         private void ResetGame(bool displayMessage)
         {
-            // Deve ser executado quando o oponente for encontrado
-            // Mostrar na caixa de texto quando o oponente for encontrado e quantos
-            // movimentos foram feitos para achá-lo
+            // Deve ser executado quando o oponente for encontrado Mostrar na caixa de texto quando
+            // o oponente for encontrado e quantos movimentos foram feitos para achá-lo
 
             if (displayMessage)
             {
@@ -142,11 +140,9 @@ namespace ExploreTheHouse
 
         private void BtnCheck_Click(object sender, System.EventArgs e)
         {
-            // Checa um esconderijo na sala
-            // Deve ser visível apenas numa sala qu tenha um
-            // Quando for mostrado, Text = "Olhar" + nome do lugar
-            // Usar o método Check() do inimigo
-            // Se o inimigo for achado o jogo acaba
+            // Checa um esconderijo na sala Deve ser visível apenas numa sala qu tenha um Quando for
+            // mostrado, Text = "Olhar" + nome do lugar Usar o método Check() do inimigo Se o
+            // inimigo for achado o jogo acaba
 
             moves++;
             if (opponent.Check(currentLocation))

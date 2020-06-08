@@ -28,7 +28,8 @@ namespace TheMission
         }
 
         /// <summary>
-        /// Quando o jogador ataca um inimigo, ele chama o método Hit() de Enemy, que subtrai um número aleatório dos pontos de vida.
+        /// Quando o jogador ataca um inimigo, ele chama o método Hit() de Enemy, que subtrai um
+        /// número aleatório dos pontos de vida.
         /// </summary>
         /// <param name="maxDamage">Dano máximo.</param>
         /// <param name="random">Variável tipo aleatória.</param>

@@ -6,7 +6,9 @@
         int StingerLenght { get; set; }
 
         bool LookForEnemies();
+
         int SharpenStinger(int lenght);
+
         void Sting();
     }
 }

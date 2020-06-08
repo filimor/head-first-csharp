@@ -22,10 +22,10 @@ namespace GoFish
         /// <param name="textBoxOnForm">Caixa de texto no formulário.</param>
         public Player(string name, Random random, TextBox textBoxOnForm)
         {
-            // O construtor para a classe Player inicializa quatro campos private, e então
-            // adicionar uma linha no controle TextBox do formulário que diz "João entrou
-            // no jogo" - mas use o nome no campo privado e não se esqueça de adicionar
-            // uma quebra no fim de cada linha adicionada na caixa de texto.
+            // O construtor para a classe Player inicializa quatro campos private, e então adicionar
+            // uma linha no controle TextBox do formulário que diz "João entrou no jogo" - mas use o
+            // nome no campo privado e não se esqueça de adicionar uma quebra no fim de cada linha
+            // adicionada na caixa de texto.
 
             Name = name;
             _random = random;
@@ -108,10 +108,9 @@ namespace GoFish
         /// <returns>Retorna um baralho com as cartas pescadas.</returns>
         public Deck DoYouHaveAny(Card.Values value)
         {
-            // Um oponente pergunta se o jogador tem cartas de um certo valor
-            // usando Deck.PullOutValues() para retirar os valores. Adicione uma
-            // linha na caixa de texto que diz "João tem 3 Seis" - use o novo
-            // método estático Card.Plural().
+            // Um oponente pergunta se o jogador tem cartas de um certo valor usando
+            // Deck.PullOutValues() para retirar os valores. Adicione uma linha na caixa de texto
+            // que diz "João tem 3 Seis" - use o novo método estático Card.Plural().
 
             Deck deck = _cards.PullOutValues(value);
             _textBoxOnForm.Text += $"{Name} tem {deck.Count} {Card.Plural(value)}.\n";
@@ -126,8 +125,8 @@ namespace GoFish
         /// <param name="stock">Cartas no monte.</param>
         public void AskForACard(List<Player> players, int myIndex, Deck stock)
         {
-            // Uma sobrecarga de AskForACard() - escolha um valor aleatório do
-            // baralho usando GetRandomValue() e pergunte por ele usando AskForACard().
+            // Uma sobrecarga de AskForACard() - escolha um valor aleatório do baralho usando
+            // GetRandomValue() e pergunte por ele usando AskForACard().
 
             AskForACard(players, myIndex, stock, GetRandomValue());
         }
@@ -141,14 +140,14 @@ namespace GoFish
         /// <param name="value">Valor a ser perguntado.</param>
         public void AskForACard(List<Player> players, int myIndex, Deck stock, Card.Values value)
         {
-            // Pergunte para os outros jogadores se eles tem um dado valor. Primeiro adicione
-            // uma linha na caixa de texto que diz "João pergunta se alguém tem alguma Rainha",
-            // por exemplo. Então itere pela lista de jogadores passada como parâmetro e para
-            // cada um deles pergunte se ele tem o valor (usando seu método DoYouHaveAny).
-            // Ele deve passar a você um baralho - adicione este ao seu. Mantenha registro
-            // de quantas cartas foram adicionadas. Se forem zero, teremos que pegar uma do
-            // monte (que também foi passado como parâmetro), e nesse caso uma linha
-            // "João tem que pegar uma carta da pilha" deve ser adicionada.
+            // Pergunte para os outros jogadores se eles tem um dado valor. Primeiro adicione uma
+            // linha na caixa de texto que diz "João pergunta se alguém tem alguma Rainha", por
+            // exemplo. Então itere pela lista de jogadores passada como parâmetro e para cada um
+            // deles pergunte se ele tem o valor (usando seu método DoYouHaveAny). Ele deve passar a
+            // você um baralho - adicione este ao seu. Mantenha registro de quantas cartas foram
+            // adicionadas. Se forem zero, teremos que pegar uma do monte (que também foi passado
+            // como parâmetro), e nesse caso uma linha "João tem que pegar uma carta da pilha" deve
+            // ser adicionada.
 
             int howMany = 0;
             _textBoxOnForm.Text += $"{Name} pergunta se alguém tem algum(a) {value}.\n";

@@ -28,7 +28,7 @@ namespace ExcuseManager
         public Excuse(Random random, string path)
         {
             //string[] fileNames = Directory.GetFiles(path,"*.txt");
-            string[] fileNames = Directory.GetFiles(path,"*.excuse");
+            string[] fileNames = Directory.GetFiles(path, "*.excuse");
             OpenFile(fileNames[random.Next(fileNames.Length)]);
         }
 

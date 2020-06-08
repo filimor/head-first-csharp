@@ -1,4 +1,6 @@
-﻿namespace RacingDay
+﻿using RacingDay.Properties;
+
+namespace RacingDay
 {
     public class Bet
     {
@@ -13,22 +15,25 @@
             Bettor = bettor;
         }
 
+        /// <summary>
+        /// It returns a string that tells who bet, how much money bet and on which dog ("John bet 8
+        /// on dog 4"). If the amount is zero, the bet was not placed ("John didn't bet").
+        /// </summary>
+        /// <returns>A string that describes the bet.</returns>
         public string GetDescription()
         {
-            // Retorna uma sequência de caracteres que diz quem fez a aposta,
-            // quanto dinheiro foi apostado e em qual cão ("João apostou 8 no
-            // cão 4"). Se a quantidade for zero, a aposta não foi feita
-            // ("João não apostou")
-
-            return Amount > 0 ? $"{Bettor.Name} apostou {Amount} reais no cão {Dog}." : $"{Bettor.Name} não apostou.";
+            return Amount > 0 ? $"{Bettor.Name} {Resources.bet} {Amount} " +
+                $"{Resources.betPlaced} {Dog}." : $"{Bettor.Name} {Resources.betNotPlaced}.";
         }
 
+        /// <summary>
+        /// The parameter gets the winner. If the dog won, it reveals the amount bet. If not, it
+        /// returns a negative value equal to the bet amount.
+        /// </summary>
+        /// <param name="winner">The number of the bettor.</param>
+        /// <returns>The amount bet.</returns>
         public int PayOut(int winner)
         {
-            // O parâmetro deve receber o vencedor da corrida. Se o cão venceu,
-            // retorna a quantidade apostada. De outra forma, retorne um valor
-            // negativo correspondente ao valor apostado
-
             return Dog == winner ? Amount : -Amount;
         }
     }

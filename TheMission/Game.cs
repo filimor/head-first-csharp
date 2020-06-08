@@ -64,8 +64,7 @@ namespace TheMission
         /// <returns></returns>
         private Point GetRandomLocation(Random random)
         {
-            // Útil para o método NewLevel(), usado para determinar onde colocar 
-            // os inimigos e as armas.
+            // Útil para o método NewLevel(), usado para determinar onde colocar os inimigos e as armas.
 
             return new Point(Boundaries.Left +
                 (random.Next((Boundaries.Right / 10) - (Boundaries.Left / 10)) * 10),
@@ -136,16 +135,12 @@ namespace TheMission
         /// <param name="random">Variável do tipo aleatória.</param>
         public void NewLevel(Random random)
         {
-            // Se o jogador já possui a poção de uma cor, o jogo não deve
-            // adicioná-la ao nível.
+            // Se o jogador já possui a poção de uma cor, o jogo não deve adicioná-la ao nível.
 
-            // Nível 2 -- Fantasma -- Poção azul
-            // Nível 3 -- Zumbi -- Arco
-            // Nível 4 -- Morcego, Fantasma -- Arco / Poção azul
-            // Nível 5 -- Morcego, Zumbi -- Poção vermelha
-            // Nível 6 -- Fantasma, Zumbi -- Bastão
-            // Nível 7 -- Morcego, Fantasma, Zumbi -- Bastão / Poção vermelha
-            // Nível 8 N/A -- Termine o jogo com Application.Exit();
+            // Nível 2 -- Fantasma -- Poção azul Nível 3 -- Zumbi -- Arco Nível 4 -- Morcego,
+            // Fantasma -- Arco / Poção azul Nível 5 -- Morcego, Zumbi -- Poção vermelha Nível 6 --
+            // Fantasma, Zumbi -- Bastão Nível 7 -- Morcego, Fantasma, Zumbi -- Bastão / Poção
+            // vermelha Nível 8 N/A -- Termine o jogo com Application.Exit();
 
             Level++;
             switch (Level)
@@ -157,6 +152,7 @@ namespace TheMission
                     };
                     WeaponInRoom = new Sword(this, GetRandomLocation(random));
                     break;
+
                 case 2:
                     Enemies = new List<Enemy>
                     {
@@ -164,6 +160,7 @@ namespace TheMission
                     };
                     WeaponInRoom = new BluePotion(this, GetRandomLocation(random), _player);
                     break;
+
                 case 3:
                     Enemies = new List<Enemy>
                     {
@@ -171,6 +168,7 @@ namespace TheMission
                     };
                     WeaponInRoom = new Bow(this, GetRandomLocation(random));
                     break;
+
                 case 4:
                     Enemies = new List<Enemy>
                     {
@@ -182,6 +180,7 @@ namespace TheMission
                         (Weapon)new BluePotion(this, GetRandomLocation(random), _player);
 
                     break;
+
                 case 5:
                     Enemies = new List<Enemy>
                     {
@@ -190,6 +189,7 @@ namespace TheMission
                     };
                     WeaponInRoom = new RedPotion(this, GetRandomLocation(random), _player);
                     break;
+
                 case 6:
                     Enemies = new List<Enemy>
                     {
@@ -198,6 +198,7 @@ namespace TheMission
                     };
                     WeaponInRoom = new Mace(this, GetRandomLocation(random));
                     break;
+
                 case 7:
                     Enemies = new List<Enemy>
                     {
@@ -209,6 +210,7 @@ namespace TheMission
                         new Mace(this, GetRandomLocation(random)) :
                         (Weapon)new RedPotion(this, GetRandomLocation(random), _player);
                     break;
+
                 case 8:
                     MessageBox.Show("Você concluiu o jogo!", "Vitória",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -4,9 +4,8 @@ namespace BeehiveManager
 {
     public class Queen : Bee
     {
-        // A rainnha seleciona a tarefa a ser feita não importando qual abelha
-        // e o programa deve descobrir se há uma operária disponível e
-        // atribuir o trabalho a ela
+        // A rainnha seleciona a tarefa a ser feita não importando qual abelha e o programa deve
+        // descobrir se há uma operária disponível e atribuir o trabalho a ela
 
         // usa shiftsLeft da operária para ver quantos turnos faltam
 
@@ -20,12 +19,10 @@ namespace BeehiveManager
 
         public bool AssignWork(string job, int shifts)
         {
-            // retorna true se encontrar uma operária para atribuir o trabalho
-            // se houver uma abelha disponível o programa deve atribuir e
-            // avisar a rainha que o trabalho será feito
+            // retorna true se encontrar uma operária para atribuir o trabalho se houver uma abelha
+            // disponível o programa deve atribuir e avisar a rainha que o trabalho será feito
 
-            // itera pela matriz e tenta atribuir a cada operária usando
-            // seu método DoThisJob()
+            // itera pela matriz e tenta atribuir a cada operária usando seu método DoThisJob()
 
             foreach (Worker bee in _workers)
             {
@@ -39,19 +36,15 @@ namespace BeehiveManager
 
         public string WorkTheNextShift()
         {
-            // manda cada objeto Worker trabalhar um turno e então checa
-            // o estado da operária para adicionar uma linha ao relatório
-            // gera um relatório que deve retornar quais abelhas trabalharam,
-            // quais tarefas fizeram e quantos turnos elas trabalharam em cada
-            // tarefa
+            // manda cada objeto Worker trabalhar um turno e então checa o estado da operária para
+            // adicionar uma linha ao relatório gera um relatório que deve retornar quais abelhas
+            // trabalharam, quais tarefas fizeram e quantos turnos elas trabalharam em cada tarefa
 
-            // alterar o relatório para incluir o consumo de mel de cada operária
-            // já que ela mesma consome mel também, terá de herdar de Bee
-            // e sobrepor seu método GetHoneyConsumption()
+            // alterar o relatório para incluir o consumo de mel de cada operária já que ela mesma
+            // consome mel também, terá de herdar de Bee e sobrepor seu método GetHoneyConsumption()
 
-            // incluir um laço para somar os consumos de mel para cada operária
-            // e encontrar a de maior consumo - antes de dizer a cada uma para
-            // trabalhar o próximo turno
+            // incluir um laço para somar os consumos de mel para cada operária e encontrar a de
+            // maior consumo - antes de dizer a cada uma para trabalhar o próximo turno
 
             // somar os valores ao seu próprio número e incluir no relatório
 

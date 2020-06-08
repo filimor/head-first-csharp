@@ -1,0 +1,3 @@
+﻿<a target="_blank" href="https://icons8.com/icons/set/guide-dog--v1">Guide Dog icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+
+macOS and Windows applications should have the link to https://icons8.com in the About dialog.

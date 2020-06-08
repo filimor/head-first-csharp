@@ -1,29 +1,27 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.852
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contacts", "Contacts\Contacts.csproj", "{354F0AD9-A11E-45A1-8CAB-51D64557F70E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_PartyPlanner", "PartyPlanner\02_PartyPlanner.csproj", "{E0FD8F45-5D4F-436C-8760-B96618EF96BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RacingDay", "RacingDay\RacingDay.csproj", "{FA8060C6-256C-4ED7-A2D2-DDAB1D0C78C4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_BeehiveManager", "BeehiveManager\03_BeehiveManager.csproj", "{32C94541-DBD3-466C-85A7-FE799B4DAE2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartyPlanner", "PartyPlanner\PartyPlanner.csproj", "{E0FD8F45-5D4F-436C-8760-B96618EF96BD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_ExploreTheHouse", "ExploreTheHouse\04_ExploreTheHouse.csproj", "{5F734E71-0AD8-423E-90D6-2F74C6410EB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeehiveManager", "BeehiveManager\BeehiveManager.csproj", "{32C94541-DBD3-466C-85A7-FE799B4DAE2E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05_DeckOfCards", "DeckOfCards\05_DeckOfCards.csproj", "{CA7AB5F4-1C9C-4DF8-8B5E-0CA07B81E2EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExploreTheHouse", "ExploreTheHouse\ExploreTheHouse.csproj", "{5F734E71-0AD8-423E-90D6-2F74C6410EB1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06_GoFish", "GoFish\06_GoFish.csproj", "{457BC3EF-3B73-44C3-ADBC-50BA5C80833F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeckOfCards", "DeckOfCards\DeckOfCards.csproj", "{CA7AB5F4-1C9C-4DF8-8B5E-0CA07B81E2EE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07_TheMission", "TheMission\07_TheMission.csproj", "{08DE28A6-477C-4ADD-BAF4-0E05E961A96F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoFish", "GoFish\GoFish.csproj", "{457BC3EF-3B73-44C3-ADBC-50BA5C80833F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08_ExcuseManager", "ExcuseGenerator\08_ExcuseManager.csproj", "{426F84BF-5525-449A-9D84-B49D0A626CD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheMission", "TheMission\TheMission.csproj", "{08DE28A6-477C-4ADD-BAF4-0E05E961A96F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_BeehiveSimulator", "BeehiveSimulator\09_BeehiveSimulator.csproj", "{693EBE60-8799-4AB2-BD3F-66B5CB880B64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcuseManager", "ExcuseGenerator\ExcuseManager.csproj", "{426F84BF-5525-449A-9D84-B49D0A626CD0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10_SpaceInvaders", "SpaceInvaders\10_SpaceInvaders.csproj", "{36B28CD4-139D-41D7-9132-75A764FA3631}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeehiveSimulator", "BeehiveSimulator\BeehiveSimulator.csproj", "{693EBE60-8799-4AB2-BD3F-66B5CB880B64}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceInvaders", "SpaceInvaders\SpaceInvaders.csproj", "{36B28CD4-139D-41D7-9132-75A764FA3631}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_RacingDay", "RacingDay\01_RacingDay.csproj", "{6C34F47E-961C-4B7F-A93D-A86A9CA090A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,14 +29,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{354F0AD9-A11E-45A1-8CAB-51D64557F70E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{354F0AD9-A11E-45A1-8CAB-51D64557F70E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{354F0AD9-A11E-45A1-8CAB-51D64557F70E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{354F0AD9-A11E-45A1-8CAB-51D64557F70E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FA8060C6-256C-4ED7-A2D2-DDAB1D0C78C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FA8060C6-256C-4ED7-A2D2-DDAB1D0C78C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FA8060C6-256C-4ED7-A2D2-DDAB1D0C78C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FA8060C6-256C-4ED7-A2D2-DDAB1D0C78C4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E0FD8F45-5D4F-436C-8760-B96618EF96BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E0FD8F45-5D4F-436C-8760-B96618EF96BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0FD8F45-5D4F-436C-8760-B96618EF96BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -75,6 +65,10 @@ Global
 		{36B28CD4-139D-41D7-9132-75A764FA3631}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36B28CD4-139D-41D7-9132-75A764FA3631}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36B28CD4-139D-41D7-9132-75A764FA3631}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C34F47E-961C-4B7F-A93D-A86A9CA090A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C34F47E-961C-4B7F-A93D-A86A9CA090A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C34F47E-961C-4B7F-A93D-A86A9CA090A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C34F47E-961C-4B7F-A93D-A86A9CA090A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

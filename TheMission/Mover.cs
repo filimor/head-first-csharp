@@ -9,6 +9,7 @@ namespace TheMission
         /// Tamanho do passo do jogador ou inimigo.
         /// </summary>
         private const int MOVEINTERVAL = 10;
+
         protected Game _game;
 
         /// <summary>

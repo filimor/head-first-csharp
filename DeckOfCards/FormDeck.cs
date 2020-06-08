@@ -13,9 +13,8 @@ namespace DeckOfCards
         {
             InitializeComponent();
 
-            // Ao iniciar, o baralho 1 deve ter 10 cartas aleatórieas e o baralho 2
-            // deve ser um baralho completo com 52 cartas, ambos ordenados por
-            // naipe e valor
+            // Ao iniciar, o baralho 1 deve ter 10 cartas aleatórieas e o baralho 2 deve ser um
+            // baralho completo com 52 cartas, ambos ordenados por naipe e valor
 
             ResetDeck(1);
             RedrawDeck(1);

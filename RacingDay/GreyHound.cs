@@ -19,17 +19,12 @@ namespace RacingDay
             MyPictureBox = myPictureBox;
         }
 
+        /// <summary>
+        /// Move forward 1, 2, 3 or 4 spaces randomly. Update my picturebox position on the form.
+        /// </summary>
+        /// <returns>Return true if I won the race.</returns>
         public bool Run()
         {
-            // Mova-se para frente 1, 2, 3 ou 4 espaços aleatoriamente
-            // Atualize a posição da minha caixa de imagem no formulário
-            // Retorne True se eu ganhei a corrida
-
-            // Exemplo:
-            // Point p = MyPictureBox.Location;
-            // p.X += distance;
-            // MyPictureBox.Location = p;
-
             MyRandom = new Random();
             int distance = MyRandom.Next(1, 5);
             Point p = MyPictureBox.Location;
@@ -42,10 +37,11 @@ namespace RacingDay
             return Location >= RacetrackLenght - MyPictureBox.Width;
         }
 
+        /// <summary>
+        /// Take back my position to the starting line.
+        /// </summary>
         public void TakeStartingPosition()
         {
-            // Volte minha posição para a linha de partida
-
             Point p = MyPictureBox.Location;
             p.X = StartingPosition;
             MyPictureBox.Location = p;

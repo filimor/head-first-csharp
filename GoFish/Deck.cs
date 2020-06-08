@@ -145,7 +145,7 @@ namespace GoFish
         /// <returns>Retorna true se há um livro no baralho.</returns>
         public bool HasBook(Card.Values value)
         {
-            //
+
 
             int numberOfCards = 0;
             foreach (Card card in _cards)

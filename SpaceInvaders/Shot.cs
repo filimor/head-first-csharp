@@ -31,8 +31,7 @@ namespace SpaceInvaders
         }
 
         /// <summary>
-        /// Movimenta o tiro para cima ou para baixo e verifica se o tiro está dentro
-        /// dos limites da tela.
+        /// Movimenta o tiro para cima ou para baixo e verifica se o tiro está dentro dos limites da tela.
         /// </summary>
         /// <param name="direction">Direção do tiro.</param>
         /// <returns>Retorna true se o tiro ainda estiver dentro dos limites do jogo.</returns>

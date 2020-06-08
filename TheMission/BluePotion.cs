@@ -16,9 +16,8 @@ namespace TheMission
 
         public override void Attack(Direction direction, Random random)
         {
-            // Aumenta a vida do jogador em até 5 pontos chamando seu
-            // método IncreasePlayerHealth(). Depois de usada, o método
-            // Used() deve retornar true.
+            // Aumenta a vida do jogador em até 5 pontos chamando seu método IncreasePlayerHealth().
+            // Depois de usada, o método Used() deve retornar true.
 
             _player.IncreaseHealth(5, random);
             Used = true;

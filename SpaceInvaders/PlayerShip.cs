@@ -19,9 +19,9 @@ namespace SpaceInvaders
         public Rectangle Area => new Rectangle(Location, _image.Size);
 
         /// <summary>
-        /// Quando a nave é atingida por um disparo, o jogo atribui false para sua
-        /// propriedade Alive, impedindo os invasores de se moverem até que a nave
-        /// reinicie e altere a propriedade para ture novamente.
+        /// Quando a nave é atingida por um disparo, o jogo atribui false para sua propriedade
+        /// Alive, impedindo os invasores de se moverem até que a nave reinicie e altere a
+        /// propriedade para ture novamente.
         /// </summary>
         public bool Alive
         {
@@ -33,15 +33,15 @@ namespace SpaceInvaders
             }
         }
 
-        // Usar o acessador set para dar a um campo privado do tipo DateTime o valor
-        // DateTime.Now. A primeira coisa que o método Go() da nave deve fazer é usar
-        // um TimeSpan para verificar se três segundos se passaram. Se ainda não for
-        // o caso, continue executando a animação de esmagamento. Assim que transcorrerem,
-        // modifique Alive de volta para true para que o jogo saiba que deve continuar.
+        // Usar o acessador set para dar a um campo privado do tipo DateTime o valor DateTime.Now. A
+        // primeira coisa que o método Go() da nave deve fazer é usar um TimeSpan para verificar se
+        // três segundos se passaram. Se ainda não for o caso, continue executando a animação de
+        // esmagamento. Assim que transcorrerem, modifique Alive de volta para true para que o jogo
+        // saiba que deve continuar.
 
         /// <summary>
-        /// Desenha a nave do jogador na posição certa - a não ser que ele esteja morto.
-        /// Nesse caso ele desenha uma animação da nave sendo esmagada pelo disparo.
+        /// Desenha a nave do jogador na posição certa - a não ser que ele esteja morto. Nesse caso
+        /// ele desenha uma animação da nave sendo esmagada pelo disparo.
         /// </summary>
         /// <param name="g"></param>
         public void Draw(Graphics g)
@@ -54,13 +54,12 @@ namespace SpaceInvaders
             }
             else
             {
-                // Usa o campo privado _deadShipHeight para animar a nave sendo lentamente
-                // esmagada pelo tiro. Depois de três segundos morta, a propriedade Alive
-                // deve ser alterada de volta para true.
+                // Usa o campo privado _deadShipHeight para animar a nave sendo lentamente esmagada
+                // pelo tiro. Depois de três segundos morta, a propriedade Alive deve ser alterada
+                // de volta para true.
 
-                // Verifique o campo _deadShipHeight. Se ele for maior que zero, diminua
-                // seu valolr em 1 e use DrawImage() para desenhar a nave um pouco mais
-                // achatada.
+                // Verifique o campo _deadShipHeight. Se ele for maior que zero, diminua seu valolr
+                // em 1 e use DrawImage() para desenhar a nave um pouco mais achatada.
 
                 if (_deadShipHeight > 0)
                 {

@@ -19,7 +19,7 @@ namespace RacingDay.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -61,6 +61,33 @@ namespace RacingDay.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to bet.
+        /// </summary>
+        internal static string bet {
+            get {
+                return ResourceManager.GetString("bet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to didn&apos;t bet.
+        /// </summary>
+        internal static string betNotPlaced {
+            get {
+                return ResourceManager.GetString("betNotPlaced", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to dollars on dog.
+        /// </summary>
+        internal static string betPlaced {
+            get {
+                return ResourceManager.GetString("betPlaced", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap dog {
@@ -71,12 +98,120 @@ namespace RacingDay.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to dollars.
+        /// </summary>
+        internal static string dollars {
+            get {
+                return ResourceManager.GetString("dollars", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We got a winner!.
+        /// </summary>
+        internal static string gotWinner {
+            get {
+                return ResourceManager.GetString("gotWinner", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to John.
+        /// </summary>
+        internal static string guy1 {
+            get {
+                return ResourceManager.GetString("guy1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bob.
+        /// </summary>
+        internal static string guy2 {
+            get {
+                return ResourceManager.GetString("guy2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alfred.
+        /// </summary>
+        internal static string guy3 {
+            get {
+                return ResourceManager.GetString("guy3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to has.
+        /// </summary>
+        internal static string has {
+            get {
+                return ResourceManager.GetString("has", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nobody bet!.
+        /// </summary>
+        internal static string noBet {
+            get {
+                return ResourceManager.GetString("noBet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No bettors.
+        /// </summary>
+        internal static string noBettors {
+            get {
+                return ResourceManager.GetString("noBettors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to não tem dinheiro o suficiente!.
+        /// </summary>
+        internal static string notEnough {
+            get {
+                return ResourceManager.GetString("notEnough", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bet not placed.
+        /// </summary>
+        internal static string notPlaced {
+            get {
+                return ResourceManager.GetString("notPlaced", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap racetrack {
             get {
                 object obj = ResourceManager.GetObject("racetrack", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The dog.
+        /// </summary>
+        internal static string theDog {
+            get {
+                return ResourceManager.GetString("theDog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to won the race!.
+        /// </summary>
+        internal static string wonRace {
+            get {
+                return ResourceManager.GetString("wonRace", resourceCulture);
             }
         }
     }

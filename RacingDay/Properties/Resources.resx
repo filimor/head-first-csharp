@@ -124,4 +124,49 @@
   <data name="dog" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dog.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="bet" xml:space="preserve">
+    <value>bet</value>
+  </data>
+  <data name="betPlaced" xml:space="preserve">
+    <value>dollars on dog</value>
+  </data>
+  <data name="betNotPlaced" xml:space="preserve">
+    <value>didn't bet</value>
+  </data>
+  <data name="dollars" xml:space="preserve">
+    <value>dollars</value>
+  </data>
+  <data name="has" xml:space="preserve">
+    <value>has</value>
+  </data>
+  <data name="gotWinner" xml:space="preserve">
+    <value>We got a winner!</value>
+  </data>
+  <data name="noBet" xml:space="preserve">
+    <value>Nobody bet!</value>
+  </data>
+  <data name="noBettors" xml:space="preserve">
+    <value>No bettors</value>
+  </data>
+  <data name="notEnough" xml:space="preserve">
+    <value>não tem dinheiro o suficiente!</value>
+  </data>
+  <data name="notPlaced" xml:space="preserve">
+    <value>Bet not placed</value>
+  </data>
+  <data name="theDog" xml:space="preserve">
+    <value>The dog</value>
+  </data>
+  <data name="wonRace" xml:space="preserve">
+    <value>won the race!</value>
+  </data>
+  <data name="guy1" xml:space="preserve">
+    <value>John</value>
+  </data>
+  <data name="guy2" xml:space="preserve">
+    <value>Bob</value>
+  </data>
+  <data name="guy3" xml:space="preserve">
+    <value>Alfred</value>
+  </data>
 </root>

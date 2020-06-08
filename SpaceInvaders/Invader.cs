@@ -10,8 +10,7 @@ namespace SpaceInvaders
         private const int HORIZONTALINTERVAL = 10;
 
         /// <summary>
-        /// O número de pixels que um invasor desce quando a formação chega à borda do
-        /// campo de batalha.
+        /// O número de pixels que um invasor desce quando a formação chega à borda do campo de batalha.
         /// </summary>
         private const int VERTICALINTERVAL = 40;
 

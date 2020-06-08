@@ -13,7 +13,8 @@ namespace GoFish
         }
 
         /// <summary>
-        /// Limpa e repovoa a caixa de listagem que ocntém a mão do jogador, e então atualiza as caixas de texto.
+        /// Limpa e repovoa a caixa de listagem que ocntém a mão do jogador, e então atualiza as
+        /// caixas de texto.
         /// </summary>
         private void UpdateForm()
         {

@@ -5,7 +5,9 @@
         double Nectar { get; }
 
         void FindFlowers();
+
         void GatherNectar();
+
         void ReturnToHive();
     }
 }
