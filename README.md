@@ -13,7 +13,7 @@
 
 ## Description
 
-It consists of 10 projects made with C# language and Windows Forms and includes UML diagrams created with Astah software. Although WinForms are currently deprecated, the code is still useful for learning OOP principles and C# commands and syntax.
+It consists of 10 projects made with C# language and Windows Forms and includes UML diagrams created with Astah software. Although WinForms are currently legacy, the code is still useful for learning OOP (Object-Oriented Programming) principles and C# commands and syntax.
 
 Now I am working on internationalization, standardization, refactoring, bug fixes, code cleaning and implementation of new features in the solution.
 
@@ -26,7 +26,7 @@ No need to install. The projects in solution are all independent and small Windo
 The repository contains the following projects and their corresponding introduced concepts:
 
 1. **Racing Day (Lab 1)**
-   > WinForms controls, OOP basics
+   > WinForms controls, OOP Basics
 2. **Party Planner**
    > Inheritance
 3. **Beehive Manager**
@@ -38,7 +38,7 @@ The repository contains the following projects and their corresponding introduce
 6. **Go Fish**
    > Collections, Lists
 7. **The Mission (Lab 2)**
-   > Sealed modifier, Abstract classes
+   > Sealed Modifier, Abstract Classes
 8. **Excuse Manager**
    > Serialization, Open/Save file dialogs
 9. **Beehive Simulator**
