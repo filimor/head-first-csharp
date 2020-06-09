@@ -31,8 +31,8 @@ namespace ExploreTheHouse
                 bool hidden = false;
                 while (!hidden)
                 {
-                    int rnd = Random.Next(0, MyLocation.Exits.Length);
-                    MyLocation = MyLocation.Exits[rnd];
+                    int rnd = Random.Next(0, MyLocation.GetExits().Length);
+                    MyLocation = MyLocation.GetExits()[rnd];
                     hidden = MyLocation is IHidingPlace;
                 }
             }

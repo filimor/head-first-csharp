@@ -7,7 +7,7 @@ namespace DeckOfCards
     {
         private Deck _deck1;
         private Deck _deck2;
-        private Random _random = new Random();
+        private readonly Random _random = new Random();
 
         public FormDeck()
         {
@@ -29,7 +29,7 @@ namespace DeckOfCards
             if (deckNumber == 1)
             {
                 int numberOfCards = _random.Next(1, 11);
-                _deck1 = new Deck(new Card[] { });
+                _deck1 = new Deck(Array.Empty<Card>());
                 for (int i = 0; i < numberOfCards; i++)
                 {
                     _deck1.Add(new Card((Card.Suits)_random.Next(4),

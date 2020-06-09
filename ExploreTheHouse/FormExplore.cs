@@ -50,19 +50,19 @@ namespace ExploreTheHouse
             bathroom = new RoomWithHidingPlace("Banheiro", "uma pia e um vaso sanitário", "no chuveiro");
             driveway = new OutsideWithHidingPlace("Calçada", true, "na garagem");
 
-            livingRoom.Exits = new Location[] { dinningRoom, stairs };
-            dinningRoom.Exits = new Location[] { livingRoom, kitchen };
-            kitchen.Exits = new Location[] { dinningRoom };
-            backYard.Exits = new Location[] { frontYard, garden, driveway };
-            garden.Exits = new Location[] { frontYard, backYard };
-            frontYard.Exits = new Location[] { backYard, garden, driveway };
+            livingRoom.SetExits(new Location[] { dinningRoom, stairs });
+            dinningRoom.SetExits(new Location[] { livingRoom, kitchen });
+            kitchen.SetExits(new Location[] { dinningRoom });
+            backYard.SetExits(new Location[] { frontYard, garden, driveway });
+            garden.SetExits(new Location[] { frontYard, backYard });
+            frontYard.SetExits(new Location[] { backYard, garden, driveway });
 
-            stairs.Exits = new Location[] { livingRoom, upstairsHallway };
-            upstairsHallway.Exits = new Location[] { stairs, masterBedroom, secondBedroom, bathroom };
-            masterBedroom.Exits = new Location[] { upstairsHallway };
-            secondBedroom.Exits = new Location[] { upstairsHallway };
-            bathroom.Exits = new Location[] { upstairsHallway };
-            driveway.Exits = new Location[] { frontYard, backYard };
+            stairs.SetExits(new Location[] { livingRoom, upstairsHallway });
+            upstairsHallway.SetExits(new Location[] { stairs, masterBedroom, secondBedroom, bathroom });
+            masterBedroom.SetExits(new Location[] { upstairsHallway });
+            secondBedroom.SetExits(new Location[] { upstairsHallway });
+            bathroom.SetExits(new Location[] { upstairsHallway });
+            driveway.SetExits(new Location[] { frontYard, backYard });
 
             livingRoom.DoorLocation = frontYard;
             frontYard.DoorLocation = livingRoom;
@@ -85,7 +85,7 @@ namespace ExploreTheHouse
             // correto no botão do meio
 
             cboExits.Items.Clear();
-            foreach (Location exit in currentLocation.Exits)
+            foreach (Location exit in currentLocation.GetExits())
             {
                 cboExits.Items.Add(exit.Name);
             }
@@ -129,7 +129,7 @@ namespace ExploreTheHouse
 
         private void BtnGoHere_Click(object sender, System.EventArgs e)
         {
-            MoveToANewLocation(currentLocation.Exits[cboExits.SelectedIndex]);
+            MoveToANewLocation(currentLocation.GetExits()[cboExits.SelectedIndex]);
         }
 
         private void BtnPassThroughTheDoor_Click(object sender, System.EventArgs e)

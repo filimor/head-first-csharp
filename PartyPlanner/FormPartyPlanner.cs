@@ -4,8 +4,8 @@ namespace PartyPlanner
 {
     public partial class FormPartyPlanner : Form
     {
-        private DinnerParty dinnerParty;
-        private BirthdayParty birthdayParty;
+        private readonly DinnerParty dinnerParty;
+        private readonly BirthdayParty birthdayParty;
 
         public FormPartyPlanner()
         {

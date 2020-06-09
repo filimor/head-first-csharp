@@ -32,7 +32,7 @@ namespace ExcuseManager
             OpenFile(fileNames[random.Next(fileNames.Length)]);
         }
 
-        internal Excuse(SerializationInfo info, StreamingContext context)
+        protected Excuse(SerializationInfo info, StreamingContext context)
         {
             Description = info.GetString(nameof(Description));
             Results = info.GetString(nameof(Results));

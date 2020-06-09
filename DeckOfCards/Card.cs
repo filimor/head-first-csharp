@@ -29,7 +29,7 @@
 
         public Suits Suit { get; set; }
         public Values Value { get; set; }
-        public string Name => $"{Value.ToString()} de {Suit.ToString()}";
+        public string Name => $"{Value} de {Suit}";
 
         public Card(Suits suit, Values value)
         {

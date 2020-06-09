@@ -8,14 +8,14 @@ namespace SpaceInvaders
     public partial class FormInvaders : Form
     {
         // A tecla no índice 0 será sempre a mais recentemente pressionada.
-        private List<Keys> _keysPressed = new List<Keys>();
+        private readonly List<Keys> _keysPressed = new List<Keys>();
 
         private Game _game;
         private bool _gameOver;
         private int _counter;
         private Graphics _g;
         private int _animationCell;
-        private Random _random = new Random();
+        private readonly Random _random = new Random();
 
         public FormInvaders()
         {

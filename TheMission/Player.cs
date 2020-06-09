@@ -15,7 +15,7 @@ namespace TheMission
 
         public int HitPoints { get; set; } = 10;
         new public Point Location { get; private set; }
-        public List<Weapon> Inventory { get; set; } = new List<Weapon>();
+        public List<Weapon> Inventory { get; } = new List<Weapon>();
 
         /// <summary>
         /// O jogador pode guardar muitas armas no inventário, mas só pode usar uma de cada vez.

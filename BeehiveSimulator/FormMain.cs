@@ -8,18 +8,17 @@ using System.Windows.Forms;
 
 namespace BeehiveSimulator
 {
-    [Serializable]
     public partial class FormMain : Form
     {
         private World _world;
         private Renderer _renderer;
-        private Random _random = new Random();
+        private readonly Random _random = new Random();
         private DateTime _start = DateTime.Now;
         private DateTime _end;
         private int _framesRun;
         private BinaryFormatter _formatter;
-        private FormHive _hiveForm = new FormHive();
-        private FormField _fieldForm = new FormField();
+        private readonly FormHive _hiveForm = new FormHive();
+        private readonly FormField _fieldForm = new FormField();
 
         public FormMain()
         {

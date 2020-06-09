@@ -12,7 +12,11 @@ namespace GoFish
 
         public string Name { get; }
         public int CardCount => _cards.Count;
-        public string[] CardNames => _cards.GetCardNames();
+
+        public string[] GetCardNames()
+        {
+            return _cards.GetCardNames();
+        }
 
         /// <summary>
         /// Inicializa os campos private e adiciona uma linha no controle TextBox.
@@ -29,7 +33,7 @@ namespace GoFish
 
             Name = name;
             _random = random;
-            _cards = new Deck(new Card[] { });
+            _cards = new Deck(Array.Empty<Card>());
             _textBoxOnForm = textBoxOnForm;
             _textBoxOnForm.Text += $"{Name} entrou no jogo.\n";
         }

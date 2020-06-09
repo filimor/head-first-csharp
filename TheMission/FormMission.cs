@@ -7,7 +7,7 @@ namespace TheMission
     public partial class FormMission : Form
     {
         private Game _game;
-        private Random _random = new Random();
+        private readonly Random _random = new Random();
 
         public FormMission()
         {

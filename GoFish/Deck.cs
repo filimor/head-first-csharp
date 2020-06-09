@@ -127,7 +127,7 @@ namespace GoFish
         /// <returns>Retorna um baralho novo sem aquelas cartas.</returns>
         public Deck PullOutValues(Card.Values value)
         {
-            var deckToReturn = new Deck(new Card[] { });
+            var deckToReturn = new Deck(Array.Empty<Card>());
             for (int i = _cards.Count - 1; i >= 0; i--)
             {
                 if (_cards[i].Value == value)
@@ -145,8 +145,6 @@ namespace GoFish
         /// <returns>Retorna true se há um livro no baralho.</returns>
         public bool HasBook(Card.Values value)
         {
-
-
             int numberOfCards = 0;
             foreach (Card card in _cards)
             {

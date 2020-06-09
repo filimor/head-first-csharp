@@ -12,7 +12,10 @@ namespace GoFish
         private readonly Deck _stock;
         private readonly TextBox _textBoxOnForm;
 
-        public string[] PlayerCardNames => _players[0].CardNames;
+        public string[] GetPlayerCardNames()
+        {
+            return _players[0].GetCardNames();
+        }
 
         /// <summary>
         /// Instância do jogo.

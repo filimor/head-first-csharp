@@ -5,7 +5,7 @@ namespace BeehiveManager
 {
     public partial class FormBeehiveManager : Form
     {
-        private Queen _queen;
+        private readonly Queen _queen;
 
         public FormBeehiveManager()
         {

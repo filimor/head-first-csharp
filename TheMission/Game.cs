@@ -25,7 +25,7 @@ namespace TheMission
         /// <summary>
         /// Lista de inimigos do nível atual.
         /// </summary>
-        public List<Enemy> Enemies { get; set; }
+        public List<Enemy> Enemies { get; private set; }
 
         /// <summary>
         /// Arma disponível no nível atual.

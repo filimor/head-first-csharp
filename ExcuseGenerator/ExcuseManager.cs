@@ -9,7 +9,7 @@ namespace ExcuseManager
         private string _currentPath;
         private bool _formChanged;
         private Excuse _currentExcuse;
-        private Random _random = new Random();
+        private readonly Random _random = new Random();
 
         public FormExcuseManager()
         {
@@ -63,7 +63,7 @@ namespace ExcuseManager
         {
             folderBrowserDialog.SelectedPath = _currentPath;
             if (folderBrowserDialog.ShowDialog() == DialogResult.OK &&
-                folderBrowserDialog.SelectedPath != string.Empty)
+                !string.IsNullOrEmpty(folderBrowserDialog.SelectedPath))
             {
                 btnSave.Enabled = true;
                 btnOpen.Enabled = true;
