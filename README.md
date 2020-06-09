@@ -1,6 +1,6 @@
 # Head First C
 
-> A collection of the 10 main projects created following the exercises and labs of the book "Head Fisrt C# - 2nd Edition" (Use a Cabeça C# - 2ª Edição).
+> A collection of the 10 main projects created following the exercises and labs of the book "Head Fisrt C# - 2nd Edition".
 >
 > ![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/filimor/head-first-csharp)
 > ![GitHub repo size](https://img.shields.io/github/repo-size/filimor/head-first-csharp)
@@ -9,9 +9,13 @@
 > ![GitHub](https://img.shields.io/github/license/filimor/head-first-csharp)
 > ![GitHub last commit](https://img.shields.io/github/last-commit/filimor/head-first-csharp)
 
+*Read it in other languages:* [English](https://github.com/filimor/head-first-csharp/blob/master/README.md), [Português (Brasil)](https://github.com/filimor/head-first-csharp/blob/master/README.pt-br.md)
+
 ## Description
 
-It consists of 10 projects made with C# language and Windows Forms. Although WinForms are currently deprecated, the code is still useful for learning OOP principles and C# commands and syntax.
+It consists of 10 projects made with C# language and Windows Forms and includes UML diagrams created with Astah software. Although WinForms are currently deprecated, the code is still useful for learning OOP principles and C# commands and syntax.
+
+Now I am working on internationalization, standardization, refactoring, bug fixes, code cleaning and implementation of new features in the solution.
 
 ## Installation
 
@@ -45,6 +49,8 @@ The repository contains the following projects and their corresponding introduce
 ## Build With
 
 - Microsoft Visual Studio 2019 Community Edition
+- [Astah Community Edition](https://astah.net/)
+- [Astah UML Edition](https://astah.net/)
 
 ## Contributing
 
@@ -52,7 +58,8 @@ Check out the [contribution guidelines](https://github.com/filimor/head-first-cs
 
 ## Translations
 
-TODO
+* [English](https://github.com/filimor/head-first-csharp/blob/master/README.md)
+* [Português (Brasil)](https://github.com/filimor/head-first-csharp/blob/master/README.pt-br.md)
 
 ## Credits
 
@@ -68,5 +75,3 @@ TODO
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/filimor/head-first-csharp/blob/master/LICENSE "MIT") file for details.
-
-
