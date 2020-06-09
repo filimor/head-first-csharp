@@ -48,7 +48,7 @@ The repository contains the following projects and their corresponding introduce
 
 ## Build With
 
-- Microsoft Visual Studio 2019 Community Edition
+- [Microsoft Visual Studio 2019 Community Edition](https://visualstudio.microsoft.com/vs/community/)
 - [Astah Community Edition](https://astah.net/)
 - [Astah UML Edition](https://astah.net/)
 
