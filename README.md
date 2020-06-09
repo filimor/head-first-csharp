@@ -1,4 +1,4 @@
-# Head First C
+# Head First C#
 
 > A collection of the 10 main projects created following the exercises and labs of the book "Head Fisrt C# - 2nd Edition".
 >
