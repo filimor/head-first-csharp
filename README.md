@@ -67,6 +67,6 @@ TODO
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/filimor/head-first-csharp/blob/master/README.md "MIT") file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/filimor/head-first-csharp/blob/master/LICENSE "MIT") file for details.
 
 
