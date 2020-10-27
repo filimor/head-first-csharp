@@ -1,3 +1,5 @@
+> ⚠️ This repository will be replaced as soon as the 4th edition is released, in December 2020.
+
 # Head First C#
 
 > A collection of the 10 main projects created following the exercises and labs of the book "Head Fisrt C# - 2nd Edition".
