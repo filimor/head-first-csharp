@@ -1,3 +1,5 @@
+> ⚠️ Este repositório será substituído assim que a 4ª edição for lançada, em 2020, dezembro.
+
 # Head First C
 
 > Coleção com os 10 principais projetos criados seguindo os exercícios e laboratórios do libro "Use a Cabeça C# - 2ª Edição".
